@@ -354,7 +354,7 @@ func (e *ExtractReport) Rewrite(path string) (string, bool) {
 				}
 			}
 		}
-		log.Println("[WARN] no vendored path for", path)
+		// log.Println("[WARN] no vendored path for", path)
 		return path, false
 	}
 	if filepath.HasPrefix(path, "github.com/ipfs/go-ipfs/Godeps/_workspace/src/") {
@@ -415,17 +415,21 @@ func findDeps(p *build.Package, includes, excludes []string, debug bool) (map[st
 		if !containsPrefix(dep.ImportPath, includes) {
 			return
 		}
-		var allFiles []string
+		var packageFiles []string
 		filepath.Walk(dep.Dir, func(path string, f os.FileInfo, err error) error {
 			if path == dep.Dir {
 				return nil
 			} else if f.IsDir() {
 				return filepath.SkipDir
 			}
-			allFiles = append(allFiles, path)
+			if strings.HasSuffix(path, "_test.go") {
+				// except tests, lol
+				return nil
+			}
+			packageFiles = append(packageFiles, path)
 			return nil
 		})
-		for _, path := range allFiles {
+		for _, path := range packageFiles {
 			deps[path] = struct{}{}
 		}
 	}
