@@ -15,7 +15,7 @@ import (
 // according to the rules supplied by the map of strings.
 //
 // Author: https://gist.github.com/jackspirou/61ce33574e9f411b8b4a
-func rewriteFile(name string, rewriteFn func(string) (string, bool)) error {
+func rewriteFile(name string, includes []string, rewriteFn func(string) (string, bool)) error {
 	fset := token.NewFileSet()
 	f, err := parser.ParseFile(fset, name, nil, parser.ParseComments)
 	if err != nil {
@@ -32,6 +32,9 @@ func rewriteFile(name string, rewriteFn func(string) (string, bool)) error {
 		if err != nil {
 			return err
 		}
+		if !containsPrefix(path, includes) {
+			continue
+		}
 		if path, ok := rewriteFn(path); ok {
 			i.Path.Value = strconv.Quote(path)
 			change = true
@@ -46,6 +49,9 @@ func rewriteFile(name string, rewriteFn func(string) (string, bool)) error {
 				ctext, err := strconv.Unquote(ctext)
 				if err != nil {
 					return err
+				}
+				if !containsPrefix(ctext, includes) {
+					continue
 				}
 				if ctext, ok := rewriteFn(ctext); ok {
 					c.Text = "// import " + strconv.Quote(ctext)

@@ -269,13 +269,18 @@ func extractCmd(c *cli.Cmd) {
 				SourcesRelocated: ipfsPackagesRelocated[pkg],
 			}
 		}
-		v, _ := json.Marshal(report)
-		if err := ioutil.WriteFile(*reportPath, v, 0644); err != nil {
-			log.Println("[INFO] failed to write extraction report:", err)
-		}
 		if !(*apply) {
-			return // exit with no further actions
-		} else if *debug {
+			// write a report and exit
+			v, _ := json.Marshal(report)
+			if err := ioutil.WriteFile(*reportPath, v, 0644); err != nil {
+				log.Println("[INFO] failed to write extraction report:", err)
+			}
+			return
+		} else {
+			// cleanup the report and continue
+			os.Remove(*reportPath)
+		}
+		if *debug {
 			log.Println("[INFO] copying files over, rewriting paths")
 		}
 		makeExtract := func(dstPath, srcPath string) {
@@ -285,7 +290,7 @@ func extractCmd(c *cli.Cmd) {
 			if err := copyFile(dstPath, srcPath); err != nil {
 				closer.Fatalln("[ERR] failed to copy a file:", err)
 			}
-			if err := rewriteFile(dstPath, report.Rewrite); err != nil {
+			if err := rewriteFile(dstPath, *include, report.Rewrite); err != nil {
 				closer.Fatalln("[ERR] failed to rewrite paths in a file:", err)
 			}
 		}
@@ -365,7 +370,7 @@ func (e *ExtractReport) Rewrite(path string) (string, bool) {
 		sources := m[SourcesOrigin]
 		for i, src := range sources {
 			if src.Package == path {
-				return e.GodepsResults[basePkg][SourcesRelocated][i].Package, true
+				return e.IpfsResults[basePkg][SourcesRelocated][i].Package, true
 			}
 		}
 	}
