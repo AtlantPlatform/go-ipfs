@@ -34,7 +34,7 @@ main.go:201: [INFO] found 1 deps vendored using Godeps
 main.go:230: [INFO] found 21 packages from IPFS
 
 $ du -csh extraction.json
-564K    extraction.json
+1.5M    extraction.json
 
 $ surgical-extraction extract --apply
 # copies sources over...

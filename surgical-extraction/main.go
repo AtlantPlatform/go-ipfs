@@ -333,7 +333,7 @@ func extractCmd(c *cli.Cmd) {
 		}
 		if *debug {
 			log.Println("[INFO] relocated", totalPackages, "Go packages")
-			log.Println("[INFO] relocated", totalSources, "source files")
+			log.Println("[INFO] relocated", totalSources, "files")
 		}
 	}
 }
@@ -415,17 +415,18 @@ func findDeps(p *build.Package, includes, excludes []string, debug bool) (map[st
 		if !containsPrefix(dep.ImportPath, includes) {
 			return
 		}
-		for _, f := range dep.GoFiles {
-			deps[filepath.Join(dep.Dir, f)] = struct{}{}
-		}
-		for _, f := range dep.HFiles {
-			deps[filepath.Join(dep.Dir, f)] = struct{}{}
-		}
-		for _, f := range dep.CFiles {
-			deps[filepath.Join(dep.Dir, f)] = struct{}{}
-		}
-		for _, f := range dep.SFiles {
-			deps[filepath.Join(dep.Dir, f)] = struct{}{}
+		var allFiles []string
+		filepath.Walk(dep.Dir, func(path string, f os.FileInfo, err error) error {
+			if path == dep.Dir {
+				return nil
+			} else if f.IsDir() {
+				return filepath.SkipDir
+			}
+			allFiles = append(allFiles, path)
+			return nil
+		})
+		for _, path := range allFiles {
+			deps[path] = struct{}{}
 		}
 	}
 	seenDeps := make(map[string]struct{}, len(p.Imports))
