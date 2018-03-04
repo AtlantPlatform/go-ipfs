@@ -7,9 +7,9 @@ link:
 extract:
 	# before must do: cd $$GOPATH/src/github.com/ipfs/go-ipfs && make install
 	#
-	surgical-extraction --pkg github.com/ipfs/go-ipfs/cmd/ipfswatch --out bitbucket.org/atlantproject/go-ipfs extract
+	surgical-extraction --pkg github.com/ipfs/go-ipfs/cmd/ipfswatch --out bitbucket.org/atlantproject/go-ipfs \
+	extract
 	
 extract-apply:
-	surgical-extraction --pkg github.com/ipfs/go-ipfs/cmd/ipfswatch \
-						--out bitbucket.org/atlantproject/go-ipfs \
+	surgical-extraction --pkg github.com/ipfs/go-ipfs/cmd/ipfswatch --out bitbucket.org/atlantproject/go-ipfs \
 	extract --apply

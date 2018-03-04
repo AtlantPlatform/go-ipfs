@@ -269,16 +269,17 @@ func extractCmd(c *cli.Cmd) {
 				SourcesRelocated: ipfsPackagesRelocated[pkg],
 			}
 		}
-		if !(*apply) {
+		if *apply {
+			// cleanup the report and continue
+			os.Remove(*reportPath)
+
+		} else {
 			// write a report and exit
 			v, _ := json.Marshal(report)
 			if err := ioutil.WriteFile(*reportPath, v, 0644); err != nil {
 				log.Println("[INFO] failed to write extraction report:", err)
 			}
 			return
-		} else {
-			// cleanup the report and continue
-			os.Remove(*reportPath)
 		}
 		if *debug {
 			log.Println("[INFO] copying files over, rewriting paths")
@@ -290,8 +291,10 @@ func extractCmd(c *cli.Cmd) {
 			if err := copyFile(dstPath, srcPath); err != nil {
 				closer.Fatalln("[ERR] failed to copy a file:", err)
 			}
-			if err := rewriteFile(dstPath, *include, report.Rewrite); err != nil {
-				closer.Fatalln("[ERR] failed to rewrite paths in a file:", err)
+			if filepath.Ext(dstPath) == ".go" {
+				if err := rewriteFile(dstPath, *include, report.Rewrite); err != nil {
+					closer.Fatalln("[ERR] failed to rewrite paths in a file:", err)
+				}
 			}
 		}
 		var (
@@ -419,6 +422,9 @@ func findDeps(p *build.Package, includes, excludes []string, debug bool) (map[st
 			deps[filepath.Join(dep.Dir, f)] = struct{}{}
 		}
 		for _, f := range dep.CFiles {
+			deps[filepath.Join(dep.Dir, f)] = struct{}{}
+		}
+		for _, f := range dep.SFiles {
 			deps[filepath.Join(dep.Dir, f)] = struct{}{}
 		}
 	}
