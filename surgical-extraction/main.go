@@ -63,11 +63,15 @@ type SourceFile struct {
 	Package  string `json:"PackageName"`
 }
 
-func (s SourceFile) VendorAuto() SourceFile {
+func (s SourceFile) VendorAuto(nonce int) SourceFile {
 	relativePath := s.Relative
 	if s.IsGx() {
 		parts := strings.Split(relativePath, "/")
-		relativePath = "unknown/" + strings.Join(parts[3:], "/")
+		if nonce > 0 {
+			relativePath = fmt.Sprintf("unknown-%d/%s", nonce, strings.Join(parts[3:], "/"))
+		} else {
+			relativePath = fmt.Sprintf("unknown/%s", strings.Join(parts[3:], "/"))
+		}
 	} else {
 		relativePath = strings.TrimPrefix(relativePath, "github.com/ipfs/go-ipfs/Godeps/_workspace/src/")
 	}
@@ -93,6 +97,17 @@ func (s SourceFile) RelocateAuto(project string) SourceFile {
 
 func (s SourceFile) IsGx() bool {
 	return strings.HasPrefix(s.Package, "gx/ipfs/")
+}
+
+func (s SourceFile) GxVersion() string {
+	if !s.IsGx() {
+		panic("wrong source")
+	}
+	parts := strings.Split(s.Package, "/")
+	// 0: gx
+	// 1: ipfs
+	// 2: hash
+	return parts[2]
 }
 
 func (s SourceFile) GxRootPackage() (string, bool) {
@@ -207,10 +222,22 @@ func extractCmd(c *cli.Cmd) {
 		if *debug {
 			log.Println("[INFO] found", len(godepsPackages), "deps vendored using Godeps")
 		}
+		gxVersions := make(map[string]map[string]struct{})
 		gxPackagesVendored := make(map[string][]SourceFile)
+		gxNonce := make(map[string]int)
 		for pkg, sources := range gxPackages {
 			for _, src := range sources {
-				src = src.VendorAuto()
+				if gxVersions[pkg] == nil {
+					gxVersions[pkg] = map[string]struct{}{
+						src.GxVersion(): struct{}{},
+					}
+					gxNonce[pkg] = 0
+				} else if _, ok := gxVersions[pkg][src.GxVersion()]; !ok {
+					gxVersions[pkg][src.GxVersion()] = struct{}{}
+					gxNonce[pkg] = len(gxVersions[pkg])
+				}
+
+				src = src.VendorAuto(gxNonce[pkg])
 				src.FullPath = filepath.Join(projectRoot, "vendor", src.Relative)
 				gxPackagesVendored[pkg] = append(gxPackagesVendored[pkg], src)
 			}
@@ -218,7 +245,7 @@ func extractCmd(c *cli.Cmd) {
 		godepsPackagesVendored := make(map[string][]SourceFile)
 		for pkg, sources := range godepsPackages {
 			for _, src := range sources {
-				src = src.VendorAuto()
+				src = src.VendorAuto(0)
 				src.FullPath = filepath.Join(projectRoot, "vendor", src.Relative)
 				godepsPackagesVendored[pkg] = append(godepsPackagesVendored[pkg], src)
 			}
