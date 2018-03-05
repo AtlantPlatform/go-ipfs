@@ -6,10 +6,10 @@ package unixfs
 import (
 	"errors"
 
-	proto "gx/ipfs/QmZ4Qi3GaRbjcx28Sme5eMH7RQjGkt8wHxt2a65oLaeFEV/gogo-protobuf/proto"
+	proto "unknown/gogo-protobuf/proto"
 
-	dag "github.com/ipfs/go-ipfs/merkledag"
-	pb "github.com/ipfs/go-ipfs/unixfs/pb"
+	dag "bitbucket.org/atlantproject/go-ipfs/merkledag"
+	pb "bitbucket.org/atlantproject/go-ipfs/unixfs/pb"
 )
 
 // Shorthands for protobuffer types

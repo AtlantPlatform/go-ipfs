@@ -5,9 +5,9 @@ import (
 	"encoding/json"
 	"fmt"
 
-	mh "gx/ipfs/QmZyZDi491cCNTLfAhwcaDii2Kg4pwKRkhqQzURGDvY6ua/go-multihash"
-	cid "gx/ipfs/QmcZfnkapfECQGcLZaf9B79NRg7cRa9EnZh4LSbkCzwNvY/go-cid"
-	ipld "gx/ipfs/Qme5bWv7wtjUNGsK2BNGVUFPKiuxWrsqrtvYwCLRw8YFES/go-ipld-format"
+	cid "unknown/go-cid"
+	ipld "unknown/go-ipld-format"
+	mh "unknown/go-multihash"
 )
 
 // Common errors

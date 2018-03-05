@@ -8,10 +8,9 @@ import (
 	"text/tabwriter"
 	"time"
 
-	cmds "github.com/ipfs/go-ipfs/commands"
-	e "github.com/ipfs/go-ipfs/core/commands/e"
-
-	"gx/ipfs/QmceUdzxkimdYsgtX733uNgzf1DLHyBKN6ehGSp85ayppM/go-ipfs-cmdkit"
+	cmds "bitbucket.org/atlantproject/go-ipfs/commands"
+	e "bitbucket.org/atlantproject/go-ipfs/core/commands/e"
+	"unknown/go-ipfs-cmdkit"
 )
 
 var ActiveReqsCmd = &cmds.Command{

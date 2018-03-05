@@ -9,18 +9,17 @@ import (
 	"sort"
 	"strings"
 
-	cmds "github.com/ipfs/go-ipfs/commands"
-	e "github.com/ipfs/go-ipfs/core/commands/e"
-	repo "github.com/ipfs/go-ipfs/repo"
-	config "github.com/ipfs/go-ipfs/repo/config"
-	"github.com/ipfs/go-ipfs/repo/fsrepo"
-
-	iaddr "gx/ipfs/QmQViVWBHbU6HmYjXcdNq7tVASCNgdg64ZGcauuDkLCivW/go-ipfs-addr"
-	mafilter "gx/ipfs/QmSMZwvs3n4GBikZ7hKzT17c3bk65FmyZo2JqtJ16swqCv/multiaddr-filter"
-	swarm "gx/ipfs/QmSwZMWwFZSUpe5muU2xgTUwppH24KfMwdPXiwbEp2c6G5/go-libp2p-swarm"
-	ma "gx/ipfs/QmWWQ2Txc2c6tqjsBpzg5Ar652cHPGNsQQp2SejkNmkUMb/go-multiaddr"
-	pstore "gx/ipfs/QmXauCuJzmzapetmC6W4TuDJLL1yFFrVzSHoWv8YdbmnxH/go-libp2p-peerstore"
-	cmdkit "gx/ipfs/QmceUdzxkimdYsgtX733uNgzf1DLHyBKN6ehGSp85ayppM/go-ipfs-cmdkit"
+	cmds "bitbucket.org/atlantproject/go-ipfs/commands"
+	e "bitbucket.org/atlantproject/go-ipfs/core/commands/e"
+	repo "bitbucket.org/atlantproject/go-ipfs/repo"
+	config "bitbucket.org/atlantproject/go-ipfs/repo/config"
+	"bitbucket.org/atlantproject/go-ipfs/repo/fsrepo"
+	iaddr "unknown/go-ipfs-addr"
+	cmdkit "unknown/go-ipfs-cmdkit"
+	pstore "unknown/go-libp2p-peerstore"
+	swarm "unknown/go-libp2p-swarm"
+	ma "unknown/go-multiaddr"
+	mafilter "unknown/multiaddr-filter"
 )
 
 type stringList struct {

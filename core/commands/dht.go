@@ -8,20 +8,19 @@ import (
 	"io"
 	"time"
 
-	cmds "github.com/ipfs/go-ipfs/commands"
-	e "github.com/ipfs/go-ipfs/core/commands/e"
-	dag "github.com/ipfs/go-ipfs/merkledag"
-	path "github.com/ipfs/go-ipfs/path"
-
-	routing "gx/ipfs/QmTiWLZ6Fo5j4KcTVutZJ5KWRRJrbxzmxA4td8NfEdrPh7/go-libp2p-routing"
-	notif "gx/ipfs/QmTiWLZ6Fo5j4KcTVutZJ5KWRRJrbxzmxA4td8NfEdrPh7/go-libp2p-routing/notifications"
-	ipdht "gx/ipfs/QmVSep2WwKcXxMonPASsAJ3nZVjfVMKgMcaSigxKnUWpJv/go-libp2p-kad-dht"
-	b58 "gx/ipfs/QmWFAMPqsEyUX7gDUsRVmMWz59FxSpJ1b2v6bJ1yYzo7jY/go-base58-fast/base58"
-	pstore "gx/ipfs/QmXauCuJzmzapetmC6W4TuDJLL1yFFrVzSHoWv8YdbmnxH/go-libp2p-peerstore"
-	peer "gx/ipfs/QmZoWKhxUmZ2seW4BzX6fJkNR8hh9PsGModr7q171yq2SS/go-libp2p-peer"
-	cid "gx/ipfs/QmcZfnkapfECQGcLZaf9B79NRg7cRa9EnZh4LSbkCzwNvY/go-cid"
-	"gx/ipfs/QmceUdzxkimdYsgtX733uNgzf1DLHyBKN6ehGSp85ayppM/go-ipfs-cmdkit"
-	ipld "gx/ipfs/Qme5bWv7wtjUNGsK2BNGVUFPKiuxWrsqrtvYwCLRw8YFES/go-ipld-format"
+	cmds "bitbucket.org/atlantproject/go-ipfs/commands"
+	e "bitbucket.org/atlantproject/go-ipfs/core/commands/e"
+	dag "bitbucket.org/atlantproject/go-ipfs/merkledag"
+	path "bitbucket.org/atlantproject/go-ipfs/path"
+	b58 "unknown/go-base58-fast/base58"
+	cid "unknown/go-cid"
+	"unknown/go-ipfs-cmdkit"
+	ipld "unknown/go-ipld-format"
+	ipdht "unknown/go-libp2p-kad-dht"
+	peer "unknown/go-libp2p-peer"
+	pstore "unknown/go-libp2p-peerstore"
+	routing "unknown/go-libp2p-routing"
+	notif "unknown/go-libp2p-routing/notifications"
 )
 
 var ErrNotDHT = errors.New("routing service is not a DHT")

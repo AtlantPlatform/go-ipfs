@@ -9,13 +9,12 @@ import (
 	"sync"
 	"time"
 
-	mdag "github.com/ipfs/go-ipfs/merkledag"
-	dutils "github.com/ipfs/go-ipfs/merkledag/utils"
-
-	ds "gx/ipfs/QmPpegoMqhAEqjncrzArm7KVWAkCm78rqL2DPuNjhPrshg/go-datastore"
-	logging "gx/ipfs/QmRb5jh8z2E8hMGN2tkvs1yHynUanqnZ3UeKwgN1i9P1F8/go-log"
-	cid "gx/ipfs/QmcZfnkapfECQGcLZaf9B79NRg7cRa9EnZh4LSbkCzwNvY/go-cid"
-	ipld "gx/ipfs/Qme5bWv7wtjUNGsK2BNGVUFPKiuxWrsqrtvYwCLRw8YFES/go-ipld-format"
+	mdag "bitbucket.org/atlantproject/go-ipfs/merkledag"
+	dutils "bitbucket.org/atlantproject/go-ipfs/merkledag/utils"
+	cid "unknown/go-cid"
+	ds "unknown/go-datastore"
+	ipld "unknown/go-ipld-format"
+	logging "unknown/go-log"
 )
 
 var log = logging.Logger("pin")

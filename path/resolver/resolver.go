@@ -7,12 +7,11 @@ import (
 	"fmt"
 	"time"
 
-	dag "github.com/ipfs/go-ipfs/merkledag"
-	path "github.com/ipfs/go-ipfs/path"
-
-	logging "gx/ipfs/QmRb5jh8z2E8hMGN2tkvs1yHynUanqnZ3UeKwgN1i9P1F8/go-log"
-	cid "gx/ipfs/QmcZfnkapfECQGcLZaf9B79NRg7cRa9EnZh4LSbkCzwNvY/go-cid"
-	ipld "gx/ipfs/Qme5bWv7wtjUNGsK2BNGVUFPKiuxWrsqrtvYwCLRw8YFES/go-ipld-format"
+	dag "bitbucket.org/atlantproject/go-ipfs/merkledag"
+	path "bitbucket.org/atlantproject/go-ipfs/path"
+	cid "unknown/go-cid"
+	ipld "unknown/go-ipld-format"
+	logging "unknown/go-log"
 )
 
 var log = logging.Logger("pathresolv")

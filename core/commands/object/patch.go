@@ -5,16 +5,15 @@ import (
 	"io/ioutil"
 	"strings"
 
-	cmds "github.com/ipfs/go-ipfs/commands"
-	core "github.com/ipfs/go-ipfs/core"
-	e "github.com/ipfs/go-ipfs/core/commands/e"
-	dag "github.com/ipfs/go-ipfs/merkledag"
-	dagutils "github.com/ipfs/go-ipfs/merkledag/utils"
-	path "github.com/ipfs/go-ipfs/path"
-	ft "github.com/ipfs/go-ipfs/unixfs"
-
-	logging "gx/ipfs/QmRb5jh8z2E8hMGN2tkvs1yHynUanqnZ3UeKwgN1i9P1F8/go-log"
-	cmdkit "gx/ipfs/QmceUdzxkimdYsgtX733uNgzf1DLHyBKN6ehGSp85ayppM/go-ipfs-cmdkit"
+	cmds "bitbucket.org/atlantproject/go-ipfs/commands"
+	core "bitbucket.org/atlantproject/go-ipfs/core"
+	e "bitbucket.org/atlantproject/go-ipfs/core/commands/e"
+	dag "bitbucket.org/atlantproject/go-ipfs/merkledag"
+	dagutils "bitbucket.org/atlantproject/go-ipfs/merkledag/utils"
+	path "bitbucket.org/atlantproject/go-ipfs/path"
+	ft "bitbucket.org/atlantproject/go-ipfs/unixfs"
+	cmdkit "unknown/go-ipfs-cmdkit"
+	logging "unknown/go-log"
 )
 
 var log = logging.Logger("core/commands/object")

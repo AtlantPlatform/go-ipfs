@@ -10,13 +10,12 @@ import (
 	"sync"
 	"time"
 
-	dag "github.com/ipfs/go-ipfs/merkledag"
-	ft "github.com/ipfs/go-ipfs/unixfs"
-	uio "github.com/ipfs/go-ipfs/unixfs/io"
-	ufspb "github.com/ipfs/go-ipfs/unixfs/pb"
-
-	cid "gx/ipfs/QmcZfnkapfECQGcLZaf9B79NRg7cRa9EnZh4LSbkCzwNvY/go-cid"
-	ipld "gx/ipfs/Qme5bWv7wtjUNGsK2BNGVUFPKiuxWrsqrtvYwCLRw8YFES/go-ipld-format"
+	dag "bitbucket.org/atlantproject/go-ipfs/merkledag"
+	ft "bitbucket.org/atlantproject/go-ipfs/unixfs"
+	uio "bitbucket.org/atlantproject/go-ipfs/unixfs/io"
+	ufspb "bitbucket.org/atlantproject/go-ipfs/unixfs/pb"
+	cid "unknown/go-cid"
+	ipld "unknown/go-ipld-format"
 )
 
 var ErrNotYetImplemented = errors.New("not yet implemented")

@@ -13,17 +13,16 @@ import (
 	"strings"
 	"text/tabwriter"
 
-	cmds "github.com/ipfs/go-ipfs/commands"
-	core "github.com/ipfs/go-ipfs/core"
-	e "github.com/ipfs/go-ipfs/core/commands/e"
-	dag "github.com/ipfs/go-ipfs/merkledag"
-	path "github.com/ipfs/go-ipfs/path"
-	pin "github.com/ipfs/go-ipfs/pin"
-	ft "github.com/ipfs/go-ipfs/unixfs"
-
-	cid "gx/ipfs/QmcZfnkapfECQGcLZaf9B79NRg7cRa9EnZh4LSbkCzwNvY/go-cid"
-	cmdkit "gx/ipfs/QmceUdzxkimdYsgtX733uNgzf1DLHyBKN6ehGSp85ayppM/go-ipfs-cmdkit"
-	ipld "gx/ipfs/Qme5bWv7wtjUNGsK2BNGVUFPKiuxWrsqrtvYwCLRw8YFES/go-ipld-format"
+	cmds "bitbucket.org/atlantproject/go-ipfs/commands"
+	core "bitbucket.org/atlantproject/go-ipfs/core"
+	e "bitbucket.org/atlantproject/go-ipfs/core/commands/e"
+	dag "bitbucket.org/atlantproject/go-ipfs/merkledag"
+	path "bitbucket.org/atlantproject/go-ipfs/path"
+	pin "bitbucket.org/atlantproject/go-ipfs/pin"
+	ft "bitbucket.org/atlantproject/go-ipfs/unixfs"
+	cid "unknown/go-cid"
+	cmdkit "unknown/go-ipfs-cmdkit"
+	ipld "unknown/go-ipld-format"
 )
 
 // ErrObjectTooLarge is returned when too much data was read from stdin. current limit 2m

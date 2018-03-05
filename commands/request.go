@@ -12,13 +12,13 @@ import (
 	"strings"
 	"time"
 
-	"github.com/ipfs/go-ipfs/core"
-	"github.com/ipfs/go-ipfs/repo/config"
-	u "gx/ipfs/QmNiJuT8Ja3hMVpBHXv3Q6dwmperaQ6JjLtpMQgMCD7xvx/go-ipfs-util"
+	"bitbucket.org/atlantproject/go-ipfs/core"
+	"bitbucket.org/atlantproject/go-ipfs/repo/config"
+	u "unknown/go-ipfs-util"
 
-	"gx/ipfs/QmabLouZTZwhfALuBcssPvkzhbYGMb4394huT7HY4LQ6d3/go-ipfs-cmds"
-	"gx/ipfs/QmceUdzxkimdYsgtX733uNgzf1DLHyBKN6ehGSp85ayppM/go-ipfs-cmdkit"
-	"gx/ipfs/QmceUdzxkimdYsgtX733uNgzf1DLHyBKN6ehGSp85ayppM/go-ipfs-cmdkit/files"
+	"unknown/go-ipfs-cmdkit"
+	"unknown/go-ipfs-cmdkit/files"
+	"unknown/go-ipfs-cmds"
 )
 
 type Context struct {

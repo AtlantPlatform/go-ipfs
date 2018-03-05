@@ -3,9 +3,9 @@ package commands
 import (
 	"fmt"
 
-	"github.com/ipfs/go-ipfs/commands"
-	"github.com/ipfs/go-ipfs/core"
-	"github.com/ipfs/go-ipfs/repo/config"
+	"bitbucket.org/atlantproject/go-ipfs/commands"
+	"bitbucket.org/atlantproject/go-ipfs/core"
+	"bitbucket.org/atlantproject/go-ipfs/repo/config"
 )
 
 // GetNode extracts the node from the environment.

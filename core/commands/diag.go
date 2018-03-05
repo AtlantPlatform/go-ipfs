@@ -1,9 +1,8 @@
 package commands
 
 import (
-	cmds "github.com/ipfs/go-ipfs/commands"
-
-	"gx/ipfs/QmceUdzxkimdYsgtX733uNgzf1DLHyBKN6ehGSp85ayppM/go-ipfs-cmdkit"
+	cmds "bitbucket.org/atlantproject/go-ipfs/commands"
+	"unknown/go-ipfs-cmdkit"
 )
 
 var DiagCmd = &cmds.Command{

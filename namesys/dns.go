@@ -6,8 +6,8 @@ import (
 	"net"
 	"strings"
 
-	path "github.com/ipfs/go-ipfs/path"
-	isd "gx/ipfs/QmZmmuAXgX73UQmX1jRKjTGmjzq24Jinqkq8vzkBtno4uX/go-is-domain"
+	path "bitbucket.org/atlantproject/go-ipfs/path"
+	isd "unknown/go-is-domain"
 )
 
 type LookupTXTFunc func(name string) (txt []string, err error)

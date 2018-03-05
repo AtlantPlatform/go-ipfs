@@ -6,20 +6,19 @@ import (
 	"io"
 	"text/tabwriter"
 
-	blockservice "github.com/ipfs/go-ipfs/blockservice"
-	cmds "github.com/ipfs/go-ipfs/commands"
-	core "github.com/ipfs/go-ipfs/core"
-	e "github.com/ipfs/go-ipfs/core/commands/e"
-	offline "github.com/ipfs/go-ipfs/exchange/offline"
-	merkledag "github.com/ipfs/go-ipfs/merkledag"
-	path "github.com/ipfs/go-ipfs/path"
-	resolver "github.com/ipfs/go-ipfs/path/resolver"
-	unixfs "github.com/ipfs/go-ipfs/unixfs"
-	uio "github.com/ipfs/go-ipfs/unixfs/io"
-	unixfspb "github.com/ipfs/go-ipfs/unixfs/pb"
-
-	"gx/ipfs/QmceUdzxkimdYsgtX733uNgzf1DLHyBKN6ehGSp85ayppM/go-ipfs-cmdkit"
-	ipld "gx/ipfs/Qme5bWv7wtjUNGsK2BNGVUFPKiuxWrsqrtvYwCLRw8YFES/go-ipld-format"
+	blockservice "bitbucket.org/atlantproject/go-ipfs/blockservice"
+	cmds "bitbucket.org/atlantproject/go-ipfs/commands"
+	core "bitbucket.org/atlantproject/go-ipfs/core"
+	e "bitbucket.org/atlantproject/go-ipfs/core/commands/e"
+	offline "bitbucket.org/atlantproject/go-ipfs/exchange/offline"
+	merkledag "bitbucket.org/atlantproject/go-ipfs/merkledag"
+	path "bitbucket.org/atlantproject/go-ipfs/path"
+	resolver "bitbucket.org/atlantproject/go-ipfs/path/resolver"
+	unixfs "bitbucket.org/atlantproject/go-ipfs/unixfs"
+	uio "bitbucket.org/atlantproject/go-ipfs/unixfs/io"
+	unixfspb "bitbucket.org/atlantproject/go-ipfs/unixfs/pb"
+	"unknown/go-ipfs-cmdkit"
+	ipld "unknown/go-ipld-format"
 )
 
 type LsLink struct {

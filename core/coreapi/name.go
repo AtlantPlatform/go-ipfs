@@ -7,16 +7,15 @@ import (
 	"strings"
 	"time"
 
-	core "github.com/ipfs/go-ipfs/core"
-	coreiface "github.com/ipfs/go-ipfs/core/coreapi/interface"
-	caopts "github.com/ipfs/go-ipfs/core/coreapi/interface/options"
-	keystore "github.com/ipfs/go-ipfs/keystore"
-	namesys "github.com/ipfs/go-ipfs/namesys"
-	ipath "github.com/ipfs/go-ipfs/path"
-
-	offline "gx/ipfs/QmZRcGYvxdauCd7hHnMYLYqcZRaDjv24c7eUNyJojAcdBb/go-ipfs-routing/offline"
-	peer "gx/ipfs/QmZoWKhxUmZ2seW4BzX6fJkNR8hh9PsGModr7q171yq2SS/go-libp2p-peer"
-	crypto "gx/ipfs/QmaPbCnUMBohSGo3KnxEa2bHqyJVVeEEcwtqJAYxerieBo/go-libp2p-crypto"
+	core "bitbucket.org/atlantproject/go-ipfs/core"
+	coreiface "bitbucket.org/atlantproject/go-ipfs/core/coreapi/interface"
+	caopts "bitbucket.org/atlantproject/go-ipfs/core/coreapi/interface/options"
+	keystore "bitbucket.org/atlantproject/go-ipfs/keystore"
+	namesys "bitbucket.org/atlantproject/go-ipfs/namesys"
+	ipath "bitbucket.org/atlantproject/go-ipfs/path"
+	offline "unknown/go-ipfs-routing/offline"
+	crypto "unknown/go-libp2p-crypto"
+	peer "unknown/go-libp2p-peer"
 )
 
 type NameAPI struct {

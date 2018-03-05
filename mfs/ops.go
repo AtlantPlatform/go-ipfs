@@ -7,10 +7,9 @@ import (
 	gopath "path"
 	"strings"
 
-	path "github.com/ipfs/go-ipfs/path"
-
-	cid "gx/ipfs/QmcZfnkapfECQGcLZaf9B79NRg7cRa9EnZh4LSbkCzwNvY/go-cid"
-	ipld "gx/ipfs/Qme5bWv7wtjUNGsK2BNGVUFPKiuxWrsqrtvYwCLRw8YFES/go-ipld-format"
+	path "bitbucket.org/atlantproject/go-ipfs/path"
+	cid "unknown/go-cid"
+	ipld "unknown/go-ipld-format"
 )
 
 // Mv moves the file or directory at 'src' to 'dst'

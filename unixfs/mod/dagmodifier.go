@@ -8,16 +8,15 @@ import (
 	"errors"
 	"io"
 
-	help "github.com/ipfs/go-ipfs/importer/helpers"
-	trickle "github.com/ipfs/go-ipfs/importer/trickle"
-	mdag "github.com/ipfs/go-ipfs/merkledag"
-	ft "github.com/ipfs/go-ipfs/unixfs"
-	uio "github.com/ipfs/go-ipfs/unixfs/io"
-
-	chunker "gx/ipfs/QmWo8jYc19ppG7YoTsrr2kEtLRbARTJho5oNXFTR6B7Peq/go-ipfs-chunker"
-	proto "gx/ipfs/QmZ4Qi3GaRbjcx28Sme5eMH7RQjGkt8wHxt2a65oLaeFEV/gogo-protobuf/proto"
-	cid "gx/ipfs/QmcZfnkapfECQGcLZaf9B79NRg7cRa9EnZh4LSbkCzwNvY/go-cid"
-	ipld "gx/ipfs/Qme5bWv7wtjUNGsK2BNGVUFPKiuxWrsqrtvYwCLRw8YFES/go-ipld-format"
+	help "bitbucket.org/atlantproject/go-ipfs/importer/helpers"
+	trickle "bitbucket.org/atlantproject/go-ipfs/importer/trickle"
+	mdag "bitbucket.org/atlantproject/go-ipfs/merkledag"
+	ft "bitbucket.org/atlantproject/go-ipfs/unixfs"
+	uio "bitbucket.org/atlantproject/go-ipfs/unixfs/io"
+	cid "unknown/go-cid"
+	chunker "unknown/go-ipfs-chunker"
+	ipld "unknown/go-ipld-format"
+	proto "unknown/gogo-protobuf/proto"
 )
 
 // Common errors

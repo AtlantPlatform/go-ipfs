@@ -3,15 +3,14 @@ package coreapi
 import (
 	"context"
 
-	core "github.com/ipfs/go-ipfs/core"
-	coreiface "github.com/ipfs/go-ipfs/core/coreapi/interface"
-	namesys "github.com/ipfs/go-ipfs/namesys"
-	ipfspath "github.com/ipfs/go-ipfs/path"
-	resolver "github.com/ipfs/go-ipfs/path/resolver"
-	uio "github.com/ipfs/go-ipfs/unixfs/io"
-
-	cid "gx/ipfs/QmcZfnkapfECQGcLZaf9B79NRg7cRa9EnZh4LSbkCzwNvY/go-cid"
-	ipld "gx/ipfs/Qme5bWv7wtjUNGsK2BNGVUFPKiuxWrsqrtvYwCLRw8YFES/go-ipld-format"
+	core "bitbucket.org/atlantproject/go-ipfs/core"
+	coreiface "bitbucket.org/atlantproject/go-ipfs/core/coreapi/interface"
+	namesys "bitbucket.org/atlantproject/go-ipfs/namesys"
+	ipfspath "bitbucket.org/atlantproject/go-ipfs/path"
+	resolver "bitbucket.org/atlantproject/go-ipfs/path/resolver"
+	uio "bitbucket.org/atlantproject/go-ipfs/unixfs/io"
+	cid "unknown/go-cid"
+	ipld "unknown/go-ipld-format"
 )
 
 type CoreAPI struct {

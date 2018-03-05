@@ -8,15 +8,14 @@ import (
 	"io"
 	"strings"
 
-	importer "github.com/ipfs/go-ipfs/importer"
-	dag "github.com/ipfs/go-ipfs/merkledag"
-	dagutil "github.com/ipfs/go-ipfs/merkledag/utils"
-	path "github.com/ipfs/go-ipfs/path"
-	uio "github.com/ipfs/go-ipfs/unixfs/io"
-
-	logging "gx/ipfs/QmRb5jh8z2E8hMGN2tkvs1yHynUanqnZ3UeKwgN1i9P1F8/go-log"
-	chunker "gx/ipfs/QmWo8jYc19ppG7YoTsrr2kEtLRbARTJho5oNXFTR6B7Peq/go-ipfs-chunker"
-	ipld "gx/ipfs/Qme5bWv7wtjUNGsK2BNGVUFPKiuxWrsqrtvYwCLRw8YFES/go-ipld-format"
+	importer "bitbucket.org/atlantproject/go-ipfs/importer"
+	dag "bitbucket.org/atlantproject/go-ipfs/merkledag"
+	dagutil "bitbucket.org/atlantproject/go-ipfs/merkledag/utils"
+	path "bitbucket.org/atlantproject/go-ipfs/path"
+	uio "bitbucket.org/atlantproject/go-ipfs/unixfs/io"
+	chunker "unknown/go-ipfs-chunker"
+	ipld "unknown/go-ipld-format"
+	logging "unknown/go-log"
 )
 
 var log = logging.Logger("tarfmt")

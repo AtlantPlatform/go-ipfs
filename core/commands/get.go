@@ -9,16 +9,15 @@ import (
 	gopath "path"
 	"strings"
 
-	core "github.com/ipfs/go-ipfs/core"
-	e "github.com/ipfs/go-ipfs/core/commands/e"
-	dag "github.com/ipfs/go-ipfs/merkledag"
-	path "github.com/ipfs/go-ipfs/path"
-	tar "github.com/ipfs/go-ipfs/thirdparty/tar"
-	uarchive "github.com/ipfs/go-ipfs/unixfs/archive"
-
-	"gx/ipfs/QmabLouZTZwhfALuBcssPvkzhbYGMb4394huT7HY4LQ6d3/go-ipfs-cmds"
-	"gx/ipfs/QmceUdzxkimdYsgtX733uNgzf1DLHyBKN6ehGSp85ayppM/go-ipfs-cmdkit"
-	"gx/ipfs/QmeWjRodbcZFKe5tMN7poEx3izym6osrLSnTLf9UjJZBbs/pb"
+	core "bitbucket.org/atlantproject/go-ipfs/core"
+	e "bitbucket.org/atlantproject/go-ipfs/core/commands/e"
+	dag "bitbucket.org/atlantproject/go-ipfs/merkledag"
+	path "bitbucket.org/atlantproject/go-ipfs/path"
+	tar "bitbucket.org/atlantproject/go-ipfs/thirdparty/tar"
+	uarchive "bitbucket.org/atlantproject/go-ipfs/unixfs/archive"
+	"unknown/go-ipfs-cmdkit"
+	"unknown/go-ipfs-cmds"
+	"unknown/pb"
 )
 
 var ErrInvalidCompressionLevel = errors.New("Compression level must be between 1 and 9")

@@ -3,7 +3,7 @@ package datastore2
 import (
 	"io"
 
-	"gx/ipfs/QmPpegoMqhAEqjncrzArm7KVWAkCm78rqL2DPuNjhPrshg/go-datastore"
+	"unknown/go-datastore"
 )
 
 // ClaimThreadSafe claims that a Datastore is threadsafe, even when

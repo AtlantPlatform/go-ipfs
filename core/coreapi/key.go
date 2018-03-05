@@ -6,12 +6,11 @@ import (
 	"fmt"
 	"sort"
 
-	coreiface "github.com/ipfs/go-ipfs/core/coreapi/interface"
-	caopts "github.com/ipfs/go-ipfs/core/coreapi/interface/options"
-	ipfspath "github.com/ipfs/go-ipfs/path"
-
-	peer "gx/ipfs/QmZoWKhxUmZ2seW4BzX6fJkNR8hh9PsGModr7q171yq2SS/go-libp2p-peer"
-	crypto "gx/ipfs/QmaPbCnUMBohSGo3KnxEa2bHqyJVVeEEcwtqJAYxerieBo/go-libp2p-crypto"
+	coreiface "bitbucket.org/atlantproject/go-ipfs/core/coreapi/interface"
+	caopts "bitbucket.org/atlantproject/go-ipfs/core/coreapi/interface/options"
+	ipfspath "bitbucket.org/atlantproject/go-ipfs/path"
+	crypto "unknown/go-libp2p-crypto"
+	peer "unknown/go-libp2p-peer"
 )
 
 type KeyAPI struct {

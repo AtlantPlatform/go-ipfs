@@ -4,16 +4,15 @@ import (
 	"io"
 	"strings"
 
-	oldcmds "github.com/ipfs/go-ipfs/commands"
-	dag "github.com/ipfs/go-ipfs/core/commands/dag"
-	e "github.com/ipfs/go-ipfs/core/commands/e"
-	ocmd "github.com/ipfs/go-ipfs/core/commands/object"
-	unixfs "github.com/ipfs/go-ipfs/core/commands/unixfs"
-
-	lgc "github.com/ipfs/go-ipfs/commands/legacy"
-	logging "gx/ipfs/QmRb5jh8z2E8hMGN2tkvs1yHynUanqnZ3UeKwgN1i9P1F8/go-log"
-	"gx/ipfs/QmabLouZTZwhfALuBcssPvkzhbYGMb4394huT7HY4LQ6d3/go-ipfs-cmds"
-	"gx/ipfs/QmceUdzxkimdYsgtX733uNgzf1DLHyBKN6ehGSp85ayppM/go-ipfs-cmdkit"
+	oldcmds "bitbucket.org/atlantproject/go-ipfs/commands"
+	lgc "bitbucket.org/atlantproject/go-ipfs/commands/legacy"
+	dag "bitbucket.org/atlantproject/go-ipfs/core/commands/dag"
+	e "bitbucket.org/atlantproject/go-ipfs/core/commands/e"
+	ocmd "bitbucket.org/atlantproject/go-ipfs/core/commands/object"
+	unixfs "bitbucket.org/atlantproject/go-ipfs/core/commands/unixfs"
+	"unknown/go-ipfs-cmdkit"
+	"unknown/go-ipfs-cmds"
+	logging "unknown/go-log"
 )
 
 var log = logging.Logger("core/commands")

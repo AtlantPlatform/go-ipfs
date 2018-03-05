@@ -11,22 +11,21 @@ import (
 	"strings"
 	"sync"
 
-	filestore "github.com/ipfs/go-ipfs/filestore"
-	keystore "github.com/ipfs/go-ipfs/keystore"
-	repo "github.com/ipfs/go-ipfs/repo"
-	"github.com/ipfs/go-ipfs/repo/common"
-	config "github.com/ipfs/go-ipfs/repo/config"
-	lockfile "github.com/ipfs/go-ipfs/repo/fsrepo/lock"
-	mfsr "github.com/ipfs/go-ipfs/repo/fsrepo/migrations"
-	serialize "github.com/ipfs/go-ipfs/repo/fsrepo/serialize"
-	dir "github.com/ipfs/go-ipfs/thirdparty/dir"
+	filestore "bitbucket.org/atlantproject/go-ipfs/filestore"
+	keystore "bitbucket.org/atlantproject/go-ipfs/keystore"
+	repo "bitbucket.org/atlantproject/go-ipfs/repo"
+	"bitbucket.org/atlantproject/go-ipfs/repo/common"
+	config "bitbucket.org/atlantproject/go-ipfs/repo/config"
+	lockfile "bitbucket.org/atlantproject/go-ipfs/repo/fsrepo/lock"
+	mfsr "bitbucket.org/atlantproject/go-ipfs/repo/fsrepo/migrations"
+	serialize "bitbucket.org/atlantproject/go-ipfs/repo/fsrepo/serialize"
+	dir "bitbucket.org/atlantproject/go-ipfs/thirdparty/dir"
+	"github.com/mitchellh/go-homedir"
 
-	"github.com/ipfs/go-ipfs/Godeps/_workspace/src/github.com/mitchellh/go-homedir"
-
-	util "gx/ipfs/QmNiJuT8Ja3hMVpBHXv3Q6dwmperaQ6JjLtpMQgMCD7xvx/go-ipfs-util"
-	logging "gx/ipfs/QmRb5jh8z2E8hMGN2tkvs1yHynUanqnZ3UeKwgN1i9P1F8/go-log"
-	measure "gx/ipfs/QmRhjB5Mnha4k6VH6qRFNabAVkxpbqC7bVw2daMKLHPXXN/go-ds-measure"
-	ma "gx/ipfs/QmWWQ2Txc2c6tqjsBpzg5Ar652cHPGNsQQp2SejkNmkUMb/go-multiaddr"
+	measure "unknown/go-ds-measure"
+	util "unknown/go-ipfs-util"
+	logging "unknown/go-log"
+	ma "unknown/go-multiaddr"
 )
 
 var log = logging.Logger("fsrepo")

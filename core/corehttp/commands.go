@@ -9,14 +9,13 @@ import (
 	"strconv"
 	"strings"
 
-	oldcmds "github.com/ipfs/go-ipfs/commands"
-	core "github.com/ipfs/go-ipfs/core"
-	corecommands "github.com/ipfs/go-ipfs/core/commands"
-	path "github.com/ipfs/go-ipfs/path"
-	config "github.com/ipfs/go-ipfs/repo/config"
-
-	cmds "gx/ipfs/QmabLouZTZwhfALuBcssPvkzhbYGMb4394huT7HY4LQ6d3/go-ipfs-cmds"
-	cmdsHttp "gx/ipfs/QmabLouZTZwhfALuBcssPvkzhbYGMb4394huT7HY4LQ6d3/go-ipfs-cmds/http"
+	oldcmds "bitbucket.org/atlantproject/go-ipfs/commands"
+	core "bitbucket.org/atlantproject/go-ipfs/core"
+	corecommands "bitbucket.org/atlantproject/go-ipfs/core/commands"
+	path "bitbucket.org/atlantproject/go-ipfs/path"
+	config "bitbucket.org/atlantproject/go-ipfs/repo/config"
+	cmds "unknown/go-ipfs-cmds"
+	cmdsHttp "unknown/go-ipfs-cmds/http"
 )
 
 var (

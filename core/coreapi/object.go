@@ -11,14 +11,13 @@ import (
 	"io"
 	"io/ioutil"
 
-	coreiface "github.com/ipfs/go-ipfs/core/coreapi/interface"
-	caopts "github.com/ipfs/go-ipfs/core/coreapi/interface/options"
-	dag "github.com/ipfs/go-ipfs/merkledag"
-	dagutils "github.com/ipfs/go-ipfs/merkledag/utils"
-	ft "github.com/ipfs/go-ipfs/unixfs"
-
-	cid "gx/ipfs/QmcZfnkapfECQGcLZaf9B79NRg7cRa9EnZh4LSbkCzwNvY/go-cid"
-	ipld "gx/ipfs/Qme5bWv7wtjUNGsK2BNGVUFPKiuxWrsqrtvYwCLRw8YFES/go-ipld-format"
+	coreiface "bitbucket.org/atlantproject/go-ipfs/core/coreapi/interface"
+	caopts "bitbucket.org/atlantproject/go-ipfs/core/coreapi/interface/options"
+	dag "bitbucket.org/atlantproject/go-ipfs/merkledag"
+	dagutils "bitbucket.org/atlantproject/go-ipfs/merkledag/utils"
+	ft "bitbucket.org/atlantproject/go-ipfs/unixfs"
+	cid "unknown/go-cid"
+	ipld "unknown/go-ipld-format"
 )
 
 const inputLimit = 2 << 20

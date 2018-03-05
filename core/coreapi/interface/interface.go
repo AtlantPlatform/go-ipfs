@@ -8,10 +8,9 @@ import (
 	"io"
 	"time"
 
-	options "github.com/ipfs/go-ipfs/core/coreapi/interface/options"
-
-	cid "gx/ipfs/QmcZfnkapfECQGcLZaf9B79NRg7cRa9EnZh4LSbkCzwNvY/go-cid"
-	ipld "gx/ipfs/Qme5bWv7wtjUNGsK2BNGVUFPKiuxWrsqrtvYwCLRw8YFES/go-ipld-format"
+	options "bitbucket.org/atlantproject/go-ipfs/core/coreapi/interface/options"
+	cid "unknown/go-cid"
+	ipld "unknown/go-ipld-format"
 )
 
 // Path is a generic wrapper for paths used in the API. A path can be resolved

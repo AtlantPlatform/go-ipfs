@@ -9,10 +9,9 @@ import (
 	"runtime"
 	"strings"
 
-	core "github.com/ipfs/go-ipfs/core"
-
-	unix "gx/ipfs/QmPXvegq26x982cQjSfbTvSzZXn7GiaMwhhVPHkeTEhrPT/sys/unix"
-	"gx/ipfs/QmYRGECuvQnRX73fcvPnGbYijBcGN2HbKZQ7jh26qmLiHG/semver"
+	core "bitbucket.org/atlantproject/go-ipfs/core"
+	"unknown/semver"
+	unix "unknown/sys/unix"
 )
 
 func init() {

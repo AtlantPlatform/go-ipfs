@@ -4,12 +4,11 @@ import (
 	"errors"
 	"io"
 
-	filestore "github.com/ipfs/go-ipfs/filestore"
-	keystore "github.com/ipfs/go-ipfs/keystore"
-	config "github.com/ipfs/go-ipfs/repo/config"
-
-	ds "gx/ipfs/QmPpegoMqhAEqjncrzArm7KVWAkCm78rqL2DPuNjhPrshg/go-datastore"
-	ma "gx/ipfs/QmWWQ2Txc2c6tqjsBpzg5Ar652cHPGNsQQp2SejkNmkUMb/go-multiaddr"
+	filestore "bitbucket.org/atlantproject/go-ipfs/filestore"
+	keystore "bitbucket.org/atlantproject/go-ipfs/keystore"
+	config "bitbucket.org/atlantproject/go-ipfs/repo/config"
+	ds "unknown/go-datastore"
+	ma "unknown/go-multiaddr"
 )
 
 var (

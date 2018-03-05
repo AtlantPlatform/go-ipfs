@@ -9,11 +9,11 @@ import (
 	"strings"
 	"sync"
 
-	core "github.com/ipfs/go-ipfs/core"
-	ipns "github.com/ipfs/go-ipfs/fuse/ipns"
-	mount "github.com/ipfs/go-ipfs/fuse/mount"
-	rofs "github.com/ipfs/go-ipfs/fuse/readonly"
-	logging "gx/ipfs/QmRb5jh8z2E8hMGN2tkvs1yHynUanqnZ3UeKwgN1i9P1F8/go-log"
+	core "bitbucket.org/atlantproject/go-ipfs/core"
+	ipns "bitbucket.org/atlantproject/go-ipfs/fuse/ipns"
+	mount "bitbucket.org/atlantproject/go-ipfs/fuse/mount"
+	rofs "bitbucket.org/atlantproject/go-ipfs/fuse/readonly"
+	logging "unknown/go-log"
 )
 
 var log = logging.Logger("node")

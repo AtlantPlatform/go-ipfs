@@ -7,18 +7,17 @@ import (
 	"math"
 	"strings"
 
-	cmds "github.com/ipfs/go-ipfs/commands"
-	e "github.com/ipfs/go-ipfs/core/commands/e"
-	coredag "github.com/ipfs/go-ipfs/core/coredag"
-	path "github.com/ipfs/go-ipfs/path"
-	pin "github.com/ipfs/go-ipfs/pin"
-
-	logging "gx/ipfs/QmRb5jh8z2E8hMGN2tkvs1yHynUanqnZ3UeKwgN1i9P1F8/go-log"
-	mh "gx/ipfs/QmZyZDi491cCNTLfAhwcaDii2Kg4pwKRkhqQzURGDvY6ua/go-multihash"
-	cid "gx/ipfs/QmcZfnkapfECQGcLZaf9B79NRg7cRa9EnZh4LSbkCzwNvY/go-cid"
-	cmdkit "gx/ipfs/QmceUdzxkimdYsgtX733uNgzf1DLHyBKN6ehGSp85ayppM/go-ipfs-cmdkit"
-	files "gx/ipfs/QmceUdzxkimdYsgtX733uNgzf1DLHyBKN6ehGSp85ayppM/go-ipfs-cmdkit/files"
-	ipld "gx/ipfs/Qme5bWv7wtjUNGsK2BNGVUFPKiuxWrsqrtvYwCLRw8YFES/go-ipld-format"
+	cmds "bitbucket.org/atlantproject/go-ipfs/commands"
+	e "bitbucket.org/atlantproject/go-ipfs/core/commands/e"
+	coredag "bitbucket.org/atlantproject/go-ipfs/core/coredag"
+	path "bitbucket.org/atlantproject/go-ipfs/path"
+	pin "bitbucket.org/atlantproject/go-ipfs/pin"
+	cid "unknown/go-cid"
+	cmdkit "unknown/go-ipfs-cmdkit"
+	files "unknown/go-ipfs-cmdkit/files"
+	ipld "unknown/go-ipld-format"
+	logging "unknown/go-log"
+	mh "unknown/go-multihash"
 )
 
 var log = logging.Logger("cmds/files")

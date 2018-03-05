@@ -3,12 +3,11 @@ package reprovide
 import (
 	"context"
 
-	merkledag "github.com/ipfs/go-ipfs/merkledag"
-	pin "github.com/ipfs/go-ipfs/pin"
-
-	blocks "gx/ipfs/QmTVDM4LCSUMFNQzbDLL9zQwp8usE6QHymFdh3h8vL9v6b/go-ipfs-blockstore"
-	cid "gx/ipfs/QmcZfnkapfECQGcLZaf9B79NRg7cRa9EnZh4LSbkCzwNvY/go-cid"
-	ipld "gx/ipfs/Qme5bWv7wtjUNGsK2BNGVUFPKiuxWrsqrtvYwCLRw8YFES/go-ipld-format"
+	merkledag "bitbucket.org/atlantproject/go-ipfs/merkledag"
+	pin "bitbucket.org/atlantproject/go-ipfs/pin"
+	cid "unknown/go-cid"
+	blocks "unknown/go-ipfs-blockstore"
+	ipld "unknown/go-ipld-format"
 )
 
 // NewBlockstoreProvider returns key provider using bstore.AllKeysChan

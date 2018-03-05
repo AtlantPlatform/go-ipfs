@@ -6,13 +6,12 @@ import (
 	"io"
 	"sort"
 
-	cmds "github.com/ipfs/go-ipfs/commands"
-	e "github.com/ipfs/go-ipfs/core/commands/e"
-	repo "github.com/ipfs/go-ipfs/repo"
-	config "github.com/ipfs/go-ipfs/repo/config"
-	"github.com/ipfs/go-ipfs/repo/fsrepo"
-
-	"gx/ipfs/QmceUdzxkimdYsgtX733uNgzf1DLHyBKN6ehGSp85ayppM/go-ipfs-cmdkit"
+	cmds "bitbucket.org/atlantproject/go-ipfs/commands"
+	e "bitbucket.org/atlantproject/go-ipfs/core/commands/e"
+	repo "bitbucket.org/atlantproject/go-ipfs/repo"
+	config "bitbucket.org/atlantproject/go-ipfs/repo/config"
+	"bitbucket.org/atlantproject/go-ipfs/repo/fsrepo"
+	"unknown/go-ipfs-cmdkit"
 )
 
 type BootstrapOutput struct {

@@ -5,13 +5,12 @@ import (
 	"io"
 	"os"
 
-	dag "github.com/ipfs/go-ipfs/merkledag"
-	ft "github.com/ipfs/go-ipfs/unixfs"
-
-	chunker "gx/ipfs/QmWo8jYc19ppG7YoTsrr2kEtLRbARTJho5oNXFTR6B7Peq/go-ipfs-chunker"
-	cid "gx/ipfs/QmcZfnkapfECQGcLZaf9B79NRg7cRa9EnZh4LSbkCzwNvY/go-cid"
-	files "gx/ipfs/QmceUdzxkimdYsgtX733uNgzf1DLHyBKN6ehGSp85ayppM/go-ipfs-cmdkit/files"
-	ipld "gx/ipfs/Qme5bWv7wtjUNGsK2BNGVUFPKiuxWrsqrtvYwCLRw8YFES/go-ipld-format"
+	dag "bitbucket.org/atlantproject/go-ipfs/merkledag"
+	ft "bitbucket.org/atlantproject/go-ipfs/unixfs"
+	cid "unknown/go-cid"
+	chunker "unknown/go-ipfs-chunker"
+	files "unknown/go-ipfs-cmdkit/files"
+	ipld "unknown/go-ipld-format"
 )
 
 // DagBuilderHelper wraps together a bunch of objects needed to

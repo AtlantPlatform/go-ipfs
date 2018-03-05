@@ -4,15 +4,14 @@ import (
 	"context"
 	"errors"
 
-	bserv "github.com/ipfs/go-ipfs/blockservice"
-	offline "github.com/ipfs/go-ipfs/exchange/offline"
-	dag "github.com/ipfs/go-ipfs/merkledag"
-	path "github.com/ipfs/go-ipfs/path"
-
-	ds "gx/ipfs/QmPpegoMqhAEqjncrzArm7KVWAkCm78rqL2DPuNjhPrshg/go-datastore"
-	syncds "gx/ipfs/QmPpegoMqhAEqjncrzArm7KVWAkCm78rqL2DPuNjhPrshg/go-datastore/sync"
-	bstore "gx/ipfs/QmTVDM4LCSUMFNQzbDLL9zQwp8usE6QHymFdh3h8vL9v6b/go-ipfs-blockstore"
-	ipld "gx/ipfs/Qme5bWv7wtjUNGsK2BNGVUFPKiuxWrsqrtvYwCLRw8YFES/go-ipld-format"
+	bserv "bitbucket.org/atlantproject/go-ipfs/blockservice"
+	offline "bitbucket.org/atlantproject/go-ipfs/exchange/offline"
+	dag "bitbucket.org/atlantproject/go-ipfs/merkledag"
+	path "bitbucket.org/atlantproject/go-ipfs/path"
+	ds "unknown/go-datastore"
+	syncds "unknown/go-datastore/sync"
+	bstore "unknown/go-ipfs-blockstore"
+	ipld "unknown/go-ipld-format"
 )
 
 // Editor represents a ProtoNode tree editor and provides methods to

@@ -5,8 +5,8 @@ import (
 
 	context "context"
 
-	path "github.com/ipfs/go-ipfs/path"
-	proquint "gx/ipfs/QmYnf27kzqR2cxt6LFZdrAFJuQd6785fTkBvMuEj9EeRxM/proquint"
+	path "bitbucket.org/atlantproject/go-ipfs/path"
+	proquint "unknown/proquint"
 )
 
 type ProquintResolver struct{}

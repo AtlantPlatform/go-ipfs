@@ -3,12 +3,11 @@ package network
 import (
 	"context"
 
-	bsmsg "github.com/ipfs/go-ipfs/exchange/bitswap/message"
-
-	protocol "gx/ipfs/QmZNkThpqfVXs9GNbexPrfBbXSLNYeKrE7jwFM2oqHbyqN/go-libp2p-protocol"
-	peer "gx/ipfs/QmZoWKhxUmZ2seW4BzX6fJkNR8hh9PsGModr7q171yq2SS/go-libp2p-peer"
-	ifconnmgr "gx/ipfs/Qmax8X1Kfahf5WfSB68EWDG3d3qyS3Sqs1v412fjPTfRwx/go-libp2p-interface-connmgr"
-	cid "gx/ipfs/QmcZfnkapfECQGcLZaf9B79NRg7cRa9EnZh4LSbkCzwNvY/go-cid"
+	bsmsg "bitbucket.org/atlantproject/go-ipfs/exchange/bitswap/message"
+	cid "unknown/go-cid"
+	ifconnmgr "unknown/go-libp2p-interface-connmgr"
+	peer "unknown/go-libp2p-peer"
+	protocol "unknown/go-libp2p-protocol"
 )
 
 var (

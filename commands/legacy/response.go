@@ -7,10 +7,10 @@ import (
 	"reflect"
 	"sync"
 
-	"gx/ipfs/QmabLouZTZwhfALuBcssPvkzhbYGMb4394huT7HY4LQ6d3/go-ipfs-cmds"
-	"gx/ipfs/QmceUdzxkimdYsgtX733uNgzf1DLHyBKN6ehGSp85ayppM/go-ipfs-cmdkit"
+	"unknown/go-ipfs-cmdkit"
+	"unknown/go-ipfs-cmds"
 
-	oldcmds "github.com/ipfs/go-ipfs/commands"
+	oldcmds "bitbucket.org/atlantproject/go-ipfs/commands"
 )
 
 // responseWrapper wraps Response and implements olcdms.Response.

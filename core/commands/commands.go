@@ -11,10 +11,9 @@ import (
 	"sort"
 	"strings"
 
-	e "github.com/ipfs/go-ipfs/core/commands/e"
-
-	cmds "gx/ipfs/QmabLouZTZwhfALuBcssPvkzhbYGMb4394huT7HY4LQ6d3/go-ipfs-cmds"
-	"gx/ipfs/QmceUdzxkimdYsgtX733uNgzf1DLHyBKN6ehGSp85ayppM/go-ipfs-cmdkit"
+	e "bitbucket.org/atlantproject/go-ipfs/core/commands/e"
+	"unknown/go-ipfs-cmdkit"
+	cmds "unknown/go-ipfs-cmds"
 )
 
 type commandEncoder struct {

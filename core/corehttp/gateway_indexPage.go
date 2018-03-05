@@ -6,7 +6,7 @@ import (
 	"path"
 	"strings"
 
-	"github.com/ipfs/go-ipfs/assets"
+	"bitbucket.org/atlantproject/go-ipfs/assets"
 )
 
 // structs for directory listing

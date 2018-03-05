@@ -5,10 +5,9 @@ import (
 	"fmt"
 	"path"
 
-	dag "github.com/ipfs/go-ipfs/merkledag"
-
-	cid "gx/ipfs/QmcZfnkapfECQGcLZaf9B79NRg7cRa9EnZh4LSbkCzwNvY/go-cid"
-	ipld "gx/ipfs/Qme5bWv7wtjUNGsK2BNGVUFPKiuxWrsqrtvYwCLRw8YFES/go-ipld-format"
+	dag "bitbucket.org/atlantproject/go-ipfs/merkledag"
+	cid "unknown/go-cid"
+	ipld "unknown/go-ipld-format"
 )
 
 // These constants define the changes that can be applied to a DAG.

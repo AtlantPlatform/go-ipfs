@@ -4,11 +4,10 @@ import (
 	"fmt"
 	"math"
 
+	"bitbucket.org/atlantproject/go-ipfs/core"
+	fsrepo "bitbucket.org/atlantproject/go-ipfs/repo/fsrepo"
 	context "context"
-	"github.com/ipfs/go-ipfs/core"
-	fsrepo "github.com/ipfs/go-ipfs/repo/fsrepo"
-
-	humanize "gx/ipfs/QmPSBJL4momYnE7DcUyk2DVhD6rH488ZmHBGLbxNdhU44K/go-humanize"
+	humanize "unknown/go-humanize"
 )
 
 type Stat struct {

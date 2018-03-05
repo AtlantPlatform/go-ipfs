@@ -9,12 +9,11 @@ import (
 	"fmt"
 	"io"
 
-	exchange "github.com/ipfs/go-ipfs/exchange"
-
-	logging "gx/ipfs/QmRb5jh8z2E8hMGN2tkvs1yHynUanqnZ3UeKwgN1i9P1F8/go-log"
-	blockstore "gx/ipfs/QmTVDM4LCSUMFNQzbDLL9zQwp8usE6QHymFdh3h8vL9v6b/go-ipfs-blockstore"
-	cid "gx/ipfs/QmcZfnkapfECQGcLZaf9B79NRg7cRa9EnZh4LSbkCzwNvY/go-cid"
-	blocks "gx/ipfs/Qmej7nf81hi2x2tvjRBF3mcp74sQyuDH4VMYDGd1YtXjb2/go-block-format"
+	exchange "bitbucket.org/atlantproject/go-ipfs/exchange"
+	blocks "unknown/go-block-format"
+	cid "unknown/go-cid"
+	blockstore "unknown/go-ipfs-blockstore"
+	logging "unknown/go-log"
 )
 
 var log = logging.Logger("blockservice")

@@ -4,9 +4,9 @@ import (
 	"context"
 	"sync"
 
-	cid "gx/ipfs/QmcZfnkapfECQGcLZaf9B79NRg7cRa9EnZh4LSbkCzwNvY/go-cid"
-	pubsub "gx/ipfs/QmdbxjQWogRCHRaxhhGnYdT1oQJzL9GdqSKzCdqWr85AP2/pubsub"
-	blocks "gx/ipfs/Qmej7nf81hi2x2tvjRBF3mcp74sQyuDH4VMYDGd1YtXjb2/go-block-format"
+	blocks "unknown/go-block-format"
+	cid "unknown/go-cid"
+	pubsub "unknown/pubsub"
 )
 
 const bufferSize = 16

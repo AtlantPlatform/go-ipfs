@@ -5,12 +5,11 @@ import (
 	"sort"
 	"strings"
 
-	"gx/ipfs/Qmej7nf81hi2x2tvjRBF3mcp74sQyuDH4VMYDGd1YtXjb2/go-block-format"
+	"unknown/go-block-format"
 
-	pb "github.com/ipfs/go-ipfs/merkledag/pb"
-
-	cid "gx/ipfs/QmcZfnkapfECQGcLZaf9B79NRg7cRa9EnZh4LSbkCzwNvY/go-cid"
-	ipld "gx/ipfs/Qme5bWv7wtjUNGsK2BNGVUFPKiuxWrsqrtvYwCLRw8YFES/go-ipld-format"
+	pb "bitbucket.org/atlantproject/go-ipfs/merkledag/pb"
+	cid "unknown/go-cid"
+	ipld "unknown/go-ipld-format"
 )
 
 // for now, we use a PBNode intermediate thing.

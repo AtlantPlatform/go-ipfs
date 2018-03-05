@@ -4,11 +4,10 @@ import (
 	"context"
 	"errors"
 
-	notifications "github.com/ipfs/go-ipfs/exchange/bitswap/notifications"
-
-	blockstore "gx/ipfs/QmTVDM4LCSUMFNQzbDLL9zQwp8usE6QHymFdh3h8vL9v6b/go-ipfs-blockstore"
-	cid "gx/ipfs/QmcZfnkapfECQGcLZaf9B79NRg7cRa9EnZh4LSbkCzwNvY/go-cid"
-	blocks "gx/ipfs/Qmej7nf81hi2x2tvjRBF3mcp74sQyuDH4VMYDGd1YtXjb2/go-block-format"
+	notifications "bitbucket.org/atlantproject/go-ipfs/exchange/bitswap/notifications"
+	blocks "unknown/go-block-format"
+	cid "unknown/go-cid"
+	blockstore "unknown/go-ipfs-blockstore"
 )
 
 type getBlocksFunc func(context.Context, []*cid.Cid) (<-chan blocks.Block, error)

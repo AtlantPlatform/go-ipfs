@@ -4,10 +4,9 @@ import (
 	"bytes"
 	"errors"
 
-	pb "github.com/ipfs/go-ipfs/namesys/pb"
-
-	u "gx/ipfs/QmNiJuT8Ja3hMVpBHXv3Q6dwmperaQ6JjLtpMQgMCD7xvx/go-ipfs-util"
-	proto "gx/ipfs/QmZ4Qi3GaRbjcx28Sme5eMH7RQjGkt8wHxt2a65oLaeFEV/gogo-protobuf/proto"
+	pb "bitbucket.org/atlantproject/go-ipfs/namesys/pb"
+	u "unknown/go-ipfs-util"
+	proto "unknown/gogo-protobuf/proto"
 )
 
 // IpnsSelectorFunc selects the best record by checking which has the highest

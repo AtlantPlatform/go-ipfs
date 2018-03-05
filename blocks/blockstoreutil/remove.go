@@ -5,11 +5,10 @@ import (
 	"fmt"
 	"io"
 
-	"github.com/ipfs/go-ipfs/pin"
-
-	ds "gx/ipfs/QmPpegoMqhAEqjncrzArm7KVWAkCm78rqL2DPuNjhPrshg/go-datastore"
-	bs "gx/ipfs/QmTVDM4LCSUMFNQzbDLL9zQwp8usE6QHymFdh3h8vL9v6b/go-ipfs-blockstore"
-	cid "gx/ipfs/QmcZfnkapfECQGcLZaf9B79NRg7cRa9EnZh4LSbkCzwNvY/go-cid"
+	"bitbucket.org/atlantproject/go-ipfs/pin"
+	cid "unknown/go-cid"
+	ds "unknown/go-datastore"
+	bs "unknown/go-ipfs-blockstore"
 )
 
 // RemovedBlock is used to respresent the result of removing a block.

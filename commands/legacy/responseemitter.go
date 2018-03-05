@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"io"
 
-	"gx/ipfs/QmceUdzxkimdYsgtX733uNgzf1DLHyBKN6ehGSp85ayppM/go-ipfs-cmdkit"
+	"unknown/go-ipfs-cmdkit"
 
-	oldcmds "github.com/ipfs/go-ipfs/commands"
+	oldcmds "bitbucket.org/atlantproject/go-ipfs/commands"
 )
 
 // wrappedResponseEmitter implements a ResponseEmitter by forwarding everything to an oldcmds.Response

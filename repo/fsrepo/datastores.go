@@ -8,18 +8,17 @@ import (
 	"path/filepath"
 	"sort"
 
-	repo "github.com/ipfs/go-ipfs/repo"
+	repo "bitbucket.org/atlantproject/go-ipfs/repo"
+	flatfs "unknown/go-ds-flatfs"
+	measure "unknown/go-ds-measure"
 
-	measure "gx/ipfs/QmRhjB5Mnha4k6VH6qRFNabAVkxpbqC7bVw2daMKLHPXXN/go-ds-measure"
-	flatfs "gx/ipfs/QmbHGPnENTUvxBsidRZasYYTFT2DJWYHLpAzcpssSxZupj/go-ds-flatfs"
+	ds "unknown/go-datastore"
+	mount "unknown/go-datastore/syncmount"
 
-	ds "gx/ipfs/QmPpegoMqhAEqjncrzArm7KVWAkCm78rqL2DPuNjhPrshg/go-datastore"
-	mount "gx/ipfs/QmPpegoMqhAEqjncrzArm7KVWAkCm78rqL2DPuNjhPrshg/go-datastore/syncmount"
-
-	humanize "gx/ipfs/QmPSBJL4momYnE7DcUyk2DVhD6rH488ZmHBGLbxNdhU44K/go-humanize"
-	ldbopts "gx/ipfs/QmbBhyDKsY4mbY6xsKt3qu9Y7FPvMJ6qbD8AMjYYvPRw1g/goleveldb/leveldb/opt"
-	badgerds "gx/ipfs/Qmbjb3c2KRPVNZWSvQED8zAf12Brdbp3ksSnGdsJiytqUs/go-ds-badger"
-	levelds "gx/ipfs/Qmbkc8BMfEixGCeKRuGGbf34mAjTb9xPmJ8Pm5gHU7ohZ4/go-ds-leveldb"
+	badgerds "unknown/go-ds-badger"
+	levelds "unknown/go-ds-leveldb"
+	humanize "unknown/go-humanize"
+	ldbopts "unknown/goleveldb/leveldb/opt"
 )
 
 // ConfigFromMap creates a new datastore config from a map

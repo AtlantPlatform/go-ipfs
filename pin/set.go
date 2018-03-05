@@ -9,12 +9,11 @@ import (
 	"hash/fnv"
 	"sort"
 
-	"github.com/ipfs/go-ipfs/merkledag"
-	"github.com/ipfs/go-ipfs/pin/internal/pb"
-
-	"gx/ipfs/QmZ4Qi3GaRbjcx28Sme5eMH7RQjGkt8wHxt2a65oLaeFEV/gogo-protobuf/proto"
-	cid "gx/ipfs/QmcZfnkapfECQGcLZaf9B79NRg7cRa9EnZh4LSbkCzwNvY/go-cid"
-	ipld "gx/ipfs/Qme5bWv7wtjUNGsK2BNGVUFPKiuxWrsqrtvYwCLRw8YFES/go-ipld-format"
+	"bitbucket.org/atlantproject/go-ipfs/merkledag"
+	"bitbucket.org/atlantproject/go-ipfs/pin/internal/pb"
+	cid "unknown/go-cid"
+	ipld "unknown/go-ipld-format"
+	"unknown/gogo-protobuf/proto"
 )
 
 const (

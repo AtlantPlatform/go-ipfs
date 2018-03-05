@@ -8,14 +8,13 @@ import (
 	"io/ioutil"
 	"os"
 
-	util "github.com/ipfs/go-ipfs/blocks/blockstoreutil"
-	e "github.com/ipfs/go-ipfs/core/commands/e"
-
-	mh "gx/ipfs/QmZyZDi491cCNTLfAhwcaDii2Kg4pwKRkhqQzURGDvY6ua/go-multihash"
-	"gx/ipfs/QmabLouZTZwhfALuBcssPvkzhbYGMb4394huT7HY4LQ6d3/go-ipfs-cmds"
-	cid "gx/ipfs/QmcZfnkapfECQGcLZaf9B79NRg7cRa9EnZh4LSbkCzwNvY/go-cid"
-	"gx/ipfs/QmceUdzxkimdYsgtX733uNgzf1DLHyBKN6ehGSp85ayppM/go-ipfs-cmdkit"
-	blocks "gx/ipfs/Qmej7nf81hi2x2tvjRBF3mcp74sQyuDH4VMYDGd1YtXjb2/go-block-format"
+	util "bitbucket.org/atlantproject/go-ipfs/blocks/blockstoreutil"
+	e "bitbucket.org/atlantproject/go-ipfs/core/commands/e"
+	blocks "unknown/go-block-format"
+	cid "unknown/go-cid"
+	"unknown/go-ipfs-cmdkit"
+	"unknown/go-ipfs-cmds"
+	mh "unknown/go-multihash"
 )
 
 type BlockStat struct {

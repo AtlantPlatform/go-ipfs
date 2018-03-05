@@ -1,7 +1,7 @@
 package node
 
 import (
-	"github.com/ipfs/go-ipfs/core"
+	"bitbucket.org/atlantproject/go-ipfs/core"
 )
 
 func Mount(node *core.IpfsNode, fsdir, nsdir string) error {

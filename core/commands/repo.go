@@ -9,18 +9,17 @@ import (
 	"strings"
 	"text/tabwriter"
 
-	oldcmds "github.com/ipfs/go-ipfs/commands"
-	lgc "github.com/ipfs/go-ipfs/commands/legacy"
-	e "github.com/ipfs/go-ipfs/core/commands/e"
-	corerepo "github.com/ipfs/go-ipfs/core/corerepo"
-	config "github.com/ipfs/go-ipfs/repo/config"
-	fsrepo "github.com/ipfs/go-ipfs/repo/fsrepo"
-	lockfile "github.com/ipfs/go-ipfs/repo/fsrepo/lock"
-
-	bstore "gx/ipfs/QmTVDM4LCSUMFNQzbDLL9zQwp8usE6QHymFdh3h8vL9v6b/go-ipfs-blockstore"
-	cmds "gx/ipfs/QmabLouZTZwhfALuBcssPvkzhbYGMb4394huT7HY4LQ6d3/go-ipfs-cmds"
-	cid "gx/ipfs/QmcZfnkapfECQGcLZaf9B79NRg7cRa9EnZh4LSbkCzwNvY/go-cid"
-	cmdkit "gx/ipfs/QmceUdzxkimdYsgtX733uNgzf1DLHyBKN6ehGSp85ayppM/go-ipfs-cmdkit"
+	oldcmds "bitbucket.org/atlantproject/go-ipfs/commands"
+	lgc "bitbucket.org/atlantproject/go-ipfs/commands/legacy"
+	e "bitbucket.org/atlantproject/go-ipfs/core/commands/e"
+	corerepo "bitbucket.org/atlantproject/go-ipfs/core/corerepo"
+	config "bitbucket.org/atlantproject/go-ipfs/repo/config"
+	fsrepo "bitbucket.org/atlantproject/go-ipfs/repo/fsrepo"
+	lockfile "bitbucket.org/atlantproject/go-ipfs/repo/fsrepo/lock"
+	cid "unknown/go-cid"
+	bstore "unknown/go-ipfs-blockstore"
+	cmdkit "unknown/go-ipfs-cmdkit"
+	cmds "unknown/go-ipfs-cmds"
 )
 
 type RepoVersion struct {
