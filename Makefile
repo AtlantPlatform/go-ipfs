@@ -13,3 +13,6 @@ extract:
 extract-apply:
 	surgical-extraction --pkg github.com/ipfs/go-ipfs/cmd/ipfswatch --out bitbucket.org/atlantproject/go-ipfs \
 	extract --apply
+
+test:
+	go install bitbucket.org/atlantproject/go-ipfs/cmd/ipfswatch
