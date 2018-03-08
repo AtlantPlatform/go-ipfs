@@ -38,8 +38,8 @@ func init() {
 
 func main() {
 	app.Command("extract", "Copies sources and rewrites import paths.", extractCmd)
-	app.Command("relocate", "Renames a vendored dependency and rewrites the paths.", relocateCmd)
-	app.Command("unvendor", "Moves a package from vendored prefix into the project root, rewrites the paths.", unvendorCmd)
+	// app.Command("relocate", "Renames a vendored dependency and rewrites the paths.", relocateCmd)
+	// app.Command("unvendor", "Moves a package from vendored prefix into the project root, rewrites the paths.", unvendorCmd)
 	if err := app.Run(os.Args); err != nil {
 		log.Fatalln("[ERR]", err)
 	}
@@ -58,6 +58,7 @@ const (
 )
 
 type SourceFile struct {
+	ID       string `json:"ID"`
 	FullPath string `json:"Path"`
 	Relative string `json:"Relative"`
 	Package  string `json:"PackageName"`
@@ -76,6 +77,7 @@ func (s SourceFile) VendorAuto(nonce int) SourceFile {
 		relativePath = strings.TrimPrefix(relativePath, "github.com/ipfs/go-ipfs/Godeps/_workspace/src/")
 	}
 	return SourceFile{
+		ID:       s.ID,
 		FullPath: "", // must be composed by writer
 		Relative: relativePath,
 		Package:  filepath.Dir(relativePath),
@@ -83,12 +85,25 @@ func (s SourceFile) VendorAuto(nonce int) SourceFile {
 }
 
 func (s SourceFile) RelocateAuto(project string) SourceFile {
-	if s.IsGodeps() || s.IsGx() {
+	if s.IsGodeps() {
+		// cannot be relocated
 		return s
 	}
-	relativePath := strings.TrimPrefix(s.Relative, "github.com/ipfs/go-ipfs/")
+	relativePath := s.Relative
+	if s.IsGx() {
+		parts := strings.Split(relativePath, "/")
+		relativePath = strings.Join(parts[3:], "/")
+		return SourceFile{
+			ID:       s.ID,
+			FullPath: "", // must be composed by writer
+			Relative: relativePath,
+			Package:  filepath.Dir(fmt.Sprintf("%s/%s", project, relativePath)),
+		}
+	}
+	relativePath = strings.TrimPrefix(s.Relative, "github.com/ipfs/go-ipfs/")
 	relativePath = fmt.Sprintf("%s/%s", project, relativePath)
 	return SourceFile{
+		ID:       s.ID,
 		FullPath: "", // must be composed by writer
 		Relative: relativePath,
 		Package:  filepath.Dir(relativePath),
@@ -157,12 +172,20 @@ type SourceFiles []SourceFile
 func (s SourceFiles) Len() int           { return len(s) }
 func (s SourceFiles) Swap(i, j int)      { s[i], s[j] = s[j], s[i] }
 func (s SourceFiles) Less(i, j int) bool { return s[i].FullPath < s[j].FullPath }
+func (s SourceFiles) Map() map[string]SourceFile {
+	m := make(map[string]SourceFile, len(s))
+	for _, f := range ([]SourceFile)(s) {
+		m[f.ID] = f
+	}
+	return m
+}
 
 func extractCmd(c *cli.Cmd) {
 	if len(*projectOut) == 0 {
 		closer.Fatalln("[ERR] output project package not specified")
 	}
 	defaultIncludes := []string{"github.com/ipfs/go-ipfs", "gx/ipfs/"}
+	unvendor := c.StringsOpt("unvendor", nil, "Unvendor specific Gx root packages (e.g. go-libp2p-pnet)")
 	exclude := c.StringsOpt("E exclude", nil, "Exclude specfic package prefixes.")
 	include := c.StringsOpt("I include", defaultIncludes, "Include specific package prefixes.")
 	reportPath := c.StringOpt("R report", "extraction.json", "Path to extraction report.")
@@ -190,6 +213,7 @@ func extractCmd(c *cli.Cmd) {
 		for path := range set {
 			relative := stripGoPaths(path, goPaths)
 			src := SourceFile{
+				ID:       NewID(),
 				FullPath: path,
 				Relative: relative,
 				Package:  filepath.Dir(relative),
@@ -224,6 +248,7 @@ func extractCmd(c *cli.Cmd) {
 		}
 		gxVersions := make(map[string]map[string]struct{})
 		gxPackagesVendored := make(map[string][]SourceFile)
+		gxPackagesRelocated := make(map[string][]SourceFile)
 		gxNonce := make(map[string]int)
 		for pkg, sources := range gxPackages {
 			for _, src := range sources {
@@ -237,6 +262,19 @@ func extractCmd(c *cli.Cmd) {
 					gxNonce[pkg] = len(gxVersions[pkg])
 				}
 
+				var shouldRelocate bool
+				for _, p := range *unvendor {
+					if p == pkg {
+						shouldRelocate = true
+						break
+					}
+				}
+				if shouldRelocate {
+					src = src.RelocateAuto(*projectOut)
+					src.FullPath = filepath.Join(projectRoot, src.Relative)
+					gxPackagesRelocated[pkg] = append(gxPackagesRelocated[pkg], src)
+					continue
+				}
 				src = src.VendorAuto(gxNonce[pkg])
 				src.FullPath = filepath.Join(projectRoot, "vendor", src.Relative)
 				gxPackagesVendored[pkg] = append(gxPackagesVendored[pkg], src)
@@ -280,8 +318,9 @@ func extractCmd(c *cli.Cmd) {
 		}
 		for pkg, sources := range gxPackages {
 			report.GxResults[pkg] = map[string][]SourceFile{
-				SourcesOrigin:   sources,
-				SourcesVendored: gxPackagesVendored[pkg],
+				SourcesOrigin:    sources,
+				SourcesVendored:  gxPackagesVendored[pkg],
+				SourcesRelocated: gxPackagesRelocated[pkg],
 			}
 		}
 		for pkg, sources := range godepsPackages {
@@ -331,9 +370,17 @@ func extractCmd(c *cli.Cmd) {
 		for _, m := range report.GxResults {
 			totalPackages++
 			sources := m[SourcesOrigin]
-			for i, src := range sources {
+			vendoredSources := SourceFiles(m[SourcesVendored]).Map()
+			relocatedSources := SourceFiles(m[SourcesRelocated]).Map()
+			for _, src := range sources {
 				srcPath := src.FullPath
-				dstPath := m[SourcesVendored][i].FullPath
+				dstPath := relocatedSources[src.ID].FullPath
+				if len(dstPath) == 0 {
+					dstPath = vendoredSources[src.ID].FullPath
+				}
+				if len(dstPath) == 0 {
+					closer.Fatalln("[ERR] dst not found")
+				}
 				makeExtract(dstPath, srcPath)
 				totalSources++
 			}
@@ -375,9 +422,18 @@ func (e *ExtractReport) Rewrite(path string) (string, bool) {
 	if filepath.HasPrefix(path, "gx/ipfs/") {
 		for basePkg, m := range e.GxResults {
 			sources := m[SourcesOrigin]
-			for i, src := range sources {
+			vendoredSources := SourceFiles(e.GxResults[basePkg][SourcesVendored]).Map()
+			relocatedSources := SourceFiles(e.GxResults[basePkg][SourcesRelocated]).Map()
+			for _, src := range sources {
 				if src.Package == path {
-					return e.GxResults[basePkg][SourcesVendored][i].Package, true
+					pkg := relocatedSources[src.ID].Package
+					if len(pkg) == 0 {
+						pkg = vendoredSources[src.ID].Package
+					}
+					if len(pkg) == 0 {
+						return path, false
+					}
+					return pkg, true
 				}
 			}
 		}
@@ -406,12 +462,6 @@ func (e *ExtractReport) Rewrite(path string) (string, bool) {
 	}
 	log.Println("[WARN] no relocation path for", path)
 	return path, false
-}
-
-func relocateCmd(c *cli.Cmd) {
-}
-
-func unvendorCmd(c *cli.Cmd) {
 }
 
 func stripGoPaths(path string, gopaths []string) string {
