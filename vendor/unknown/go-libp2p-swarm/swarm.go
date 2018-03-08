@@ -11,10 +11,10 @@ import (
 	"sync"
 	"time"
 
+	ipnet "bitbucket.org/atlantproject/go-ipfs/go-libp2p-interface-pnet"
 	addrutil "unknown/go-addr-util"
 	conn "unknown/go-libp2p-conn"
 	ci "unknown/go-libp2p-crypto"
-	ipnet "unknown/go-libp2p-interface-pnet"
 	metrics "unknown/go-libp2p-metrics"
 	mconn "unknown/go-libp2p-metrics/conn"
 	inet "unknown/go-libp2p-net"

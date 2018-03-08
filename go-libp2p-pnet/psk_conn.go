@@ -5,8 +5,8 @@ import (
 	"crypto/rand"
 	"io"
 
+	ipnet "bitbucket.org/atlantproject/go-ipfs/go-libp2p-interface-pnet"
 	salsa20 "unknown/go-crypto-dav/salsa20"
-	ipnet "unknown/go-libp2p-interface-pnet"
 	tconn "unknown/go-libp2p-transport"
 	mpool "unknown/go-msgio/mpool"
 )

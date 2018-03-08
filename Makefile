@@ -8,11 +8,15 @@ extract:
 	# before must do: cd $$GOPATH/src/github.com/ipfs/go-ipfs && make install
 	#
 	surgical-extraction --pkg github.com/ipfs/go-ipfs/cmd/ipfswatch --out bitbucket.org/atlantproject/go-ipfs \
-	extract
+	extract \
+	--unvendor go-libp2p-pnet \
+	--unvendor go-libp2p-interface-pnet
 	
 extract-apply:
 	surgical-extraction --pkg github.com/ipfs/go-ipfs/cmd/ipfswatch --out bitbucket.org/atlantproject/go-ipfs \
-	extract --apply
+	extract --apply \
+	--unvendor go-libp2p-pnet \
+	--unvendor go-libp2p-interface-pnet
 
 test:
 	go install bitbucket.org/atlantproject/go-ipfs/cmd/ipfswatch

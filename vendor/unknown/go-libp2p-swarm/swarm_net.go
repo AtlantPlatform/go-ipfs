@@ -4,7 +4,7 @@ import (
 	"context"
 	"fmt"
 
-	ipnet "unknown/go-libp2p-interface-pnet"
+	ipnet "bitbucket.org/atlantproject/go-ipfs/go-libp2p-interface-pnet"
 	metrics "unknown/go-libp2p-metrics"
 	inet "unknown/go-libp2p-net"
 	peer "unknown/go-libp2p-peer"

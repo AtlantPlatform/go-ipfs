@@ -3,7 +3,7 @@ package pnet
 import (
 	"io"
 
-	ipnet "unknown/go-libp2p-interface-pnet"
+	ipnet "bitbucket.org/atlantproject/go-ipfs/go-libp2p-interface-pnet"
 	tconn "unknown/go-libp2p-transport"
 )
 

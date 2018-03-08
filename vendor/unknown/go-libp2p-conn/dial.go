@@ -7,10 +7,10 @@ import (
 	"strings"
 	"time"
 
+	ipnet "bitbucket.org/atlantproject/go-ipfs/go-libp2p-interface-pnet"
 	addrutil "unknown/go-addr-util"
 	ci "unknown/go-libp2p-crypto"
 	iconn "unknown/go-libp2p-interface-conn"
-	ipnet "unknown/go-libp2p-interface-pnet"
 	lgbl "unknown/go-libp2p-loggables"
 	peer "unknown/go-libp2p-peer"
 	transport "unknown/go-libp2p-transport"
