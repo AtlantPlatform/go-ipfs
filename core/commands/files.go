@@ -124,7 +124,20 @@ var filesStatCmd = &cmds.Command{
 			return
 		}
 
-		nd, err := getNodeFromPath(req.Context, node, path)
+		withLocal, _ := req.Options["with-local"].(bool)
+
+		var dagserv ipld.DAGService
+		if withLocal {
+			// an offline DAGService will not fetch from the network
+			dagserv = dag.NewDAGService(bservice.New(
+				node.Blockstore,
+				offline.Exchange(node.Blockstore),
+			))
+		} else {
+			dagserv = node.DAG
+		}
+
+		nd, err := getNodeFromPath(req.Context, node, dagserv, path)
 		if err != nil {
 			res.SetError(err, cmdkit.ErrNormal)
 			return
@@ -136,17 +149,10 @@ var filesStatCmd = &cmds.Command{
 			return
 		}
 
-		withLocal, _ := req.Options["with-local"].(bool)
 		if !withLocal {
 			res.Emit(o)
 			return
 		}
-
-		// an offline DAGService will not fetch from the network
-		dagserv := dag.NewDAGService(bservice.New(
-			node.Blockstore,
-			offline.Exchange(node.Blockstore),
-		))
 
 		local, sizeLocal, err := walkBlock(req.Context, dagserv, nd)
 
@@ -320,7 +326,7 @@ var filesCpCmd = &oldcmds.Command{
 			dst += gopath.Base(src)
 		}
 
-		nd, err := getNodeFromPath(req.Context(), node, src)
+		nd, err := getNodeFromPath(req.Context(), node, node.DAG, src)
 		if err != nil {
 			res.SetError(err, cmdkit.ErrNormal)
 			return
@@ -344,7 +350,7 @@ var filesCpCmd = &oldcmds.Command{
 	},
 }
 
-func getNodeFromPath(ctx context.Context, node *core.IpfsNode, p string) (ipld.Node, error) {
+func getNodeFromPath(ctx context.Context, node *core.IpfsNode, dagservice ipld.DAGService, p string) (ipld.Node, error) {
 	switch {
 	case strings.HasPrefix(p, "/ipfs/"):
 		np, err := path.ParsePath(p)
@@ -353,7 +359,7 @@ func getNodeFromPath(ctx context.Context, node *core.IpfsNode, p string) (ipld.N
 		}
 
 		resolver := &resolver.Resolver{
-			DAG:         node.DAG,
+			DAG:         dagservice,
 			ResolveOnce: uio.ResolveUnixfsOnce,
 		}
 

@@ -5,11 +5,13 @@ import (
 	"context"
 	"errors"
 	"fmt"
+	"strings"
 
 	bserv "bitbucket.org/atlantproject/go-ipfs/blockservice"
 	offline "bitbucket.org/atlantproject/go-ipfs/exchange/offline"
 	dag "bitbucket.org/atlantproject/go-ipfs/merkledag"
 	pin "bitbucket.org/atlantproject/go-ipfs/pin"
+	"bitbucket.org/atlantproject/go-ipfs/thirdparty/verifcid"
 	cid "unknown/go-cid"
 	dstore "unknown/go-datastore"
 	bstore "unknown/go-ipfs-blockstore"
@@ -128,12 +130,34 @@ func GC(ctx context.Context, bs bstore.GCBlockstore, dstor dstore.Datastore, pn 
 // adds them to the given cid.Set, using the provided dag.GetLinks function
 // to walk the tree.
 func Descendants(ctx context.Context, getLinks dag.GetLinks, set *cid.Set, roots []*cid.Cid) error {
+	verifyGetLinks := func(ctx context.Context, c *cid.Cid) ([]*ipld.Link, error) {
+		err := verifcid.ValidateCid(c)
+		if err != nil {
+			return nil, err
+		}
+
+		return getLinks(ctx, c)
+	}
+
+	verboseCidError := func(err error) error {
+		if strings.Contains(err.Error(), verifcid.ErrBelowMinimumHashLength.Error()) ||
+			strings.Contains(err.Error(), verifcid.ErrPossiblyInsecureHashFunction.Error()) {
+			err = fmt.Errorf("\"%s\"\nPlease run 'ipfs pin verify'"+
+				" to list insecure hashes. If you want to read them,"+
+				" please downgrade your go-ipfs to 0.4.13\n", err)
+			log.Error(err)
+		}
+		return err
+	}
+
 	for _, c := range roots {
 		set.Add(c)
 
 		// EnumerateChildren recursively walks the dag and adds the keys to the given set
-		err := dag.EnumerateChildren(ctx, getLinks, c, set.Visit)
+		err := dag.EnumerateChildren(ctx, verifyGetLinks, c, set.Visit)
+
 		if err != nil {
+			err = verboseCidError(err)
 			return err
 		}
 	}

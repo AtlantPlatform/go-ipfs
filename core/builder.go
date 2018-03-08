@@ -17,6 +17,7 @@ import (
 	pin "bitbucket.org/atlantproject/go-ipfs/pin"
 	repo "bitbucket.org/atlantproject/go-ipfs/repo"
 	cfg "bitbucket.org/atlantproject/go-ipfs/repo/config"
+	"bitbucket.org/atlantproject/go-ipfs/thirdparty/verifbs"
 	uio "bitbucket.org/atlantproject/go-ipfs/unixfs/io"
 	ds "unknown/go-datastore"
 	dsync "unknown/go-datastore/sync"
@@ -169,7 +170,9 @@ func setupNode(ctx context.Context, n *IpfsNode, cfg *BuildCfg) error {
 		TempErrFunc: isTooManyFDError,
 	}
 
+	// hash security
 	bs := bstore.NewBlockstore(rds)
+	bs = &verifbs.VerifBS{bs}
 
 	opts := bstore.DefaultCacheOpts()
 	conf, err := n.Repo.Config()
@@ -195,8 +198,10 @@ func setupNode(ctx context.Context, n *IpfsNode, cfg *BuildCfg) error {
 	n.Blockstore = bstore.NewGCBlockstore(cbs, n.GCLocker)
 
 	if conf.Experimental.FilestoreEnabled {
+		// hash security
 		n.Filestore = filestore.NewFilestore(bs, n.Repo.FileManager())
 		n.Blockstore = bstore.NewGCBlockstore(n.Filestore, n.GCLocker)
+		n.Blockstore = &verifbs.VerifBSGC{n.Blockstore}
 	}
 
 	rcfg, err := n.Repo.Config()

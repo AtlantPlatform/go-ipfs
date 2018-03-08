@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"time"
 
+	"bitbucket.org/atlantproject/go-ipfs/thirdparty/verifcid"
 	backoff "unknown/backoff"
 	cid "unknown/go-cid"
 	routing "unknown/go-libp2p-routing"
@@ -83,6 +84,11 @@ func (rp *Reprovider) Reprovide() error {
 		return fmt.Errorf("Failed to get key chan: %s", err)
 	}
 	for c := range keychan {
+		// hash security
+		if err := verifcid.ValidateCid(c); err != nil {
+			log.Errorf("insecure hash in reprovider, %s (%s)", c, err)
+			continue
+		}
 		op := func() error {
 			err := rp.rsys.Provide(rp.ctx, c, true)
 			if err != nil {
