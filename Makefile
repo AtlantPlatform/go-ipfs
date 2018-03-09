@@ -10,13 +10,15 @@ extract:
 	surgical-extraction --pkg github.com/ipfs/go-ipfs/cmd/ipfswatch --out bitbucket.org/atlantproject/go-ipfs \
 	extract \
 	--unvendor go-libp2p-pnet \
-	--unvendor go-libp2p-interface-pnet
+	--unvendor go-libp2p-interface-pnet \
+	--unvendor go-ds-badger
 	
 extract-apply:
 	surgical-extraction --pkg github.com/ipfs/go-ipfs/cmd/ipfswatch --out bitbucket.org/atlantproject/go-ipfs \
 	extract --apply \
 	--unvendor go-libp2p-pnet \
-	--unvendor go-libp2p-interface-pnet
+	--unvendor go-libp2p-interface-pnet \
+	--unvendor go-ds-badger
 
 test:
 	go install bitbucket.org/atlantproject/go-ipfs/cmd/ipfswatch

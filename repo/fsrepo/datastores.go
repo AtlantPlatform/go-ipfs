@@ -15,7 +15,7 @@ import (
 	ds "unknown/go-datastore"
 	mount "unknown/go-datastore/syncmount"
 
-	badgerds "unknown/go-ds-badger"
+	badgerds "bitbucket.org/atlantproject/go-ipfs/go-ds-badger"
 	levelds "unknown/go-ds-leveldb"
 	humanize "unknown/go-humanize"
 	ldbopts "unknown/goleveldb/leveldb/opt"
