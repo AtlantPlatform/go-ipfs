@@ -7,11 +7,11 @@ import (
 	"time"
 
 	bsmsg "bitbucket.org/atlantproject/go-ipfs/exchange/bitswap/message"
+	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
 	cid "unknown/go-cid"
 	host "unknown/go-libp2p-host"
 	ifconnmgr "unknown/go-libp2p-interface-connmgr"
 	inet "unknown/go-libp2p-net"
-	peer "unknown/go-libp2p-peer"
 	pstore "unknown/go-libp2p-peerstore"
 	routing "unknown/go-libp2p-routing"
 	logging "unknown/go-log"

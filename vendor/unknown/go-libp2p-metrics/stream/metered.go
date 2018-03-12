@@ -1,9 +1,9 @@
 package meterstream
 
 import (
+	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
 	metrics "unknown/go-libp2p-metrics"
 	inet "unknown/go-libp2p-net"
-	peer "unknown/go-libp2p-peer"
 	protocol "unknown/go-libp2p-protocol"
 )
 

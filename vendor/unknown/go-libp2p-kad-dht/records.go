@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"time"
 
+	ci "bitbucket.org/atlantproject/go-ipfs/go-libp2p-crypto"
+	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
 	ctxfrac "unknown/go-context/frac"
-	ci "unknown/go-libp2p-crypto"
-	peer "unknown/go-libp2p-peer"
 	record "unknown/go-libp2p-record"
 	recpb "unknown/go-libp2p-record/pb"
 	routing "unknown/go-libp2p-routing"

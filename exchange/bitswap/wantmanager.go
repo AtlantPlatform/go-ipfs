@@ -9,8 +9,8 @@ import (
 	bsmsg "bitbucket.org/atlantproject/go-ipfs/exchange/bitswap/message"
 	bsnet "bitbucket.org/atlantproject/go-ipfs/exchange/bitswap/network"
 	wantlist "bitbucket.org/atlantproject/go-ipfs/exchange/bitswap/wantlist"
+	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
 	cid "unknown/go-cid"
-	peer "unknown/go-libp2p-peer"
 	metrics "unknown/go-metrics-interface"
 )
 

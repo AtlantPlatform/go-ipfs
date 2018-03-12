@@ -4,7 +4,7 @@ import (
 	"container/list"
 	"sort"
 
-	peer "unknown/go-libp2p-peer"
+	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
 )
 
 // A helper struct to sort peers by their distance to the local node

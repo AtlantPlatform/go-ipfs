@@ -6,7 +6,7 @@ import (
 
 	pb "unknown/go-libp2p-circuit/pb"
 
-	peer "unknown/go-libp2p-peer"
+	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
 	tpt "unknown/go-libp2p-transport"
 	filter "unknown/go-maddr-filter"
 	ma "unknown/go-multiaddr"

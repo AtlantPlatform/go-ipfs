@@ -4,8 +4,8 @@ import (
 	"context"
 	"time"
 
+	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
 	inet "unknown/go-libp2p-net"
-	peer "unknown/go-libp2p-peer"
 	ma "unknown/go-multiaddr"
 )
 

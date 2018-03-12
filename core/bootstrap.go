@@ -13,9 +13,9 @@ import (
 	math2 "bitbucket.org/atlantproject/go-ipfs/thirdparty/math2"
 	lgbl "unknown/go-libp2p-loggables"
 
+	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
 	host "unknown/go-libp2p-host"
 	inet "unknown/go-libp2p-net"
-	peer "unknown/go-libp2p-peer"
 	pstore "unknown/go-libp2p-peerstore"
 	goprocess "unknown/goprocess"
 	procctx "unknown/goprocess/context"

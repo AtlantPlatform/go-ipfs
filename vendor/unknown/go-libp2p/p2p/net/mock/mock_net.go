@@ -9,10 +9,10 @@ import (
 	host "unknown/go-libp2p-host"
 	bhost "unknown/go-libp2p/p2p/host/basic"
 
-	ic "unknown/go-libp2p-crypto"
+	ic "bitbucket.org/atlantproject/go-ipfs/go-libp2p-crypto"
+	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
 	inet "unknown/go-libp2p-net"
 	p2putil "unknown/go-libp2p-netutil"
-	peer "unknown/go-libp2p-peer"
 	pstore "unknown/go-libp2p-peerstore"
 	ma "unknown/go-multiaddr"
 	testutil "unknown/go-testutil"

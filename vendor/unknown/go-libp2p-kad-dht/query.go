@@ -4,9 +4,9 @@ import (
 	"context"
 	"sync"
 
+	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
+	pset "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer/peerset"
 	u "unknown/go-ipfs-util"
-	peer "unknown/go-libp2p-peer"
-	pset "unknown/go-libp2p-peer/peerset"
 	pstore "unknown/go-libp2p-peerstore"
 	queue "unknown/go-libp2p-peerstore/queue"
 	routing "unknown/go-libp2p-routing"

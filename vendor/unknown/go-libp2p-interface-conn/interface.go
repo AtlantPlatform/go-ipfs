@@ -6,9 +6,9 @@ import (
 	"net"
 	"time"
 
+	ic "bitbucket.org/atlantproject/go-ipfs/go-libp2p-crypto"
+	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
 	u "unknown/go-ipfs-util"
-	ic "unknown/go-libp2p-crypto"
-	peer "unknown/go-libp2p-peer"
 	tpt "unknown/go-libp2p-transport"
 	filter "unknown/go-maddr-filter"
 	ma "unknown/go-multiaddr"

@@ -6,6 +6,8 @@ import (
 	"fmt"
 	"time"
 
+	ci "bitbucket.org/atlantproject/go-ipfs/go-libp2p-crypto"
+	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
 	pb "bitbucket.org/atlantproject/go-ipfs/namesys/pb"
 	path "bitbucket.org/atlantproject/go-ipfs/path"
 	pin "bitbucket.org/atlantproject/go-ipfs/pin"
@@ -13,8 +15,6 @@ import (
 	ds "unknown/go-datastore"
 	dshelp "unknown/go-ipfs-ds-help"
 	u "unknown/go-ipfs-util"
-	ci "unknown/go-libp2p-crypto"
-	peer "unknown/go-libp2p-peer"
 	dhtpb "unknown/go-libp2p-record/pb"
 	routing "unknown/go-libp2p-routing"
 	proto "unknown/gogo-protobuf/proto"

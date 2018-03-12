@@ -9,7 +9,7 @@ package loggables
 import (
 	"net"
 
-	peer "unknown/go-libp2p-peer"
+	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
 	logging "unknown/go-log"
 	ma "unknown/go-multiaddr"
 	uuid "unknown/go.uuid"

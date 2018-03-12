@@ -7,11 +7,11 @@ import (
 	"sync"
 	"time"
 
-	ic "unknown/go-libp2p-crypto"
+	ic "bitbucket.org/atlantproject/go-ipfs/go-libp2p-crypto"
 
 	//ds "github.com/jbenet/go-datastore"
 	//dssync "github.com/jbenet/go-datastore/sync"
-	"unknown/go-libp2p-peer"
+	"bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
 	logging "unknown/go-log"
 	ma "unknown/go-multiaddr"
 )

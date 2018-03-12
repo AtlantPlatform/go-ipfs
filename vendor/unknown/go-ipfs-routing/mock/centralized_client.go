@@ -5,11 +5,11 @@ import (
 	"errors"
 	"time"
 
+	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
 	cid "unknown/go-cid"
 	ds "unknown/go-datastore"
 	dshelp "unknown/go-ipfs-ds-help"
 	u "unknown/go-ipfs-util"
-	peer "unknown/go-libp2p-peer"
 	pstore "unknown/go-libp2p-peerstore"
 	dhtpb "unknown/go-libp2p-record/pb"
 	routing "unknown/go-libp2p-routing"

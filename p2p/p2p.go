@@ -5,9 +5,9 @@ import (
 	"errors"
 	"time"
 
+	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
 	p2phost "unknown/go-libp2p-host"
 	net "unknown/go-libp2p-net"
-	peer "unknown/go-libp2p-peer"
 	pstore "unknown/go-libp2p-peerstore"
 	pro "unknown/go-libp2p-protocol"
 	ma "unknown/go-multiaddr"

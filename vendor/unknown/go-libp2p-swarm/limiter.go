@@ -4,9 +4,9 @@ import (
 	"context"
 	"sync"
 
+	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
 	addrutil "unknown/go-addr-util"
 	iconn "unknown/go-libp2p-interface-conn"
-	peer "unknown/go-libp2p-peer"
 	ma "unknown/go-multiaddr"
 )
 

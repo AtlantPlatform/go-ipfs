@@ -6,10 +6,10 @@ import (
 	"sync"
 	"time"
 
+	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
 	cid "unknown/go-cid"
 	ds "unknown/go-datastore"
 	dssync "unknown/go-datastore/sync"
-	peer "unknown/go-libp2p-peer"
 	pstore "unknown/go-libp2p-peerstore"
 	"unknown/go-testutil"
 )

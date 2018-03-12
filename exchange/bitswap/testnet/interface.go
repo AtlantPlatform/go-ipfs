@@ -2,7 +2,7 @@ package bitswap
 
 import (
 	bsnet "bitbucket.org/atlantproject/go-ipfs/exchange/bitswap/network"
-	peer "unknown/go-libp2p-peer"
+	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
 	"unknown/go-testutil"
 )
 

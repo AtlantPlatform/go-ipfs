@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"strings"
 
-	"unknown/go-libp2p-peer"
+	"bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
 	ma "unknown/go-multiaddr"
 )
 

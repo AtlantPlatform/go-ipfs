@@ -5,13 +5,13 @@ import (
 	"time"
 
 	tn "bitbucket.org/atlantproject/go-ipfs/exchange/bitswap/testnet"
+	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
 	datastore2 "bitbucket.org/atlantproject/go-ipfs/thirdparty/datastore2"
 	ds "unknown/go-datastore"
 	ds_sync "unknown/go-datastore/sync"
 	blockstore "unknown/go-ipfs-blockstore"
 	delay "unknown/go-ipfs-delay"
 	p2ptestutil "unknown/go-libp2p-netutil"
-	peer "unknown/go-libp2p-peer"
 	testutil "unknown/go-testutil"
 )
 

@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"math/rand"
 
-	peer "unknown/go-libp2p-peer"
+	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
 	pstore "unknown/go-libp2p-peerstore"
 	tpt "unknown/go-libp2p-transport"
 	ma "unknown/go-multiaddr"

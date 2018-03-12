@@ -4,10 +4,10 @@ import (
 	"context"
 	"fmt"
 
-	ic "unknown/go-libp2p-crypto"
+	ic "bitbucket.org/atlantproject/go-ipfs/go-libp2p-crypto"
+	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
 	iconn "unknown/go-libp2p-interface-conn"
 	inet "unknown/go-libp2p-net"
-	peer "unknown/go-libp2p-peer"
 	ma "unknown/go-multiaddr"
 	ps "unknown/go-peerstream"
 )

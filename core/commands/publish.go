@@ -11,11 +11,11 @@ import (
 	cmds "bitbucket.org/atlantproject/go-ipfs/commands"
 	core "bitbucket.org/atlantproject/go-ipfs/core"
 	e "bitbucket.org/atlantproject/go-ipfs/core/commands/e"
+	crypto "bitbucket.org/atlantproject/go-ipfs/go-libp2p-crypto"
+	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
 	keystore "bitbucket.org/atlantproject/go-ipfs/keystore"
 	path "bitbucket.org/atlantproject/go-ipfs/path"
 	"unknown/go-ipfs-cmdkit"
-	crypto "unknown/go-libp2p-crypto"
-	peer "unknown/go-libp2p-peer"
 )
 
 var errNotOnline = errors.New("This command must be run in online mode. Try running 'ipfs daemon' first.")

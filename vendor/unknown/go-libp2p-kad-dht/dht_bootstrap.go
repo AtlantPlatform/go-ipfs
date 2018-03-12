@@ -9,8 +9,8 @@ import (
 	"sync"
 	"time"
 
+	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
 	u "unknown/go-ipfs-util"
-	peer "unknown/go-libp2p-peer"
 	routing "unknown/go-libp2p-routing"
 	goprocess "unknown/goprocess"
 	periodicproc "unknown/goprocess/periodic"

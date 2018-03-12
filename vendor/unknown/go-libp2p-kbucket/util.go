@@ -5,9 +5,9 @@ import (
 	"crypto/sha256"
 	"errors"
 
+	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
 	u "unknown/go-ipfs-util"
 	ks "unknown/go-libp2p-kbucket/keyspace"
-	peer "unknown/go-libp2p-peer"
 )
 
 // Returned if a routing table query returns no results. This is NOT expected

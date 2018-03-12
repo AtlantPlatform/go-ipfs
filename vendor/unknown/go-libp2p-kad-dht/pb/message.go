@@ -1,9 +1,9 @@
 package dht_pb
 
 import (
+	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
 	b58 "unknown/go-base58-fast/base58"
 	inet "unknown/go-libp2p-net"
-	peer "unknown/go-libp2p-peer"
 	pstore "unknown/go-libp2p-peerstore"
 	logging "unknown/go-log"
 	ma "unknown/go-multiaddr"

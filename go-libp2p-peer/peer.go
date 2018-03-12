@@ -8,8 +8,8 @@ import (
 	"fmt"
 	"strings"
 
+	ic "bitbucket.org/atlantproject/go-ipfs/go-libp2p-crypto"
 	b58 "unknown/go-base58-fast/base58"
-	ic "unknown/go-libp2p-crypto"
 	logging "unknown/go-log" // ID represents the identity of a peer.
 	mc "unknown/go-multicodec-packed"
 	mh "unknown/go-multihash"

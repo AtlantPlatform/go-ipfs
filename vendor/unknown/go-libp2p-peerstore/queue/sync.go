@@ -3,7 +3,7 @@ package queue
 import (
 	"context"
 
-	peer "unknown/go-libp2p-peer"
+	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
 	logging "unknown/go-log"
 )
 

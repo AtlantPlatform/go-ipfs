@@ -4,9 +4,9 @@ import (
 	"context"
 
 	bsnet "bitbucket.org/atlantproject/go-ipfs/exchange/bitswap/network"
+	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
 	ds "unknown/go-datastore"
 	mockrouting "unknown/go-ipfs-routing/mock"
-	peer "unknown/go-libp2p-peer"
 	mockpeernet "unknown/go-libp2p/p2p/net/mock"
 	testutil "unknown/go-testutil"
 )

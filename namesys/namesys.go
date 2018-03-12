@@ -7,13 +7,13 @@ import (
 	"sync"
 	"time"
 
+	ci "bitbucket.org/atlantproject/go-ipfs/go-libp2p-crypto"
+	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
 	path "bitbucket.org/atlantproject/go-ipfs/path"
 	ds "unknown/go-datastore"
 	isd "unknown/go-is-domain"
-	ci "unknown/go-libp2p-crypto"
 	floodsub "unknown/go-libp2p-floodsub"
 	p2phost "unknown/go-libp2p-host"
-	peer "unknown/go-libp2p-peer"
 	routing "unknown/go-libp2p-routing"
 	mh "unknown/go-multihash"
 )

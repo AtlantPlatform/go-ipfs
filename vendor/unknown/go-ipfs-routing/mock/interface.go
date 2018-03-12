@@ -7,9 +7,9 @@ package mockrouting
 import (
 	"context"
 
+	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
 	ds "unknown/go-datastore"
 	delay "unknown/go-ipfs-delay"
-	peer "unknown/go-libp2p-peer"
 	routing "unknown/go-libp2p-routing"
 	"unknown/go-testutil"
 )

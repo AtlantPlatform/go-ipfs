@@ -8,10 +8,10 @@ import (
 	"sync"
 	"testing"
 
+	ci "bitbucket.org/atlantproject/go-ipfs/go-libp2p-crypto"
+	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
+	ptest "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer/test"
 	cid "unknown/go-cid"
-	ci "unknown/go-libp2p-crypto"
-	peer "unknown/go-libp2p-peer"
-	ptest "unknown/go-libp2p-peer/test"
 	ma "unknown/go-multiaddr"
 	mh "unknown/go-multihash"
 )

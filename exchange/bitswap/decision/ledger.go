@@ -5,8 +5,8 @@ import (
 	"time"
 
 	wl "bitbucket.org/atlantproject/go-ipfs/exchange/bitswap/wantlist"
+	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
 	cid "unknown/go-cid"
-	peer "unknown/go-libp2p-peer"
 )
 
 func newLedger(p peer.ID) *ledger {

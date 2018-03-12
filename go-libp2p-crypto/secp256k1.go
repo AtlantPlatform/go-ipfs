@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"io"
 
+	pb "bitbucket.org/atlantproject/go-ipfs/go-libp2p-crypto/pb"
 	btcec "unknown/btcec"
-	pb "unknown/go-libp2p-crypto/pb"
 	proto "unknown/gogo-protobuf/proto"
 )
 

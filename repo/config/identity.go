@@ -3,7 +3,7 @@ package config
 import (
 	"encoding/base64"
 
-	ic "unknown/go-libp2p-crypto"
+	ic "bitbucket.org/atlantproject/go-ipfs/go-libp2p-crypto"
 )
 
 const IdentityTag = "Identity"

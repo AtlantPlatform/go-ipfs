@@ -7,13 +7,13 @@ import (
 
 	pb "unknown/go-libp2p/p2p/protocol/identify/pb"
 
-	ic "unknown/go-libp2p-crypto"
+	ic "bitbucket.org/atlantproject/go-ipfs/go-libp2p-crypto"
+	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
 	host "unknown/go-libp2p-host"
 	lgbl "unknown/go-libp2p-loggables"
 	metrics "unknown/go-libp2p-metrics"
 	mstream "unknown/go-libp2p-metrics/stream"
 	inet "unknown/go-libp2p-net"
-	peer "unknown/go-libp2p-peer"
 	pstore "unknown/go-libp2p-peerstore"
 	logging "unknown/go-log"
 	ma "unknown/go-multiaddr"

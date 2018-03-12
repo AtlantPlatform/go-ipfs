@@ -4,8 +4,8 @@ import (
 	"errors"
 	"time"
 
+	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
 	pb "bitbucket.org/atlantproject/go-ipfs/namesys/pb"
-	peer "unknown/go-libp2p-peer"
 	pstore "unknown/go-libp2p-peerstore"
 
 	u "unknown/go-ipfs-util"

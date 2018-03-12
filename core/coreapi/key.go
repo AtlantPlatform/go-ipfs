@@ -8,9 +8,9 @@ import (
 
 	coreiface "bitbucket.org/atlantproject/go-ipfs/core/coreapi/interface"
 	caopts "bitbucket.org/atlantproject/go-ipfs/core/coreapi/interface/options"
+	crypto "bitbucket.org/atlantproject/go-ipfs/go-libp2p-crypto"
+	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
 	ipfspath "bitbucket.org/atlantproject/go-ipfs/path"
-	crypto "unknown/go-libp2p-crypto"
-	peer "unknown/go-libp2p-peer"
 )
 
 type KeyAPI struct {

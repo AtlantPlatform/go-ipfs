@@ -10,8 +10,8 @@ import (
 	"sync"
 	"time"
 
+	"bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
 	"unknown/go-libp2p-host"
-	"unknown/go-libp2p-peer"
 	pstore "unknown/go-libp2p-peerstore"
 	logging "unknown/go-log"
 	ma "unknown/go-multiaddr"

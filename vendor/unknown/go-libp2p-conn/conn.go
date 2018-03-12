@@ -6,10 +6,10 @@ import (
 	"net"
 	"time"
 
-	ic "unknown/go-libp2p-crypto"
+	ic "bitbucket.org/atlantproject/go-ipfs/go-libp2p-crypto"
+	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
 	iconn "unknown/go-libp2p-interface-conn"
 	lgbl "unknown/go-libp2p-loggables"
-	peer "unknown/go-libp2p-peer"
 	tpt "unknown/go-libp2p-transport"
 	logging "unknown/go-log"
 	mpool "unknown/go-msgio/mpool"

@@ -1,6 +1,6 @@
 package queue
 
-import peer "unknown/go-libp2p-peer"
+import peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
 
 // PeerQueue maintains a set of peers ordered according to a metric.
 // Implementations of PeerQueue could order peers based on distances along

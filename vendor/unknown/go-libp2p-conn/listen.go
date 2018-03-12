@@ -8,10 +8,10 @@ import (
 	"sync"
 	"time"
 
+	ic "bitbucket.org/atlantproject/go-ipfs/go-libp2p-crypto"
 	ipnet "bitbucket.org/atlantproject/go-ipfs/go-libp2p-interface-pnet"
-	ic "unknown/go-libp2p-crypto"
+	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
 	iconn "unknown/go-libp2p-interface-conn"
-	peer "unknown/go-libp2p-peer"
 	transport "unknown/go-libp2p-transport"
 	filter "unknown/go-maddr-filter"
 	ma "unknown/go-multiaddr"

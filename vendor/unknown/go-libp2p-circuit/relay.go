@@ -9,9 +9,9 @@ import (
 
 	pb "unknown/go-libp2p-circuit/pb"
 
+	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
 	host "unknown/go-libp2p-host"
 	inet "unknown/go-libp2p-net"
-	peer "unknown/go-libp2p-peer"
 	pstore "unknown/go-libp2p-peerstore"
 	logging "unknown/go-log"
 )

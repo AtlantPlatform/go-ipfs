@@ -6,10 +6,10 @@ import (
 	"time"
 
 	notifications "bitbucket.org/atlantproject/go-ipfs/exchange/bitswap/notifications"
+	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
 	blocks "unknown/go-block-format"
 	cid "unknown/go-cid"
 	loggables "unknown/go-libp2p-loggables"
-	peer "unknown/go-libp2p-peer"
 	logging "unknown/go-log"
 	lru "unknown/golang-lru"
 )

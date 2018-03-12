@@ -10,6 +10,7 @@ import (
 
 	cmds "bitbucket.org/atlantproject/go-ipfs/commands"
 	e "bitbucket.org/atlantproject/go-ipfs/core/commands/e"
+	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
 	dag "bitbucket.org/atlantproject/go-ipfs/merkledag"
 	path "bitbucket.org/atlantproject/go-ipfs/path"
 	b58 "unknown/go-base58-fast/base58"
@@ -17,7 +18,6 @@ import (
 	"unknown/go-ipfs-cmdkit"
 	ipld "unknown/go-ipld-format"
 	ipdht "unknown/go-libp2p-kad-dht"
-	peer "unknown/go-libp2p-peer"
 	pstore "unknown/go-libp2p-peerstore"
 	routing "unknown/go-libp2p-routing"
 	notif "unknown/go-libp2p-routing/notifications"

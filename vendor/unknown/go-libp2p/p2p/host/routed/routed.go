@@ -7,10 +7,10 @@ import (
 
 	host "unknown/go-libp2p-host"
 
+	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
 	ifconnmgr "unknown/go-libp2p-interface-connmgr"
 	lgbl "unknown/go-libp2p-loggables"
 	inet "unknown/go-libp2p-net"
-	peer "unknown/go-libp2p-peer"
 	pstore "unknown/go-libp2p-peerstore"
 	protocol "unknown/go-libp2p-protocol"
 	logging "unknown/go-log"

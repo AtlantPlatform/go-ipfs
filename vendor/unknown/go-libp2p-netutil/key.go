@@ -6,8 +6,8 @@ import (
 	"io"
 	"testing"
 
-	ic "unknown/go-libp2p-crypto"
-	peer "unknown/go-libp2p-peer"
+	ic "bitbucket.org/atlantproject/go-ipfs/go-libp2p-crypto"
+	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
 	logging "unknown/go-log"
 	testutil "unknown/go-testutil"
 

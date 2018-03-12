@@ -1,7 +1,7 @@
 package metrics
 
 import (
-	peer "unknown/go-libp2p-peer"
+	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
 	protocol "unknown/go-libp2p-protocol"
 )
 

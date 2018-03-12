@@ -5,10 +5,10 @@ import (
 	"context"
 	"errors"
 
+	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
 	cid "unknown/go-cid"
 	ds "unknown/go-datastore"
 	p2phost "unknown/go-libp2p-host"
-	peer "unknown/go-libp2p-peer"
 	pstore "unknown/go-libp2p-peerstore"
 	routing "unknown/go-libp2p-routing"
 )

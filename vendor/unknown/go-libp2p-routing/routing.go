@@ -5,9 +5,9 @@ import (
 	"context"
 	"errors"
 
+	ci "bitbucket.org/atlantproject/go-ipfs/go-libp2p-crypto"
+	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
 	cid "unknown/go-cid"
-	ci "unknown/go-libp2p-crypto"
-	peer "unknown/go-libp2p-peer"
 	pstore "unknown/go-libp2p-peerstore"
 )
 

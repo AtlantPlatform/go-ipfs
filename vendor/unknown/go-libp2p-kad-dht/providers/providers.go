@@ -7,12 +7,12 @@ import (
 	"strings"
 	"time"
 
+	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
 	autobatch "unknown/autobatch"
 	base32 "unknown/base32"
 	cid "unknown/go-cid"
 	ds "unknown/go-datastore"
 	dsq "unknown/go-datastore/query"
-	peer "unknown/go-libp2p-peer"
 	logging "unknown/go-log"
 	lru "unknown/golang-lru"
 	goprocess "unknown/goprocess"

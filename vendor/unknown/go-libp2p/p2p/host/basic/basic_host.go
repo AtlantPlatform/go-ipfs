@@ -7,12 +7,12 @@ import (
 
 	identify "unknown/go-libp2p/p2p/protocol/identify"
 
+	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
 	circuit "unknown/go-libp2p-circuit"
 	ifconnmgr "unknown/go-libp2p-interface-connmgr"
 	metrics "unknown/go-libp2p-metrics"
 	mstream "unknown/go-libp2p-metrics/stream"
 	inet "unknown/go-libp2p-net"
-	peer "unknown/go-libp2p-peer"
 	pstore "unknown/go-libp2p-peerstore"
 	protocol "unknown/go-libp2p-protocol"
 	logging "unknown/go-log"

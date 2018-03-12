@@ -5,9 +5,9 @@ import (
 	"time"
 
 	wantlist "bitbucket.org/atlantproject/go-ipfs/exchange/bitswap/wantlist"
+	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
 	cid "unknown/go-cid"
 	pq "unknown/go-ipfs-pq"
-	peer "unknown/go-libp2p-peer"
 )
 
 type peerRequestQueue interface {

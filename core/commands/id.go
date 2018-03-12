@@ -11,10 +11,10 @@ import (
 	cmds "bitbucket.org/atlantproject/go-ipfs/commands"
 	core "bitbucket.org/atlantproject/go-ipfs/core"
 	e "bitbucket.org/atlantproject/go-ipfs/core/commands/e"
+	ic "bitbucket.org/atlantproject/go-ipfs/go-libp2p-crypto"
+	"bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
 	"unknown/go-ipfs-cmdkit"
-	ic "unknown/go-libp2p-crypto"
 	kb "unknown/go-libp2p-kbucket"
-	"unknown/go-libp2p-peer"
 	pstore "unknown/go-libp2p-peerstore"
 	identify "unknown/go-libp2p/p2p/protocol/identify"
 )

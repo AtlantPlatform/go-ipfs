@@ -19,7 +19,7 @@ import (
 	"crypto/sha512"
 	"hash"
 
-	pb "unknown/go-libp2p-crypto/pb"
+	pb "bitbucket.org/atlantproject/go-ipfs/go-libp2p-crypto/pb"
 
 	proto "unknown/gogo-protobuf/proto"
 )

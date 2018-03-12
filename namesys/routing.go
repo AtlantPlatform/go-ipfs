@@ -5,11 +5,11 @@ import (
 	"strings"
 	"time"
 
+	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
 	pb "bitbucket.org/atlantproject/go-ipfs/namesys/pb"
 	path "bitbucket.org/atlantproject/go-ipfs/path"
 	cid "unknown/go-cid"
 	u "unknown/go-ipfs-util"
-	peer "unknown/go-libp2p-peer"
 	routing "unknown/go-libp2p-routing"
 	logging "unknown/go-log"
 	mh "unknown/go-multihash"

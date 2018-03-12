@@ -4,10 +4,10 @@ import (
 	"context"
 
 	"bitbucket.org/atlantproject/go-ipfs/core"
+	ci "bitbucket.org/atlantproject/go-ipfs/go-libp2p-crypto"
 	nsys "bitbucket.org/atlantproject/go-ipfs/namesys"
 	path "bitbucket.org/atlantproject/go-ipfs/path"
 	ft "bitbucket.org/atlantproject/go-ipfs/unixfs"
-	ci "unknown/go-libp2p-crypto"
 )
 
 // InitializeKeyspace sets the ipns record for the given key to

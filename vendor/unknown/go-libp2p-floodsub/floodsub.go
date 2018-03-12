@@ -5,8 +5,8 @@ import (
 
 	pb "unknown/go-libp2p-floodsub/pb"
 
+	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
 	host "unknown/go-libp2p-host"
-	peer "unknown/go-libp2p-peer"
 	protocol "unknown/go-libp2p-protocol"
 )
 

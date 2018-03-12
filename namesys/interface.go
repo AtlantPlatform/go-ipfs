@@ -35,8 +35,8 @@ import (
 
 	context "context"
 
+	ci "bitbucket.org/atlantproject/go-ipfs/go-libp2p-crypto"
 	path "bitbucket.org/atlantproject/go-ipfs/path"
-	ci "unknown/go-libp2p-crypto"
 )
 
 const (

@@ -10,11 +10,11 @@ import (
 	e "bitbucket.org/atlantproject/go-ipfs/core/commands/e"
 	bitswap "bitbucket.org/atlantproject/go-ipfs/exchange/bitswap"
 	decision "bitbucket.org/atlantproject/go-ipfs/exchange/bitswap/decision"
+	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
 	cid "unknown/go-cid"
 	"unknown/go-humanize"
 	cmdkit "unknown/go-ipfs-cmdkit"
 	cmds "unknown/go-ipfs-cmds"
-	peer "unknown/go-libp2p-peer"
 )
 
 var BitswapCmd = &cmds.Command{

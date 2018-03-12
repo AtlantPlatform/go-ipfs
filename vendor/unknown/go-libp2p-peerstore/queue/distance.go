@@ -5,8 +5,8 @@ import (
 	"math/big"
 	"sync"
 
+	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
 	ks "unknown/go-keyspace"
-	peer "unknown/go-libp2p-peer"
 )
 
 // peerMetric tracks a peer and its distance to something else.

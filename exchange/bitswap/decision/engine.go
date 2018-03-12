@@ -8,9 +8,9 @@ import (
 
 	bsmsg "bitbucket.org/atlantproject/go-ipfs/exchange/bitswap/message"
 	wl "bitbucket.org/atlantproject/go-ipfs/exchange/bitswap/wantlist"
+	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
 	blocks "unknown/go-block-format"
 	bstore "unknown/go-ipfs-blockstore"
-	peer "unknown/go-libp2p-peer"
 	logging "unknown/go-log"
 )
 

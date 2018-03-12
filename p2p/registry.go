@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"io"
 
+	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
 	net "unknown/go-libp2p-net"
-	peer "unknown/go-libp2p-peer"
 	ma "unknown/go-multiaddr"
 	manet "unknown/go-multiaddr-net"
 )

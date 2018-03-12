@@ -7,8 +7,8 @@ import (
 	"io"
 	"time"
 
-	ci "unknown/go-libp2p-crypto"
-	peer "unknown/go-libp2p-peer"
+	ci "bitbucket.org/atlantproject/go-ipfs/go-libp2p-crypto"
+	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
 )
 
 func Init(out io.Writer, nBitsForKeypair int) (*Config, error) {

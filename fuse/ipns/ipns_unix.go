@@ -12,6 +12,8 @@ import (
 	"os"
 
 	core "bitbucket.org/atlantproject/go-ipfs/core"
+	ci "bitbucket.org/atlantproject/go-ipfs/go-libp2p-crypto"
+	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
 	dag "bitbucket.org/atlantproject/go-ipfs/merkledag"
 	mfs "bitbucket.org/atlantproject/go-ipfs/mfs"
 	namesys "bitbucket.org/atlantproject/go-ipfs/namesys"
@@ -20,8 +22,6 @@ import (
 	fuse "unknown/fuse"
 	fs "unknown/fuse/fs"
 	cid "unknown/go-cid"
-	ci "unknown/go-libp2p-crypto"
-	peer "unknown/go-libp2p-peer"
 	logging "unknown/go-log"
 )
 

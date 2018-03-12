@@ -4,8 +4,8 @@ import (
 	"errors"
 	"strings"
 
+	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
 	circuit "unknown/go-libp2p-circuit"
-	peer "unknown/go-libp2p-peer"
 	logging "unknown/go-log"
 	ma "unknown/go-multiaddr"
 )
