@@ -808,7 +808,7 @@ func loadPrivateKey(cfg *config.Identity, id peer.ID) (ic.PrivKey, error) {
 		return nil, err
 	}
 
-	id2, err := peer.IDFromPrivateKey(sk)
+	id2, err := peer.IDFromEd25519PublicKey(sk.GetPublic())
 	if err != nil {
 		return nil, err
 	}

@@ -59,7 +59,7 @@ func (id ID) MatchesPrivateKey(sk ic.PrivKey) bool {
 
 // MatchesPublicKey tests whether this ID was derived from pk
 func (id ID) MatchesPublicKey(pk ic.PubKey) bool {
-	oid, err := IDFromPublicKey(pk)
+	oid, err := IDFromEd25519PublicKey(pk)
 	if err != nil {
 		return false
 	}

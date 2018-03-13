@@ -24,5 +24,8 @@ extract-apply:
 	--unvendor go-libp2p-peer \
 	--unvendor go-libp2p-crypto
 
+patch-apply:
+	git apply patches/ed25519.patch
+
 test:
 	go install bitbucket.org/atlantproject/go-ipfs/cmd/ipfswatch
