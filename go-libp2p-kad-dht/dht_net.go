@@ -6,9 +6,9 @@ import (
 	"sync"
 	"time"
 
+	pb "bitbucket.org/atlantproject/go-ipfs/go-libp2p-kad-dht/pb"
 	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
 	ctxio "unknown/go-context/io"
-	pb "unknown/go-libp2p-kad-dht/pb"
 	inet "unknown/go-libp2p-net"
 	ggio "unknown/gogo-protobuf/io"
 )

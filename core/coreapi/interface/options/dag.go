@@ -3,7 +3,7 @@ package options
 import (
 	"math"
 
-	cid "unknown/go-cid"
+	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
 )
 
 type DagPutSettings struct {

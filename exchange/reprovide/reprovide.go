@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"time"
 
+	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
 	"bitbucket.org/atlantproject/go-ipfs/thirdparty/verifcid"
 	backoff "unknown/backoff"
-	cid "unknown/go-cid"
 	routing "unknown/go-libp2p-routing"
 	logging "unknown/go-log"
 )

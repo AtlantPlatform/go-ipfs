@@ -7,8 +7,8 @@ import (
 
 	core "bitbucket.org/atlantproject/go-ipfs/core"
 	coreapi "bitbucket.org/atlantproject/go-ipfs/core/coreapi"
+	id "bitbucket.org/atlantproject/go-ipfs/go-libp2p/p2p/protocol/identify"
 	config "bitbucket.org/atlantproject/go-ipfs/repo/config"
-	id "unknown/go-libp2p/p2p/protocol/identify"
 )
 
 type GatewayConfig struct {

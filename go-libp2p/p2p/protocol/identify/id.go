@@ -5,7 +5,7 @@ import (
 	"strings"
 	"sync"
 
-	pb "unknown/go-libp2p/p2p/protocol/identify/pb"
+	pb "bitbucket.org/atlantproject/go-ipfs/go-libp2p/p2p/protocol/identify/pb"
 
 	ic "bitbucket.org/atlantproject/go-ipfs/go-libp2p-crypto"
 	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"

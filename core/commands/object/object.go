@@ -16,11 +16,11 @@ import (
 	cmds "bitbucket.org/atlantproject/go-ipfs/commands"
 	core "bitbucket.org/atlantproject/go-ipfs/core"
 	e "bitbucket.org/atlantproject/go-ipfs/core/commands/e"
+	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
 	dag "bitbucket.org/atlantproject/go-ipfs/merkledag"
 	path "bitbucket.org/atlantproject/go-ipfs/path"
 	pin "bitbucket.org/atlantproject/go-ipfs/pin"
 	ft "bitbucket.org/atlantproject/go-ipfs/unixfs"
-	cid "unknown/go-cid"
 	cmdkit "unknown/go-ipfs-cmdkit"
 	ipld "unknown/go-ipld-format"
 )

@@ -17,7 +17,8 @@ extract:
 	--unvendor go-cid \
 	--unvendor go-libp2p-kad-dht \
 	--unvendor go-libp2p-secio \
-	--unvendor go-libp2p
+	--unvendor go-libp2p \
+	--rename badger:github.com/dgraph-io/badger
 	
 extract-apply:
 	surgical-extraction --pkg github.com/ipfs/go-ipfs/cmd/ipfswatch --out bitbucket.org/atlantproject/go-ipfs \
@@ -30,7 +31,8 @@ extract-apply:
 	--unvendor go-cid \
 	--unvendor go-libp2p-kad-dht \
 	--unvendor go-libp2p-secio \
-	--unvendor go-libp2p
+	--unvendor go-libp2p \
+	--rename badger:github.com/dgraph-io/badger
 
 patch-apply:
 	git apply patches/ed25519.patch

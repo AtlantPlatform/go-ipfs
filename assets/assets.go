@@ -11,8 +11,8 @@ import (
 
 	"bitbucket.org/atlantproject/go-ipfs/core"
 	"bitbucket.org/atlantproject/go-ipfs/core/coreunix"
+	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
 	uio "bitbucket.org/atlantproject/go-ipfs/unixfs/io"
-	cid "unknown/go-cid"
 
 	// this import keeps gx from thinking the dep isn't used
 	_ "unknown/dir-index-html"

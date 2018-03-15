@@ -5,10 +5,10 @@ import (
 	"errors"
 	"strings"
 
+	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
 	namesys "bitbucket.org/atlantproject/go-ipfs/namesys"
 	path "bitbucket.org/atlantproject/go-ipfs/path"
 	resolver "bitbucket.org/atlantproject/go-ipfs/path/resolver"
-	cid "unknown/go-cid"
 	ipld "unknown/go-ipld-format"
 	logging "unknown/go-log"
 )

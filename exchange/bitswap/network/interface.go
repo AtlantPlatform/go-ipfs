@@ -4,8 +4,8 @@ import (
 	"context"
 
 	bsmsg "bitbucket.org/atlantproject/go-ipfs/exchange/bitswap/message"
+	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
 	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
-	cid "unknown/go-cid"
 	ifconnmgr "unknown/go-libp2p-interface-connmgr"
 	protocol "unknown/go-libp2p-protocol"
 )

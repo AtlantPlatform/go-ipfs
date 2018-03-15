@@ -7,7 +7,7 @@ import (
 
 	blocks "unknown/go-block-format"
 
-	cid "unknown/go-cid"
+	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
 )
 
 // Interface defines the functionality of the IPFS block exchange protocol.

@@ -5,7 +5,7 @@ import (
 	"io"
 	"time"
 
-	identify "unknown/go-libp2p/p2p/protocol/identify"
+	identify "bitbucket.org/atlantproject/go-ipfs/go-libp2p/p2p/protocol/identify"
 
 	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
 	circuit "unknown/go-libp2p-circuit"

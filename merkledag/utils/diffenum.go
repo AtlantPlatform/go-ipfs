@@ -4,8 +4,8 @@ import (
 	"context"
 	"fmt"
 
+	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
 	mdag "bitbucket.org/atlantproject/go-ipfs/merkledag"
-	cid "unknown/go-cid"
 	ipld "unknown/go-ipld-format"
 )
 

@@ -13,10 +13,10 @@ import (
 
 	coreiface "bitbucket.org/atlantproject/go-ipfs/core/coreapi/interface"
 	caopts "bitbucket.org/atlantproject/go-ipfs/core/coreapi/interface/options"
+	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
 	dag "bitbucket.org/atlantproject/go-ipfs/merkledag"
 	dagutils "bitbucket.org/atlantproject/go-ipfs/merkledag/utils"
 	ft "bitbucket.org/atlantproject/go-ipfs/unixfs"
-	cid "unknown/go-cid"
 	ipld "unknown/go-ipld-format"
 )
 

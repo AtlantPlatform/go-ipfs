@@ -9,7 +9,7 @@ import (
 	ft "bitbucket.org/atlantproject/go-ipfs/unixfs"
 	pi "unknown/go-ipfs-posinfo"
 
-	cid "unknown/go-cid"
+	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
 	ipld "unknown/go-ipld-format"
 )
 

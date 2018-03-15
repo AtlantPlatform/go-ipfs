@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"path"
 
+	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
 	dag "bitbucket.org/atlantproject/go-ipfs/merkledag"
-	cid "unknown/go-cid"
 	ipld "unknown/go-ipld-format"
 )
 

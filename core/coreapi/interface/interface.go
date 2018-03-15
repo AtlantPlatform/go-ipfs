@@ -9,7 +9,7 @@ import (
 	"time"
 
 	options "bitbucket.org/atlantproject/go-ipfs/core/coreapi/interface/options"
-	cid "unknown/go-cid"
+	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
 	ipld "unknown/go-ipld-format"
 )
 

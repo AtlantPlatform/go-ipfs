@@ -7,8 +7,8 @@ import (
 	"time"
 
 	bsmsg "bitbucket.org/atlantproject/go-ipfs/exchange/bitswap/message"
+	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
 	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
-	cid "unknown/go-cid"
 	logging "unknown/go-log"
 	process "unknown/goprocess"
 	procctx "unknown/goprocess/context"

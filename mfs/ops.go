@@ -7,8 +7,8 @@ import (
 	gopath "path"
 	"strings"
 
+	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
 	path "bitbucket.org/atlantproject/go-ipfs/path"
-	cid "unknown/go-cid"
 	ipld "unknown/go-ipld-format"
 )
 

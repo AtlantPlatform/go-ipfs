@@ -7,8 +7,8 @@ import (
 
 	"unknown/go-block-format"
 
+	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
 	pb "bitbucket.org/atlantproject/go-ipfs/merkledag/pb"
-	cid "unknown/go-cid"
 	ipld "unknown/go-ipld-format"
 )
 

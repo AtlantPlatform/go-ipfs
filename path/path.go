@@ -6,7 +6,7 @@ import (
 	"path"
 	"strings"
 
-	cid "unknown/go-cid"
+	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
 )
 
 var (

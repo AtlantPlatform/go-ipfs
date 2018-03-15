@@ -7,9 +7,9 @@ import (
 	"errors"
 	"time"
 
+	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
 	ci "bitbucket.org/atlantproject/go-ipfs/go-libp2p-crypto"
 	"bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
-	cid "unknown/go-cid"
 	ds "unknown/go-datastore"
 	dshelp "unknown/go-ipfs-ds-help"
 	pstore "unknown/go-libp2p-peerstore"

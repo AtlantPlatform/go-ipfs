@@ -10,9 +10,9 @@ import (
 	"io"
 
 	exchange "bitbucket.org/atlantproject/go-ipfs/exchange"
+	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
 	"bitbucket.org/atlantproject/go-ipfs/thirdparty/verifcid"
 	blocks "unknown/go-block-format"
-	cid "unknown/go-cid"
 	blockstore "unknown/go-ipfs-blockstore"
 	logging "unknown/go-log"
 )

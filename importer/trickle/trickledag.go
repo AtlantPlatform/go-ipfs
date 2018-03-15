@@ -20,10 +20,10 @@ import (
 	"errors"
 	"fmt"
 
+	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
 	h "bitbucket.org/atlantproject/go-ipfs/importer/helpers"
 	dag "bitbucket.org/atlantproject/go-ipfs/merkledag"
 	ft "bitbucket.org/atlantproject/go-ipfs/unixfs"
-	cid "unknown/go-cid"
 	ipld "unknown/go-ipld-format"
 )
 

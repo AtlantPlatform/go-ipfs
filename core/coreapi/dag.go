@@ -10,7 +10,7 @@ import (
 	coreiface "bitbucket.org/atlantproject/go-ipfs/core/coreapi/interface"
 	caopts "bitbucket.org/atlantproject/go-ipfs/core/coreapi/interface/options"
 	coredag "bitbucket.org/atlantproject/go-ipfs/core/coredag"
-	cid "unknown/go-cid"
+	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
 )
 
 type DagAPI struct {

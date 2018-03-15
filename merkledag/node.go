@@ -5,7 +5,7 @@ import (
 	"encoding/json"
 	"fmt"
 
-	cid "unknown/go-cid"
+	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
 	ipld "unknown/go-ipld-format"
 	mh "unknown/go-multihash"
 )

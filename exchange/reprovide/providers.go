@@ -3,9 +3,9 @@ package reprovide
 import (
 	"context"
 
+	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
 	merkledag "bitbucket.org/atlantproject/go-ipfs/merkledag"
 	pin "bitbucket.org/atlantproject/go-ipfs/pin"
-	cid "unknown/go-cid"
 	blocks "unknown/go-ipfs-blockstore"
 	ipld "unknown/go-ipld-format"
 )

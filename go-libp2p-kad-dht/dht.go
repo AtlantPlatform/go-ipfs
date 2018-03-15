@@ -10,14 +10,14 @@ import (
 	"sync"
 	"time"
 
-	pb "unknown/go-libp2p-kad-dht/pb"
-	providers "unknown/go-libp2p-kad-dht/providers"
+	pb "bitbucket.org/atlantproject/go-ipfs/go-libp2p-kad-dht/pb"
+	providers "bitbucket.org/atlantproject/go-ipfs/go-libp2p-kad-dht/providers"
 	routing "unknown/go-libp2p-routing"
 
+	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
 	ci "bitbucket.org/atlantproject/go-ipfs/go-libp2p-crypto"
 	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
 	base32 "unknown/base32"
-	cid "unknown/go-cid"
 	ds "unknown/go-datastore"
 	host "unknown/go-libp2p-host"
 	kb "unknown/go-libp2p-kbucket"

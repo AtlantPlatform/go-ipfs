@@ -27,10 +27,10 @@ import (
 	"math/big"
 	"os"
 
+	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
 	dag "bitbucket.org/atlantproject/go-ipfs/merkledag"
 	format "bitbucket.org/atlantproject/go-ipfs/unixfs"
 	upb "bitbucket.org/atlantproject/go-ipfs/unixfs/pb"
-	cid "unknown/go-cid"
 	ipld "unknown/go-ipld-format"
 	proto "unknown/gogo-protobuf/proto"
 	"unknown/murmur3"

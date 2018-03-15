@@ -6,8 +6,8 @@ import (
 	"sort"
 	"sync"
 
+	bhost "bitbucket.org/atlantproject/go-ipfs/go-libp2p/p2p/host/basic"
 	host "unknown/go-libp2p-host"
-	bhost "unknown/go-libp2p/p2p/host/basic"
 
 	ic "bitbucket.org/atlantproject/go-ipfs/go-libp2p-crypto"
 	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"

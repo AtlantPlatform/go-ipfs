@@ -3,7 +3,7 @@ package verifcid
 import (
 	"fmt"
 
-	cid "unknown/go-cid"
+	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
 	mh "unknown/go-multihash"
 )
 

@@ -10,8 +10,8 @@ import (
 	cmds "bitbucket.org/atlantproject/go-ipfs/commands"
 	"bitbucket.org/atlantproject/go-ipfs/core"
 	e "bitbucket.org/atlantproject/go-ipfs/core/commands/e"
+	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
 	path "bitbucket.org/atlantproject/go-ipfs/path"
-	cid "unknown/go-cid"
 	"unknown/go-ipfs-cmdkit"
 	ipld "unknown/go-ipld-format"
 )

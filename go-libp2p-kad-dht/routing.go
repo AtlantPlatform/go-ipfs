@@ -8,10 +8,10 @@ import (
 	"sync"
 	"time"
 
+	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
+	pb "bitbucket.org/atlantproject/go-ipfs/go-libp2p-kad-dht/pb"
 	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
 	pset "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer/peerset"
-	cid "unknown/go-cid"
-	pb "unknown/go-libp2p-kad-dht/pb"
 	kb "unknown/go-libp2p-kbucket"
 	inet "unknown/go-libp2p-net"
 	pstore "unknown/go-libp2p-peerstore"

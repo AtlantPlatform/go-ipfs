@@ -3,7 +3,7 @@ package bitswap
 import (
 	"sort"
 
-	cid "unknown/go-cid"
+	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
 )
 
 type Stat struct {

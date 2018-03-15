@@ -3,7 +3,7 @@ package merkledag
 import (
 	"context"
 
-	cid "unknown/go-cid"
+	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
 	ipld "unknown/go-ipld-format"
 )
 

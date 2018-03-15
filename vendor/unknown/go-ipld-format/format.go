@@ -6,7 +6,7 @@ import (
 
 	blocks "unknown/go-block-format"
 
-	cid "unknown/go-cid"
+	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
 )
 
 type Resolver interface {

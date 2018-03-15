@@ -5,10 +5,10 @@ import (
 	"strings"
 	"time"
 
+	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
 	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
 	pb "bitbucket.org/atlantproject/go-ipfs/namesys/pb"
 	path "bitbucket.org/atlantproject/go-ipfs/path"
-	cid "unknown/go-cid"
 	u "unknown/go-ipfs-util"
 	routing "unknown/go-libp2p-routing"
 	logging "unknown/go-log"

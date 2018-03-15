@@ -8,11 +8,11 @@ import (
 	"sync"
 	"time"
 
+	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
 	ci "bitbucket.org/atlantproject/go-ipfs/go-libp2p-crypto"
 	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
 	pb "bitbucket.org/atlantproject/go-ipfs/namesys/pb"
 	path "bitbucket.org/atlantproject/go-ipfs/path"
-	cid "unknown/go-cid"
 	ds "unknown/go-datastore"
 	dssync "unknown/go-datastore/sync"
 	dshelp "unknown/go-ipfs-ds-help"

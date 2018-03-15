@@ -6,8 +6,8 @@ import (
 
 	coreiface "bitbucket.org/atlantproject/go-ipfs/core/coreapi/interface"
 	coreunix "bitbucket.org/atlantproject/go-ipfs/core/coreunix"
+	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
 	uio "bitbucket.org/atlantproject/go-ipfs/unixfs/io"
-	cid "unknown/go-cid"
 	ipld "unknown/go-ipld-format"
 )
 

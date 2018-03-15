@@ -5,8 +5,8 @@ import (
 	"io/ioutil"
 	"math"
 
+	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
 	"bitbucket.org/atlantproject/go-ipfs/merkledag"
-	cid "unknown/go-cid"
 	ipld "unknown/go-ipld-format"
 	mh "unknown/go-multihash"
 )

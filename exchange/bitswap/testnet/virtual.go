@@ -8,8 +8,8 @@ import (
 
 	bsmsg "bitbucket.org/atlantproject/go-ipfs/exchange/bitswap/message"
 	bsnet "bitbucket.org/atlantproject/go-ipfs/exchange/bitswap/network"
+	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
 	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
-	cid "unknown/go-cid"
 	delay "unknown/go-ipfs-delay"
 	mockrouting "unknown/go-ipfs-routing/mock"
 	ifconnmgr "unknown/go-libp2p-interface-connmgr"

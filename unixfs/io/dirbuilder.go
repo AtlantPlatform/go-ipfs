@@ -5,10 +5,10 @@ import (
 	"fmt"
 	"os"
 
+	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
 	mdag "bitbucket.org/atlantproject/go-ipfs/merkledag"
 	format "bitbucket.org/atlantproject/go-ipfs/unixfs"
 	hamt "bitbucket.org/atlantproject/go-ipfs/unixfs/hamt"
-	cid "unknown/go-cid"
 	ipld "unknown/go-ipld-format"
 )
 

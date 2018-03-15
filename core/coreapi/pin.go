@@ -9,9 +9,9 @@ import (
 	caopts "bitbucket.org/atlantproject/go-ipfs/core/coreapi/interface/options"
 	corerepo "bitbucket.org/atlantproject/go-ipfs/core/corerepo"
 	offline "bitbucket.org/atlantproject/go-ipfs/exchange/offline"
+	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
 	merkledag "bitbucket.org/atlantproject/go-ipfs/merkledag"
 	pin "bitbucket.org/atlantproject/go-ipfs/pin"
-	cid "unknown/go-cid"
 	ipld "unknown/go-ipld-format"
 )
 

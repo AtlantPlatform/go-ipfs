@@ -5,8 +5,8 @@ import (
 	"time"
 
 	wantlist "bitbucket.org/atlantproject/go-ipfs/exchange/bitswap/wantlist"
+	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
 	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
-	cid "unknown/go-cid"
 	pq "unknown/go-ipfs-pq"
 )
 

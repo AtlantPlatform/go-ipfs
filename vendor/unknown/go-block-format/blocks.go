@@ -7,7 +7,7 @@ import (
 	"errors"
 	"fmt"
 
-	cid "unknown/go-cid"
+	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
 	u "unknown/go-ipfs-util"
 	mh "unknown/go-multihash"
 )

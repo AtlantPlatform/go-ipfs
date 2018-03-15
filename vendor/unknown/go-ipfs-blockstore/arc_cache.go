@@ -3,8 +3,8 @@ package blockstore
 import (
 	"context"
 
+	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
 	blocks "unknown/go-block-format"
-	cid "unknown/go-cid"
 	ds "unknown/go-datastore"
 	metrics "unknown/go-metrics-interface"
 	lru "unknown/golang-lru"

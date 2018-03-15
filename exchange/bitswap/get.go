@@ -5,8 +5,8 @@ import (
 	"errors"
 
 	notifications "bitbucket.org/atlantproject/go-ipfs/exchange/bitswap/notifications"
+	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
 	blocks "unknown/go-block-format"
-	cid "unknown/go-cid"
 	blockstore "unknown/go-ipfs-blockstore"
 )
 

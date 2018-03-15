@@ -5,7 +5,7 @@ import (
 	"sort"
 
 	pb "bitbucket.org/atlantproject/go-ipfs/filestore/pb"
-	cid "unknown/go-cid"
+	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
 	ds "unknown/go-datastore"
 	dsq "unknown/go-datastore/query"
 	blockstore "unknown/go-ipfs-blockstore"

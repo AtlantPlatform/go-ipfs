@@ -5,8 +5,8 @@ import (
 	"context"
 	"errors"
 
+	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
 	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
-	cid "unknown/go-cid"
 	ds "unknown/go-datastore"
 	p2phost "unknown/go-libp2p-host"
 	pstore "unknown/go-libp2p-peerstore"

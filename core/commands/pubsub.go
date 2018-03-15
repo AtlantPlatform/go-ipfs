@@ -10,8 +10,8 @@ import (
 	"time"
 
 	core "bitbucket.org/atlantproject/go-ipfs/core"
+	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
 	blocks "unknown/go-block-format"
-	cid "unknown/go-cid"
 	cmdkit "unknown/go-ipfs-cmdkit"
 	cmds "unknown/go-ipfs-cmds"
 	floodsub "unknown/go-libp2p-floodsub"

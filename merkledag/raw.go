@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"unknown/go-block-format"
 
-	cid "unknown/go-cid"
+	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
 	u "unknown/go-ipfs-util"
 	ipld "unknown/go-ipld-format"
 )

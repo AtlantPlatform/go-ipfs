@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"io"
 
+	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
 	"bitbucket.org/atlantproject/go-ipfs/pin"
-	cid "unknown/go-cid"
 	ds "unknown/go-datastore"
 	bs "unknown/go-ipfs-blockstore"
 )

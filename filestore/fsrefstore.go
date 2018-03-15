@@ -8,8 +8,8 @@ import (
 	"path/filepath"
 
 	pb "bitbucket.org/atlantproject/go-ipfs/filestore/pb"
+	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
 	blocks "unknown/go-block-format"
-	cid "unknown/go-cid"
 	ds "unknown/go-datastore"
 	dsns "unknown/go-datastore/namespace"
 	dsq "unknown/go-datastore/query"

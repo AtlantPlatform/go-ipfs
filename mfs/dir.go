@@ -10,11 +10,11 @@ import (
 	"sync"
 	"time"
 
+	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
 	dag "bitbucket.org/atlantproject/go-ipfs/merkledag"
 	ft "bitbucket.org/atlantproject/go-ipfs/unixfs"
 	uio "bitbucket.org/atlantproject/go-ipfs/unixfs/io"
 	ufspb "bitbucket.org/atlantproject/go-ipfs/unixfs/pb"
-	cid "unknown/go-cid"
 	ipld "unknown/go-ipld-format"
 )
 

@@ -8,7 +8,7 @@ import (
 	wantlist "bitbucket.org/atlantproject/go-ipfs/exchange/bitswap/wantlist"
 	blocks "unknown/go-block-format"
 
-	cid "unknown/go-cid"
+	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
 	inet "unknown/go-libp2p-net"
 	ggio "unknown/gogo-protobuf/io"
 	proto "unknown/gogo-protobuf/proto"

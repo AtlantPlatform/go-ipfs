@@ -8,12 +8,12 @@ import (
 	"errors"
 	"io"
 
+	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
 	help "bitbucket.org/atlantproject/go-ipfs/importer/helpers"
 	trickle "bitbucket.org/atlantproject/go-ipfs/importer/trickle"
 	mdag "bitbucket.org/atlantproject/go-ipfs/merkledag"
 	ft "bitbucket.org/atlantproject/go-ipfs/unixfs"
 	uio "bitbucket.org/atlantproject/go-ipfs/unixfs/io"
-	cid "unknown/go-cid"
 	chunker "unknown/go-ipfs-chunker"
 	ipld "unknown/go-ipld-format"
 	proto "unknown/gogo-protobuf/proto"

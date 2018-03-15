@@ -6,10 +6,10 @@ import (
 	"fmt"
 	"io"
 
+	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
 	mdag "bitbucket.org/atlantproject/go-ipfs/merkledag"
 	ft "bitbucket.org/atlantproject/go-ipfs/unixfs"
 	ftpb "bitbucket.org/atlantproject/go-ipfs/unixfs/pb"
-	cid "unknown/go-cid"
 	ipld "unknown/go-ipld-format"
 	proto "unknown/gogo-protobuf/proto"
 )

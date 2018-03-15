@@ -7,10 +7,10 @@ import (
 	"time"
 
 	"bitbucket.org/atlantproject/go-ipfs/core"
+	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
 	mfs "bitbucket.org/atlantproject/go-ipfs/mfs"
 	gc "bitbucket.org/atlantproject/go-ipfs/pin/gc"
 	repo "bitbucket.org/atlantproject/go-ipfs/repo"
-	cid "unknown/go-cid"
 	humanize "unknown/go-humanize"
 	logging "unknown/go-log"
 )
