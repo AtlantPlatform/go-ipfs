@@ -97,7 +97,7 @@ func (dht *IpfsDHT) getPublicKeyFromNode(ctx context.Context, p peer.ID) (ci.Pub
 		return nil, err
 	}
 
-	id, err := peer.IDFromPublicKey(pk)
+	id, err := peer.IDFromEd25519PublicKey(pk)
 	if err != nil {
 		return nil, err
 	}

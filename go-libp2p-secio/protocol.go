@@ -188,7 +188,7 @@ func (s *secureSession) runHandshakeSync() error {
 	}
 
 	// get peer id
-	s.remotePeer, err = peer.IDFromPublicKey(s.remote.permanentPubKey)
+	s.remotePeer, err = peer.IDFromEd25519PublicKey(s.remote.permanentPubKey)
 	if err != nil {
 		return err
 	}

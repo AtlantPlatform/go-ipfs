@@ -216,7 +216,7 @@ func IDFromEd25519PublicKey(pk ic.PubKey) (ID, error) {
 
 // IDFromPrivateKey returns the Peer ID corresponding to sk
 func IDFromPrivateKey(sk ic.PrivKey) (ID, error) {
-	return IDFromPublicKey(sk.GetPublic())
+	return IDFromEd25519PublicKey(sk.GetPublic())
 }
 
 // IDSlice for sorting peers

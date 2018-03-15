@@ -245,13 +245,16 @@ func uvError(read int) error {
 //     <version><codec-type><multihash>
 //
 // CidV0 are also supported. In particular, data buffers starting
-// with length 34 bytes, which starts with bytes [18,32...] are considered
-// binary multihashes.
+// with length 34 bytes, which starts with bytes [18,32...] or [0,34...]
+// are considered binary multihashes.
 //
 // Please use decode when parsing a regular Cid string, as Cast does not
 // expect multibase-encoded data. Cast accepts the output of Cid.Bytes().
 func Cast(data []byte) (*Cid, error) {
-	if len(data) == 34 && data[0] == 18 && data[1] == 32 {
+	switch {
+	case
+		len(data) == 34 && data[0] == 18 && data[1] == 32, // Code = SHA_256, Length = 32
+		len(data) == 36 && data[0] == 0 && data[1] == 34:  // Code = ID, Length = 34 (e.g.: Ed25519 peer ID)
 		h, err := mh.Cast(data)
 		if err != nil {
 			return nil, err

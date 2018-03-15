@@ -272,7 +272,7 @@ func (ids *IDService) consumeReceivedPubKey(c inet.Conn, kb []byte) {
 	}
 
 	// verify key matches peer.ID
-	np, err := peer.IDFromPublicKey(newKey)
+	np, err := peer.IDFromEd25519PublicKey(newKey)
 	if err != nil {
 		log.Debugf("%s cannot get peer.ID from key of remote peer: %s, %s", lp, rp, err)
 		return
@@ -316,7 +316,7 @@ func (ids *IDService) consumeReceivedPubKey(c inet.Conn, kb []byte) {
 	log.Errorf("%s identify got a different key for: %s", lp, rp)
 
 	// okay... does ours NOT match the remote peer.ID?
-	cp, err := peer.IDFromPublicKey(currKey)
+	cp, err := peer.IDFromEd25519PublicKey(currKey)
 	if err != nil {
 		log.Errorf("%s cannot get peer.ID from local key of remote peer: %s, %s", lp, rp, err)
 		return
