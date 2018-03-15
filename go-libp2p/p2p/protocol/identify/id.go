@@ -29,7 +29,7 @@ const ID = "/ipfs/id/1.0.0"
 
 // LibP2PVersion holds the current protocol version for a client running this code
 // TODO(jbenet): fix the versioning mess.
-const LibP2PVersion = "ipfs/0.1.0"
+const LibP2PVersion = "atlant/0.1.0"
 
 var ClientVersion = "go-libp2p/3.3.4"
 
