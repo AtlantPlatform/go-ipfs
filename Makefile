@@ -18,6 +18,7 @@ extract:
 	--unvendor go-libp2p-kad-dht \
 	--unvendor go-libp2p-secio \
 	--unvendor go-libp2p \
+	--unvendor go-libp2p-floodsub \
 	--rename badger:github.com/dgraph-io/badger
 	
 extract-apply:
@@ -32,6 +33,7 @@ extract-apply:
 	--unvendor go-libp2p-kad-dht \
 	--unvendor go-libp2p-secio \
 	--unvendor go-libp2p \
+	--unvendor go-libp2p-floodsub \
 	--rename badger:github.com/dgraph-io/badger
 
 patch-apply:

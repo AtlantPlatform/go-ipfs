@@ -5,7 +5,7 @@ import (
 	"context"
 	"io"
 
-	pb "unknown/go-libp2p-floodsub/pb"
+	pb "bitbucket.org/atlantproject/go-ipfs/go-libp2p-floodsub/pb"
 
 	inet "unknown/go-libp2p-net"
 	ggio "unknown/gogo-protobuf/io"

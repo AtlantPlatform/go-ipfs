@@ -10,6 +10,7 @@ import (
 
 	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
 	ci "bitbucket.org/atlantproject/go-ipfs/go-libp2p-crypto"
+	floodsub "bitbucket.org/atlantproject/go-ipfs/go-libp2p-floodsub"
 	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
 	pb "bitbucket.org/atlantproject/go-ipfs/namesys/pb"
 	path "bitbucket.org/atlantproject/go-ipfs/path"
@@ -17,7 +18,6 @@ import (
 	dssync "unknown/go-datastore/sync"
 	dshelp "unknown/go-ipfs-ds-help"
 	u "unknown/go-ipfs-util"
-	floodsub "unknown/go-libp2p-floodsub"
 	p2phost "unknown/go-libp2p-host"
 	pstore "unknown/go-libp2p-peerstore"
 	record "unknown/go-libp2p-record"

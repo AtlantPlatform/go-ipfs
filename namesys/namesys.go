@@ -8,11 +8,11 @@ import (
 	"time"
 
 	ci "bitbucket.org/atlantproject/go-ipfs/go-libp2p-crypto"
+	floodsub "bitbucket.org/atlantproject/go-ipfs/go-libp2p-floodsub"
 	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
 	path "bitbucket.org/atlantproject/go-ipfs/path"
 	ds "unknown/go-datastore"
 	isd "unknown/go-is-domain"
-	floodsub "unknown/go-libp2p-floodsub"
 	p2phost "unknown/go-libp2p-host"
 	routing "unknown/go-libp2p-routing"
 	mh "unknown/go-multihash"

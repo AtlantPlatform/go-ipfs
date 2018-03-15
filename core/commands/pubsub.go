@@ -11,10 +11,10 @@ import (
 
 	core "bitbucket.org/atlantproject/go-ipfs/core"
 	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
+	floodsub "bitbucket.org/atlantproject/go-ipfs/go-libp2p-floodsub"
 	blocks "unknown/go-block-format"
 	cmdkit "unknown/go-ipfs-cmdkit"
 	cmds "unknown/go-ipfs-cmds"
-	floodsub "unknown/go-libp2p-floodsub"
 	pstore "unknown/go-libp2p-peerstore"
 )
 
