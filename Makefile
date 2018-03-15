@@ -13,7 +13,11 @@ extract:
 	--unvendor go-libp2p-interface-pnet \
 	--unvendor go-ds-badger \
 	--unvendor go-libp2p-peer \
-	--unvendor go-libp2p-crypto
+	--unvendor go-libp2p-crypto \
+	--unvendor go-cid \
+	--unvendor go-libp2p-kad-dht \
+	--unvendor go-libp2p-secio \
+	--unvendor go-libp2p
 	
 extract-apply:
 	surgical-extraction --pkg github.com/ipfs/go-ipfs/cmd/ipfswatch --out bitbucket.org/atlantproject/go-ipfs \
@@ -22,7 +26,11 @@ extract-apply:
 	--unvendor go-libp2p-interface-pnet \
 	--unvendor go-ds-badger \
 	--unvendor go-libp2p-peer \
-	--unvendor go-libp2p-crypto
+	--unvendor go-libp2p-crypto \
+	--unvendor go-cid \
+	--unvendor go-libp2p-kad-dht \
+	--unvendor go-libp2p-secio \
+	--unvendor go-libp2p
 
 patch-apply:
 	git apply patches/ed25519.patch
