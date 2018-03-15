@@ -38,29 +38,22 @@ func init() {
 
 func main() {
 	app.Command("extract", "Copies sources and rewrites import paths.", extractCmd)
-	// app.Command("relocate", "Renames a vendored dependency and rewrites the paths.", relocateCmd)
-	// app.Command("unvendor", "Moves a package from vendored prefix into the project root, rewrites the paths.", unvendorCmd)
 	if err := app.Run(os.Args); err != nil {
 		log.Fatalln("[ERR]", err)
 	}
-}
-
-type SourceMap struct {
-	OriginSource    SourceFile  `json:"Origin"`
-	VendoredSource  *SourceFile `json:"Vendored"`
-	RelocatedSource *SourceFile `json:"Relocated"`
 }
 
 const (
 	SourcesOrigin    string = "Origin"
 	SourcesVendored  string = "Vendored"
 	SourcesRelocated string = "Relocated"
+	SourcesRenamed   string = "Renamed"
 )
 
 type SourceFile struct {
 	ID       string `json:"ID"`
-	FullPath string `json:"Path"`
-	Relative string `json:"Relative"`
+	FullPath string `json:"Path,omitempty"`
+	Relative string `json:"Relative,omitempty"`
 	Package  string `json:"PackageName"`
 }
 
@@ -107,6 +100,26 @@ func (s SourceFile) RelocateAuto(project string) SourceFile {
 		FullPath: "", // must be composed by writer
 		Relative: relativePath,
 		Package:  filepath.Dir(relativePath),
+	}
+}
+
+func (s SourceFile) Rename(pattern string) SourceFile {
+	if !s.IsGx() {
+		// rename supported for Gx only
+		return s
+	}
+	patternParts := strings.Split(pattern, ":")
+	if len(patternParts) < 2 {
+		log.Println("[WARN] invalid rename pattern specified: ", pattern)
+		return s
+	}
+	relativePath := s.Relative
+	parts := strings.Split(relativePath, "/")
+	relativePath = fmt.Sprintf("unknown/%s", strings.Join(parts[3:], "/"))
+	return SourceFile{
+		ID:       s.ID,
+		Relative: relativePath,
+		Package:  patternParts[1],
 	}
 }
 
@@ -185,6 +198,7 @@ func extractCmd(c *cli.Cmd) {
 		closer.Fatalln("[ERR] output project package not specified")
 	}
 	defaultIncludes := []string{"github.com/ipfs/go-ipfs", "gx/ipfs/"}
+	rename := c.StringsOpt("rename", nil, "Rename specific Gx root packages and remove the vendored code (e.g. badger)")
 	unvendor := c.StringsOpt("unvendor", nil, "Unvendor specific Gx root packages (e.g. go-libp2p-pnet)")
 	exclude := c.StringsOpt("E exclude", nil, "Exclude specfic package prefixes.")
 	include := c.StringsOpt("I include", defaultIncludes, "Include specific package prefixes.")
@@ -249,6 +263,7 @@ func extractCmd(c *cli.Cmd) {
 		gxVersions := make(map[string]map[string]struct{})
 		gxPackagesVendored := make(map[string][]SourceFile)
 		gxPackagesRelocated := make(map[string][]SourceFile)
+		gxPackagesRenamed := make(map[string][]SourceFile)
 		gxNonce := make(map[string]int)
 		for pkg, sources := range gxPackages {
 			for _, src := range sources {
@@ -269,10 +284,24 @@ func extractCmd(c *cli.Cmd) {
 						break
 					}
 				}
+				var shouldRename bool
+				var renamePattern string
+				for _, p := range *rename {
+					if strings.HasPrefix(p, pkg+":") {
+						shouldRename = true
+						renamePattern = p
+						break
+					}
+				}
 				if shouldRelocate {
 					src = src.RelocateAuto(*projectOut)
 					src.FullPath = filepath.Join(projectRoot, src.Relative)
 					gxPackagesRelocated[pkg] = append(gxPackagesRelocated[pkg], src)
+					continue
+				} else if shouldRename {
+					src = src.Rename(renamePattern)
+					src.FullPath = filepath.Join(projectRoot, src.Relative)
+					gxPackagesRenamed[pkg] = append(gxPackagesRenamed[pkg], src)
 					continue
 				}
 				src = src.VendorAuto(gxNonce[pkg])
@@ -321,6 +350,7 @@ func extractCmd(c *cli.Cmd) {
 				SourcesOrigin:    sources,
 				SourcesVendored:  gxPackagesVendored[pkg],
 				SourcesRelocated: gxPackagesRelocated[pkg],
+				SourcesRenamed:   gxPackagesRenamed[pkg],
 			}
 		}
 		for pkg, sources := range godepsPackages {
@@ -372,7 +402,12 @@ func extractCmd(c *cli.Cmd) {
 			sources := m[SourcesOrigin]
 			vendoredSources := SourceFiles(m[SourcesVendored]).Map()
 			relocatedSources := SourceFiles(m[SourcesRelocated]).Map()
+			renamedSources := SourceFiles(m[SourcesRenamed]).Map()
 			for _, src := range sources {
+				if toRemove, ok := renamedSources[src.ID]; ok {
+					os.RemoveAll(toRemove.FullPath)
+					continue
+				}
 				srcPath := src.FullPath
 				dstPath := relocatedSources[src.ID].FullPath
 				if len(dstPath) == 0 {
@@ -424,11 +459,15 @@ func (e *ExtractReport) Rewrite(path string) (string, bool) {
 			sources := m[SourcesOrigin]
 			vendoredSources := SourceFiles(e.GxResults[basePkg][SourcesVendored]).Map()
 			relocatedSources := SourceFiles(e.GxResults[basePkg][SourcesRelocated]).Map()
+			renamedSources := SourceFiles(e.GxResults[basePkg][SourcesRenamed]).Map()
 			for _, src := range sources {
 				if src.Package == path {
-					pkg := relocatedSources[src.ID].Package
+					pkg := renamedSources[src.ID].Package
 					if len(pkg) == 0 {
-						pkg = vendoredSources[src.ID].Package
+						pkg = relocatedSources[src.ID].Package
+						if len(pkg) == 0 {
+							pkg = vendoredSources[src.ID].Package
+						}
 					}
 					if len(pkg) == 0 {
 						return path, false
