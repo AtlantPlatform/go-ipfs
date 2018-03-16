@@ -1,0 +1,15 @@
+diff --git a/go-libp2p/p2p/discovery/mdns.go b/go-libp2p/p2p/discovery/mdns.go
+index 2d67b515a..faa19f442 100644
+--- a/go-libp2p/p2p/discovery/mdns.go
++++ b/go-libp2p/p2p/discovery/mdns.go
+@@ -153,6 +153,10 @@ func (m *mdnsService) pollForEntries(ctx context.Context) {
+ 
+ func (m *mdnsService) handleEntry(e *mdns.ServiceEntry) {
+ 	log.Debugf("Handling MDNS entry: %s:%d %s", e.AddrV4, e.Port, e.Info)
++	if len(e.Info) == 0 {
++		// an unrelated entry
++		return
++	}
+ 	mpeer, err := peer.IDB58Decode(e.Info)
+ 	if err != nil {
+ 		log.Warning("Error parsing peer ID from mdns entry: ", err)

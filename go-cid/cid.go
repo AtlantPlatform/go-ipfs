@@ -204,14 +204,17 @@ func Parse(v interface{}) (*Cid, error) {
 // <version><codec-type><multihash>
 //
 // Decode will also detect and parse CidV0 strings. Strings
-// starting with "Qm" are considered CidV0 and treated directly
+// starting with "Qm" and "14V" are considered CidV0 and treated directly
 // as B58-encoded multihashes.
 func Decode(v string) (*Cid, error) {
 	if len(v) < 2 {
 		return nil, ErrCidTooShort
 	}
 
-	if len(v) == 46 && v[:2] == "Qm" {
+	switch {
+	case
+		len(v) == 46 && v[:2] == "Qm",  // SHA_256
+		len(v) == 49 && v[:3] == "14V": // ID (e.g.: Ed25519 peer ID)
 		hash, err := mh.FromB58String(v)
 		if err != nil {
 			return nil, err

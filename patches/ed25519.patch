@@ -24,6 +24,15 @@ index 0b3bbbcb9..55786f4db 100644
  	if err != nil {
  		return false
  	}
+@@ -216,7 +216,7 @@ func IDFromEd25519PublicKey(pk ic.PubKey) (ID, error) {
+ 
+ // IDFromPrivateKey returns the Peer ID corresponding to sk
+ func IDFromPrivateKey(sk ic.PrivKey) (ID, error) {
+-	return IDFromPublicKey(sk.GetPublic())
++	return IDFromEd25519PublicKey(sk.GetPublic())
+ }
+ 
+ // IDSlice for sorting peers
 diff --git a/repo/config/init.go b/repo/config/init.go
 index b42fdcf14..775b6e782 100644
 --- a/repo/config/init.go
@@ -48,19 +57,6 @@ index b42fdcf14..775b6e782 100644
  	if err != nil {
  		return ident, err
  	}
-diff --git a/go-libp2p-peer/peer.go b/go-libp2p-peer/peer.go
-index 55786f4db..27365c2bb 100644
---- a/go-libp2p-peer/peer.go
-+++ b/go-libp2p-peer/peer.go
-@@ -216,7 +216,7 @@ func IDFromEd25519PublicKey(pk ic.PubKey) (ID, error) {
- 
- // IDFromPrivateKey returns the Peer ID corresponding to sk
- func IDFromPrivateKey(sk ic.PrivKey) (ID, error) {
--	return IDFromPublicKey(sk.GetPublic())
-+	return IDFromEd25519PublicKey(sk.GetPublic())
- }
- 
- // IDSlice for sorting peers
 diff --git a/go-cid/cid.go b/go-cid/cid.go
 index d0ce2ce35..bfaf34f80 100644
 --- a/go-cid/cid.go
@@ -83,6 +79,26 @@ index d0ce2ce35..bfaf34f80 100644
 +		len(data) == 34 && data[0] == 18 && data[1] == 32, // Code = SHA_256, Length = 32
 +		len(data) == 36 && data[0] == 0 && data[1] == 34:  // Code = ID, Length = 34 (e.g.: Ed25519 peer ID)
  		h, err := mh.Cast(data)
+ 		if err != nil {
+ 			return nil, err
+@@ -204,14 +204,17 @@ func Parse(v interface{}) (*Cid, error) {
+ // <version><codec-type><multihash>
+ //
+ // Decode will also detect and parse CidV0 strings. Strings
+-// starting with "Qm" are considered CidV0 and treated directly
++// starting with "Qm" and "14V" are considered CidV0 and treated directly
+ // as B58-encoded multihashes.
+ func Decode(v string) (*Cid, error) {
+ 	if len(v) < 2 {
+ 		return nil, ErrCidTooShort
+ 	}
+ 
+-	if len(v) == 46 && v[:2] == "Qm" {
++	switch {
++	case
++		len(v) == 46 && v[:2] == "Qm",  // SHA_256
++		len(v) == 49 && v[:3] == "14V": // ID (e.g.: Ed25519 peer ID)
+ 		hash, err := mh.FromB58String(v)
  		if err != nil {
  			return nil, err
 diff --git a/go-libp2p-kad-dht/records.go b/go-libp2p-kad-dht/records.go

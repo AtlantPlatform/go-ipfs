@@ -43,6 +43,7 @@ extract-apply:
 patch-apply:
 	git apply patches/ed25519.patch
 	git apply patches/libp2p-version.patch
+	git apply patches/mdns.patch
 
 test:
 	go install bitbucket.org/atlantproject/go-ipfs/cmd/ipfswatch
