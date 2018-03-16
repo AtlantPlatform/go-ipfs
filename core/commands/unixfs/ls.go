@@ -7,7 +7,7 @@ import (
 	"sort"
 	"text/tabwriter"
 
-	cmdkit "unknown/go-ipfs-cmdkit"
+	cmdkit "bitbucket.org/atlantproject/go-ipfs/go-ipfs-cmdkit"
 
 	cmds "bitbucket.org/atlantproject/go-ipfs/commands"
 	core "bitbucket.org/atlantproject/go-ipfs/core"

@@ -12,7 +12,7 @@ import (
 	e "bitbucket.org/atlantproject/go-ipfs/core/commands/e"
 	blocks "bitbucket.org/atlantproject/go-ipfs/go-block-format"
 	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
-	"unknown/go-ipfs-cmdkit"
+	"bitbucket.org/atlantproject/go-ipfs/go-ipfs-cmdkit"
 	"unknown/go-ipfs-cmds"
 	mh "unknown/go-multihash"
 )

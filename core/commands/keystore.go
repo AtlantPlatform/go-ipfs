@@ -11,9 +11,9 @@ import (
 
 	cmds "bitbucket.org/atlantproject/go-ipfs/commands"
 	e "bitbucket.org/atlantproject/go-ipfs/core/commands/e"
+	"bitbucket.org/atlantproject/go-ipfs/go-ipfs-cmdkit"
 	ci "bitbucket.org/atlantproject/go-ipfs/go-libp2p-crypto"
 	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
-	"unknown/go-ipfs-cmdkit"
 )
 
 var KeyCmd = &cmds.Command{

@@ -1,7 +1,7 @@
 package cmds
 
 import (
-	"unknown/go-ipfs-cmdkit"
+	"bitbucket.org/atlantproject/go-ipfs/go-ipfs-cmdkit"
 )
 
 // Flag names

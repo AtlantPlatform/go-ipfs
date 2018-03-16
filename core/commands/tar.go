@@ -8,10 +8,10 @@ import (
 	core "bitbucket.org/atlantproject/go-ipfs/core"
 	e "bitbucket.org/atlantproject/go-ipfs/core/commands/e"
 	"bitbucket.org/atlantproject/go-ipfs/core/coreunix"
+	"bitbucket.org/atlantproject/go-ipfs/go-ipfs-cmdkit"
 	dag "bitbucket.org/atlantproject/go-ipfs/merkledag"
 	path "bitbucket.org/atlantproject/go-ipfs/path"
 	tar "bitbucket.org/atlantproject/go-ipfs/tar"
-	"unknown/go-ipfs-cmdkit"
 )
 
 var TarCmd = &cmds.Command{

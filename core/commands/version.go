@@ -8,9 +8,9 @@ import (
 
 	cmds "bitbucket.org/atlantproject/go-ipfs/commands"
 	e "bitbucket.org/atlantproject/go-ipfs/core/commands/e"
+	"bitbucket.org/atlantproject/go-ipfs/go-ipfs-cmdkit"
 	config "bitbucket.org/atlantproject/go-ipfs/repo/config"
 	fsrepo "bitbucket.org/atlantproject/go-ipfs/repo/fsrepo"
-	"unknown/go-ipfs-cmdkit"
 )
 
 type VersionOutput struct {

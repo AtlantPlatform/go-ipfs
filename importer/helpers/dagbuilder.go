@@ -6,10 +6,10 @@ import (
 	"os"
 
 	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
+	files "bitbucket.org/atlantproject/go-ipfs/go-ipfs-cmdkit/files"
 	dag "bitbucket.org/atlantproject/go-ipfs/merkledag"
 	ft "bitbucket.org/atlantproject/go-ipfs/unixfs"
 	chunker "unknown/go-ipfs-chunker"
-	files "unknown/go-ipfs-cmdkit/files"
 	ipld "unknown/go-ipld-format"
 )
 

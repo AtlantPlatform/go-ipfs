@@ -7,7 +7,7 @@ import (
 	"reflect"
 	"sync"
 
-	"unknown/go-ipfs-cmdkit"
+	"bitbucket.org/atlantproject/go-ipfs/go-ipfs-cmdkit"
 	"unknown/go-ipfs-cmds"
 
 	oldcmds "bitbucket.org/atlantproject/go-ipfs/commands"

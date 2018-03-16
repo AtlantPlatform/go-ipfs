@@ -7,9 +7,9 @@ import (
 	cmds "bitbucket.org/atlantproject/go-ipfs/commands"
 	"bitbucket.org/atlantproject/go-ipfs/core"
 	e "bitbucket.org/atlantproject/go-ipfs/core/commands/e"
+	"bitbucket.org/atlantproject/go-ipfs/go-ipfs-cmdkit"
 	ns "bitbucket.org/atlantproject/go-ipfs/namesys"
 	path "bitbucket.org/atlantproject/go-ipfs/path"
-	"unknown/go-ipfs-cmdkit"
 )
 
 type ResolvedPath struct {

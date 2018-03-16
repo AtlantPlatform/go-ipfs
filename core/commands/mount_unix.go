@@ -11,8 +11,8 @@ import (
 	cmds "bitbucket.org/atlantproject/go-ipfs/commands"
 	e "bitbucket.org/atlantproject/go-ipfs/core/commands/e"
 	nodeMount "bitbucket.org/atlantproject/go-ipfs/fuse/node"
+	"bitbucket.org/atlantproject/go-ipfs/go-ipfs-cmdkit"
 	config "bitbucket.org/atlantproject/go-ipfs/repo/config"
-	"unknown/go-ipfs-cmdkit"
 )
 
 var MountCmd = &cmds.Command{

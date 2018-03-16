@@ -14,11 +14,11 @@ import (
 	e "bitbucket.org/atlantproject/go-ipfs/core/commands/e"
 	corerepo "bitbucket.org/atlantproject/go-ipfs/core/corerepo"
 	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
+	cmdkit "bitbucket.org/atlantproject/go-ipfs/go-ipfs-cmdkit"
 	config "bitbucket.org/atlantproject/go-ipfs/repo/config"
 	fsrepo "bitbucket.org/atlantproject/go-ipfs/repo/fsrepo"
 	lockfile "bitbucket.org/atlantproject/go-ipfs/repo/fsrepo/lock"
 	bstore "unknown/go-ipfs-blockstore"
-	cmdkit "unknown/go-ipfs-cmdkit"
 	cmds "unknown/go-ipfs-cmds"
 )
 

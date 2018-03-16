@@ -3,7 +3,7 @@ package unixfs
 import (
 	cmds "bitbucket.org/atlantproject/go-ipfs/commands"
 	e "bitbucket.org/atlantproject/go-ipfs/core/commands/e"
-	"unknown/go-ipfs-cmdkit"
+	"bitbucket.org/atlantproject/go-ipfs/go-ipfs-cmdkit"
 )
 
 var UnixFSCmd = &cmds.Command{

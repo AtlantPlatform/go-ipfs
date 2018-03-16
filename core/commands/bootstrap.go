@@ -8,10 +8,10 @@ import (
 
 	cmds "bitbucket.org/atlantproject/go-ipfs/commands"
 	e "bitbucket.org/atlantproject/go-ipfs/core/commands/e"
+	"bitbucket.org/atlantproject/go-ipfs/go-ipfs-cmdkit"
 	repo "bitbucket.org/atlantproject/go-ipfs/repo"
 	config "bitbucket.org/atlantproject/go-ipfs/repo/config"
 	"bitbucket.org/atlantproject/go-ipfs/repo/fsrepo"
-	"unknown/go-ipfs-cmdkit"
 )
 
 type BootstrapOutput struct {

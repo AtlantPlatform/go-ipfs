@@ -12,7 +12,7 @@ import (
 	"strings"
 
 	e "bitbucket.org/atlantproject/go-ipfs/core/commands/e"
-	"unknown/go-ipfs-cmdkit"
+	"bitbucket.org/atlantproject/go-ipfs/go-ipfs-cmdkit"
 	cmds "unknown/go-ipfs-cmds"
 )
 

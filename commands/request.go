@@ -16,8 +16,8 @@ import (
 	"bitbucket.org/atlantproject/go-ipfs/repo/config"
 	u "unknown/go-ipfs-util"
 
-	"unknown/go-ipfs-cmdkit"
-	"unknown/go-ipfs-cmdkit/files"
+	"bitbucket.org/atlantproject/go-ipfs/go-ipfs-cmdkit"
+	"bitbucket.org/atlantproject/go-ipfs/go-ipfs-cmdkit/files"
 	"unknown/go-ipfs-cmds"
 )
 

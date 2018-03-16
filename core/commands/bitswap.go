@@ -11,9 +11,9 @@ import (
 	bitswap "bitbucket.org/atlantproject/go-ipfs/exchange/bitswap"
 	decision "bitbucket.org/atlantproject/go-ipfs/exchange/bitswap/decision"
 	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
+	cmdkit "bitbucket.org/atlantproject/go-ipfs/go-ipfs-cmdkit"
 	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
 	"unknown/go-humanize"
-	cmdkit "unknown/go-ipfs-cmdkit"
 	cmds "unknown/go-ipfs-cmds"
 )
 

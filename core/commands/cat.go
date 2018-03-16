@@ -8,7 +8,7 @@ import (
 
 	core "bitbucket.org/atlantproject/go-ipfs/core"
 	coreunix "bitbucket.org/atlantproject/go-ipfs/core/coreunix"
-	"unknown/go-ipfs-cmdkit"
+	"bitbucket.org/atlantproject/go-ipfs/go-ipfs-cmdkit"
 	cmds "unknown/go-ipfs-cmds"
 )
 

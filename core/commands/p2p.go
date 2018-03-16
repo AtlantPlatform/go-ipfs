@@ -10,7 +10,7 @@ import (
 
 	cmds "bitbucket.org/atlantproject/go-ipfs/commands"
 	core "bitbucket.org/atlantproject/go-ipfs/core"
-	"unknown/go-ipfs-cmdkit"
+	"bitbucket.org/atlantproject/go-ipfs/go-ipfs-cmdkit"
 	ma "unknown/go-multiaddr"
 )
 

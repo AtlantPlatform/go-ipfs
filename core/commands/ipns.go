@@ -7,8 +7,8 @@ import (
 
 	cmds "bitbucket.org/atlantproject/go-ipfs/commands"
 	e "bitbucket.org/atlantproject/go-ipfs/core/commands/e"
+	"bitbucket.org/atlantproject/go-ipfs/go-ipfs-cmdkit"
 	namesys "bitbucket.org/atlantproject/go-ipfs/namesys"
-	"unknown/go-ipfs-cmdkit"
 	offline "unknown/go-ipfs-routing/offline"
 )
 

@@ -6,8 +6,8 @@ import (
 	"runtime"
 
 	cmds "bitbucket.org/atlantproject/go-ipfs/commands"
+	"bitbucket.org/atlantproject/go-ipfs/go-ipfs-cmdkit"
 	config "bitbucket.org/atlantproject/go-ipfs/repo/config"
-	"unknown/go-ipfs-cmdkit"
 	manet "unknown/go-multiaddr-net"
 	sysi "unknown/go-sysinfo"
 )

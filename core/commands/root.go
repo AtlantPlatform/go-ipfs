@@ -10,7 +10,7 @@ import (
 	e "bitbucket.org/atlantproject/go-ipfs/core/commands/e"
 	ocmd "bitbucket.org/atlantproject/go-ipfs/core/commands/object"
 	unixfs "bitbucket.org/atlantproject/go-ipfs/core/commands/unixfs"
-	"unknown/go-ipfs-cmdkit"
+	"bitbucket.org/atlantproject/go-ipfs/go-ipfs-cmdkit"
 	"unknown/go-ipfs-cmds"
 	logging "unknown/go-log"
 )

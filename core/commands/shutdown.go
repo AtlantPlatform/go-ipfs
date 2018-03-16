@@ -3,7 +3,7 @@ package commands
 import (
 	"fmt"
 
-	"unknown/go-ipfs-cmdkit"
+	"bitbucket.org/atlantproject/go-ipfs/go-ipfs-cmdkit"
 
 	cmds "bitbucket.org/atlantproject/go-ipfs/commands"
 )

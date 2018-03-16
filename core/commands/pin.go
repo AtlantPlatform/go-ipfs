@@ -14,13 +14,13 @@ import (
 	corerepo "bitbucket.org/atlantproject/go-ipfs/core/corerepo"
 	offline "bitbucket.org/atlantproject/go-ipfs/exchange/offline"
 	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
+	"bitbucket.org/atlantproject/go-ipfs/go-ipfs-cmdkit"
 	dag "bitbucket.org/atlantproject/go-ipfs/merkledag"
 	path "bitbucket.org/atlantproject/go-ipfs/path"
 	resolver "bitbucket.org/atlantproject/go-ipfs/path/resolver"
 	pin "bitbucket.org/atlantproject/go-ipfs/pin"
 	"bitbucket.org/atlantproject/go-ipfs/thirdparty/verifcid"
 	uio "bitbucket.org/atlantproject/go-ipfs/unixfs/io"
-	"unknown/go-ipfs-cmdkit"
 	u "unknown/go-ipfs-util"
 )
 

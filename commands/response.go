@@ -9,7 +9,7 @@ import (
 	"os"
 	"strings"
 
-	cmdkit "unknown/go-ipfs-cmdkit"
+	cmdkit "bitbucket.org/atlantproject/go-ipfs/go-ipfs-cmdkit"
 	cmds "unknown/go-ipfs-cmds"
 )
 

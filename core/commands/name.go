@@ -2,7 +2,7 @@ package commands
 
 import (
 	cmds "bitbucket.org/atlantproject/go-ipfs/commands"
-	"unknown/go-ipfs-cmdkit"
+	"bitbucket.org/atlantproject/go-ipfs/go-ipfs-cmdkit"
 )
 
 type IpnsEntry struct {

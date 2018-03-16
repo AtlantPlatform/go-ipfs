@@ -8,11 +8,11 @@ import (
 	cmds "bitbucket.org/atlantproject/go-ipfs/commands"
 	core "bitbucket.org/atlantproject/go-ipfs/core"
 	e "bitbucket.org/atlantproject/go-ipfs/core/commands/e"
+	cmdkit "bitbucket.org/atlantproject/go-ipfs/go-ipfs-cmdkit"
 	dag "bitbucket.org/atlantproject/go-ipfs/merkledag"
 	dagutils "bitbucket.org/atlantproject/go-ipfs/merkledag/utils"
 	path "bitbucket.org/atlantproject/go-ipfs/path"
 	ft "bitbucket.org/atlantproject/go-ipfs/unixfs"
-	cmdkit "unknown/go-ipfs-cmdkit"
 	logging "unknown/go-log"
 )
 

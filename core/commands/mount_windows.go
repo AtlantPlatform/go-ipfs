@@ -4,7 +4,7 @@ import (
 	"errors"
 
 	cmds "bitbucket.org/atlantproject/go-ipfs/commands"
-	cmdkit "unknown/go-ipfs-cmdkit"
+	cmdkit "bitbucket.org/atlantproject/go-ipfs/go-ipfs-cmdkit"
 )
 
 var MountCmd = &cmds.Command{

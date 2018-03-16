@@ -6,8 +6,8 @@ import (
 	"fmt"
 	"reflect"
 
-	"unknown/go-ipfs-cmdkit"
-	"unknown/go-ipfs-cmdkit/files"
+	"bitbucket.org/atlantproject/go-ipfs/go-ipfs-cmdkit"
+	"bitbucket.org/atlantproject/go-ipfs/go-ipfs-cmdkit/files"
 )
 
 // Request represents a call to a command from a consumer

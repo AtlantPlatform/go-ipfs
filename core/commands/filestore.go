@@ -12,7 +12,7 @@ import (
 	e "bitbucket.org/atlantproject/go-ipfs/core/commands/e"
 	"bitbucket.org/atlantproject/go-ipfs/filestore"
 	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
-	"unknown/go-ipfs-cmdkit"
+	"bitbucket.org/atlantproject/go-ipfs/go-ipfs-cmdkit"
 	cmds "unknown/go-ipfs-cmds"
 )
 

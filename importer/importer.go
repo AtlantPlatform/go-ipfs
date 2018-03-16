@@ -6,8 +6,8 @@ import (
 	"fmt"
 	"os"
 
+	"bitbucket.org/atlantproject/go-ipfs/go-ipfs-cmdkit/files"
 	chunker "unknown/go-ipfs-chunker"
-	"unknown/go-ipfs-cmdkit/files"
 	ipld "unknown/go-ipld-format"
 
 	bal "bitbucket.org/atlantproject/go-ipfs/importer/balanced"
