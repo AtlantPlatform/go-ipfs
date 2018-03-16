@@ -7,8 +7,8 @@ import (
 	"sync"
 
 	bserv "bitbucket.org/atlantproject/go-ipfs/blockservice"
+	blocks "bitbucket.org/atlantproject/go-ipfs/go-block-format"
 	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
-	blocks "unknown/go-block-format"
 	ipldcbor "unknown/go-ipld-cbor"
 	ipld "unknown/go-ipld-format"
 )

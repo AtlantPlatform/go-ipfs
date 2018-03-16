@@ -5,9 +5,9 @@ import (
 	"sync/atomic"
 	"time"
 
+	blocks "bitbucket.org/atlantproject/go-ipfs/go-block-format"
 	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
 	bloom "unknown/bbloom"
-	blocks "unknown/go-block-format"
 	metrics "unknown/go-metrics-interface"
 )
 

@@ -6,7 +6,7 @@ import (
 
 	pb "bitbucket.org/atlantproject/go-ipfs/exchange/bitswap/message/pb"
 	wantlist "bitbucket.org/atlantproject/go-ipfs/exchange/bitswap/wantlist"
-	blocks "unknown/go-block-format"
+	blocks "bitbucket.org/atlantproject/go-ipfs/go-block-format"
 
 	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
 	inet "unknown/go-libp2p-net"

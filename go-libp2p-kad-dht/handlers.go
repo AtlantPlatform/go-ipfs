@@ -9,11 +9,11 @@ import (
 	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
 	pb "bitbucket.org/atlantproject/go-ipfs/go-libp2p-kad-dht/pb"
 	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
+	pstore "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peerstore"
 	base32 "unknown/base32"
 	ds "unknown/go-datastore"
 	u "unknown/go-ipfs-util"
 	lgbl "unknown/go-libp2p-loggables"
-	pstore "unknown/go-libp2p-peerstore"
 	recpb "unknown/go-libp2p-record/pb"
 	proto "unknown/gogo-protobuf/proto"
 )

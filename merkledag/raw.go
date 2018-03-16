@@ -1,8 +1,8 @@
 package merkledag
 
 import (
+	"bitbucket.org/atlantproject/go-ipfs/go-block-format"
 	"fmt"
-	"unknown/go-block-format"
 
 	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
 	u "unknown/go-ipfs-util"

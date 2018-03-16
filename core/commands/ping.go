@@ -12,9 +12,9 @@ import (
 	cmds "bitbucket.org/atlantproject/go-ipfs/commands"
 	core "bitbucket.org/atlantproject/go-ipfs/core"
 	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
+	pstore "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peerstore"
 	"unknown/go-ipfs-cmdkit"
 	u "unknown/go-ipfs-util"
-	pstore "unknown/go-libp2p-peerstore"
 	ma "unknown/go-multiaddr"
 )
 

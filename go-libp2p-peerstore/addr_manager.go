@@ -8,7 +8,7 @@ import (
 	"time"
 
 	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
-	addr "unknown/go-libp2p-peerstore/addr"
+	addr "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peerstore/addr"
 	ma "unknown/go-multiaddr"
 )
 

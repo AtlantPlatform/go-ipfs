@@ -14,9 +14,9 @@ import (
 	lgbl "unknown/go-libp2p-loggables"
 
 	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
+	pstore "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peerstore"
 	host "unknown/go-libp2p-host"
 	inet "unknown/go-libp2p-net"
-	pstore "unknown/go-libp2p-peerstore"
 	goprocess "unknown/goprocess"
 	procctx "unknown/goprocess/context"
 	periodicproc "unknown/goprocess/periodic"

@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"sync"
 
-	blocks "unknown/go-block-format"
+	blocks "bitbucket.org/atlantproject/go-ipfs/go-block-format"
 )
 
 // DecodeBlockFunc functions decode blocks into nodes.

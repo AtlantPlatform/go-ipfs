@@ -10,8 +10,8 @@ package filestore
 import (
 	"context"
 
+	blocks "bitbucket.org/atlantproject/go-ipfs/go-block-format"
 	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
-	blocks "unknown/go-block-format"
 	dsq "unknown/go-datastore/query"
 	blockstore "unknown/go-ipfs-blockstore"
 	posinfo "unknown/go-ipfs-posinfo"

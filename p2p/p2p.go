@@ -6,9 +6,9 @@ import (
 	"time"
 
 	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
+	pstore "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peerstore"
 	p2phost "unknown/go-libp2p-host"
 	net "unknown/go-libp2p-net"
-	pstore "unknown/go-libp2p-peerstore"
 	pro "unknown/go-libp2p-protocol"
 	ma "unknown/go-multiaddr"
 	manet "unknown/go-multiaddr-net"

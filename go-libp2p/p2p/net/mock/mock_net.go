@@ -11,9 +11,9 @@ import (
 
 	ic "bitbucket.org/atlantproject/go-ipfs/go-libp2p-crypto"
 	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
+	pstore "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peerstore"
 	inet "unknown/go-libp2p-net"
 	p2putil "unknown/go-libp2p-netutil"
-	pstore "unknown/go-libp2p-peerstore"
 	ma "unknown/go-multiaddr"
 	testutil "unknown/go-testutil"
 	"unknown/goprocess"

@@ -19,6 +19,8 @@ extract:
 	--unvendor go-libp2p-secio \
 	--unvendor go-libp2p \
 	--unvendor go-libp2p-floodsub \
+	--unvendor go-libp2p-peerstore \
+	--unvendor go-block-format \
 	--rename badger:github.com/dgraph-io/badger
 	
 extract-apply:
@@ -34,6 +36,8 @@ extract-apply:
 	--unvendor go-libp2p-secio \
 	--unvendor go-libp2p \
 	--unvendor go-libp2p-floodsub \
+	--unvendor go-libp2p-peerstore \
+	--unvendor go-block-format \
 	--rename badger:github.com/dgraph-io/badger
 
 patch-apply:

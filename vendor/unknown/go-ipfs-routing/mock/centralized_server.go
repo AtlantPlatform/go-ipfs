@@ -8,9 +8,9 @@ import (
 
 	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
 	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
+	pstore "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peerstore"
 	ds "unknown/go-datastore"
 	dssync "unknown/go-datastore/sync"
-	pstore "unknown/go-libp2p-peerstore"
 	"unknown/go-testutil"
 )
 

@@ -4,8 +4,8 @@ import (
 	"context"
 	"testing"
 
+	pstore "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peerstore"
 	inet "unknown/go-libp2p-net"
-	pstore "unknown/go-libp2p-peerstore"
 	swarm "unknown/go-libp2p-swarm"
 	ma "unknown/go-multiaddr"
 	tu "unknown/go-testutil"

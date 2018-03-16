@@ -13,10 +13,10 @@ import (
 	e "bitbucket.org/atlantproject/go-ipfs/core/commands/e"
 	ic "bitbucket.org/atlantproject/go-ipfs/go-libp2p-crypto"
 	"bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
+	pstore "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peerstore"
 	identify "bitbucket.org/atlantproject/go-ipfs/go-libp2p/p2p/protocol/identify"
 	"unknown/go-ipfs-cmdkit"
 	kb "unknown/go-libp2p-kbucket"
-	pstore "unknown/go-libp2p-peerstore"
 )
 
 const offlineIdErrorMessage = `'ipfs id' currently cannot query information on remote

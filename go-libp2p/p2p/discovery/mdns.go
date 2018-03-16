@@ -11,8 +11,8 @@ import (
 	"time"
 
 	"bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
+	pstore "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peerstore"
 	"unknown/go-libp2p-host"
-	pstore "unknown/go-libp2p-peerstore"
 	logging "unknown/go-log"
 	ma "unknown/go-multiaddr"
 	manet "unknown/go-multiaddr-net"

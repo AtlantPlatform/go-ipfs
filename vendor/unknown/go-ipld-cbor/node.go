@@ -10,9 +10,9 @@ import (
 	"strconv"
 	"strings"
 
+	blocks "bitbucket.org/atlantproject/go-ipfs/go-block-format"
 	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
 	cbor "unknown/cbor/go"
-	blocks "unknown/go-block-format"
 	node "unknown/go-ipld-format"
 	mh "unknown/go-multihash"
 )

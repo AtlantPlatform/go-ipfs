@@ -11,8 +11,8 @@ import (
 	util "bitbucket.org/atlantproject/go-ipfs/blocks/blockstoreutil"
 	coreiface "bitbucket.org/atlantproject/go-ipfs/core/coreapi/interface"
 	caopts "bitbucket.org/atlantproject/go-ipfs/core/coreapi/interface/options"
+	blocks "bitbucket.org/atlantproject/go-ipfs/go-block-format"
 	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
-	blocks "unknown/go-block-format"
 	mh "unknown/go-multihash"
 )
 

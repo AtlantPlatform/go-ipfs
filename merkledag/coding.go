@@ -5,7 +5,7 @@ import (
 	"sort"
 	"strings"
 
-	"unknown/go-block-format"
+	"bitbucket.org/atlantproject/go-ipfs/go-block-format"
 
 	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
 	pb "bitbucket.org/atlantproject/go-ipfs/merkledag/pb"

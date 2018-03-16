@@ -5,7 +5,7 @@ import (
 	"context"
 	"io"
 
-	blocks "unknown/go-block-format"
+	blocks "bitbucket.org/atlantproject/go-ipfs/go-block-format"
 
 	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
 )

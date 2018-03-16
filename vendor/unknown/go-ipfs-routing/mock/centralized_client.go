@@ -7,10 +7,10 @@ import (
 
 	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
 	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
+	pstore "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peerstore"
 	ds "unknown/go-datastore"
 	dshelp "unknown/go-ipfs-ds-help"
 	u "unknown/go-ipfs-util"
-	pstore "unknown/go-libp2p-peerstore"
 	dhtpb "unknown/go-libp2p-record/pb"
 	routing "unknown/go-libp2p-routing"
 	logging "unknown/go-log"

@@ -8,8 +8,8 @@ import (
 	"sync"
 	"sync/atomic"
 
+	blocks "bitbucket.org/atlantproject/go-ipfs/go-block-format"
 	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
-	blocks "unknown/go-block-format"
 	ds "unknown/go-datastore"
 	dsns "unknown/go-datastore/namespace"
 	dsq "unknown/go-datastore/query"

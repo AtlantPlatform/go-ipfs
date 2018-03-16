@@ -6,9 +6,9 @@ import (
 
 	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
 	pset "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer/peerset"
+	pstore "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peerstore"
+	queue "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peerstore/queue"
 	u "unknown/go-ipfs-util"
-	pstore "unknown/go-libp2p-peerstore"
-	queue "unknown/go-libp2p-peerstore/queue"
 	routing "unknown/go-libp2p-routing"
 	notif "unknown/go-libp2p-routing/notifications"
 	logging "unknown/go-log"

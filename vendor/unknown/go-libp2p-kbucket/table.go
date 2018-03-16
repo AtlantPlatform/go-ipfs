@@ -8,7 +8,7 @@ import (
 	"time"
 
 	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
-	pstore "unknown/go-libp2p-peerstore"
+	pstore "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peerstore"
 	logging "unknown/go-log"
 )
 

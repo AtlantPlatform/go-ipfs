@@ -8,8 +8,8 @@ import (
 
 	bsmsg "bitbucket.org/atlantproject/go-ipfs/exchange/bitswap/message"
 	wl "bitbucket.org/atlantproject/go-ipfs/exchange/bitswap/wantlist"
+	blocks "bitbucket.org/atlantproject/go-ipfs/go-block-format"
 	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
-	blocks "unknown/go-block-format"
 	bstore "unknown/go-ipfs-blockstore"
 	logging "unknown/go-log"
 )

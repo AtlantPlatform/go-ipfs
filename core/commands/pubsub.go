@@ -10,12 +10,12 @@ import (
 	"time"
 
 	core "bitbucket.org/atlantproject/go-ipfs/core"
+	blocks "bitbucket.org/atlantproject/go-ipfs/go-block-format"
 	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
 	floodsub "bitbucket.org/atlantproject/go-ipfs/go-libp2p-floodsub"
-	blocks "unknown/go-block-format"
+	pstore "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peerstore"
 	cmdkit "unknown/go-ipfs-cmdkit"
 	cmds "unknown/go-ipfs-cmds"
-	pstore "unknown/go-libp2p-peerstore"
 )
 
 var PubsubCmd = &cmds.Command{

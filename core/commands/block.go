@@ -10,8 +10,8 @@ import (
 
 	util "bitbucket.org/atlantproject/go-ipfs/blocks/blockstoreutil"
 	e "bitbucket.org/atlantproject/go-ipfs/core/commands/e"
+	blocks "bitbucket.org/atlantproject/go-ipfs/go-block-format"
 	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
-	blocks "unknown/go-block-format"
 	"unknown/go-ipfs-cmdkit"
 	"unknown/go-ipfs-cmds"
 	mh "unknown/go-multihash"

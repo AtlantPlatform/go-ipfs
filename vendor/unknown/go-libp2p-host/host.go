@@ -4,9 +4,9 @@ import (
 	"context"
 
 	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
+	pstore "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peerstore"
 	ifconnmgr "unknown/go-libp2p-interface-connmgr"
 	inet "unknown/go-libp2p-net"
-	pstore "unknown/go-libp2p-peerstore"
 	protocol "unknown/go-libp2p-protocol"
 	ma "unknown/go-multiaddr"
 	msmux "unknown/go-multistream"

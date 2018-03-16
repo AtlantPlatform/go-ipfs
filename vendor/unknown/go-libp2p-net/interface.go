@@ -5,8 +5,8 @@ import (
 	"io"
 
 	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
+	pstore "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peerstore"
 	iconn "unknown/go-libp2p-interface-conn"
-	pstore "unknown/go-libp2p-peerstore"
 	protocol "unknown/go-libp2p-protocol"
 	ma "unknown/go-multiaddr"
 	smux "unknown/go-stream-muxer"

@@ -4,7 +4,7 @@ import (
 	"sync"
 	"time"
 
-	pstore "unknown/go-libp2p-peerstore"
+	pstore "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peerstore"
 	ma "unknown/go-multiaddr"
 )
 

@@ -8,7 +8,7 @@ import (
 	pb "unknown/go-libp2p-circuit/pb"
 
 	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
-	pstore "unknown/go-libp2p-peerstore"
+	pstore "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peerstore"
 	ma "unknown/go-multiaddr"
 	mh "unknown/go-multihash"
 	ggio "unknown/gogo-protobuf/io"
