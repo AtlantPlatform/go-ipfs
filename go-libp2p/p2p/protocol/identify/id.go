@@ -425,11 +425,15 @@ func addrInAddrs(a ma.Multiaddr, as []ma.Multiaddr) bool {
 // we're in tight development, we will return false for minor version
 // changes too.
 func protocolVersionsAreCompatible(v1, v2 string) bool {
-	if strings.HasPrefix(v1, "ipfs/") {
-		v1 = v1[5:]
+	if !strings.HasPrefix(v1, "atlant/") {
+		return false
+	} else {
+		v1 = v1[7:]
 	}
-	if strings.HasPrefix(v2, "ipfs/") {
-		v2 = v2[5:]
+	if !strings.HasPrefix(v2, "atlant/") {
+		return false
+	} else {
+		v2 = v2[7:]
 	}
 
 	v1s, err := semver.NewVersion(v1)
