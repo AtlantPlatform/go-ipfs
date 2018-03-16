@@ -426,7 +426,7 @@ func setupDiscoveryOption(d config.Discovery) DiscoveryOption {
 // HandlePeerFound attempts to connect to peer from `PeerInfo`, if it fails
 // logs a warning log.
 func (n *IpfsNode) HandlePeerFound(p pstore.PeerInfo) {
-	log.Warning("trying peer info: ", p)
+	log.Info("trying peer info: ", p)
 	ctx, cancel := context.WithTimeout(n.Context(), discoveryConnTimeout)
 	defer cancel()
 	if err := n.PeerHost.Connect(ctx, p); err != nil {
