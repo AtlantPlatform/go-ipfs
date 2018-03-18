@@ -8,8 +8,8 @@ import (
 	"strings"
 
 	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
+	ipld "bitbucket.org/atlantproject/go-ipfs/go-ipld-format"
 	path "bitbucket.org/atlantproject/go-ipfs/path"
-	ipld "unknown/go-ipld-format"
 )
 
 // Mv moves the file or directory at 'src' to 'dst'

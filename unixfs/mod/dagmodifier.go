@@ -9,13 +9,13 @@ import (
 	"io"
 
 	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
+	ipld "bitbucket.org/atlantproject/go-ipfs/go-ipld-format"
 	help "bitbucket.org/atlantproject/go-ipfs/importer/helpers"
 	trickle "bitbucket.org/atlantproject/go-ipfs/importer/trickle"
 	mdag "bitbucket.org/atlantproject/go-ipfs/merkledag"
 	ft "bitbucket.org/atlantproject/go-ipfs/unixfs"
 	uio "bitbucket.org/atlantproject/go-ipfs/unixfs/io"
 	chunker "unknown/go-ipfs-chunker"
-	ipld "unknown/go-ipld-format"
 	proto "unknown/gogo-protobuf/proto"
 )
 

@@ -6,10 +6,10 @@ import (
 	"strings"
 
 	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
+	ipld "bitbucket.org/atlantproject/go-ipfs/go-ipld-format"
 	namesys "bitbucket.org/atlantproject/go-ipfs/namesys"
 	path "bitbucket.org/atlantproject/go-ipfs/path"
 	resolver "bitbucket.org/atlantproject/go-ipfs/path/resolver"
-	ipld "unknown/go-ipld-format"
 	logging "unknown/go-log"
 )
 

@@ -21,10 +21,10 @@ import (
 	"fmt"
 
 	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
+	ipld "bitbucket.org/atlantproject/go-ipfs/go-ipld-format"
 	h "bitbucket.org/atlantproject/go-ipfs/importer/helpers"
 	dag "bitbucket.org/atlantproject/go-ipfs/merkledag"
 	ft "bitbucket.org/atlantproject/go-ipfs/unixfs"
-	ipld "unknown/go-ipld-format"
 )
 
 // layerRepeat specifies how many times to append a child tree of a

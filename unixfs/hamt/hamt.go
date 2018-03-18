@@ -28,10 +28,10 @@ import (
 	"os"
 
 	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
+	ipld "bitbucket.org/atlantproject/go-ipfs/go-ipld-format"
 	dag "bitbucket.org/atlantproject/go-ipfs/merkledag"
 	format "bitbucket.org/atlantproject/go-ipfs/unixfs"
 	upb "bitbucket.org/atlantproject/go-ipfs/unixfs/pb"
-	ipld "unknown/go-ipld-format"
 	proto "unknown/gogo-protobuf/proto"
 	"unknown/murmur3"
 )

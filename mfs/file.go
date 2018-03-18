@@ -5,11 +5,11 @@ import (
 	"fmt"
 	"sync"
 
+	ipld "bitbucket.org/atlantproject/go-ipfs/go-ipld-format"
 	dag "bitbucket.org/atlantproject/go-ipfs/merkledag"
 	ft "bitbucket.org/atlantproject/go-ipfs/unixfs"
 	mod "bitbucket.org/atlantproject/go-ipfs/unixfs/mod"
 	chunker "unknown/go-ipfs-chunker"
-	ipld "unknown/go-ipld-format"
 )
 
 type File struct {

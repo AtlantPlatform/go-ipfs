@@ -4,7 +4,7 @@ import (
 	"context"
 
 	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
-	ipld "unknown/go-ipld-format"
+	ipld "bitbucket.org/atlantproject/go-ipfs/go-ipld-format"
 )
 
 // ComboService implements ipld.DAGService, using 'Read' for all fetch methods,

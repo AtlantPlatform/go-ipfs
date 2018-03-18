@@ -13,9 +13,9 @@ import (
 	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
 	cmdkit "bitbucket.org/atlantproject/go-ipfs/go-ipfs-cmdkit"
 	files "bitbucket.org/atlantproject/go-ipfs/go-ipfs-cmdkit/files"
+	ipld "bitbucket.org/atlantproject/go-ipfs/go-ipld-format"
 	path "bitbucket.org/atlantproject/go-ipfs/path"
 	pin "bitbucket.org/atlantproject/go-ipfs/pin"
-	ipld "unknown/go-ipld-format"
 	logging "unknown/go-log"
 	mh "unknown/go-multihash"
 )

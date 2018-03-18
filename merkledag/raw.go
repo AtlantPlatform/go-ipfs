@@ -5,8 +5,8 @@ import (
 	"fmt"
 
 	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
+	ipld "bitbucket.org/atlantproject/go-ipfs/go-ipld-format"
 	u "unknown/go-ipfs-util"
-	ipld "unknown/go-ipld-format"
 )
 
 // RawNode represents a node which only contains data.

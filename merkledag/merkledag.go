@@ -9,8 +9,8 @@ import (
 	bserv "bitbucket.org/atlantproject/go-ipfs/blockservice"
 	blocks "bitbucket.org/atlantproject/go-ipfs/go-block-format"
 	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
+	ipld "bitbucket.org/atlantproject/go-ipfs/go-ipld-format"
 	ipldcbor "unknown/go-ipld-cbor"
-	ipld "unknown/go-ipld-format"
 )
 
 // TODO: We should move these registrations elsewhere. Really, most of the IPLD

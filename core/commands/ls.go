@@ -12,13 +12,13 @@ import (
 	e "bitbucket.org/atlantproject/go-ipfs/core/commands/e"
 	offline "bitbucket.org/atlantproject/go-ipfs/exchange/offline"
 	"bitbucket.org/atlantproject/go-ipfs/go-ipfs-cmdkit"
+	ipld "bitbucket.org/atlantproject/go-ipfs/go-ipld-format"
 	merkledag "bitbucket.org/atlantproject/go-ipfs/merkledag"
 	path "bitbucket.org/atlantproject/go-ipfs/path"
 	resolver "bitbucket.org/atlantproject/go-ipfs/path/resolver"
 	unixfs "bitbucket.org/atlantproject/go-ipfs/unixfs"
 	uio "bitbucket.org/atlantproject/go-ipfs/unixfs/io"
 	unixfspb "bitbucket.org/atlantproject/go-ipfs/unixfs/pb"
-	ipld "unknown/go-ipld-format"
 )
 
 type LsLink struct {

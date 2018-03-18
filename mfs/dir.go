@@ -11,11 +11,11 @@ import (
 	"time"
 
 	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
+	ipld "bitbucket.org/atlantproject/go-ipfs/go-ipld-format"
 	dag "bitbucket.org/atlantproject/go-ipfs/merkledag"
 	ft "bitbucket.org/atlantproject/go-ipfs/unixfs"
 	uio "bitbucket.org/atlantproject/go-ipfs/unixfs/io"
 	ufspb "bitbucket.org/atlantproject/go-ipfs/unixfs/pb"
-	ipld "unknown/go-ipld-format"
 )
 
 var ErrNotYetImplemented = errors.New("not yet implemented")

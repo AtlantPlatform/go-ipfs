@@ -7,8 +7,8 @@ import (
 	"os"
 
 	"bitbucket.org/atlantproject/go-ipfs/go-ipfs-cmdkit/files"
+	ipld "bitbucket.org/atlantproject/go-ipfs/go-ipld-format"
 	chunker "unknown/go-ipfs-chunker"
-	ipld "unknown/go-ipld-format"
 
 	bal "bitbucket.org/atlantproject/go-ipfs/importer/balanced"
 	h "bitbucket.org/atlantproject/go-ipfs/importer/helpers"

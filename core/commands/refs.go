@@ -12,8 +12,8 @@ import (
 	e "bitbucket.org/atlantproject/go-ipfs/core/commands/e"
 	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
 	"bitbucket.org/atlantproject/go-ipfs/go-ipfs-cmdkit"
+	ipld "bitbucket.org/atlantproject/go-ipfs/go-ipld-format"
 	path "bitbucket.org/atlantproject/go-ipfs/path"
-	ipld "unknown/go-ipld-format"
 )
 
 // KeyList is a general type for outputting lists of keys

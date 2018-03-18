@@ -6,12 +6,12 @@ import (
 
 	bserv "bitbucket.org/atlantproject/go-ipfs/blockservice"
 	offline "bitbucket.org/atlantproject/go-ipfs/exchange/offline"
+	ipld "bitbucket.org/atlantproject/go-ipfs/go-ipld-format"
 	dag "bitbucket.org/atlantproject/go-ipfs/merkledag"
 	path "bitbucket.org/atlantproject/go-ipfs/path"
 	ds "unknown/go-datastore"
 	syncds "unknown/go-datastore/sync"
 	bstore "unknown/go-ipfs-blockstore"
-	ipld "unknown/go-ipld-format"
 )
 
 // Editor represents a ProtoNode tree editor and provides methods to

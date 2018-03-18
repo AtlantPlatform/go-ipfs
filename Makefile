@@ -22,6 +22,7 @@ extract:
 	--unvendor go-libp2p-peerstore \
 	--unvendor go-block-format \
 	--unvendor go-ipfs-cmdkit \
+	--unvendor go-ipld-format \
 	--rename badger:github.com/dgraph-io/badger
 	
 extract-apply:
@@ -40,6 +41,7 @@ extract-apply:
 	--unvendor go-libp2p-peerstore \
 	--unvendor go-block-format \
 	--unvendor go-ipfs-cmdkit \
+	--unvendor go-ipld-format \
 	--rename badger:github.com/dgraph-io/badger
 
 patch-apply:

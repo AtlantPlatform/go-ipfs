@@ -6,10 +6,10 @@ import (
 	"fmt"
 	"io"
 
+	ipld "bitbucket.org/atlantproject/go-ipfs/go-ipld-format"
 	mdag "bitbucket.org/atlantproject/go-ipfs/merkledag"
 	ft "bitbucket.org/atlantproject/go-ipfs/unixfs"
 	ftpb "bitbucket.org/atlantproject/go-ipfs/unixfs/pb"
-	ipld "unknown/go-ipld-format"
 	proto "unknown/gogo-protobuf/proto"
 )
 

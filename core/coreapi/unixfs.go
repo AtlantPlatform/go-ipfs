@@ -7,8 +7,8 @@ import (
 	coreiface "bitbucket.org/atlantproject/go-ipfs/core/coreapi/interface"
 	coreunix "bitbucket.org/atlantproject/go-ipfs/core/coreunix"
 	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
+	ipld "bitbucket.org/atlantproject/go-ipfs/go-ipld-format"
 	uio "bitbucket.org/atlantproject/go-ipfs/unixfs/io"
-	ipld "unknown/go-ipld-format"
 )
 
 type UnixfsAPI CoreAPI

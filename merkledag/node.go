@@ -6,7 +6,7 @@ import (
 	"fmt"
 
 	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
-	ipld "unknown/go-ipld-format"
+	ipld "bitbucket.org/atlantproject/go-ipfs/go-ipld-format"
 	mh "unknown/go-multihash"
 )
 

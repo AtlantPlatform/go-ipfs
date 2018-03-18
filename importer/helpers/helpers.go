@@ -10,7 +10,7 @@ import (
 	pi "unknown/go-ipfs-posinfo"
 
 	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
-	ipld "unknown/go-ipld-format"
+	ipld "bitbucket.org/atlantproject/go-ipfs/go-ipld-format"
 )
 
 // BlockSizeLimit specifies the maximum size an imported block can have.

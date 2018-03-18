@@ -16,6 +16,7 @@ import (
 	coreapi "bitbucket.org/atlantproject/go-ipfs/core/coreapi"
 	coreiface "bitbucket.org/atlantproject/go-ipfs/core/coreapi/interface"
 	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
+	ipld "bitbucket.org/atlantproject/go-ipfs/go-ipld-format"
 	"bitbucket.org/atlantproject/go-ipfs/importer"
 	dag "bitbucket.org/atlantproject/go-ipfs/merkledag"
 	dagutils "bitbucket.org/atlantproject/go-ipfs/merkledag/utils"
@@ -25,7 +26,6 @@ import (
 	uio "bitbucket.org/atlantproject/go-ipfs/unixfs/io"
 	humanize "unknown/go-humanize"
 	chunker "unknown/go-ipfs-chunker"
-	ipld "unknown/go-ipld-format"
 	routing "unknown/go-libp2p-routing"
 	multibase "unknown/go-multibase"
 )

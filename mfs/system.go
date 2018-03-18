@@ -17,9 +17,9 @@ import (
 	"time"
 
 	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
+	ipld "bitbucket.org/atlantproject/go-ipfs/go-ipld-format"
 	dag "bitbucket.org/atlantproject/go-ipfs/merkledag"
 	ft "bitbucket.org/atlantproject/go-ipfs/unixfs"
-	ipld "unknown/go-ipld-format"
 	logging "unknown/go-log"
 )
 

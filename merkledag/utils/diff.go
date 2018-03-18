@@ -6,8 +6,8 @@ import (
 	"path"
 
 	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
+	ipld "bitbucket.org/atlantproject/go-ipfs/go-ipld-format"
 	dag "bitbucket.org/atlantproject/go-ipfs/merkledag"
-	ipld "unknown/go-ipld-format"
 )
 
 // These constants define the changes that can be applied to a DAG.

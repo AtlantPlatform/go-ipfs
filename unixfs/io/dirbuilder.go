@@ -6,10 +6,10 @@ import (
 	"os"
 
 	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
+	ipld "bitbucket.org/atlantproject/go-ipfs/go-ipld-format"
 	mdag "bitbucket.org/atlantproject/go-ipfs/merkledag"
 	format "bitbucket.org/atlantproject/go-ipfs/unixfs"
 	hamt "bitbucket.org/atlantproject/go-ipfs/unixfs/hamt"
-	ipld "unknown/go-ipld-format"
 )
 
 // ShardSplitThreshold specifies how large of an unsharded directory

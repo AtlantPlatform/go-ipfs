@@ -8,13 +8,13 @@ import (
 	"io"
 	"strings"
 
+	ipld "bitbucket.org/atlantproject/go-ipfs/go-ipld-format"
 	importer "bitbucket.org/atlantproject/go-ipfs/importer"
 	dag "bitbucket.org/atlantproject/go-ipfs/merkledag"
 	dagutil "bitbucket.org/atlantproject/go-ipfs/merkledag/utils"
 	path "bitbucket.org/atlantproject/go-ipfs/path"
 	uio "bitbucket.org/atlantproject/go-ipfs/unixfs/io"
 	chunker "unknown/go-ipfs-chunker"
-	ipld "unknown/go-ipld-format"
 	logging "unknown/go-log"
 )
 

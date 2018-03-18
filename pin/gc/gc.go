@@ -10,12 +10,12 @@ import (
 	bserv "bitbucket.org/atlantproject/go-ipfs/blockservice"
 	offline "bitbucket.org/atlantproject/go-ipfs/exchange/offline"
 	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
+	ipld "bitbucket.org/atlantproject/go-ipfs/go-ipld-format"
 	dag "bitbucket.org/atlantproject/go-ipfs/merkledag"
 	pin "bitbucket.org/atlantproject/go-ipfs/pin"
 	"bitbucket.org/atlantproject/go-ipfs/thirdparty/verifcid"
 	dstore "unknown/go-datastore"
 	bstore "unknown/go-ipfs-blockstore"
-	ipld "unknown/go-ipld-format"
 	logging "unknown/go-log"
 )
 

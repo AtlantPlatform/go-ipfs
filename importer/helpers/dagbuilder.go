@@ -7,10 +7,10 @@ import (
 
 	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
 	files "bitbucket.org/atlantproject/go-ipfs/go-ipfs-cmdkit/files"
+	ipld "bitbucket.org/atlantproject/go-ipfs/go-ipld-format"
 	dag "bitbucket.org/atlantproject/go-ipfs/merkledag"
 	ft "bitbucket.org/atlantproject/go-ipfs/unixfs"
 	chunker "unknown/go-ipfs-chunker"
-	ipld "unknown/go-ipld-format"
 )
 
 // DagBuilderHelper wraps together a bunch of objects needed to

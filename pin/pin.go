@@ -10,10 +10,10 @@ import (
 	"time"
 
 	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
+	ipld "bitbucket.org/atlantproject/go-ipfs/go-ipld-format"
 	mdag "bitbucket.org/atlantproject/go-ipfs/merkledag"
 	dutils "bitbucket.org/atlantproject/go-ipfs/merkledag/utils"
 	ds "unknown/go-datastore"
-	ipld "unknown/go-ipld-format"
 	logging "unknown/go-log"
 )
 

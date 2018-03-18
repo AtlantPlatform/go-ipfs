@@ -10,7 +10,7 @@ import (
 
 	options "bitbucket.org/atlantproject/go-ipfs/core/coreapi/interface/options"
 	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
-	ipld "unknown/go-ipld-format"
+	ipld "bitbucket.org/atlantproject/go-ipfs/go-ipld-format"
 )
 
 // Path is a generic wrapper for paths used in the API. A path can be resolved

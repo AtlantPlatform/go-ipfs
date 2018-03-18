@@ -10,9 +10,9 @@ import (
 	"sort"
 
 	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
+	ipld "bitbucket.org/atlantproject/go-ipfs/go-ipld-format"
 	"bitbucket.org/atlantproject/go-ipfs/merkledag"
 	"bitbucket.org/atlantproject/go-ipfs/pin/internal/pb"
-	ipld "unknown/go-ipld-format"
 	"unknown/gogo-protobuf/proto"
 )
 

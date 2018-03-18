@@ -14,6 +14,7 @@ import (
 	"bitbucket.org/atlantproject/go-ipfs/exchange/offline"
 	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
 	files "bitbucket.org/atlantproject/go-ipfs/go-ipfs-cmdkit/files"
+	ipld "bitbucket.org/atlantproject/go-ipfs/go-ipld-format"
 	balanced "bitbucket.org/atlantproject/go-ipfs/importer/balanced"
 	ihelper "bitbucket.org/atlantproject/go-ipfs/importer/helpers"
 	trickle "bitbucket.org/atlantproject/go-ipfs/importer/trickle"
@@ -26,7 +27,6 @@ import (
 	bstore "unknown/go-ipfs-blockstore"
 	chunker "unknown/go-ipfs-chunker"
 	posinfo "unknown/go-ipfs-posinfo"
-	ipld "unknown/go-ipld-format"
 	logging "unknown/go-log"
 )
 

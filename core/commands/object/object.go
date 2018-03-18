@@ -18,11 +18,11 @@ import (
 	e "bitbucket.org/atlantproject/go-ipfs/core/commands/e"
 	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
 	cmdkit "bitbucket.org/atlantproject/go-ipfs/go-ipfs-cmdkit"
+	ipld "bitbucket.org/atlantproject/go-ipfs/go-ipld-format"
 	dag "bitbucket.org/atlantproject/go-ipfs/merkledag"
 	path "bitbucket.org/atlantproject/go-ipfs/path"
 	pin "bitbucket.org/atlantproject/go-ipfs/pin"
 	ft "bitbucket.org/atlantproject/go-ipfs/unixfs"
-	ipld "unknown/go-ipld-format"
 )
 
 // ErrObjectTooLarge is returned when too much data was read from stdin. current limit 2m

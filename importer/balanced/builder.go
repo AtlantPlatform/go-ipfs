@@ -18,8 +18,8 @@ package balanced
 import (
 	"errors"
 
+	ipld "bitbucket.org/atlantproject/go-ipfs/go-ipld-format"
 	h "bitbucket.org/atlantproject/go-ipfs/importer/helpers"
-	ipld "unknown/go-ipld-format"
 )
 
 // Layout builds a balanced DAG. Data is stored at the leaves

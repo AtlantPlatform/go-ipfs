@@ -6,11 +6,11 @@ import (
 	core "bitbucket.org/atlantproject/go-ipfs/core"
 	coreiface "bitbucket.org/atlantproject/go-ipfs/core/coreapi/interface"
 	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
+	ipld "bitbucket.org/atlantproject/go-ipfs/go-ipld-format"
 	namesys "bitbucket.org/atlantproject/go-ipfs/namesys"
 	ipfspath "bitbucket.org/atlantproject/go-ipfs/path"
 	resolver "bitbucket.org/atlantproject/go-ipfs/path/resolver"
 	uio "bitbucket.org/atlantproject/go-ipfs/unixfs/io"
-	ipld "unknown/go-ipld-format"
 )
 
 type CoreAPI struct {

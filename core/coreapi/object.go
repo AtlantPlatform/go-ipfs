@@ -14,10 +14,10 @@ import (
 	coreiface "bitbucket.org/atlantproject/go-ipfs/core/coreapi/interface"
 	caopts "bitbucket.org/atlantproject/go-ipfs/core/coreapi/interface/options"
 	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
+	ipld "bitbucket.org/atlantproject/go-ipfs/go-ipld-format"
 	dag "bitbucket.org/atlantproject/go-ipfs/merkledag"
 	dagutils "bitbucket.org/atlantproject/go-ipfs/merkledag/utils"
 	ft "bitbucket.org/atlantproject/go-ipfs/unixfs"
-	ipld "unknown/go-ipld-format"
 )
 
 const inputLimit = 2 << 20

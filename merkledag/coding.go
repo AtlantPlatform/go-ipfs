@@ -8,8 +8,8 @@ import (
 	"bitbucket.org/atlantproject/go-ipfs/go-block-format"
 
 	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
+	ipld "bitbucket.org/atlantproject/go-ipfs/go-ipld-format"
 	pb "bitbucket.org/atlantproject/go-ipfs/merkledag/pb"
-	ipld "unknown/go-ipld-format"
 )
 
 // for now, we use a PBNode intermediate thing.

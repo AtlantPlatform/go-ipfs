@@ -4,10 +4,10 @@ import (
 	"context"
 
 	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
+	ipld "bitbucket.org/atlantproject/go-ipfs/go-ipld-format"
 	merkledag "bitbucket.org/atlantproject/go-ipfs/merkledag"
 	pin "bitbucket.org/atlantproject/go-ipfs/pin"
 	blocks "unknown/go-ipfs-blockstore"
-	ipld "unknown/go-ipld-format"
 )
 
 // NewBlockstoreProvider returns key provider using bstore.AllKeysChan

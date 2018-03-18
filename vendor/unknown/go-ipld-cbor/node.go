@@ -12,8 +12,8 @@ import (
 
 	blocks "bitbucket.org/atlantproject/go-ipfs/go-block-format"
 	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
+	node "bitbucket.org/atlantproject/go-ipfs/go-ipld-format"
 	cbor "unknown/cbor/go"
-	node "unknown/go-ipld-format"
 	mh "unknown/go-multihash"
 )
 
