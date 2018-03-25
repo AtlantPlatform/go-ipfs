@@ -3,7 +3,7 @@ package mafmt
 import (
 	"strings"
 
-	ma "unknown/go-multiaddr"
+	ma "bitbucket.org/atlantproject/go-ipfs/go-multiaddr"
 )
 
 // Define IP as either ipv4 or ipv6

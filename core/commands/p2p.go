@@ -11,7 +11,7 @@ import (
 	cmds "bitbucket.org/atlantproject/go-ipfs/commands"
 	core "bitbucket.org/atlantproject/go-ipfs/core"
 	"bitbucket.org/atlantproject/go-ipfs/go-ipfs-cmdkit"
-	ma "unknown/go-multiaddr"
+	ma "bitbucket.org/atlantproject/go-ipfs/go-multiaddr"
 )
 
 // P2PListenerInfoOutput is output type of ls command

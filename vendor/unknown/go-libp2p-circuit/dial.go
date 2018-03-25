@@ -7,8 +7,8 @@ import (
 
 	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
 	pstore "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peerstore"
+	ma "bitbucket.org/atlantproject/go-ipfs/go-multiaddr"
 	tpt "unknown/go-libp2p-transport"
-	ma "unknown/go-multiaddr"
 )
 
 var _ tpt.Dialer = (*RelayDialer)(nil)

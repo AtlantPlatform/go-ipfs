@@ -8,12 +8,12 @@ import (
 
 	ic "bitbucket.org/atlantproject/go-ipfs/go-libp2p-crypto"
 	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
+	ma "bitbucket.org/atlantproject/go-ipfs/go-multiaddr"
 	iconn "unknown/go-libp2p-interface-conn"
 	lgbl "unknown/go-libp2p-loggables"
 	tpt "unknown/go-libp2p-transport"
 	logging "unknown/go-log"
 	mpool "unknown/go-msgio/mpool"
-	ma "unknown/go-multiaddr"
 )
 
 var log = logging.Logger("conn")

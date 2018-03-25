@@ -5,9 +5,9 @@ import (
 	"testing"
 
 	pstore "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peerstore"
+	ma "bitbucket.org/atlantproject/go-ipfs/go-multiaddr"
 	inet "unknown/go-libp2p-net"
 	swarm "unknown/go-libp2p-swarm"
-	ma "unknown/go-multiaddr"
 	tu "unknown/go-testutil"
 )
 

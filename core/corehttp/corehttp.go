@@ -11,8 +11,8 @@ import (
 	"time"
 
 	core "bitbucket.org/atlantproject/go-ipfs/core"
+	ma "bitbucket.org/atlantproject/go-ipfs/go-multiaddr"
 	logging "unknown/go-log"
-	ma "unknown/go-multiaddr"
 	manet "unknown/go-multiaddr-net"
 	"unknown/goprocess"
 )

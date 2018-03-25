@@ -4,13 +4,13 @@ import (
 	"context"
 	"fmt"
 
+	ma "bitbucket.org/atlantproject/go-ipfs/go-multiaddr"
 	conn "unknown/go-libp2p-conn"
 	iconn "unknown/go-libp2p-interface-conn"
 	lgbl "unknown/go-libp2p-loggables"
 	mconn "unknown/go-libp2p-metrics/conn"
 	inet "unknown/go-libp2p-net"
 	transport "unknown/go-libp2p-transport"
-	ma "unknown/go-multiaddr"
 	ps "unknown/go-peerstream"
 )
 

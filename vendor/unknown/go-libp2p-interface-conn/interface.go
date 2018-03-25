@@ -8,10 +8,10 @@ import (
 
 	ic "bitbucket.org/atlantproject/go-ipfs/go-libp2p-crypto"
 	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
+	ma "bitbucket.org/atlantproject/go-ipfs/go-multiaddr"
 	u "unknown/go-ipfs-util"
 	tpt "unknown/go-libp2p-transport"
 	filter "unknown/go-maddr-filter"
-	ma "unknown/go-multiaddr"
 )
 
 type PeerConn interface {

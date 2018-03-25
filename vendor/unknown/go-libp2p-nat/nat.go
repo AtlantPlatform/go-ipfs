@@ -8,8 +8,8 @@ import (
 	"sync"
 	"time"
 
+	ma "bitbucket.org/atlantproject/go-ipfs/go-multiaddr"
 	logging "unknown/go-log"
-	ma "unknown/go-multiaddr"
 	manet "unknown/go-multiaddr-net"
 	nat "unknown/go-nat"
 	goprocess "unknown/goprocess"

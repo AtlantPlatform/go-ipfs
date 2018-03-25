@@ -13,12 +13,12 @@ import (
 	e "bitbucket.org/atlantproject/go-ipfs/core/commands/e"
 	cmdkit "bitbucket.org/atlantproject/go-ipfs/go-ipfs-cmdkit"
 	pstore "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peerstore"
+	ma "bitbucket.org/atlantproject/go-ipfs/go-multiaddr"
 	repo "bitbucket.org/atlantproject/go-ipfs/repo"
 	config "bitbucket.org/atlantproject/go-ipfs/repo/config"
 	"bitbucket.org/atlantproject/go-ipfs/repo/fsrepo"
 	iaddr "unknown/go-ipfs-addr"
 	swarm "unknown/go-libp2p-swarm"
-	ma "unknown/go-multiaddr"
 	mafilter "unknown/multiaddr-filter"
 )
 

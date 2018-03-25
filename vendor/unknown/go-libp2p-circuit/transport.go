@@ -4,11 +4,11 @@ import (
 	"context"
 	"fmt"
 
+	ma "bitbucket.org/atlantproject/go-ipfs/go-multiaddr"
 	addrutil "unknown/go-addr-util"
 	host "unknown/go-libp2p-host"
 	swarm "unknown/go-libp2p-swarm"
 	tpt "unknown/go-libp2p-transport"
-	ma "unknown/go-multiaddr"
 )
 
 const P_CIRCUIT = 290

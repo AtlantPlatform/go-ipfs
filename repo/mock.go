@@ -4,9 +4,9 @@ import (
 	"errors"
 
 	filestore "bitbucket.org/atlantproject/go-ipfs/filestore"
+	ma "bitbucket.org/atlantproject/go-ipfs/go-multiaddr"
 	keystore "bitbucket.org/atlantproject/go-ipfs/keystore"
 	"bitbucket.org/atlantproject/go-ipfs/repo/config"
-	ma "unknown/go-multiaddr"
 )
 
 var errTODO = errors.New("TODO: mock repo")

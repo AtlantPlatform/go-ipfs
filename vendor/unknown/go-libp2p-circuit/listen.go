@@ -7,9 +7,9 @@ import (
 	pb "unknown/go-libp2p-circuit/pb"
 
 	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
+	ma "bitbucket.org/atlantproject/go-ipfs/go-multiaddr"
 	tpt "unknown/go-libp2p-transport"
 	filter "unknown/go-maddr-filter"
-	ma "unknown/go-multiaddr"
 )
 
 var _ tpt.Listener = (*RelayListener)(nil)

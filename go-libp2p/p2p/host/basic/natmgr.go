@@ -4,10 +4,10 @@ import (
 	"context"
 	"sync"
 
+	ma "bitbucket.org/atlantproject/go-ipfs/go-multiaddr"
 	lgbl "unknown/go-libp2p-loggables"
 	inat "unknown/go-libp2p-nat"
 	inet "unknown/go-libp2p-net"
-	ma "unknown/go-multiaddr"
 	goprocess "unknown/goprocess"
 )
 

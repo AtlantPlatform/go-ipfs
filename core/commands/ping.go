@@ -14,8 +14,8 @@ import (
 	"bitbucket.org/atlantproject/go-ipfs/go-ipfs-cmdkit"
 	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
 	pstore "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peerstore"
+	ma "bitbucket.org/atlantproject/go-ipfs/go-multiaddr"
 	u "unknown/go-ipfs-util"
-	ma "unknown/go-multiaddr"
 )
 
 const kPingTimeout = 10 * time.Second

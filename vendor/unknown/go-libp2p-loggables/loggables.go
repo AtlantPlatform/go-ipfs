@@ -10,8 +10,8 @@ import (
 	"net"
 
 	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
+	ma "bitbucket.org/atlantproject/go-ipfs/go-multiaddr"
 	logging "unknown/go-log"
-	ma "unknown/go-multiaddr"
 	uuid "unknown/go.uuid"
 )
 

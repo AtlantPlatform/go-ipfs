@@ -9,6 +9,7 @@ import (
 
 	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
 	pstore "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peerstore"
+	ma "bitbucket.org/atlantproject/go-ipfs/go-multiaddr"
 	circuit "unknown/go-libp2p-circuit"
 	ifconnmgr "unknown/go-libp2p-interface-connmgr"
 	metrics "unknown/go-libp2p-metrics"
@@ -16,7 +17,6 @@ import (
 	inet "unknown/go-libp2p-net"
 	protocol "unknown/go-libp2p-protocol"
 	logging "unknown/go-log"
-	ma "unknown/go-multiaddr"
 	madns "unknown/go-multiaddr-dns"
 	msmux "unknown/go-multistream"
 	goprocess "unknown/goprocess"

@@ -12,8 +12,8 @@ import (
 	//ds "github.com/jbenet/go-datastore"
 	//dssync "github.com/jbenet/go-datastore/sync"
 	"bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
+	ma "bitbucket.org/atlantproject/go-ipfs/go-multiaddr"
 	logging "unknown/go-log"
-	ma "unknown/go-multiaddr"
 )
 
 var log = logging.Logger("peerstore")

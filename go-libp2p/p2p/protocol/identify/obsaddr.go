@@ -5,7 +5,7 @@ import (
 	"time"
 
 	pstore "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peerstore"
-	ma "unknown/go-multiaddr"
+	ma "bitbucket.org/atlantproject/go-ipfs/go-multiaddr"
 )
 
 const ActivationThresh = 4

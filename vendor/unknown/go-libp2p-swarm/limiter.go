@@ -5,9 +5,9 @@ import (
 	"sync"
 
 	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
+	ma "bitbucket.org/atlantproject/go-ipfs/go-multiaddr"
 	addrutil "unknown/go-addr-util"
 	iconn "unknown/go-libp2p-interface-conn"
-	ma "unknown/go-multiaddr"
 )
 
 type dialResult struct {

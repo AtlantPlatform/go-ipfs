@@ -5,10 +5,10 @@ import (
 	"io"
 
 	filestore "bitbucket.org/atlantproject/go-ipfs/filestore"
+	ma "bitbucket.org/atlantproject/go-ipfs/go-multiaddr"
 	keystore "bitbucket.org/atlantproject/go-ipfs/keystore"
 	config "bitbucket.org/atlantproject/go-ipfs/repo/config"
 	ds "unknown/go-datastore"
-	ma "unknown/go-multiaddr"
 )
 
 var (

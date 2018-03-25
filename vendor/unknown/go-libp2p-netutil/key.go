@@ -11,7 +11,7 @@ import (
 	logging "unknown/go-log"
 	testutil "unknown/go-testutil"
 
-	ma "unknown/go-multiaddr"
+	ma "bitbucket.org/atlantproject/go-ipfs/go-multiaddr"
 )
 
 var log = logging.Logger("boguskey")

@@ -5,7 +5,7 @@ import (
 	"net"
 	"strings"
 
-	ma "unknown/go-multiaddr"
+	ma "bitbucket.org/atlantproject/go-ipfs/go-multiaddr"
 )
 
 var errIncorrectNetAddr = fmt.Errorf("incorrect network addr conversion")

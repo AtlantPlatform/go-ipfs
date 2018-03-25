@@ -3,7 +3,7 @@ package manet
 import (
 	"bytes"
 
-	ma "unknown/go-multiaddr"
+	ma "bitbucket.org/atlantproject/go-ipfs/go-multiaddr"
 )
 
 // Loopback Addresses

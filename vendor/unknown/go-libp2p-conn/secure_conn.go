@@ -9,9 +9,9 @@ import (
 	ic "bitbucket.org/atlantproject/go-ipfs/go-libp2p-crypto"
 	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
 	secio "bitbucket.org/atlantproject/go-ipfs/go-libp2p-secio"
+	ma "bitbucket.org/atlantproject/go-ipfs/go-multiaddr"
 	iconn "unknown/go-libp2p-interface-conn"
 	tpt "unknown/go-libp2p-transport"
-	ma "unknown/go-multiaddr"
 )
 
 // secureConn wraps another Conn object with an encrypted channel.

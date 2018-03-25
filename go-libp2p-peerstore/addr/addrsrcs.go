@@ -2,7 +2,7 @@
 package addr
 
 import (
-	ma "unknown/go-multiaddr"
+	ma "bitbucket.org/atlantproject/go-ipfs/go-multiaddr"
 )
 
 // AddrSource is a source of addresses. It allows clients to retrieve

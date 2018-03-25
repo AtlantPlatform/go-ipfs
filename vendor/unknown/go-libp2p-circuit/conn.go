@@ -7,10 +7,10 @@ import (
 	ic "bitbucket.org/atlantproject/go-ipfs/go-libp2p-crypto"
 	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
 	pstore "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peerstore"
+	ma "bitbucket.org/atlantproject/go-ipfs/go-multiaddr"
 	iconn "unknown/go-libp2p-interface-conn"
 	inet "unknown/go-libp2p-net"
 	tpt "unknown/go-libp2p-transport"
-	ma "unknown/go-multiaddr"
 	manet "unknown/go-multiaddr-net"
 )
 

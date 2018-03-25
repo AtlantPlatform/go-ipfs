@@ -1,9 +1,9 @@
 package swarm
 
 import (
+	ma "bitbucket.org/atlantproject/go-ipfs/go-multiaddr"
 	addrutil "unknown/go-addr-util"
 	iconn "unknown/go-libp2p-interface-conn"
-	ma "unknown/go-multiaddr"
 )
 
 // ListenAddresses returns a list of addresses at which this swarm listens.

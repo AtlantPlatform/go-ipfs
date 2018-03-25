@@ -23,6 +23,7 @@ extract:
 	--unvendor go-block-format \
 	--unvendor go-ipfs-cmdkit \
 	--unvendor go-ipld-format \
+	--unvendor go-multiaddr \
 	--rename badger:github.com/dgraph-io/badger
 	
 extract-apply:
@@ -42,6 +43,7 @@ extract-apply:
 	--unvendor go-block-format \
 	--unvendor go-ipfs-cmdkit \
 	--unvendor go-ipld-format \
+	--unvendor go-multiaddr \
 	--rename badger:github.com/dgraph-io/badger
 
 patch-apply:

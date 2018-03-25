@@ -6,7 +6,7 @@ import (
 	"strings"
 
 	"bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
-	ma "unknown/go-multiaddr"
+	ma "bitbucket.org/atlantproject/go-ipfs/go-multiaddr"
 )
 
 // PeerInfo is a small struct used to pass around a peer with

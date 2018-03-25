@@ -10,11 +10,11 @@ import (
 	ci "bitbucket.org/atlantproject/go-ipfs/go-libp2p-crypto"
 	ipnet "bitbucket.org/atlantproject/go-ipfs/go-libp2p-interface-pnet"
 	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
+	ma "bitbucket.org/atlantproject/go-ipfs/go-multiaddr"
 	addrutil "unknown/go-addr-util"
 	iconn "unknown/go-libp2p-interface-conn"
 	lgbl "unknown/go-libp2p-loggables"
 	transport "unknown/go-libp2p-transport"
-	ma "unknown/go-multiaddr"
 	manet "unknown/go-multiaddr-net"
 	msmux "unknown/go-multistream"
 )

@@ -12,9 +12,9 @@ import (
 
 	"bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
 	pstore "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peerstore"
+	ma "bitbucket.org/atlantproject/go-ipfs/go-multiaddr"
 	"unknown/go-libp2p-host"
 	logging "unknown/go-log"
-	ma "unknown/go-multiaddr"
 	manet "unknown/go-multiaddr-net"
 	"unknown/mdns"
 )

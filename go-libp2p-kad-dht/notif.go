@@ -1,8 +1,8 @@
 package dht
 
 import (
+	ma "bitbucket.org/atlantproject/go-ipfs/go-multiaddr"
 	inet "unknown/go-libp2p-net"
-	ma "unknown/go-multiaddr"
 	mstream "unknown/go-multistream"
 )
 

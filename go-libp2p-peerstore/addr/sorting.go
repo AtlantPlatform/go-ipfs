@@ -3,7 +3,7 @@ package addr
 import (
 	"bytes"
 
-	ma "unknown/go-multiaddr"
+	ma "bitbucket.org/atlantproject/go-ipfs/go-multiaddr"
 	manet "unknown/go-multiaddr-net"
 	mafmt "unknown/mafmt"
 )

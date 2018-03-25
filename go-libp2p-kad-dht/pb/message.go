@@ -3,10 +3,10 @@ package dht_pb
 import (
 	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
 	pstore "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peerstore"
+	ma "bitbucket.org/atlantproject/go-ipfs/go-multiaddr"
 	b58 "unknown/go-base58-fast/base58"
 	inet "unknown/go-libp2p-net"
 	logging "unknown/go-log"
-	ma "unknown/go-multiaddr"
 )
 
 var log = logging.Logger("dht.pb")

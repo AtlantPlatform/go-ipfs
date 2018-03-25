@@ -9,12 +9,12 @@ import (
 
 	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
 	pstore "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peerstore"
+	ma "bitbucket.org/atlantproject/go-ipfs/go-multiaddr"
 	ifconnmgr "unknown/go-libp2p-interface-connmgr"
 	lgbl "unknown/go-libp2p-loggables"
 	inet "unknown/go-libp2p-net"
 	protocol "unknown/go-libp2p-protocol"
 	logging "unknown/go-log"
-	ma "unknown/go-multiaddr"
 	msmux "unknown/go-multistream"
 )
 

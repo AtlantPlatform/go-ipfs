@@ -22,10 +22,10 @@ import (
 	dir "bitbucket.org/atlantproject/go-ipfs/thirdparty/dir"
 	"github.com/mitchellh/go-homedir"
 
+	ma "bitbucket.org/atlantproject/go-ipfs/go-multiaddr"
 	measure "unknown/go-ds-measure"
 	util "unknown/go-ipfs-util"
 	logging "unknown/go-log"
-	ma "unknown/go-multiaddr"
 )
 
 var log = logging.Logger("fsrepo")

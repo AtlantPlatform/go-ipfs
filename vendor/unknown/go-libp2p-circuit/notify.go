@@ -5,8 +5,8 @@ import (
 	"time"
 
 	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
+	ma "bitbucket.org/atlantproject/go-ipfs/go-multiaddr"
 	inet "unknown/go-libp2p-net"
-	ma "unknown/go-multiaddr"
 )
 
 var _ inet.Notifiee = (*RelayNotifiee)(nil)

@@ -1,7 +1,7 @@
 package addrutil
 
 import (
-	ma "unknown/go-multiaddr"
+	ma "bitbucket.org/atlantproject/go-ipfs/go-multiaddr"
 	mafmt "unknown/mafmt"
 )
 

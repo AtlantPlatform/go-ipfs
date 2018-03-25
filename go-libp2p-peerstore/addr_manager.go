@@ -9,7 +9,7 @@ import (
 
 	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
 	addr "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peerstore/addr"
-	ma "unknown/go-multiaddr"
+	ma "bitbucket.org/atlantproject/go-ipfs/go-multiaddr"
 )
 
 var (

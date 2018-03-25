@@ -12,7 +12,7 @@ import (
 	ci "bitbucket.org/atlantproject/go-ipfs/go-libp2p-crypto"
 	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
 	ptest "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer/test"
-	ma "unknown/go-multiaddr"
+	ma "bitbucket.org/atlantproject/go-ipfs/go-multiaddr"
 	mh "unknown/go-multihash"
 )
 

@@ -9,7 +9,7 @@ import (
 
 	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
 	pstore "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peerstore"
-	ma "unknown/go-multiaddr"
+	ma "bitbucket.org/atlantproject/go-ipfs/go-multiaddr"
 	mh "unknown/go-multihash"
 	ggio "unknown/gogo-protobuf/io"
 	proto "unknown/gogo-protobuf/proto"

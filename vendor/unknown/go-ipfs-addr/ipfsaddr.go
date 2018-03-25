@@ -5,9 +5,9 @@ import (
 	"strings"
 
 	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
+	ma "bitbucket.org/atlantproject/go-ipfs/go-multiaddr"
 	circuit "unknown/go-libp2p-circuit"
 	logging "unknown/go-log"
-	ma "unknown/go-multiaddr"
 )
 
 var log = logging.Logger("ipfsaddr")

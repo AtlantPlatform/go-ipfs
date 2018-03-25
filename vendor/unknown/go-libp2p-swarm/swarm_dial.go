@@ -8,10 +8,10 @@ import (
 	"time"
 
 	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
+	ma "bitbucket.org/atlantproject/go-ipfs/go-multiaddr"
 	addrutil "unknown/go-addr-util"
 	iconn "unknown/go-libp2p-interface-conn"
 	lgbl "unknown/go-libp2p-loggables"
-	ma "unknown/go-multiaddr"
 )
 
 // Diagram of dial sync:
