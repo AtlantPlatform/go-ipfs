@@ -24,6 +24,7 @@ extract:
 	--unvendor go-ipfs-cmdkit \
 	--unvendor go-ipld-format \
 	--unvendor go-multiaddr \
+	--unvendor go-libp2p-metrics \
 	--rename badger:github.com/dgraph-io/badger
 	
 extract-apply:
@@ -44,6 +45,7 @@ extract-apply:
 	--unvendor go-ipfs-cmdkit \
 	--unvendor go-ipld-format \
 	--unvendor go-multiaddr \
+	--unvendor go-libp2p-metrics \
 	--rename badger:github.com/dgraph-io/badger
 
 patch-apply:

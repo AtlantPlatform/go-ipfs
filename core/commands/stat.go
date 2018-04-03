@@ -8,10 +8,10 @@ import (
 	"time"
 
 	cmdkit "bitbucket.org/atlantproject/go-ipfs/go-ipfs-cmdkit"
+	metrics "bitbucket.org/atlantproject/go-ipfs/go-libp2p-metrics"
 	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
 	humanize "unknown/go-humanize"
 	cmds "unknown/go-ipfs-cmds"
-	metrics "unknown/go-libp2p-metrics"
 	protocol "unknown/go-libp2p-protocol"
 )
 

@@ -5,10 +5,10 @@ import (
 	"fmt"
 
 	ipnet "bitbucket.org/atlantproject/go-ipfs/go-libp2p-interface-pnet"
+	metrics "bitbucket.org/atlantproject/go-ipfs/go-libp2p-metrics"
 	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
 	pstore "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peerstore"
 	ma "bitbucket.org/atlantproject/go-ipfs/go-multiaddr"
-	metrics "unknown/go-libp2p-metrics"
 	inet "unknown/go-libp2p-net"
 	"unknown/goprocess"
 )

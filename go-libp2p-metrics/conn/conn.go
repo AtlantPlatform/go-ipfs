@@ -1,7 +1,7 @@
 package meterconn
 
 import (
-	metrics "unknown/go-libp2p-metrics"
+	metrics "bitbucket.org/atlantproject/go-ipfs/go-libp2p-metrics"
 	transport "unknown/go-libp2p-transport"
 )
 
