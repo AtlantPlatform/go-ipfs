@@ -6,7 +6,7 @@ import (
 	"sort"
 	"sync"
 
-	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
+	cid "github.com/AtlantPlatform/go-ipfs/go-cid"
 )
 
 type ThreadSafe struct {

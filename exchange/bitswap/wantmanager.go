@@ -5,12 +5,12 @@ import (
 	"sync"
 	"time"
 
-	engine "bitbucket.org/atlantproject/go-ipfs/exchange/bitswap/decision"
-	bsmsg "bitbucket.org/atlantproject/go-ipfs/exchange/bitswap/message"
-	bsnet "bitbucket.org/atlantproject/go-ipfs/exchange/bitswap/network"
-	wantlist "bitbucket.org/atlantproject/go-ipfs/exchange/bitswap/wantlist"
-	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
-	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
+	engine "github.com/AtlantPlatform/go-ipfs/exchange/bitswap/decision"
+	bsmsg "github.com/AtlantPlatform/go-ipfs/exchange/bitswap/message"
+	bsnet "github.com/AtlantPlatform/go-ipfs/exchange/bitswap/network"
+	wantlist "github.com/AtlantPlatform/go-ipfs/exchange/bitswap/wantlist"
+	cid "github.com/AtlantPlatform/go-ipfs/go-cid"
+	peer "github.com/AtlantPlatform/go-ipfs/go-libp2p-peer"
 	metrics "unknown/go-metrics-interface"
 )
 

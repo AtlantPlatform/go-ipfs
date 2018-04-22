@@ -3,9 +3,9 @@ package commands
 import (
 	"fmt"
 
-	"bitbucket.org/atlantproject/go-ipfs/go-ipfs-cmdkit"
+	"github.com/AtlantPlatform/go-ipfs/go-ipfs-cmdkit"
 
-	cmds "bitbucket.org/atlantproject/go-ipfs/commands"
+	cmds "github.com/AtlantPlatform/go-ipfs/commands"
 )
 
 var daemonShutdownCmd = &cmds.Command{

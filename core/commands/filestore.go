@@ -6,13 +6,13 @@ import (
 	"io"
 	"os"
 
-	oldCmds "bitbucket.org/atlantproject/go-ipfs/commands"
-	lgc "bitbucket.org/atlantproject/go-ipfs/commands/legacy"
-	"bitbucket.org/atlantproject/go-ipfs/core"
-	e "bitbucket.org/atlantproject/go-ipfs/core/commands/e"
-	"bitbucket.org/atlantproject/go-ipfs/filestore"
-	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
-	"bitbucket.org/atlantproject/go-ipfs/go-ipfs-cmdkit"
+	oldCmds "github.com/AtlantPlatform/go-ipfs/commands"
+	lgc "github.com/AtlantPlatform/go-ipfs/commands/legacy"
+	"github.com/AtlantPlatform/go-ipfs/core"
+	e "github.com/AtlantPlatform/go-ipfs/core/commands/e"
+	"github.com/AtlantPlatform/go-ipfs/filestore"
+	cid "github.com/AtlantPlatform/go-ipfs/go-cid"
+	"github.com/AtlantPlatform/go-ipfs/go-ipfs-cmdkit"
 	cmds "unknown/go-ipfs-cmds"
 )
 

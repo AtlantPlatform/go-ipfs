@@ -7,9 +7,9 @@ import (
 	"os"
 	"time"
 
-	cmdkit "bitbucket.org/atlantproject/go-ipfs/go-ipfs-cmdkit"
-	metrics "bitbucket.org/atlantproject/go-ipfs/go-libp2p-metrics"
-	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
+	cmdkit "github.com/AtlantPlatform/go-ipfs/go-ipfs-cmdkit"
+	metrics "github.com/AtlantPlatform/go-ipfs/go-libp2p-metrics"
+	peer "github.com/AtlantPlatform/go-ipfs/go-libp2p-peer"
 	humanize "unknown/go-humanize"
 	cmds "unknown/go-ipfs-cmds"
 	protocol "unknown/go-libp2p-protocol"

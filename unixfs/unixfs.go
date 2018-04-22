@@ -8,8 +8,8 @@ import (
 
 	proto "unknown/gogo-protobuf/proto"
 
-	dag "bitbucket.org/atlantproject/go-ipfs/merkledag"
-	pb "bitbucket.org/atlantproject/go-ipfs/unixfs/pb"
+	dag "github.com/AtlantPlatform/go-ipfs/merkledag"
+	pb "github.com/AtlantPlatform/go-ipfs/unixfs/pb"
 )
 
 // Shorthands for protobuffer types

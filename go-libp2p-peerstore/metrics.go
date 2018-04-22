@@ -4,7 +4,7 @@ import (
 	"sync"
 	"time"
 
-	"bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
+	"github.com/AtlantPlatform/go-ipfs/go-libp2p-peer"
 )
 
 // LatencyEWMASmooting governs the decay of the EWMA (the speed

@@ -3,8 +3,8 @@ package commands
 import (
 	"errors"
 
-	cmds "bitbucket.org/atlantproject/go-ipfs/commands"
-	cmdkit "bitbucket.org/atlantproject/go-ipfs/go-ipfs-cmdkit"
+	cmds "github.com/AtlantPlatform/go-ipfs/commands"
+	cmdkit "github.com/AtlantPlatform/go-ipfs/go-ipfs-cmdkit"
 )
 
 var MountCmd = &cmds.Command{

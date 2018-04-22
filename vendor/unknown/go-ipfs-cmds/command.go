@@ -13,7 +13,7 @@ import (
 	"fmt"
 	"strings"
 
-	"bitbucket.org/atlantproject/go-ipfs/go-ipfs-cmdkit"
+	"github.com/AtlantPlatform/go-ipfs/go-ipfs-cmdkit"
 
 	logging "unknown/go-log"
 )

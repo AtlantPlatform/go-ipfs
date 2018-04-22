@@ -5,9 +5,9 @@ package offline
 import (
 	"context"
 
-	exchange "bitbucket.org/atlantproject/go-ipfs/exchange"
-	blocks "bitbucket.org/atlantproject/go-ipfs/go-block-format"
-	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
+	exchange "github.com/AtlantPlatform/go-ipfs/exchange"
+	blocks "github.com/AtlantPlatform/go-ipfs/go-block-format"
+	cid "github.com/AtlantPlatform/go-ipfs/go-cid"
 	blockstore "unknown/go-ipfs-blockstore"
 )
 

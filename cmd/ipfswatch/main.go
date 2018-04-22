@@ -9,12 +9,12 @@ import (
 	"path/filepath"
 	"syscall"
 
-	commands "bitbucket.org/atlantproject/go-ipfs/commands"
-	core "bitbucket.org/atlantproject/go-ipfs/core"
-	corehttp "bitbucket.org/atlantproject/go-ipfs/core/corehttp"
-	coreunix "bitbucket.org/atlantproject/go-ipfs/core/coreunix"
-	config "bitbucket.org/atlantproject/go-ipfs/repo/config"
-	fsrepo "bitbucket.org/atlantproject/go-ipfs/repo/fsrepo"
+	commands "github.com/AtlantPlatform/go-ipfs/commands"
+	core "github.com/AtlantPlatform/go-ipfs/core"
+	corehttp "github.com/AtlantPlatform/go-ipfs/core/corehttp"
+	coreunix "github.com/AtlantPlatform/go-ipfs/core/coreunix"
+	config "github.com/AtlantPlatform/go-ipfs/repo/config"
+	fsrepo "github.com/AtlantPlatform/go-ipfs/repo/fsrepo"
 	homedir "github.com/mitchellh/go-homedir"
 
 	fsnotify "unknown/fsnotify.v1"

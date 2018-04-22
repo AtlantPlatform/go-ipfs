@@ -5,7 +5,7 @@ import (
 
 	"unknown/go-ipfs-cmds"
 
-	oldcmds "bitbucket.org/atlantproject/go-ipfs/commands"
+	oldcmds "github.com/AtlantPlatform/go-ipfs/commands"
 	logging "unknown/go-log"
 )
 

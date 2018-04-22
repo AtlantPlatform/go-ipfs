@@ -4,11 +4,11 @@ import (
 	"context"
 	"fmt"
 
-	ipnet "bitbucket.org/atlantproject/go-ipfs/go-libp2p-interface-pnet"
-	metrics "bitbucket.org/atlantproject/go-ipfs/go-libp2p-metrics"
-	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
-	pstore "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peerstore"
-	ma "bitbucket.org/atlantproject/go-ipfs/go-multiaddr"
+	ipnet "github.com/AtlantPlatform/go-ipfs/go-libp2p-interface-pnet"
+	metrics "github.com/AtlantPlatform/go-ipfs/go-libp2p-metrics"
+	peer "github.com/AtlantPlatform/go-ipfs/go-libp2p-peer"
+	pstore "github.com/AtlantPlatform/go-ipfs/go-libp2p-peerstore"
+	ma "github.com/AtlantPlatform/go-ipfs/go-multiaddr"
 	inet "unknown/go-libp2p-net"
 	"unknown/goprocess"
 )

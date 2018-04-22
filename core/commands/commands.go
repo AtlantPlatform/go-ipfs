@@ -11,8 +11,8 @@ import (
 	"sort"
 	"strings"
 
-	e "bitbucket.org/atlantproject/go-ipfs/core/commands/e"
-	"bitbucket.org/atlantproject/go-ipfs/go-ipfs-cmdkit"
+	e "github.com/AtlantPlatform/go-ipfs/core/commands/e"
+	"github.com/AtlantPlatform/go-ipfs/go-ipfs-cmdkit"
 	cmds "unknown/go-ipfs-cmds"
 )
 

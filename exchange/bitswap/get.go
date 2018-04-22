@@ -4,9 +4,9 @@ import (
 	"context"
 	"errors"
 
-	notifications "bitbucket.org/atlantproject/go-ipfs/exchange/bitswap/notifications"
-	blocks "bitbucket.org/atlantproject/go-ipfs/go-block-format"
-	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
+	notifications "github.com/AtlantPlatform/go-ipfs/exchange/bitswap/notifications"
+	blocks "github.com/AtlantPlatform/go-ipfs/go-block-format"
+	cid "github.com/AtlantPlatform/go-ipfs/go-cid"
 	blockstore "unknown/go-ipfs-blockstore"
 )
 

@@ -8,11 +8,11 @@ import (
 	"io/ioutil"
 	"os"
 
-	util "bitbucket.org/atlantproject/go-ipfs/blocks/blockstoreutil"
-	e "bitbucket.org/atlantproject/go-ipfs/core/commands/e"
-	blocks "bitbucket.org/atlantproject/go-ipfs/go-block-format"
-	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
-	"bitbucket.org/atlantproject/go-ipfs/go-ipfs-cmdkit"
+	util "github.com/AtlantPlatform/go-ipfs/blocks/blockstoreutil"
+	e "github.com/AtlantPlatform/go-ipfs/core/commands/e"
+	blocks "github.com/AtlantPlatform/go-ipfs/go-block-format"
+	cid "github.com/AtlantPlatform/go-ipfs/go-cid"
+	"github.com/AtlantPlatform/go-ipfs/go-ipfs-cmdkit"
 	"unknown/go-ipfs-cmds"
 	mh "unknown/go-multihash"
 )

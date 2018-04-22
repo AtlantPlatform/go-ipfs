@@ -3,9 +3,9 @@ package network
 import (
 	"context"
 
-	bsmsg "bitbucket.org/atlantproject/go-ipfs/exchange/bitswap/message"
-	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
-	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
+	bsmsg "github.com/AtlantPlatform/go-ipfs/exchange/bitswap/message"
+	cid "github.com/AtlantPlatform/go-ipfs/go-cid"
+	peer "github.com/AtlantPlatform/go-ipfs/go-libp2p-peer"
 	ifconnmgr "unknown/go-libp2p-interface-connmgr"
 	protocol "unknown/go-libp2p-protocol"
 )

@@ -6,10 +6,10 @@ import (
 	"fmt"
 	"sync"
 
-	bserv "bitbucket.org/atlantproject/go-ipfs/blockservice"
-	blocks "bitbucket.org/atlantproject/go-ipfs/go-block-format"
-	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
-	ipld "bitbucket.org/atlantproject/go-ipfs/go-ipld-format"
+	bserv "github.com/AtlantPlatform/go-ipfs/blockservice"
+	blocks "github.com/AtlantPlatform/go-ipfs/go-block-format"
+	cid "github.com/AtlantPlatform/go-ipfs/go-cid"
+	ipld "github.com/AtlantPlatform/go-ipfs/go-ipld-format"
 	ipldcbor "unknown/go-ipld-cbor"
 )
 

@@ -12,10 +12,10 @@ import (
 
 	host "unknown/go-libp2p-host"
 
-	ic "bitbucket.org/atlantproject/go-ipfs/go-libp2p-crypto"
-	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
-	pstore "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peerstore"
-	ma "bitbucket.org/atlantproject/go-ipfs/go-multiaddr"
+	ic "github.com/AtlantPlatform/go-ipfs/go-libp2p-crypto"
+	peer "github.com/AtlantPlatform/go-ipfs/go-libp2p-peer"
+	pstore "github.com/AtlantPlatform/go-ipfs/go-libp2p-peerstore"
+	ma "github.com/AtlantPlatform/go-ipfs/go-multiaddr"
 	inet "unknown/go-libp2p-net"
 )
 

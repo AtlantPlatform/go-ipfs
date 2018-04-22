@@ -4,9 +4,9 @@ import (
 	"context"
 	"fmt"
 
-	blocks "bitbucket.org/atlantproject/go-ipfs/go-block-format"
+	blocks "github.com/AtlantPlatform/go-ipfs/go-block-format"
 
-	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
+	cid "github.com/AtlantPlatform/go-ipfs/go-cid"
 )
 
 type Resolver interface {

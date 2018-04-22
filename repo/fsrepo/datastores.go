@@ -8,14 +8,14 @@ import (
 	"path/filepath"
 	"sort"
 
-	repo "bitbucket.org/atlantproject/go-ipfs/repo"
+	repo "github.com/AtlantPlatform/go-ipfs/repo"
 	flatfs "unknown/go-ds-flatfs"
 	measure "unknown/go-ds-measure"
 
 	ds "unknown/go-datastore"
 	mount "unknown/go-datastore/syncmount"
 
-	badgerds "bitbucket.org/atlantproject/go-ipfs/go-ds-badger"
+	badgerds "github.com/AtlantPlatform/go-ipfs/go-ds-badger"
 	levelds "unknown/go-ds-leveldb"
 	humanize "unknown/go-humanize"
 	ldbopts "unknown/goleveldb/leveldb/opt"

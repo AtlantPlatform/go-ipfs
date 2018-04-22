@@ -12,7 +12,7 @@ import (
 	"crypto/sha512"
 	"hash"
 
-	ci "bitbucket.org/atlantproject/go-ipfs/go-libp2p-crypto"
+	ci "github.com/AtlantPlatform/go-ipfs/go-libp2p-crypto"
 	bfish "unknown/go-crypto/blowfish"
 	sha256 "unknown/sha256-simd"
 )

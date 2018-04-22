@@ -4,8 +4,8 @@
 package readonly
 
 import (
-	core "bitbucket.org/atlantproject/go-ipfs/core"
-	mount "bitbucket.org/atlantproject/go-ipfs/fuse/mount"
+	core "github.com/AtlantPlatform/go-ipfs/core"
+	mount "github.com/AtlantPlatform/go-ipfs/fuse/mount"
 )
 
 // Mount mounts IPFS at a given location, and returns a mount.Mount instance.

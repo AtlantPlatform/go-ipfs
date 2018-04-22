@@ -4,9 +4,9 @@ import (
 	"sync"
 	"time"
 
-	wl "bitbucket.org/atlantproject/go-ipfs/exchange/bitswap/wantlist"
-	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
-	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
+	wl "github.com/AtlantPlatform/go-ipfs/exchange/bitswap/wantlist"
+	cid "github.com/AtlantPlatform/go-ipfs/go-cid"
+	peer "github.com/AtlantPlatform/go-ipfs/go-libp2p-peer"
 )
 
 func newLedger(p peer.ID) *ledger {

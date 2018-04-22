@@ -6,7 +6,7 @@ import (
 	"net/http"
 	"strings"
 
-	"bitbucket.org/atlantproject/go-ipfs/core"
+	"github.com/AtlantPlatform/go-ipfs/core"
 	isd "unknown/go-is-domain"
 )
 

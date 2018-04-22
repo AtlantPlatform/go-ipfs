@@ -4,14 +4,14 @@ import (
 	"io"
 	"strings"
 
-	cmds "bitbucket.org/atlantproject/go-ipfs/commands"
-	core "bitbucket.org/atlantproject/go-ipfs/core"
-	e "bitbucket.org/atlantproject/go-ipfs/core/commands/e"
-	"bitbucket.org/atlantproject/go-ipfs/core/coreunix"
-	"bitbucket.org/atlantproject/go-ipfs/go-ipfs-cmdkit"
-	dag "bitbucket.org/atlantproject/go-ipfs/merkledag"
-	path "bitbucket.org/atlantproject/go-ipfs/path"
-	tar "bitbucket.org/atlantproject/go-ipfs/tar"
+	cmds "github.com/AtlantPlatform/go-ipfs/commands"
+	core "github.com/AtlantPlatform/go-ipfs/core"
+	e "github.com/AtlantPlatform/go-ipfs/core/commands/e"
+	"github.com/AtlantPlatform/go-ipfs/core/coreunix"
+	"github.com/AtlantPlatform/go-ipfs/go-ipfs-cmdkit"
+	dag "github.com/AtlantPlatform/go-ipfs/merkledag"
+	path "github.com/AtlantPlatform/go-ipfs/path"
+	tar "github.com/AtlantPlatform/go-ipfs/tar"
 )
 
 var TarCmd = &cmds.Command{

@@ -7,8 +7,8 @@ import (
 	"strings"
 	"time"
 
-	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
-	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
+	cid "github.com/AtlantPlatform/go-ipfs/go-cid"
+	peer "github.com/AtlantPlatform/go-ipfs/go-libp2p-peer"
 	autobatch "unknown/autobatch"
 	base32 "unknown/base32"
 	ds "unknown/go-datastore"

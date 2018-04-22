@@ -6,7 +6,7 @@ import (
 	"net"
 	"strings"
 
-	ma "bitbucket.org/atlantproject/go-ipfs/go-multiaddr"
+	ma "github.com/AtlantPlatform/go-ipfs/go-multiaddr"
 )
 
 var ResolvableProtocols = []ma.Protocol{DnsaddrProtocol, Dns4Protocol, Dns6Protocol}

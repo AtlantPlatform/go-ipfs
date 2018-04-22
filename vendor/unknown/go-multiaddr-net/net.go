@@ -10,7 +10,7 @@ import (
 	"fmt"
 	"net"
 
-	ma "bitbucket.org/atlantproject/go-ipfs/go-multiaddr"
+	ma "github.com/AtlantPlatform/go-ipfs/go-multiaddr"
 )
 
 // Conn is the equivalent of a net.Conn object. It is the

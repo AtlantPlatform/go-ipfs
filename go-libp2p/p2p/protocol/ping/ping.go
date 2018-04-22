@@ -7,7 +7,7 @@ import (
 	"io"
 	"time"
 
-	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
+	peer "github.com/AtlantPlatform/go-ipfs/go-libp2p-peer"
 	u "unknown/go-ipfs-util"
 	host "unknown/go-libp2p-host"
 	inet "unknown/go-libp2p-net"

@@ -6,9 +6,9 @@ import (
 	"sync"
 	"time"
 
-	bsmsg "bitbucket.org/atlantproject/go-ipfs/exchange/bitswap/message"
-	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
-	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
+	bsmsg "github.com/AtlantPlatform/go-ipfs/exchange/bitswap/message"
+	cid "github.com/AtlantPlatform/go-ipfs/go-cid"
+	peer "github.com/AtlantPlatform/go-ipfs/go-libp2p-peer"
 	logging "unknown/go-log"
 	process "unknown/goprocess"
 	procctx "unknown/goprocess/context"

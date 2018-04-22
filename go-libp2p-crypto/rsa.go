@@ -8,7 +8,7 @@ import (
 	"crypto/x509"
 	"errors"
 
-	pb "bitbucket.org/atlantproject/go-ipfs/go-libp2p-crypto/pb"
+	pb "github.com/AtlantPlatform/go-ipfs/go-libp2p-crypto/pb"
 	proto "unknown/gogo-protobuf/proto"
 )
 

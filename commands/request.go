@@ -12,12 +12,12 @@ import (
 	"strings"
 	"time"
 
-	"bitbucket.org/atlantproject/go-ipfs/core"
-	"bitbucket.org/atlantproject/go-ipfs/repo/config"
+	"github.com/AtlantPlatform/go-ipfs/core"
+	"github.com/AtlantPlatform/go-ipfs/repo/config"
 	u "unknown/go-ipfs-util"
 
-	"bitbucket.org/atlantproject/go-ipfs/go-ipfs-cmdkit"
-	"bitbucket.org/atlantproject/go-ipfs/go-ipfs-cmdkit/files"
+	"github.com/AtlantPlatform/go-ipfs/go-ipfs-cmdkit"
+	"github.com/AtlantPlatform/go-ipfs/go-ipfs-cmdkit/files"
 	"unknown/go-ipfs-cmds"
 )
 

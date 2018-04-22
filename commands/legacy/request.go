@@ -7,11 +7,11 @@ import (
 	"os"
 	"reflect"
 
-	"bitbucket.org/atlantproject/go-ipfs/go-ipfs-cmdkit"
-	"bitbucket.org/atlantproject/go-ipfs/go-ipfs-cmdkit/files"
+	"github.com/AtlantPlatform/go-ipfs/go-ipfs-cmdkit"
+	"github.com/AtlantPlatform/go-ipfs/go-ipfs-cmdkit/files"
 	"unknown/go-ipfs-cmds"
 
-	oldcmds "bitbucket.org/atlantproject/go-ipfs/commands"
+	oldcmds "github.com/AtlantPlatform/go-ipfs/commands"
 )
 
 // requestWrapper implements a oldcmds.Request from an Request

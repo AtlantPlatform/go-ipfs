@@ -5,11 +5,11 @@ import (
 	"io"
 	"os"
 
-	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
-	files "bitbucket.org/atlantproject/go-ipfs/go-ipfs-cmdkit/files"
-	ipld "bitbucket.org/atlantproject/go-ipfs/go-ipld-format"
-	dag "bitbucket.org/atlantproject/go-ipfs/merkledag"
-	ft "bitbucket.org/atlantproject/go-ipfs/unixfs"
+	cid "github.com/AtlantPlatform/go-ipfs/go-cid"
+	files "github.com/AtlantPlatform/go-ipfs/go-ipfs-cmdkit/files"
+	ipld "github.com/AtlantPlatform/go-ipfs/go-ipld-format"
+	dag "github.com/AtlantPlatform/go-ipfs/merkledag"
+	ft "github.com/AtlantPlatform/go-ipfs/unixfs"
 	chunker "unknown/go-ipfs-chunker"
 )
 

@@ -5,9 +5,9 @@ import (
 	"io/ioutil"
 	"math"
 
-	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
-	ipld "bitbucket.org/atlantproject/go-ipfs/go-ipld-format"
-	"bitbucket.org/atlantproject/go-ipfs/merkledag"
+	cid "github.com/AtlantPlatform/go-ipfs/go-cid"
+	ipld "github.com/AtlantPlatform/go-ipfs/go-ipld-format"
+	"github.com/AtlantPlatform/go-ipfs/merkledag"
 	mh "unknown/go-multihash"
 )
 

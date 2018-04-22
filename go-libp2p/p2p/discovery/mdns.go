@@ -10,9 +10,9 @@ import (
 	"sync"
 	"time"
 
-	"bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
-	pstore "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peerstore"
-	ma "bitbucket.org/atlantproject/go-ipfs/go-multiaddr"
+	"github.com/AtlantPlatform/go-ipfs/go-libp2p-peer"
+	pstore "github.com/AtlantPlatform/go-ipfs/go-libp2p-peerstore"
+	ma "github.com/AtlantPlatform/go-ipfs/go-multiaddr"
 	"unknown/go-libp2p-host"
 	logging "unknown/go-log"
 	manet "unknown/go-multiaddr-net"

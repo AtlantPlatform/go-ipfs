@@ -7,13 +7,13 @@ import (
 	"io"
 	"strings"
 
-	cmds "bitbucket.org/atlantproject/go-ipfs/commands"
-	"bitbucket.org/atlantproject/go-ipfs/core"
-	e "bitbucket.org/atlantproject/go-ipfs/core/commands/e"
-	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
-	"bitbucket.org/atlantproject/go-ipfs/go-ipfs-cmdkit"
-	ipld "bitbucket.org/atlantproject/go-ipfs/go-ipld-format"
-	path "bitbucket.org/atlantproject/go-ipfs/path"
+	cmds "github.com/AtlantPlatform/go-ipfs/commands"
+	"github.com/AtlantPlatform/go-ipfs/core"
+	e "github.com/AtlantPlatform/go-ipfs/core/commands/e"
+	cid "github.com/AtlantPlatform/go-ipfs/go-cid"
+	"github.com/AtlantPlatform/go-ipfs/go-ipfs-cmdkit"
+	ipld "github.com/AtlantPlatform/go-ipfs/go-ipld-format"
+	path "github.com/AtlantPlatform/go-ipfs/path"
 )
 
 // KeyList is a general type for outputting lists of keys

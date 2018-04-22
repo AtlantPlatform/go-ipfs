@@ -3,9 +3,9 @@ package bitswap
 import (
 	"context"
 
-	bsnet "bitbucket.org/atlantproject/go-ipfs/exchange/bitswap/network"
-	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
-	mockpeernet "bitbucket.org/atlantproject/go-ipfs/go-libp2p/p2p/net/mock"
+	bsnet "github.com/AtlantPlatform/go-ipfs/exchange/bitswap/network"
+	peer "github.com/AtlantPlatform/go-ipfs/go-libp2p-peer"
+	mockpeernet "github.com/AtlantPlatform/go-ipfs/go-libp2p/p2p/net/mock"
 	ds "unknown/go-datastore"
 	mockrouting "unknown/go-ipfs-routing/mock"
 	testutil "unknown/go-testutil"

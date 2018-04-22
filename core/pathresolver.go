@@ -5,11 +5,11 @@ import (
 	"errors"
 	"strings"
 
-	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
-	ipld "bitbucket.org/atlantproject/go-ipfs/go-ipld-format"
-	namesys "bitbucket.org/atlantproject/go-ipfs/namesys"
-	path "bitbucket.org/atlantproject/go-ipfs/path"
-	resolver "bitbucket.org/atlantproject/go-ipfs/path/resolver"
+	cid "github.com/AtlantPlatform/go-ipfs/go-cid"
+	ipld "github.com/AtlantPlatform/go-ipfs/go-ipld-format"
+	namesys "github.com/AtlantPlatform/go-ipfs/namesys"
+	path "github.com/AtlantPlatform/go-ipfs/path"
+	resolver "github.com/AtlantPlatform/go-ipfs/path/resolver"
 	logging "unknown/go-log"
 )
 

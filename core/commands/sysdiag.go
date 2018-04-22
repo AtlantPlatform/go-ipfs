@@ -5,9 +5,9 @@ import (
 	"path"
 	"runtime"
 
-	cmds "bitbucket.org/atlantproject/go-ipfs/commands"
-	"bitbucket.org/atlantproject/go-ipfs/go-ipfs-cmdkit"
-	config "bitbucket.org/atlantproject/go-ipfs/repo/config"
+	cmds "github.com/AtlantPlatform/go-ipfs/commands"
+	"github.com/AtlantPlatform/go-ipfs/go-ipfs-cmdkit"
+	config "github.com/AtlantPlatform/go-ipfs/repo/config"
 	manet "unknown/go-multiaddr-net"
 	sysi "unknown/go-sysinfo"
 )

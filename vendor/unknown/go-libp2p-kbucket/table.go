@@ -7,8 +7,8 @@ import (
 	"sync"
 	"time"
 
-	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
-	pstore "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peerstore"
+	peer "github.com/AtlantPlatform/go-ipfs/go-libp2p-peer"
+	pstore "github.com/AtlantPlatform/go-ipfs/go-libp2p-peerstore"
 	logging "unknown/go-log"
 )
 

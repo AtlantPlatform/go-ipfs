@@ -10,8 +10,8 @@ import (
 	"net/http"
 	"time"
 
-	core "bitbucket.org/atlantproject/go-ipfs/core"
-	ma "bitbucket.org/atlantproject/go-ipfs/go-multiaddr"
+	core "github.com/AtlantPlatform/go-ipfs/core"
+	ma "github.com/AtlantPlatform/go-ipfs/go-multiaddr"
 	logging "unknown/go-log"
 	manet "unknown/go-multiaddr-net"
 	"unknown/goprocess"

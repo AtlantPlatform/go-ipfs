@@ -5,7 +5,7 @@ import (
 	"crypto/sha256"
 	"errors"
 
-	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
+	peer "github.com/AtlantPlatform/go-ipfs/go-libp2p-peer"
 	u "unknown/go-ipfs-util"
 	ks "unknown/go-libp2p-kbucket/keyspace"
 )

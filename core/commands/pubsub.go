@@ -9,12 +9,12 @@ import (
 	"sync"
 	"time"
 
-	core "bitbucket.org/atlantproject/go-ipfs/core"
-	blocks "bitbucket.org/atlantproject/go-ipfs/go-block-format"
-	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
-	cmdkit "bitbucket.org/atlantproject/go-ipfs/go-ipfs-cmdkit"
-	floodsub "bitbucket.org/atlantproject/go-ipfs/go-libp2p-floodsub"
-	pstore "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peerstore"
+	core "github.com/AtlantPlatform/go-ipfs/core"
+	blocks "github.com/AtlantPlatform/go-ipfs/go-block-format"
+	cid "github.com/AtlantPlatform/go-ipfs/go-cid"
+	cmdkit "github.com/AtlantPlatform/go-ipfs/go-ipfs-cmdkit"
+	floodsub "github.com/AtlantPlatform/go-ipfs/go-libp2p-floodsub"
+	pstore "github.com/AtlantPlatform/go-ipfs/go-libp2p-peerstore"
 	cmds "unknown/go-ipfs-cmds"
 )
 

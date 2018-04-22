@@ -9,12 +9,12 @@ import (
 	"sync"
 	"time"
 
-	config "bitbucket.org/atlantproject/go-ipfs/repo/config"
-	math2 "bitbucket.org/atlantproject/go-ipfs/thirdparty/math2"
+	config "github.com/AtlantPlatform/go-ipfs/repo/config"
+	math2 "github.com/AtlantPlatform/go-ipfs/thirdparty/math2"
 	lgbl "unknown/go-libp2p-loggables"
 
-	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
-	pstore "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peerstore"
+	peer "github.com/AtlantPlatform/go-ipfs/go-libp2p-peer"
+	pstore "github.com/AtlantPlatform/go-ipfs/go-libp2p-peerstore"
 	host "unknown/go-libp2p-host"
 	inet "unknown/go-libp2p-net"
 	goprocess "unknown/goprocess"

@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"sort"
 
-	pb "bitbucket.org/atlantproject/go-ipfs/filestore/pb"
-	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
+	pb "github.com/AtlantPlatform/go-ipfs/filestore/pb"
+	cid "github.com/AtlantPlatform/go-ipfs/go-cid"
 	ds "unknown/go-datastore"
 	dsq "unknown/go-datastore/query"
 	blockstore "unknown/go-ipfs-blockstore"

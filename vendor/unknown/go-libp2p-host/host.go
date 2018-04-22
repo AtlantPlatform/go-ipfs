@@ -3,9 +3,9 @@ package host
 import (
 	"context"
 
-	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
-	pstore "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peerstore"
-	ma "bitbucket.org/atlantproject/go-ipfs/go-multiaddr"
+	peer "github.com/AtlantPlatform/go-ipfs/go-libp2p-peer"
+	pstore "github.com/AtlantPlatform/go-ipfs/go-libp2p-peerstore"
+	ma "github.com/AtlantPlatform/go-ipfs/go-multiaddr"
 	ifconnmgr "unknown/go-libp2p-interface-connmgr"
 	inet "unknown/go-libp2p-net"
 	protocol "unknown/go-libp2p-protocol"

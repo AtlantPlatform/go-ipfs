@@ -5,10 +5,10 @@ import (
 	"context"
 	"errors"
 
-	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
-	ci "bitbucket.org/atlantproject/go-ipfs/go-libp2p-crypto"
-	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
-	pstore "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peerstore"
+	cid "github.com/AtlantPlatform/go-ipfs/go-cid"
+	ci "github.com/AtlantPlatform/go-ipfs/go-libp2p-crypto"
+	peer "github.com/AtlantPlatform/go-ipfs/go-libp2p-peer"
+	pstore "github.com/AtlantPlatform/go-ipfs/go-libp2p-peerstore"
 )
 
 // ErrNotFound is returned when a search fails to find anything

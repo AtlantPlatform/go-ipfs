@@ -8,7 +8,7 @@ import (
 	"os"
 	"path/filepath"
 
-	"bitbucket.org/atlantproject/go-ipfs/repo/config"
+	"github.com/AtlantPlatform/go-ipfs/repo/config"
 	"unknown/atomicfile"
 	"unknown/go-ipfs-util"
 )

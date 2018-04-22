@@ -4,8 +4,8 @@ import (
 	"context"
 	"fmt"
 
-	mconn "bitbucket.org/atlantproject/go-ipfs/go-libp2p-metrics/conn"
-	ma "bitbucket.org/atlantproject/go-ipfs/go-multiaddr"
+	mconn "github.com/AtlantPlatform/go-ipfs/go-libp2p-metrics/conn"
+	ma "github.com/AtlantPlatform/go-ipfs/go-multiaddr"
 	conn "unknown/go-libp2p-conn"
 	iconn "unknown/go-libp2p-interface-conn"
 	lgbl "unknown/go-libp2p-loggables"

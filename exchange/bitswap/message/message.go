@@ -4,11 +4,11 @@ import (
 	"fmt"
 	"io"
 
-	pb "bitbucket.org/atlantproject/go-ipfs/exchange/bitswap/message/pb"
-	wantlist "bitbucket.org/atlantproject/go-ipfs/exchange/bitswap/wantlist"
-	blocks "bitbucket.org/atlantproject/go-ipfs/go-block-format"
+	pb "github.com/AtlantPlatform/go-ipfs/exchange/bitswap/message/pb"
+	wantlist "github.com/AtlantPlatform/go-ipfs/exchange/bitswap/wantlist"
+	blocks "github.com/AtlantPlatform/go-ipfs/go-block-format"
 
-	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
+	cid "github.com/AtlantPlatform/go-ipfs/go-cid"
 	inet "unknown/go-libp2p-net"
 	ggio "unknown/gogo-protobuf/io"
 	proto "unknown/gogo-protobuf/proto"

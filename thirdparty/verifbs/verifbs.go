@@ -1,9 +1,9 @@
 package verifbs
 
 import (
-	blocks "bitbucket.org/atlantproject/go-ipfs/go-block-format"
-	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
-	"bitbucket.org/atlantproject/go-ipfs/thirdparty/verifcid"
+	blocks "github.com/AtlantPlatform/go-ipfs/go-block-format"
+	cid "github.com/AtlantPlatform/go-ipfs/go-cid"
+	"github.com/AtlantPlatform/go-ipfs/thirdparty/verifcid"
 	bstore "unknown/go-ipfs-blockstore"
 )
 

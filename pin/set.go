@@ -9,10 +9,10 @@ import (
 	"hash/fnv"
 	"sort"
 
-	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
-	ipld "bitbucket.org/atlantproject/go-ipfs/go-ipld-format"
-	"bitbucket.org/atlantproject/go-ipfs/merkledag"
-	"bitbucket.org/atlantproject/go-ipfs/pin/internal/pb"
+	cid "github.com/AtlantPlatform/go-ipfs/go-cid"
+	ipld "github.com/AtlantPlatform/go-ipfs/go-ipld-format"
+	"github.com/AtlantPlatform/go-ipfs/merkledag"
+	"github.com/AtlantPlatform/go-ipfs/pin/internal/pb"
 	"unknown/gogo-protobuf/proto"
 )
 

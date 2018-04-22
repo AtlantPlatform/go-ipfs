@@ -6,12 +6,12 @@ import (
 	"io"
 	"testing"
 
-	ic "bitbucket.org/atlantproject/go-ipfs/go-libp2p-crypto"
-	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
+	ic "github.com/AtlantPlatform/go-ipfs/go-libp2p-crypto"
+	peer "github.com/AtlantPlatform/go-ipfs/go-libp2p-peer"
 	logging "unknown/go-log"
 	testutil "unknown/go-testutil"
 
-	ma "bitbucket.org/atlantproject/go-ipfs/go-multiaddr"
+	ma "github.com/AtlantPlatform/go-ipfs/go-multiaddr"
 )
 
 var log = logging.Logger("boguskey")

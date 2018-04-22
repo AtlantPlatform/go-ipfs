@@ -3,9 +3,9 @@ package testutil
 import (
 	"testing"
 
-	ci "bitbucket.org/atlantproject/go-ipfs/go-libp2p-crypto"
-	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
-	ma "bitbucket.org/atlantproject/go-ipfs/go-multiaddr"
+	ci "github.com/AtlantPlatform/go-ipfs/go-libp2p-crypto"
+	peer "github.com/AtlantPlatform/go-ipfs/go-libp2p-peer"
+	ma "github.com/AtlantPlatform/go-ipfs/go-multiaddr"
 )
 
 type Identity interface {

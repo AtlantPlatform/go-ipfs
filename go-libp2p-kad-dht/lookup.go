@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"strings"
 
-	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
-	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
-	pstore "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peerstore"
+	cid "github.com/AtlantPlatform/go-ipfs/go-cid"
+	peer "github.com/AtlantPlatform/go-ipfs/go-libp2p-peer"
+	pstore "github.com/AtlantPlatform/go-ipfs/go-libp2p-peerstore"
 	kb "unknown/go-libp2p-kbucket"
 	notif "unknown/go-libp2p-routing/notifications"
 	logging "unknown/go-log"

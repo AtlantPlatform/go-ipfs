@@ -4,9 +4,9 @@ import (
 	"context"
 	"io"
 
-	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
-	pstore "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peerstore"
-	ma "bitbucket.org/atlantproject/go-ipfs/go-multiaddr"
+	peer "github.com/AtlantPlatform/go-ipfs/go-libp2p-peer"
+	pstore "github.com/AtlantPlatform/go-ipfs/go-libp2p-peerstore"
+	ma "github.com/AtlantPlatform/go-ipfs/go-multiaddr"
 	iconn "unknown/go-libp2p-interface-conn"
 	protocol "unknown/go-libp2p-protocol"
 	smux "unknown/go-stream-muxer"

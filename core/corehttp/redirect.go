@@ -4,7 +4,7 @@ import (
 	"net"
 	"net/http"
 
-	core "bitbucket.org/atlantproject/go-ipfs/core"
+	core "github.com/AtlantPlatform/go-ipfs/core"
 )
 
 func RedirectOption(path string, redirect string) ServeOption {

@@ -6,8 +6,8 @@ import (
 	"fmt"
 	"strings"
 
-	ci "bitbucket.org/atlantproject/go-ipfs/go-libp2p-crypto"
-	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
+	ci "github.com/AtlantPlatform/go-ipfs/go-libp2p-crypto"
+	peer "github.com/AtlantPlatform/go-ipfs/go-libp2p-peer"
 	u "unknown/go-ipfs-util"
 	pb "unknown/go-libp2p-record/pb"
 	logging "unknown/go-log"

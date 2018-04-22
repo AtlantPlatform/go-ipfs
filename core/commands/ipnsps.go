@@ -6,10 +6,10 @@ import (
 	"io"
 	"strings"
 
-	cmds "bitbucket.org/atlantproject/go-ipfs/commands"
-	e "bitbucket.org/atlantproject/go-ipfs/core/commands/e"
-	"bitbucket.org/atlantproject/go-ipfs/go-ipfs-cmdkit"
-	ns "bitbucket.org/atlantproject/go-ipfs/namesys"
+	cmds "github.com/AtlantPlatform/go-ipfs/commands"
+	e "github.com/AtlantPlatform/go-ipfs/core/commands/e"
+	"github.com/AtlantPlatform/go-ipfs/go-ipfs-cmdkit"
+	ns "github.com/AtlantPlatform/go-ipfs/namesys"
 )
 
 type ipnsPubsubState struct {

@@ -5,7 +5,7 @@ import (
 	"net"
 	"net/http"
 
-	core "bitbucket.org/atlantproject/go-ipfs/core"
+	core "github.com/AtlantPlatform/go-ipfs/core"
 	logging "unknown/go-log"
 )
 

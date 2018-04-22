@@ -3,7 +3,7 @@
 package dshelp
 
 import (
-	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
+	cid "github.com/AtlantPlatform/go-ipfs/go-cid"
 	"unknown/base32"
 	"unknown/go-datastore"
 )

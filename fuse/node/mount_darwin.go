@@ -9,7 +9,7 @@ import (
 	"runtime"
 	"strings"
 
-	core "bitbucket.org/atlantproject/go-ipfs/core"
+	core "github.com/AtlantPlatform/go-ipfs/core"
 	"unknown/semver"
 	unix "unknown/sys/unix"
 )

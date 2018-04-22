@@ -7,10 +7,10 @@ import (
 
 	gopath "path"
 
-	coreiface "bitbucket.org/atlantproject/go-ipfs/core/coreapi/interface"
-	caopts "bitbucket.org/atlantproject/go-ipfs/core/coreapi/interface/options"
-	coredag "bitbucket.org/atlantproject/go-ipfs/core/coredag"
-	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
+	coreiface "github.com/AtlantPlatform/go-ipfs/core/coreapi/interface"
+	caopts "github.com/AtlantPlatform/go-ipfs/core/coreapi/interface/options"
+	coredag "github.com/AtlantPlatform/go-ipfs/core/coredag"
+	cid "github.com/AtlantPlatform/go-ipfs/go-cid"
 )
 
 type DagAPI struct {

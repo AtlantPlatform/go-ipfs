@@ -6,11 +6,11 @@ import (
 	"errors"
 	"time"
 
-	"bitbucket.org/atlantproject/go-ipfs/core"
-	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
-	mfs "bitbucket.org/atlantproject/go-ipfs/mfs"
-	gc "bitbucket.org/atlantproject/go-ipfs/pin/gc"
-	repo "bitbucket.org/atlantproject/go-ipfs/repo"
+	"github.com/AtlantPlatform/go-ipfs/core"
+	cid "github.com/AtlantPlatform/go-ipfs/go-cid"
+	mfs "github.com/AtlantPlatform/go-ipfs/mfs"
+	gc "github.com/AtlantPlatform/go-ipfs/pin/gc"
+	repo "github.com/AtlantPlatform/go-ipfs/repo"
 	humanize "unknown/go-humanize"
 	logging "unknown/go-log"
 )

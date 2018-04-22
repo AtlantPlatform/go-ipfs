@@ -5,7 +5,7 @@ import (
 
 	context "context"
 
-	path "bitbucket.org/atlantproject/go-ipfs/path"
+	path "github.com/AtlantPlatform/go-ipfs/path"
 	proquint "unknown/proquint"
 )
 

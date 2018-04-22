@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"io"
 
-	"bitbucket.org/atlantproject/go-ipfs/go-ipfs-cmdkit"
+	"github.com/AtlantPlatform/go-ipfs/go-ipfs-cmdkit"
 )
 
 var (

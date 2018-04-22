@@ -5,7 +5,7 @@ import (
 	"net"
 	"sync"
 
-	ma "bitbucket.org/atlantproject/go-ipfs/go-multiaddr"
+	ma "github.com/AtlantPlatform/go-ipfs/go-multiaddr"
 )
 
 // FromNetAddrFunc is a generic function which converts a net.Addr to Multiaddress

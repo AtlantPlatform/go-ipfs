@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"strings"
 
-	"bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
-	ma "bitbucket.org/atlantproject/go-ipfs/go-multiaddr"
+	"github.com/AtlantPlatform/go-ipfs/go-libp2p-peer"
+	ma "github.com/AtlantPlatform/go-ipfs/go-multiaddr"
 )
 
 // PeerInfo is a small struct used to pass around a peer with

@@ -3,7 +3,7 @@ package peerset
 import (
 	"sync"
 
-	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
+	peer "github.com/AtlantPlatform/go-ipfs/go-libp2p-peer"
 )
 
 // PeerSet is a threadsafe set of peers

@@ -4,7 +4,7 @@ import (
 	"io"
 	"io/ioutil"
 
-	ipld "bitbucket.org/atlantproject/go-ipfs/go-ipld-format"
+	ipld "github.com/AtlantPlatform/go-ipfs/go-ipld-format"
 	ipldcbor "unknown/go-ipld-cbor"
 )
 

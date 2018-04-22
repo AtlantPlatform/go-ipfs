@@ -9,11 +9,11 @@ import (
 	"strconv"
 	"strings"
 
-	oldcmds "bitbucket.org/atlantproject/go-ipfs/commands"
-	core "bitbucket.org/atlantproject/go-ipfs/core"
-	corecommands "bitbucket.org/atlantproject/go-ipfs/core/commands"
-	path "bitbucket.org/atlantproject/go-ipfs/path"
-	config "bitbucket.org/atlantproject/go-ipfs/repo/config"
+	oldcmds "github.com/AtlantPlatform/go-ipfs/commands"
+	core "github.com/AtlantPlatform/go-ipfs/core"
+	corecommands "github.com/AtlantPlatform/go-ipfs/core/commands"
+	path "github.com/AtlantPlatform/go-ipfs/path"
+	config "github.com/AtlantPlatform/go-ipfs/repo/config"
 	cmds "unknown/go-ipfs-cmds"
 	cmdsHttp "unknown/go-ipfs-cmds/http"
 )

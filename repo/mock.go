@@ -3,10 +3,10 @@ package repo
 import (
 	"errors"
 
-	filestore "bitbucket.org/atlantproject/go-ipfs/filestore"
-	ma "bitbucket.org/atlantproject/go-ipfs/go-multiaddr"
-	keystore "bitbucket.org/atlantproject/go-ipfs/keystore"
-	"bitbucket.org/atlantproject/go-ipfs/repo/config"
+	filestore "github.com/AtlantPlatform/go-ipfs/filestore"
+	ma "github.com/AtlantPlatform/go-ipfs/go-multiaddr"
+	keystore "github.com/AtlantPlatform/go-ipfs/keystore"
+	"github.com/AtlantPlatform/go-ipfs/repo/config"
 )
 
 var errTODO = errors.New("TODO: mock repo")

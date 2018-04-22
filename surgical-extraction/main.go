@@ -21,7 +21,7 @@ var goPaths []string
 
 var (
 	targetPkg  = app.StringOpt("P pkg", "github.com/ipfs/go-ipfs/cmd/ipfswatch", "Package of a reference IPFS executable that imports all required IPFS packages.")
-	projectOut = app.StringOpt("O out", "bitbucket.org/atlantproject/go-ipfs", "Target must be a project package.")
+	projectOut = app.StringOpt("O out", "github.com/AtlantPlatform/go-ipfs", "Target must be a project package.")
 	stateDB    = app.StringOpt("S state", "extraction.db", "State file (BadgerDB) for relocation bookkeeping.")
 	debug      = app.BoolOpt("d debug", true, "Enable debug messages.")
 )

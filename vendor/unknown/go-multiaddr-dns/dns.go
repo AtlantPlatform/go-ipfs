@@ -4,7 +4,7 @@ import (
 	"errors"
 	"fmt"
 
-	ma "bitbucket.org/atlantproject/go-ipfs/go-multiaddr"
+	ma "github.com/AtlantPlatform/go-ipfs/go-multiaddr"
 )
 
 var Dns4Protocol = ma.Protocol{

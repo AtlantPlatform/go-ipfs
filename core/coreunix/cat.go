@@ -3,10 +3,10 @@ package coreunix
 import (
 	"context"
 
-	core "bitbucket.org/atlantproject/go-ipfs/core"
-	path "bitbucket.org/atlantproject/go-ipfs/path"
-	resolver "bitbucket.org/atlantproject/go-ipfs/path/resolver"
-	uio "bitbucket.org/atlantproject/go-ipfs/unixfs/io"
+	core "github.com/AtlantPlatform/go-ipfs/core"
+	path "github.com/AtlantPlatform/go-ipfs/path"
+	resolver "github.com/AtlantPlatform/go-ipfs/path/resolver"
+	uio "github.com/AtlantPlatform/go-ipfs/unixfs/io"
 )
 
 func Cat(ctx context.Context, n *core.IpfsNode, pstr string) (uio.DagReader, error) {

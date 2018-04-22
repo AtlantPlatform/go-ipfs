@@ -5,12 +5,12 @@ import (
 	"fmt"
 	"os"
 
-	dag "bitbucket.org/atlantproject/go-ipfs/merkledag"
-	ft "bitbucket.org/atlantproject/go-ipfs/unixfs"
+	dag "github.com/AtlantPlatform/go-ipfs/merkledag"
+	ft "github.com/AtlantPlatform/go-ipfs/unixfs"
 	pi "unknown/go-ipfs-posinfo"
 
-	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
-	ipld "bitbucket.org/atlantproject/go-ipfs/go-ipld-format"
+	cid "github.com/AtlantPlatform/go-ipfs/go-cid"
+	ipld "github.com/AtlantPlatform/go-ipfs/go-ipld-format"
 )
 
 // BlockSizeLimit specifies the maximum size an imported block can have.

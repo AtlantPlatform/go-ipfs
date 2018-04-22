@@ -1,8 +1,8 @@
 package commands
 
 import (
-	cmds "bitbucket.org/atlantproject/go-ipfs/commands"
-	"bitbucket.org/atlantproject/go-ipfs/go-ipfs-cmdkit"
+	cmds "github.com/AtlantPlatform/go-ipfs/commands"
+	"github.com/AtlantPlatform/go-ipfs/go-ipfs-cmdkit"
 )
 
 type IpnsEntry struct {

@@ -4,10 +4,10 @@ import (
 	"errors"
 	"io"
 
-	filestore "bitbucket.org/atlantproject/go-ipfs/filestore"
-	ma "bitbucket.org/atlantproject/go-ipfs/go-multiaddr"
-	keystore "bitbucket.org/atlantproject/go-ipfs/keystore"
-	config "bitbucket.org/atlantproject/go-ipfs/repo/config"
+	filestore "github.com/AtlantPlatform/go-ipfs/filestore"
+	ma "github.com/AtlantPlatform/go-ipfs/go-multiaddr"
+	keystore "github.com/AtlantPlatform/go-ipfs/keystore"
+	config "github.com/AtlantPlatform/go-ipfs/repo/config"
 	ds "unknown/go-datastore"
 )
 

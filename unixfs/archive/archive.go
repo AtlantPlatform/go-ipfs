@@ -8,9 +8,9 @@ import (
 	"io"
 	"path"
 
-	ipld "bitbucket.org/atlantproject/go-ipfs/go-ipld-format"
-	tar "bitbucket.org/atlantproject/go-ipfs/unixfs/archive/tar"
-	uio "bitbucket.org/atlantproject/go-ipfs/unixfs/io"
+	ipld "github.com/AtlantPlatform/go-ipfs/go-ipld-format"
+	tar "github.com/AtlantPlatform/go-ipfs/unixfs/archive/tar"
+	uio "github.com/AtlantPlatform/go-ipfs/unixfs/io"
 )
 
 // DefaultBufSize is the buffer size for gets. for now, 1MB, which is ~4 blocks.

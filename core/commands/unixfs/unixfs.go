@@ -1,9 +1,9 @@
 package unixfs
 
 import (
-	cmds "bitbucket.org/atlantproject/go-ipfs/commands"
-	e "bitbucket.org/atlantproject/go-ipfs/core/commands/e"
-	"bitbucket.org/atlantproject/go-ipfs/go-ipfs-cmdkit"
+	cmds "github.com/AtlantPlatform/go-ipfs/commands"
+	e "github.com/AtlantPlatform/go-ipfs/core/commands/e"
+	"github.com/AtlantPlatform/go-ipfs/go-ipfs-cmdkit"
 )
 
 var UnixFSCmd = &cmds.Command{

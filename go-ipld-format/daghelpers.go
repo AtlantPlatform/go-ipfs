@@ -3,7 +3,7 @@ package format
 import (
 	"context"
 
-	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
+	cid "github.com/AtlantPlatform/go-ipfs/go-cid"
 )
 
 // GetLinks returns the CIDs of the children of the given node. Prefer this

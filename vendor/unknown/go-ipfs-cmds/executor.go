@@ -3,7 +3,7 @@ package cmds
 import (
 	"context"
 
-	"bitbucket.org/atlantproject/go-ipfs/go-ipfs-cmdkit"
+	"github.com/AtlantPlatform/go-ipfs/go-ipfs-cmdkit"
 )
 
 type Executor interface {

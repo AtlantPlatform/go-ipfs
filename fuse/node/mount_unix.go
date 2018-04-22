@@ -9,10 +9,10 @@ import (
 	"strings"
 	"sync"
 
-	core "bitbucket.org/atlantproject/go-ipfs/core"
-	ipns "bitbucket.org/atlantproject/go-ipfs/fuse/ipns"
-	mount "bitbucket.org/atlantproject/go-ipfs/fuse/mount"
-	rofs "bitbucket.org/atlantproject/go-ipfs/fuse/readonly"
+	core "github.com/AtlantPlatform/go-ipfs/core"
+	ipns "github.com/AtlantPlatform/go-ipfs/fuse/ipns"
+	mount "github.com/AtlantPlatform/go-ipfs/fuse/mount"
+	rofs "github.com/AtlantPlatform/go-ipfs/fuse/readonly"
 	logging "unknown/go-log"
 )
 

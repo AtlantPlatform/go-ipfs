@@ -5,8 +5,8 @@ import (
 	"math/rand"
 	"time"
 
-	ci "bitbucket.org/atlantproject/go-ipfs/go-libp2p-crypto"
-	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
+	ci "github.com/AtlantPlatform/go-ipfs/go-libp2p-crypto"
+	peer "github.com/AtlantPlatform/go-ipfs/go-libp2p-peer"
 	mh "unknown/go-multihash"
 )
 

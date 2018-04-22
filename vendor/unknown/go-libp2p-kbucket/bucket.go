@@ -4,7 +4,7 @@ import (
 	"container/list"
 	"sync"
 
-	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
+	peer "github.com/AtlantPlatform/go-ipfs/go-libp2p-peer"
 )
 
 // Bucket holds a list of peers.

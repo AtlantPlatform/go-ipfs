@@ -8,14 +8,14 @@ import (
 	"strings"
 	"time"
 
-	cmds "bitbucket.org/atlantproject/go-ipfs/commands"
-	core "bitbucket.org/atlantproject/go-ipfs/core"
-	e "bitbucket.org/atlantproject/go-ipfs/core/commands/e"
-	"bitbucket.org/atlantproject/go-ipfs/go-ipfs-cmdkit"
-	crypto "bitbucket.org/atlantproject/go-ipfs/go-libp2p-crypto"
-	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
-	keystore "bitbucket.org/atlantproject/go-ipfs/keystore"
-	path "bitbucket.org/atlantproject/go-ipfs/path"
+	cmds "github.com/AtlantPlatform/go-ipfs/commands"
+	core "github.com/AtlantPlatform/go-ipfs/core"
+	e "github.com/AtlantPlatform/go-ipfs/core/commands/e"
+	"github.com/AtlantPlatform/go-ipfs/go-ipfs-cmdkit"
+	crypto "github.com/AtlantPlatform/go-ipfs/go-libp2p-crypto"
+	peer "github.com/AtlantPlatform/go-ipfs/go-libp2p-peer"
+	keystore "github.com/AtlantPlatform/go-ipfs/keystore"
+	path "github.com/AtlantPlatform/go-ipfs/path"
 )
 
 var errNotOnline = errors.New("This command must be run in online mode. Try running 'ipfs daemon' first.")

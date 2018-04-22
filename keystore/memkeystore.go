@@ -1,6 +1,6 @@
 package keystore
 
-import ci "bitbucket.org/atlantproject/go-ipfs/go-libp2p-crypto"
+import ci "github.com/AtlantPlatform/go-ipfs/go-libp2p-crypto"
 
 // MemKeystore is an in memory keystore implementation that is not persisted to
 // any backing storage.

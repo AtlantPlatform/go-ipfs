@@ -4,7 +4,7 @@ import (
 	"context"
 	"fmt"
 
-	ma "bitbucket.org/atlantproject/go-ipfs/go-multiaddr"
+	ma "github.com/AtlantPlatform/go-ipfs/go-multiaddr"
 	addrutil "unknown/go-addr-util"
 	host "unknown/go-libp2p-host"
 	swarm "unknown/go-libp2p-swarm"

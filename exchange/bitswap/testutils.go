@@ -4,9 +4,9 @@ import (
 	"context"
 	"time"
 
-	tn "bitbucket.org/atlantproject/go-ipfs/exchange/bitswap/testnet"
-	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
-	datastore2 "bitbucket.org/atlantproject/go-ipfs/thirdparty/datastore2"
+	tn "github.com/AtlantPlatform/go-ipfs/exchange/bitswap/testnet"
+	peer "github.com/AtlantPlatform/go-ipfs/go-libp2p-peer"
+	datastore2 "github.com/AtlantPlatform/go-ipfs/thirdparty/datastore2"
 	ds "unknown/go-datastore"
 	ds_sync "unknown/go-datastore/sync"
 	blockstore "unknown/go-ipfs-blockstore"

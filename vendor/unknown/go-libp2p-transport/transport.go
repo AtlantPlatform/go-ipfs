@@ -4,7 +4,7 @@ import (
 	"context"
 	"net"
 
-	ma "bitbucket.org/atlantproject/go-ipfs/go-multiaddr"
+	ma "github.com/AtlantPlatform/go-ipfs/go-multiaddr"
 	logging "unknown/go-log"
 	manet "unknown/go-multiaddr-net"
 )

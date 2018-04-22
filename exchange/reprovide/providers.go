@@ -3,10 +3,10 @@ package reprovide
 import (
 	"context"
 
-	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
-	ipld "bitbucket.org/atlantproject/go-ipfs/go-ipld-format"
-	merkledag "bitbucket.org/atlantproject/go-ipfs/merkledag"
-	pin "bitbucket.org/atlantproject/go-ipfs/pin"
+	cid "github.com/AtlantPlatform/go-ipfs/go-cid"
+	ipld "github.com/AtlantPlatform/go-ipfs/go-ipld-format"
+	merkledag "github.com/AtlantPlatform/go-ipfs/merkledag"
+	pin "github.com/AtlantPlatform/go-ipfs/pin"
 	blocks "unknown/go-ipfs-blockstore"
 )
 

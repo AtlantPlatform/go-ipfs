@@ -9,9 +9,9 @@ import (
 	"io"
 	"time"
 
-	ci "bitbucket.org/atlantproject/go-ipfs/go-libp2p-crypto"
-	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
-	pb "bitbucket.org/atlantproject/go-ipfs/go-libp2p-secio/pb"
+	ci "github.com/AtlantPlatform/go-ipfs/go-libp2p-crypto"
+	peer "github.com/AtlantPlatform/go-ipfs/go-libp2p-peer"
+	pb "github.com/AtlantPlatform/go-ipfs/go-libp2p-secio/pb"
 	logging "unknown/go-log"
 	msgio "unknown/go-msgio"
 	mh "unknown/go-multihash"

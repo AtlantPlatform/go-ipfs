@@ -10,11 +10,11 @@ import (
 	"path"
 	"time"
 
-	ipld "bitbucket.org/atlantproject/go-ipfs/go-ipld-format"
-	mdag "bitbucket.org/atlantproject/go-ipfs/merkledag"
-	ft "bitbucket.org/atlantproject/go-ipfs/unixfs"
-	uio "bitbucket.org/atlantproject/go-ipfs/unixfs/io"
-	upb "bitbucket.org/atlantproject/go-ipfs/unixfs/pb"
+	ipld "github.com/AtlantPlatform/go-ipfs/go-ipld-format"
+	mdag "github.com/AtlantPlatform/go-ipfs/merkledag"
+	ft "github.com/AtlantPlatform/go-ipfs/unixfs"
+	uio "github.com/AtlantPlatform/go-ipfs/unixfs/io"
+	upb "github.com/AtlantPlatform/go-ipfs/unixfs/pb"
 	proto "unknown/gogo-protobuf/proto"
 )
 

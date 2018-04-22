@@ -13,16 +13,16 @@ import (
 	"strings"
 	"text/tabwriter"
 
-	cmds "bitbucket.org/atlantproject/go-ipfs/commands"
-	core "bitbucket.org/atlantproject/go-ipfs/core"
-	e "bitbucket.org/atlantproject/go-ipfs/core/commands/e"
-	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
-	cmdkit "bitbucket.org/atlantproject/go-ipfs/go-ipfs-cmdkit"
-	ipld "bitbucket.org/atlantproject/go-ipfs/go-ipld-format"
-	dag "bitbucket.org/atlantproject/go-ipfs/merkledag"
-	path "bitbucket.org/atlantproject/go-ipfs/path"
-	pin "bitbucket.org/atlantproject/go-ipfs/pin"
-	ft "bitbucket.org/atlantproject/go-ipfs/unixfs"
+	cmds "github.com/AtlantPlatform/go-ipfs/commands"
+	core "github.com/AtlantPlatform/go-ipfs/core"
+	e "github.com/AtlantPlatform/go-ipfs/core/commands/e"
+	cid "github.com/AtlantPlatform/go-ipfs/go-cid"
+	cmdkit "github.com/AtlantPlatform/go-ipfs/go-ipfs-cmdkit"
+	ipld "github.com/AtlantPlatform/go-ipfs/go-ipld-format"
+	dag "github.com/AtlantPlatform/go-ipfs/merkledag"
+	path "github.com/AtlantPlatform/go-ipfs/path"
+	pin "github.com/AtlantPlatform/go-ipfs/pin"
+	ft "github.com/AtlantPlatform/go-ipfs/unixfs"
 )
 
 // ErrObjectTooLarge is returned when too much data was read from stdin. current limit 2m

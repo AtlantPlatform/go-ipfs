@@ -7,10 +7,10 @@ import (
 	"fmt"
 	"time"
 
-	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
-	ipld "bitbucket.org/atlantproject/go-ipfs/go-ipld-format"
-	dag "bitbucket.org/atlantproject/go-ipfs/merkledag"
-	path "bitbucket.org/atlantproject/go-ipfs/path"
+	cid "github.com/AtlantPlatform/go-ipfs/go-cid"
+	ipld "github.com/AtlantPlatform/go-ipfs/go-ipld-format"
+	dag "github.com/AtlantPlatform/go-ipfs/merkledag"
+	path "github.com/AtlantPlatform/go-ipfs/path"
 	logging "unknown/go-log"
 )
 

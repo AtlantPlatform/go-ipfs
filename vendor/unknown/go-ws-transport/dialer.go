@@ -3,7 +3,7 @@ package websocket
 import (
 	"context"
 
-	ma "bitbucket.org/atlantproject/go-ipfs/go-multiaddr"
+	ma "github.com/AtlantPlatform/go-ipfs/go-multiaddr"
 	tpt "unknown/go-libp2p-transport"
 	manet "unknown/go-multiaddr-net"
 	ws "unknown/websocket"

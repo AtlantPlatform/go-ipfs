@@ -4,7 +4,7 @@ import (
 	"bytes"
 	"errors"
 
-	pb "bitbucket.org/atlantproject/go-ipfs/namesys/pb"
+	pb "github.com/AtlantPlatform/go-ipfs/namesys/pb"
 	u "unknown/go-ipfs-util"
 	proto "unknown/gogo-protobuf/proto"
 )

@@ -4,9 +4,9 @@ import (
 	"context"
 	"fmt"
 
-	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
-	ipld "bitbucket.org/atlantproject/go-ipfs/go-ipld-format"
-	mdag "bitbucket.org/atlantproject/go-ipfs/merkledag"
+	cid "github.com/AtlantPlatform/go-ipfs/go-cid"
+	ipld "github.com/AtlantPlatform/go-ipfs/go-ipld-format"
+	mdag "github.com/AtlantPlatform/go-ipfs/merkledag"
 )
 
 // DiffEnumerate fetches every object in the graph pointed to by 'to' that is

@@ -17,11 +17,11 @@ import (
 	"context"
 	"fmt"
 
-	"bitbucket.org/atlantproject/go-ipfs/core"
-	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
-	path "bitbucket.org/atlantproject/go-ipfs/path"
-	resolver "bitbucket.org/atlantproject/go-ipfs/path/resolver"
-	uio "bitbucket.org/atlantproject/go-ipfs/unixfs/io"
+	"github.com/AtlantPlatform/go-ipfs/core"
+	cid "github.com/AtlantPlatform/go-ipfs/go-cid"
+	path "github.com/AtlantPlatform/go-ipfs/path"
+	resolver "github.com/AtlantPlatform/go-ipfs/path/resolver"
+	uio "github.com/AtlantPlatform/go-ipfs/unixfs/io"
 )
 
 func Pin(n *core.IpfsNode, ctx context.Context, paths []string, recursive bool) ([]*cid.Cid, error) {

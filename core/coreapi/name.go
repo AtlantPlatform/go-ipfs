@@ -7,14 +7,14 @@ import (
 	"strings"
 	"time"
 
-	core "bitbucket.org/atlantproject/go-ipfs/core"
-	coreiface "bitbucket.org/atlantproject/go-ipfs/core/coreapi/interface"
-	caopts "bitbucket.org/atlantproject/go-ipfs/core/coreapi/interface/options"
-	crypto "bitbucket.org/atlantproject/go-ipfs/go-libp2p-crypto"
-	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
-	keystore "bitbucket.org/atlantproject/go-ipfs/keystore"
-	namesys "bitbucket.org/atlantproject/go-ipfs/namesys"
-	ipath "bitbucket.org/atlantproject/go-ipfs/path"
+	core "github.com/AtlantPlatform/go-ipfs/core"
+	coreiface "github.com/AtlantPlatform/go-ipfs/core/coreapi/interface"
+	caopts "github.com/AtlantPlatform/go-ipfs/core/coreapi/interface/options"
+	crypto "github.com/AtlantPlatform/go-ipfs/go-libp2p-crypto"
+	peer "github.com/AtlantPlatform/go-ipfs/go-libp2p-peer"
+	keystore "github.com/AtlantPlatform/go-ipfs/keystore"
+	namesys "github.com/AtlantPlatform/go-ipfs/namesys"
+	ipath "github.com/AtlantPlatform/go-ipfs/path"
 	offline "unknown/go-ipfs-routing/offline"
 )
 

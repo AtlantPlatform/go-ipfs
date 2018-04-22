@@ -6,9 +6,9 @@ import (
 	"io"
 	"os"
 
-	core "bitbucket.org/atlantproject/go-ipfs/core"
-	coreunix "bitbucket.org/atlantproject/go-ipfs/core/coreunix"
-	"bitbucket.org/atlantproject/go-ipfs/go-ipfs-cmdkit"
+	core "github.com/AtlantPlatform/go-ipfs/core"
+	coreunix "github.com/AtlantPlatform/go-ipfs/core/coreunix"
+	"github.com/AtlantPlatform/go-ipfs/go-ipfs-cmdkit"
 	cmds "unknown/go-ipfs-cmds"
 )
 

@@ -9,11 +9,11 @@ import (
 	"strings"
 	"text/tabwriter"
 
-	cmds "bitbucket.org/atlantproject/go-ipfs/commands"
-	e "bitbucket.org/atlantproject/go-ipfs/core/commands/e"
-	"bitbucket.org/atlantproject/go-ipfs/go-ipfs-cmdkit"
-	ci "bitbucket.org/atlantproject/go-ipfs/go-libp2p-crypto"
-	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
+	cmds "github.com/AtlantPlatform/go-ipfs/commands"
+	e "github.com/AtlantPlatform/go-ipfs/core/commands/e"
+	"github.com/AtlantPlatform/go-ipfs/go-ipfs-cmdkit"
+	ci "github.com/AtlantPlatform/go-ipfs/go-libp2p-crypto"
+	peer "github.com/AtlantPlatform/go-ipfs/go-libp2p-peer"
 )
 
 var KeyCmd = &cmds.Command{

@@ -3,7 +3,7 @@ package fsrepo
 import (
 	"os"
 
-	"bitbucket.org/atlantproject/go-ipfs/repo/config"
+	"github.com/AtlantPlatform/go-ipfs/repo/config"
 	homedir "github.com/mitchellh/go-homedir"
 )
 

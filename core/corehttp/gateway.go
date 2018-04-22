@@ -5,10 +5,10 @@ import (
 	"net"
 	"net/http"
 
-	core "bitbucket.org/atlantproject/go-ipfs/core"
-	coreapi "bitbucket.org/atlantproject/go-ipfs/core/coreapi"
-	id "bitbucket.org/atlantproject/go-ipfs/go-libp2p/p2p/protocol/identify"
-	config "bitbucket.org/atlantproject/go-ipfs/repo/config"
+	core "github.com/AtlantPlatform/go-ipfs/core"
+	coreapi "github.com/AtlantPlatform/go-ipfs/core/coreapi"
+	id "github.com/AtlantPlatform/go-ipfs/go-libp2p/p2p/protocol/identify"
+	config "github.com/AtlantPlatform/go-ipfs/repo/config"
 )
 
 type GatewayConfig struct {

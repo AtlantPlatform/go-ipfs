@@ -10,8 +10,8 @@ import (
 	"net/url"
 	"strings"
 
-	"bitbucket.org/atlantproject/go-ipfs/go-ipfs-cmdkit"
-	"bitbucket.org/atlantproject/go-ipfs/go-ipfs-cmdkit/files"
+	"github.com/AtlantPlatform/go-ipfs/go-ipfs-cmdkit"
+	"github.com/AtlantPlatform/go-ipfs/go-ipfs-cmdkit/files"
 	cmds "unknown/go-ipfs-cmds"
 )
 

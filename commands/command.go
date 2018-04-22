@@ -14,8 +14,8 @@ import (
 	"io"
 	"reflect"
 
-	cmdkit "bitbucket.org/atlantproject/go-ipfs/go-ipfs-cmdkit"
-	"bitbucket.org/atlantproject/go-ipfs/path"
+	cmdkit "github.com/AtlantPlatform/go-ipfs/go-ipfs-cmdkit"
+	"github.com/AtlantPlatform/go-ipfs/path"
 	cmds "unknown/go-ipfs-cmds"
 	logging "unknown/go-log"
 )

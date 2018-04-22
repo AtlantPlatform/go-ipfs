@@ -4,15 +4,15 @@ import (
 	"context"
 	"fmt"
 
-	bserv "bitbucket.org/atlantproject/go-ipfs/blockservice"
-	coreiface "bitbucket.org/atlantproject/go-ipfs/core/coreapi/interface"
-	caopts "bitbucket.org/atlantproject/go-ipfs/core/coreapi/interface/options"
-	corerepo "bitbucket.org/atlantproject/go-ipfs/core/corerepo"
-	offline "bitbucket.org/atlantproject/go-ipfs/exchange/offline"
-	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
-	ipld "bitbucket.org/atlantproject/go-ipfs/go-ipld-format"
-	merkledag "bitbucket.org/atlantproject/go-ipfs/merkledag"
-	pin "bitbucket.org/atlantproject/go-ipfs/pin"
+	bserv "github.com/AtlantPlatform/go-ipfs/blockservice"
+	coreiface "github.com/AtlantPlatform/go-ipfs/core/coreapi/interface"
+	caopts "github.com/AtlantPlatform/go-ipfs/core/coreapi/interface/options"
+	corerepo "github.com/AtlantPlatform/go-ipfs/core/corerepo"
+	offline "github.com/AtlantPlatform/go-ipfs/exchange/offline"
+	cid "github.com/AtlantPlatform/go-ipfs/go-cid"
+	ipld "github.com/AtlantPlatform/go-ipfs/go-ipld-format"
+	merkledag "github.com/AtlantPlatform/go-ipfs/merkledag"
+	pin "github.com/AtlantPlatform/go-ipfs/pin"
 )
 
 type PinAPI struct {

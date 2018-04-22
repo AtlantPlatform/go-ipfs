@@ -8,10 +8,10 @@ import (
 	"strconv"
 	"text/tabwriter"
 
-	cmds "bitbucket.org/atlantproject/go-ipfs/commands"
-	core "bitbucket.org/atlantproject/go-ipfs/core"
-	"bitbucket.org/atlantproject/go-ipfs/go-ipfs-cmdkit"
-	ma "bitbucket.org/atlantproject/go-ipfs/go-multiaddr"
+	cmds "github.com/AtlantPlatform/go-ipfs/commands"
+	core "github.com/AtlantPlatform/go-ipfs/core"
+	"github.com/AtlantPlatform/go-ipfs/go-ipfs-cmdkit"
+	ma "github.com/AtlantPlatform/go-ipfs/go-multiaddr"
 )
 
 // P2PListenerInfoOutput is output type of ls command

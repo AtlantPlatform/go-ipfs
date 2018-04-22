@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"io"
 
-	pb "bitbucket.org/atlantproject/go-ipfs/go-libp2p-crypto/pb"
+	pb "github.com/AtlantPlatform/go-ipfs/go-libp2p-crypto/pb"
 	"unknown/ed25519"
 	extra "unknown/ed25519/extra25519"
 	proto "unknown/gogo-protobuf/proto"

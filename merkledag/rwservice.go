@@ -3,8 +3,8 @@ package merkledag
 import (
 	"context"
 
-	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
-	ipld "bitbucket.org/atlantproject/go-ipfs/go-ipld-format"
+	cid "github.com/AtlantPlatform/go-ipfs/go-cid"
+	ipld "github.com/AtlantPlatform/go-ipfs/go-ipld-format"
 )
 
 // ComboService implements ipld.DAGService, using 'Read' for all fetch methods,

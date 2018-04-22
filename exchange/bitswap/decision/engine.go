@@ -6,10 +6,10 @@ import (
 	"sync"
 	"time"
 
-	bsmsg "bitbucket.org/atlantproject/go-ipfs/exchange/bitswap/message"
-	wl "bitbucket.org/atlantproject/go-ipfs/exchange/bitswap/wantlist"
-	blocks "bitbucket.org/atlantproject/go-ipfs/go-block-format"
-	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
+	bsmsg "github.com/AtlantPlatform/go-ipfs/exchange/bitswap/message"
+	wl "github.com/AtlantPlatform/go-ipfs/exchange/bitswap/wantlist"
+	blocks "github.com/AtlantPlatform/go-ipfs/go-block-format"
+	peer "github.com/AtlantPlatform/go-ipfs/go-libp2p-peer"
 	bstore "unknown/go-ipfs-blockstore"
 	logging "unknown/go-log"
 )

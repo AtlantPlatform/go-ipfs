@@ -4,12 +4,12 @@ import (
 	"io"
 	"strings"
 
-	cmds "bitbucket.org/atlantproject/go-ipfs/commands"
-	"bitbucket.org/atlantproject/go-ipfs/core"
-	e "bitbucket.org/atlantproject/go-ipfs/core/commands/e"
-	"bitbucket.org/atlantproject/go-ipfs/go-ipfs-cmdkit"
-	ns "bitbucket.org/atlantproject/go-ipfs/namesys"
-	path "bitbucket.org/atlantproject/go-ipfs/path"
+	cmds "github.com/AtlantPlatform/go-ipfs/commands"
+	"github.com/AtlantPlatform/go-ipfs/core"
+	e "github.com/AtlantPlatform/go-ipfs/core/commands/e"
+	"github.com/AtlantPlatform/go-ipfs/go-ipfs-cmdkit"
+	ns "github.com/AtlantPlatform/go-ipfs/namesys"
+	path "github.com/AtlantPlatform/go-ipfs/path"
 )
 
 type ResolvedPath struct {

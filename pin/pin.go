@@ -9,10 +9,10 @@ import (
 	"sync"
 	"time"
 
-	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
-	ipld "bitbucket.org/atlantproject/go-ipfs/go-ipld-format"
-	mdag "bitbucket.org/atlantproject/go-ipfs/merkledag"
-	dutils "bitbucket.org/atlantproject/go-ipfs/merkledag/utils"
+	cid "github.com/AtlantPlatform/go-ipfs/go-cid"
+	ipld "github.com/AtlantPlatform/go-ipfs/go-ipld-format"
+	mdag "github.com/AtlantPlatform/go-ipfs/merkledag"
+	dutils "github.com/AtlantPlatform/go-ipfs/merkledag/utils"
 	ds "unknown/go-datastore"
 	logging "unknown/go-log"
 )

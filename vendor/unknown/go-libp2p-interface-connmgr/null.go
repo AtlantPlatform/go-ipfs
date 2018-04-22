@@ -3,8 +3,8 @@ package ifconnmgr
 import (
 	"context"
 
-	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
-	ma "bitbucket.org/atlantproject/go-ipfs/go-multiaddr"
+	peer "github.com/AtlantPlatform/go-ipfs/go-libp2p-peer"
+	ma "github.com/AtlantPlatform/go-ipfs/go-multiaddr"
 	inet "unknown/go-libp2p-net"
 )
 

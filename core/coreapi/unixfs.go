@@ -4,11 +4,11 @@ import (
 	"context"
 	"io"
 
-	coreiface "bitbucket.org/atlantproject/go-ipfs/core/coreapi/interface"
-	coreunix "bitbucket.org/atlantproject/go-ipfs/core/coreunix"
-	cid "bitbucket.org/atlantproject/go-ipfs/go-cid"
-	ipld "bitbucket.org/atlantproject/go-ipfs/go-ipld-format"
-	uio "bitbucket.org/atlantproject/go-ipfs/unixfs/io"
+	coreiface "github.com/AtlantPlatform/go-ipfs/core/coreapi/interface"
+	coreunix "github.com/AtlantPlatform/go-ipfs/core/coreunix"
+	cid "github.com/AtlantPlatform/go-ipfs/go-cid"
+	ipld "github.com/AtlantPlatform/go-ipfs/go-ipld-format"
+	uio "github.com/AtlantPlatform/go-ipfs/unixfs/io"
 )
 
 type UnixfsAPI CoreAPI

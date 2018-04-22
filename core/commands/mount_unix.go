@@ -8,11 +8,11 @@ import (
 	"io"
 	"strings"
 
-	cmds "bitbucket.org/atlantproject/go-ipfs/commands"
-	e "bitbucket.org/atlantproject/go-ipfs/core/commands/e"
-	nodeMount "bitbucket.org/atlantproject/go-ipfs/fuse/node"
-	"bitbucket.org/atlantproject/go-ipfs/go-ipfs-cmdkit"
-	config "bitbucket.org/atlantproject/go-ipfs/repo/config"
+	cmds "github.com/AtlantPlatform/go-ipfs/commands"
+	e "github.com/AtlantPlatform/go-ipfs/core/commands/e"
+	nodeMount "github.com/AtlantPlatform/go-ipfs/fuse/node"
+	"github.com/AtlantPlatform/go-ipfs/go-ipfs-cmdkit"
+	config "github.com/AtlantPlatform/go-ipfs/repo/config"
 )
 
 var MountCmd = &cmds.Command{

@@ -7,17 +7,17 @@ import (
 	"sort"
 	"text/tabwriter"
 
-	cmdkit "bitbucket.org/atlantproject/go-ipfs/go-ipfs-cmdkit"
+	cmdkit "github.com/AtlantPlatform/go-ipfs/go-ipfs-cmdkit"
 
-	cmds "bitbucket.org/atlantproject/go-ipfs/commands"
-	core "bitbucket.org/atlantproject/go-ipfs/core"
-	e "bitbucket.org/atlantproject/go-ipfs/core/commands/e"
-	merkledag "bitbucket.org/atlantproject/go-ipfs/merkledag"
-	path "bitbucket.org/atlantproject/go-ipfs/path"
-	resolver "bitbucket.org/atlantproject/go-ipfs/path/resolver"
-	unixfs "bitbucket.org/atlantproject/go-ipfs/unixfs"
-	uio "bitbucket.org/atlantproject/go-ipfs/unixfs/io"
-	unixfspb "bitbucket.org/atlantproject/go-ipfs/unixfs/pb"
+	cmds "github.com/AtlantPlatform/go-ipfs/commands"
+	core "github.com/AtlantPlatform/go-ipfs/core"
+	e "github.com/AtlantPlatform/go-ipfs/core/commands/e"
+	merkledag "github.com/AtlantPlatform/go-ipfs/merkledag"
+	path "github.com/AtlantPlatform/go-ipfs/path"
+	resolver "github.com/AtlantPlatform/go-ipfs/path/resolver"
+	unixfs "github.com/AtlantPlatform/go-ipfs/unixfs"
+	uio "github.com/AtlantPlatform/go-ipfs/unixfs/io"
+	unixfspb "github.com/AtlantPlatform/go-ipfs/unixfs/pb"
 )
 
 type LsLink struct {

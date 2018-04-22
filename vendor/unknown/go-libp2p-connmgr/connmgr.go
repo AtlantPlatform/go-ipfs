@@ -6,8 +6,8 @@ import (
 	"sync"
 	"time"
 
-	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
-	ma "bitbucket.org/atlantproject/go-ipfs/go-multiaddr"
+	peer "github.com/AtlantPlatform/go-ipfs/go-libp2p-peer"
+	ma "github.com/AtlantPlatform/go-ipfs/go-multiaddr"
 	ifconnmgr "unknown/go-libp2p-interface-connmgr"
 	inet "unknown/go-libp2p-net"
 	logging "unknown/go-log"

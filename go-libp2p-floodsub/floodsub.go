@@ -3,9 +3,9 @@ package floodsub
 import (
 	"context"
 
-	pb "bitbucket.org/atlantproject/go-ipfs/go-libp2p-floodsub/pb"
+	pb "github.com/AtlantPlatform/go-ipfs/go-libp2p-floodsub/pb"
 
-	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
+	peer "github.com/AtlantPlatform/go-ipfs/go-libp2p-peer"
 	host "unknown/go-libp2p-host"
 	protocol "unknown/go-libp2p-protocol"
 )

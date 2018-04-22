@@ -3,10 +3,10 @@ package io
 import (
 	"context"
 
-	ipld "bitbucket.org/atlantproject/go-ipfs/go-ipld-format"
-	dag "bitbucket.org/atlantproject/go-ipfs/merkledag"
-	ft "bitbucket.org/atlantproject/go-ipfs/unixfs"
-	hamt "bitbucket.org/atlantproject/go-ipfs/unixfs/hamt"
+	ipld "github.com/AtlantPlatform/go-ipfs/go-ipld-format"
+	dag "github.com/AtlantPlatform/go-ipfs/merkledag"
+	ft "github.com/AtlantPlatform/go-ipfs/unixfs"
+	hamt "github.com/AtlantPlatform/go-ipfs/unixfs/hamt"
 )
 
 // ResolveUnixfsOnce resolves a single hop of a path through a graph in a

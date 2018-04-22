@@ -5,10 +5,10 @@ import (
 	"fmt"
 	"sync"
 
-	ipld "bitbucket.org/atlantproject/go-ipfs/go-ipld-format"
-	dag "bitbucket.org/atlantproject/go-ipfs/merkledag"
-	ft "bitbucket.org/atlantproject/go-ipfs/unixfs"
-	mod "bitbucket.org/atlantproject/go-ipfs/unixfs/mod"
+	ipld "github.com/AtlantPlatform/go-ipfs/go-ipld-format"
+	dag "github.com/AtlantPlatform/go-ipfs/merkledag"
+	ft "github.com/AtlantPlatform/go-ipfs/unixfs"
+	mod "github.com/AtlantPlatform/go-ipfs/unixfs/mod"
 	chunker "unknown/go-ipfs-chunker"
 )
 

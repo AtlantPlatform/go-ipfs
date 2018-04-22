@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"io"
 
-	mod "bitbucket.org/atlantproject/go-ipfs/unixfs/mod"
 	context "context"
+	mod "github.com/AtlantPlatform/go-ipfs/unixfs/mod"
 )
 
 type FileDescriptor interface {

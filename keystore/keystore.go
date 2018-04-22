@@ -7,7 +7,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	ci "bitbucket.org/atlantproject/go-ipfs/go-libp2p-crypto"
+	ci "github.com/AtlantPlatform/go-ipfs/go-libp2p-crypto"
 	logging "unknown/go-log"
 )
 

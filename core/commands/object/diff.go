@@ -5,12 +5,12 @@ import (
 	"fmt"
 	"io"
 
-	cmds "bitbucket.org/atlantproject/go-ipfs/commands"
-	core "bitbucket.org/atlantproject/go-ipfs/core"
-	e "bitbucket.org/atlantproject/go-ipfs/core/commands/e"
-	cmdkit "bitbucket.org/atlantproject/go-ipfs/go-ipfs-cmdkit"
-	dagutils "bitbucket.org/atlantproject/go-ipfs/merkledag/utils"
-	path "bitbucket.org/atlantproject/go-ipfs/path"
+	cmds "github.com/AtlantPlatform/go-ipfs/commands"
+	core "github.com/AtlantPlatform/go-ipfs/core"
+	e "github.com/AtlantPlatform/go-ipfs/core/commands/e"
+	cmdkit "github.com/AtlantPlatform/go-ipfs/go-ipfs-cmdkit"
+	dagutils "github.com/AtlantPlatform/go-ipfs/merkledag/utils"
+	path "github.com/AtlantPlatform/go-ipfs/path"
 )
 
 type Changes struct {

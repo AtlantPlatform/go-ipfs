@@ -6,13 +6,13 @@ import (
 	"fmt"
 	"os"
 
-	"bitbucket.org/atlantproject/go-ipfs/go-ipfs-cmdkit/files"
-	ipld "bitbucket.org/atlantproject/go-ipfs/go-ipld-format"
+	"github.com/AtlantPlatform/go-ipfs/go-ipfs-cmdkit/files"
+	ipld "github.com/AtlantPlatform/go-ipfs/go-ipld-format"
 	chunker "unknown/go-ipfs-chunker"
 
-	bal "bitbucket.org/atlantproject/go-ipfs/importer/balanced"
-	h "bitbucket.org/atlantproject/go-ipfs/importer/helpers"
-	trickle "bitbucket.org/atlantproject/go-ipfs/importer/trickle"
+	bal "github.com/AtlantPlatform/go-ipfs/importer/balanced"
+	h "github.com/AtlantPlatform/go-ipfs/importer/helpers"
+	trickle "github.com/AtlantPlatform/go-ipfs/importer/trickle"
 )
 
 // BuildDagFromFile builds a DAG from the given file, writing created blocks to

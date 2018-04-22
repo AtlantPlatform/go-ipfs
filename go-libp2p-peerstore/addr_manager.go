@@ -7,9 +7,9 @@ import (
 	"sync"
 	"time"
 
-	peer "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peer"
-	addr "bitbucket.org/atlantproject/go-ipfs/go-libp2p-peerstore/addr"
-	ma "bitbucket.org/atlantproject/go-ipfs/go-multiaddr"
+	peer "github.com/AtlantPlatform/go-ipfs/go-libp2p-peer"
+	addr "github.com/AtlantPlatform/go-ipfs/go-libp2p-peerstore/addr"
+	ma "github.com/AtlantPlatform/go-ipfs/go-multiaddr"
 )
 
 var (

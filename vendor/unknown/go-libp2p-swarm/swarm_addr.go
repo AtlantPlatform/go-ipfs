@@ -1,7 +1,7 @@
 package swarm
 
 import (
-	ma "bitbucket.org/atlantproject/go-ipfs/go-multiaddr"
+	ma "github.com/AtlantPlatform/go-ipfs/go-multiaddr"
 	addrutil "unknown/go-addr-util"
 	iconn "unknown/go-libp2p-interface-conn"
 )

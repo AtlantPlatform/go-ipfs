@@ -7,7 +7,7 @@ link:
 extract:
 	# before must do: cd $$GOPATH/src/github.com/ipfs/go-ipfs && make install
 	#
-	surgical-extraction --pkg github.com/ipfs/go-ipfs/cmd/ipfswatch --out bitbucket.org/atlantproject/go-ipfs \
+	surgical-extraction --pkg github.com/ipfs/go-ipfs/cmd/ipfswatch --out github.com/AtlantPlatform/go-ipfs \
 	extract \
 	--unvendor go-libp2p-pnet \
 	--unvendor go-libp2p-interface-pnet \
@@ -28,7 +28,7 @@ extract:
 	--rename badger:github.com/dgraph-io/badger
 	
 extract-apply:
-	surgical-extraction --pkg github.com/ipfs/go-ipfs/cmd/ipfswatch --out bitbucket.org/atlantproject/go-ipfs \
+	surgical-extraction --pkg github.com/ipfs/go-ipfs/cmd/ipfswatch --out github.com/AtlantPlatform/go-ipfs \
 	extract --apply \
 	--unvendor go-libp2p-pnet \
 	--unvendor go-libp2p-interface-pnet \
@@ -55,4 +55,4 @@ patch-apply:
 	git apply patches/peer-info.patch
 
 test:
-	go install bitbucket.org/atlantproject/go-ipfs/cmd/ipfswatch
+	go install github.com/AtlantPlatform/go-ipfs/cmd/ipfswatch
