@@ -8,6 +8,7 @@ import (
 	e "github.com/AtlantPlatform/go-ipfs/core/commands/e"
 	"github.com/AtlantPlatform/go-ipfs/go-ipfs-cmdkit"
 	namesys "github.com/AtlantPlatform/go-ipfs/namesys"
+	nsopts "github.com/AtlantPlatform/go-ipfs/namesys/opts"
 )
 
 var DNSCmd = &cmds.Command{
@@ -56,11 +57,12 @@ The resolver can recursively resolve:
 		name := req.Arguments()[0]
 		resolver := namesys.NewDNSResolver()
 
-		depth := 1
-		if recursive {
-			depth = namesys.DefaultDepthLimit
+		var ropts []nsopts.ResolveOpt
+		if !recursive {
+			ropts = append(ropts, nsopts.Depth(1))
 		}
-		output, err := resolver.ResolveN(req.Context(), name, depth)
+
+		output, err := resolver.Resolve(req.Context(), name, ropts...)
 		if err == namesys.ErrResolveFailed {
 			res.SetError(err, cmdkit.ErrNotFound)
 			return

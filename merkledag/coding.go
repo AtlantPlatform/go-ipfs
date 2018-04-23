@@ -20,7 +20,7 @@ import (
 func (n *ProtoNode) unmarshal(encoded []byte) error {
 	var pbn pb.PBNode
 	if err := pbn.Unmarshal(encoded); err != nil {
-		return fmt.Errorf("Unmarshal failed. %v", err)
+		return fmt.Errorf("unmarshal failed. %v", err)
 	}
 
 	pbnl := pbn.GetLinks()
@@ -29,7 +29,7 @@ func (n *ProtoNode) unmarshal(encoded []byte) error {
 		n.links[i] = &ipld.Link{Name: l.GetName(), Size: l.GetTsize()}
 		c, err := cid.Cast(l.GetHash())
 		if err != nil {
-			return fmt.Errorf("Link hash #%d is not valid multihash. %v", i, err)
+			return fmt.Errorf("link hash #%d is not valid multihash. %v", i, err)
 		}
 		n.links[i].Cid = c
 	}
@@ -46,7 +46,7 @@ func (n *ProtoNode) Marshal() ([]byte, error) {
 	pbn := n.getPBNode()
 	data, err := pbn.Marshal()
 	if err != nil {
-		return data, fmt.Errorf("Marshal failed. %v", err)
+		return data, fmt.Errorf("marshal failed. %v", err)
 	}
 	return data, nil
 }
@@ -122,9 +122,9 @@ func DecodeProtobufBlock(b blocks.Block) (ipld.Node, error) {
 	decnd, err := DecodeProtobuf(b.RawData())
 	if err != nil {
 		if strings.Contains(err.Error(), "Unmarshal failed") {
-			return nil, fmt.Errorf("The block referred to by '%s' was not a valid merkledag node", c)
+			return nil, fmt.Errorf("the block referred to by '%s' was not a valid merkledag node", c)
 		}
-		return nil, fmt.Errorf("Failed to decode Protocol Buffers: %v", err)
+		return nil, fmt.Errorf("failed to decode Protocol Buffers: %v", err)
 	}
 
 	decnd.cached = c

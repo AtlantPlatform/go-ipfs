@@ -18,7 +18,7 @@ import (
 	path "github.com/AtlantPlatform/go-ipfs/path"
 )
 
-var errNotOnline = errors.New("This command must be run in online mode. Try running 'ipfs daemon' first.")
+var errNotOnline = errors.New("this command must be run in online mode. Try running 'ipfs daemon' first")
 
 var PublishCmd = &cmds.Command{
 	Helptext: cmdkit.HelpText{

@@ -29,7 +29,7 @@ type Writer struct {
 }
 
 // NewWriter wraps given io.Writer.
-func NewWriter(ctx context.Context, dag ipld.DAGService, archive bool, compression int, w io.Writer) (*Writer, error) {
+func NewWriter(ctx context.Context, dag ipld.DAGService, w io.Writer) (*Writer, error) {
 	return &Writer{
 		Dag:  dag,
 		TarW: tar.NewWriter(w),
@@ -38,23 +38,22 @@ func NewWriter(ctx context.Context, dag ipld.DAGService, archive bool, compressi
 }
 
 func (w *Writer) writeDir(nd *mdag.ProtoNode, fpath string) error {
+	dir, err := uio.NewDirectoryFromNode(w.Dag, nd)
+	if err != nil {
+		return err
+	}
 	if err := writeDirHeader(w.TarW, fpath); err != nil {
 		return err
 	}
 
-	for i, ng := range ipld.GetDAG(w.ctx, w.Dag, nd) {
-		child, err := ng.Get(w.ctx)
+	return dir.ForEachLink(w.ctx, func(l *ipld.Link) error {
+		child, err := w.Dag.Get(w.ctx, l.Cid)
 		if err != nil {
 			return err
 		}
-
-		npath := path.Join(fpath, nd.Links()[i].Name)
-		if err := w.WriteNode(child, npath); err != nil {
-			return err
-		}
-	}
-
-	return nil
+		npath := path.Join(fpath, l.Name)
+		return w.WriteNode(child, npath)
+	})
 }
 
 func (w *Writer) writeFile(nd *mdag.ProtoNode, pb *upb.Data, fpath string) error {
@@ -82,7 +81,7 @@ func (w *Writer) WriteNode(nd ipld.Node, fpath string) error {
 		switch pb.GetType() {
 		case upb.Data_Metadata:
 			fallthrough
-		case upb.Data_Directory:
+		case upb.Data_Directory, upb.Data_HAMTShard:
 			return w.writeDir(nd, fpath)
 		case upb.Data_Raw:
 			fallthrough

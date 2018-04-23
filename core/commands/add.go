@@ -10,7 +10,6 @@ import (
 	blockservice "github.com/AtlantPlatform/go-ipfs/blockservice"
 	core "github.com/AtlantPlatform/go-ipfs/core"
 	"github.com/AtlantPlatform/go-ipfs/core/coreunix"
-	offline "github.com/AtlantPlatform/go-ipfs/exchange/offline"
 	cmdkit "github.com/AtlantPlatform/go-ipfs/go-ipfs-cmdkit"
 	files "github.com/AtlantPlatform/go-ipfs/go-ipfs-cmdkit/files"
 	dag "github.com/AtlantPlatform/go-ipfs/merkledag"
@@ -19,11 +18,12 @@ import (
 	ft "github.com/AtlantPlatform/go-ipfs/unixfs"
 	bstore "unknown/go-ipfs-blockstore"
 	cmds "unknown/go-ipfs-cmds"
+	offline "unknown/go-ipfs-exchange-offline"
 	mh "unknown/go-multihash"
 	pb "unknown/pb"
 )
 
-// ErrDepthLimitExceeded indicates that the max depth has been exceded.
+// ErrDepthLimitExceeded indicates that the max depth has been exceeded.
 var ErrDepthLimitExceeded = fmt.Errorf("depth limit exceeded")
 
 const (
@@ -282,7 +282,10 @@ You can now check what blocks have been created by:
 
 		if hash {
 			md := dagtest.Mock()
-			mr, err := mfs.NewRoot(req.Context, md, ft.EmptyDirNode(), nil)
+			emptyDirNode := ft.EmptyDirNode()
+			// Use the same prefix for the "empty" MFS root as for the file adder.
+			emptyDirNode.Prefix = *fileAdder.Prefix
+			mr, err := mfs.NewRoot(req.Context, md, emptyDirNode, nil)
 			if err != nil {
 				res.SetError(err, cmdkit.ErrNormal)
 				return

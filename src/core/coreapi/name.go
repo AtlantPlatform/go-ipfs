@@ -12,17 +12,15 @@ import (
 	caopts "github.com/ipfs/go-ipfs/core/coreapi/interface/options"
 	keystore "github.com/ipfs/go-ipfs/keystore"
 	namesys "github.com/ipfs/go-ipfs/namesys"
+	nsopts "github.com/ipfs/go-ipfs/namesys/opts"
 	ipath "github.com/ipfs/go-ipfs/path"
 
-	offline "gx/ipfs/QmZRcGYvxdauCd7hHnMYLYqcZRaDjv24c7eUNyJojAcdBb/go-ipfs-routing/offline"
+	offline "gx/ipfs/QmXtoXbu9ReyV6Q4kDQ5CF9wXQNDY1PdHc4HhfxRR5AHB3/go-ipfs-routing/offline"
 	peer "gx/ipfs/QmZoWKhxUmZ2seW4BzX6fJkNR8hh9PsGModr7q171yq2SS/go-libp2p-peer"
 	crypto "gx/ipfs/QmaPbCnUMBohSGo3KnxEa2bHqyJVVeEEcwtqJAYxerieBo/go-libp2p-crypto"
 )
 
-type NameAPI struct {
-	*CoreAPI
-	*caopts.NameOptions
-}
+type NameAPI CoreAPI
 
 type ipnsEntry struct {
 	name  string
@@ -117,25 +115,21 @@ func (api *NameAPI) Resolve(ctx context.Context, name string, opts ...caopts.Nam
 		resolver = namesys.NewNameSystem(n.Routing, n.Repo.Datastore(), 0)
 	}
 
-	depth := 1
-	if options.Recursive {
-		depth = namesys.DefaultDepthLimit
-	}
-
 	if !strings.HasPrefix(name, "/ipns/") {
 		name = "/ipns/" + name
 	}
 
-	output, err := resolver.ResolveN(ctx, name, depth)
+	var ropts []nsopts.ResolveOpt
+	if !options.Recursive {
+		ropts = append(ropts, nsopts.Depth(1))
+	}
+
+	output, err := resolver.Resolve(ctx, name, ropts...)
 	if err != nil {
 		return nil, err
 	}
 
 	return &path{path: output}, nil
-}
-
-func (api *NameAPI) core() coreiface.CoreAPI {
-	return api.CoreAPI
 }
 
 func keylookup(n *core.IpfsNode, k string) (crypto.PrivKey, error) {

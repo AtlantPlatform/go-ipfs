@@ -26,14 +26,15 @@ import (
 	iconn "gx/ipfs/QmToCvh5eJtoDheMggre7b2zeFCJ6tAyB82YVs457cqoUE/go-libp2p-interface-conn"
 	ma "gx/ipfs/QmWWQ2Txc2c6tqjsBpzg5Ar652cHPGNsQQp2SejkNmkUMb/go-multiaddr"
 	"gx/ipfs/QmX3QZ5jHEPidwUrymXV1iSCSUhdGxj15sm2gP4jKMef7B/client_golang/prometheus"
-	cmds "gx/ipfs/QmabLouZTZwhfALuBcssPvkzhbYGMb4394huT7HY4LQ6d3/go-ipfs-cmds"
 	"gx/ipfs/QmceUdzxkimdYsgtX733uNgzf1DLHyBKN6ehGSp85ayppM/go-ipfs-cmdkit"
+	cmds "gx/ipfs/QmfAkMSt9Fwzk48QDJecPcwCUjnf2uG7MLnmCGTp4C6ouL/go-ipfs-cmds"
 )
 
 const (
 	adjustFDLimitKwd          = "manage-fdlimit"
 	enableGCKwd               = "enable-gc"
 	initOptionKwd             = "init"
+	initProfileOptionKwd      = "init-profile"
 	ipfsMountKwd              = "mount-ipfs"
 	ipnsMountKwd              = "mount-ipns"
 	migrateKwd                = "migrate"
@@ -44,6 +45,7 @@ const (
 	routingOptionDHTClientKwd = "dhtclient"
 	routingOptionDHTKwd       = "dht"
 	routingOptionNoneKwd      = "none"
+	routingOptionDefaultKwd   = "default"
 	unencryptTransportKwd     = "disable-transport-encryption"
 	unrestrictedApiAccessKwd  = "unrestricted-api"
 	writableKwd               = "writable"
@@ -148,7 +150,8 @@ Headers.
 
 	Options: []cmdkit.Option{
 		cmdkit.BoolOption(initOptionKwd, "Initialize ipfs with default settings if not already initialized"),
-		cmdkit.StringOption(routingOptionKwd, "Overrides the routing option").WithDefault("dht"),
+		cmdkit.StringOption(initProfileOptionKwd, "Configuration profiles to apply for --init. See ipfs init --help for more"),
+		cmdkit.StringOption(routingOptionKwd, "Overrides the routing option").WithDefault("default"),
 		cmdkit.BoolOption(mountKwd, "Mounts IPFS to the filesystem"),
 		cmdkit.BoolOption(writableKwd, "Enable writing objects (with POST, PUT and DELETE)"),
 		cmdkit.StringOption(ipfsMountKwd, "Path to the mountpoint for IPFS (if using --mount). Defaults to config setting."),
@@ -222,7 +225,9 @@ func daemonFunc(req *cmds.Request, re cmds.ResponseEmitter, env cmds.Environment
 
 		cfg := cctx.ConfigRoot
 		if !fsrepo.IsInitialized(cfg) {
-			err := initWithDefaults(os.Stdout, cfg)
+			profiles, _ := req.Options[initProfileOptionKwd].(string)
+
+			err := initWithDefaults(os.Stdout, cfg, profiles)
 			if err != nil {
 				re.SetError(err, cmdkit.ErrNormal)
 				return
@@ -296,6 +301,22 @@ func daemonFunc(req *cmds.Request, re cmds.ResponseEmitter, env cmds.Environment
 	}
 
 	routingOption, _ := req.Options[routingOptionKwd].(string)
+	if err != nil {
+		re.SetError(err, cmdkit.ErrNormal)
+		return
+	}
+	if routingOption == routingOptionDefaultKwd {
+		cfg, err := repo.Config()
+		if err != nil {
+			re.SetError(err, cmdkit.ErrNormal)
+			return
+		}
+
+		routingOption = cfg.Routing.Type
+		if routingOption == "" {
+			routingOption = routingOptionDHTKwd
+		}
+	}
 	switch routingOption {
 	case routingOptionSupernodeKwd:
 		re.SetError(errors.New("supernode routing was never fully implemented and has been removed"), cmdkit.ErrNormal)

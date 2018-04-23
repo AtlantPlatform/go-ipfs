@@ -22,7 +22,6 @@ import (
 	"time"
 
 	bserv "github.com/AtlantPlatform/go-ipfs/blockservice"
-	exchange "github.com/AtlantPlatform/go-ipfs/exchange"
 	bitswap "github.com/AtlantPlatform/go-ipfs/exchange/bitswap"
 	bsnet "github.com/AtlantPlatform/go-ipfs/exchange/bitswap/network"
 	rp "github.com/AtlantPlatform/go-ipfs/exchange/reprovide"
@@ -57,6 +56,7 @@ import (
 	addrutil "unknown/go-addr-util"
 	ds "unknown/go-datastore"
 	bstore "unknown/go-ipfs-blockstore"
+	exchange "unknown/go-ipfs-exchange-interface"
 	nilrouting "unknown/go-ipfs-routing/none"
 	offroute "unknown/go-ipfs-routing/offline"
 	u "unknown/go-ipfs-util"
@@ -244,7 +244,7 @@ func (n *IpfsNode) startOnlineServices(ctx context.Context, routingOption Routin
 	}
 
 	// Ok, now we're ready to listen.
-	if err := startListening(ctx, n.PeerHost, cfg); err != nil {
+	if err := startListening(n.PeerHost, cfg); err != nil {
 		return err
 	}
 
@@ -451,9 +451,8 @@ func (n *IpfsNode) startOnlineServicesWithHost(ctx context.Context, host p2phost
 	n.PeerHost = rhost.Wrap(host, n.Routing)
 
 	// setup exchange service
-	const alwaysSendToPeer = true // use YesManStrategy
 	bitswapNetwork := bsnet.NewFromIpfsHost(n.PeerHost, n.Routing)
-	n.Exchange = bitswap.New(ctx, n.Identity, bitswapNetwork, n.Blockstore, alwaysSendToPeer)
+	n.Exchange = bitswap.New(ctx, bitswapNetwork, n.Blockstore)
 
 	size, err := n.getCacheSize()
 	if err != nil {
@@ -695,7 +694,7 @@ func (n *IpfsNode) GetKey(name string) (ic.PrivKey, error) {
 
 func (n *IpfsNode) LoadPrivateKey() error {
 	if n.Identity == "" || n.Peerstore == nil {
-		return errors.New("loaded private key out of order.")
+		return errors.New("loaded private key out of order")
 	}
 
 	if n.PrivateKey != nil {
@@ -825,7 +824,7 @@ func listenAddresses(cfg *config.Config) ([]ma.Multiaddr, error) {
 	for _, addr := range cfg.Addresses.Swarm {
 		maddr, err := ma.NewMultiaddr(addr)
 		if err != nil {
-			return nil, fmt.Errorf("Failure to parse config.Addresses.Swarm: %s", cfg.Addresses.Swarm)
+			return nil, fmt.Errorf("failure to parse config.Addresses.Swarm: %s", cfg.Addresses.Swarm)
 		}
 		listen = append(listen, maddr)
 	}
@@ -918,7 +917,7 @@ func composeAddrsFactory(f, g p2pbhost.AddrsFactory) p2pbhost.AddrsFactory {
 }
 
 // startListening on the network addresses
-func startListening(ctx context.Context, host p2phost.Host, cfg *config.Config) error {
+func startListening(host p2phost.Host, cfg *config.Config) error {
 	listenAddrs, err := listenAddresses(cfg)
 	if err != nil {
 		return err

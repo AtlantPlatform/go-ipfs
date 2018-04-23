@@ -41,7 +41,6 @@ Please put all issues regarding the Go IPFS _implementation_ in [this repo](http
   - [Some things to try](#some-things-to-try)
   - [Docker usage](#docker-usage)
   - [Troubleshooting](#troubleshooting-1)
-- [Todo](#todo)
 - [Contributing](#contributing)
   - [Want to hack on IPFS?](#want-to-hack-on-ipfs)
   - [Want to read our code?](#want-to-read-our-code)
@@ -318,7 +317,7 @@ Please direct general questions and help requests to our
 [forum](https://discuss.ipfs.io) or our IRC channel (freenode #ipfs).
 
 If you believe you've found a bug, check the [issues list](https://github.com/ipfs/go-ipfs/issues)
-and, if you dont see your problem there, either come talk to us on IRC (freenode #ipfs) or
+and, if you don't see your problem there, either come talk to us on IRC (freenode #ipfs) or
 file an issue of your own!
 
 ## Contributing

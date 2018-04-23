@@ -9,9 +9,7 @@ import (
 	gopath "path"
 	"strconv"
 
-	bserv "github.com/AtlantPlatform/go-ipfs/blockservice"
 	core "github.com/AtlantPlatform/go-ipfs/core"
-	"github.com/AtlantPlatform/go-ipfs/exchange/offline"
 	cid "github.com/AtlantPlatform/go-ipfs/go-cid"
 	files "github.com/AtlantPlatform/go-ipfs/go-ipfs-cmdkit/files"
 	ipld "github.com/AtlantPlatform/go-ipfs/go-ipld-format"
@@ -22,8 +20,6 @@ import (
 	mfs "github.com/AtlantPlatform/go-ipfs/mfs"
 	"github.com/AtlantPlatform/go-ipfs/pin"
 	unixfs "github.com/AtlantPlatform/go-ipfs/unixfs"
-	ds "unknown/go-datastore"
-	syncds "unknown/go-datastore/sync"
 	bstore "unknown/go-ipfs-blockstore"
 	chunker "unknown/go-ipfs-chunker"
 	posinfo "unknown/go-ipfs-posinfo"
@@ -46,22 +42,6 @@ type Object struct {
 	Hash  string
 	Links []Link
 	Size  string
-}
-
-type hiddenFileError struct {
-	fileName string
-}
-
-func (e *hiddenFileError) Error() string {
-	return fmt.Sprintf("%s is a hidden file", e.fileName)
-}
-
-type ignoreFileError struct {
-	fileName string
-}
-
-func (e *ignoreFileError) Error() string {
-	return fmt.Sprintf("%s is an ignored file", e.fileName)
 }
 
 type AddedObject struct {
@@ -570,14 +550,6 @@ func outputDagnode(out chan interface{}, name string, dn ipld.Node) error {
 	}
 
 	return nil
-}
-
-// NewMemoryDagService builds and returns a new mem-datastore.
-func NewMemoryDagService() ipld.DAGService {
-	// build mem-datastore for editor's intermediary nodes
-	bs := bstore.NewBlockstore(syncds.MutexWrap(ds.NewMapDatastore()))
-	bsrv := bserv.New(bs, offline.Exchange(bs))
-	return dag.NewDAGService(bsrv)
 }
 
 // from core/commands/object.go

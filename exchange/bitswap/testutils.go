@@ -6,8 +6,8 @@ import (
 
 	tn "github.com/AtlantPlatform/go-ipfs/exchange/bitswap/testnet"
 	peer "github.com/AtlantPlatform/go-ipfs/go-libp2p-peer"
-	datastore2 "github.com/AtlantPlatform/go-ipfs/thirdparty/datastore2"
 	ds "unknown/go-datastore"
+	delayed "unknown/go-datastore/delayed"
 	ds_sync "unknown/go-datastore/sync"
 	blockstore "unknown/go-ipfs-blockstore"
 	delay "unknown/go-ipfs-delay"
@@ -89,7 +89,7 @@ func MkSession(ctx context.Context, net tn.Network, p testutil.Identity) Instanc
 	bsdelay := delay.Fixed(0)
 
 	adapter := net.Adapter(p)
-	dstore := ds_sync.MutexWrap(datastore2.WithDelay(ds.NewMapDatastore(), bsdelay))
+	dstore := ds_sync.MutexWrap(delayed.New(ds.NewMapDatastore(), bsdelay))
 
 	bstore, err := blockstore.CachedBlockstore(ctx,
 		blockstore.NewBlockstore(ds_sync.MutexWrap(dstore)),
@@ -98,9 +98,7 @@ func MkSession(ctx context.Context, net tn.Network, p testutil.Identity) Instanc
 		panic(err.Error()) // FIXME perhaps change signature and return error.
 	}
 
-	const alwaysSendToPeer = true
-
-	bs := New(ctx, p.ID(), adapter, bstore, alwaysSendToPeer).(*Bitswap)
+	bs := New(ctx, adapter, bstore).(*Bitswap)
 
 	return Instance{
 		Peer:            p.ID(),

@@ -8,17 +8,14 @@ import (
 	coreiface "github.com/AtlantPlatform/go-ipfs/core/coreapi/interface"
 	caopts "github.com/AtlantPlatform/go-ipfs/core/coreapi/interface/options"
 	corerepo "github.com/AtlantPlatform/go-ipfs/core/corerepo"
-	offline "github.com/AtlantPlatform/go-ipfs/exchange/offline"
 	cid "github.com/AtlantPlatform/go-ipfs/go-cid"
 	ipld "github.com/AtlantPlatform/go-ipfs/go-ipld-format"
 	merkledag "github.com/AtlantPlatform/go-ipfs/merkledag"
 	pin "github.com/AtlantPlatform/go-ipfs/pin"
+	offline "unknown/go-ipfs-exchange-offline"
 )
 
-type PinAPI struct {
-	*CoreAPI
-	*caopts.PinOptions
-}
+type PinAPI CoreAPI
 
 func (api *PinAPI) Add(ctx context.Context, p coreiface.Path, opts ...caopts.PinAddOption) error {
 	settings, err := caopts.PinAddOptions(opts...)

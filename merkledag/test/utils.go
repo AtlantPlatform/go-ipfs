@@ -2,12 +2,12 @@ package mdutils
 
 import (
 	bsrv "github.com/AtlantPlatform/go-ipfs/blockservice"
-	"github.com/AtlantPlatform/go-ipfs/exchange/offline"
 	ipld "github.com/AtlantPlatform/go-ipfs/go-ipld-format"
 	dag "github.com/AtlantPlatform/go-ipfs/merkledag"
 	ds "unknown/go-datastore"
 	dssync "unknown/go-datastore/sync"
 	blockstore "unknown/go-ipfs-blockstore"
+	offline "unknown/go-ipfs-exchange-offline"
 )
 
 // Mock returns a new thread-safe, mock DAGService.

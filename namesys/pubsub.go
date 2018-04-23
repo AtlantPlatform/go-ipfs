@@ -13,6 +13,7 @@ import (
 	floodsub "github.com/AtlantPlatform/go-ipfs/go-libp2p-floodsub"
 	peer "github.com/AtlantPlatform/go-ipfs/go-libp2p-peer"
 	pstore "github.com/AtlantPlatform/go-ipfs/go-libp2p-peerstore"
+	opts "github.com/AtlantPlatform/go-ipfs/namesys/opts"
 	pb "github.com/AtlantPlatform/go-ipfs/namesys/pb"
 	path "github.com/AtlantPlatform/go-ipfs/path"
 	ds "unknown/go-datastore"
@@ -184,16 +185,11 @@ func (p *PubsubPublisher) publishRecord(ctx context.Context, k ci.PrivKey, value
 }
 
 // Resolve resolves a name through pubsub and default depth limit
-func (r *PubsubResolver) Resolve(ctx context.Context, name string) (path.Path, error) {
-	return r.ResolveN(ctx, name, DefaultDepthLimit)
+func (r *PubsubResolver) Resolve(ctx context.Context, name string, options ...opts.ResolveOpt) (path.Path, error) {
+	return resolve(ctx, r, name, opts.ProcessOpts(options), "/ipns/")
 }
 
-// ResolveN resolves a name through pubsub with the specified depth limit
-func (r *PubsubResolver) ResolveN(ctx context.Context, name string, depth int) (path.Path, error) {
-	return resolve(ctx, r, name, depth, "/ipns/")
-}
-
-func (r *PubsubResolver) resolveOnce(ctx context.Context, name string) (path.Path, error) {
+func (r *PubsubResolver) resolveOnce(ctx context.Context, name string, options *opts.ResolveOpts) (path.Path, error) {
 	log.Debugf("PubsubResolve: resolve '%s'", name)
 
 	// retrieve the public key once (for verifying messages)
@@ -206,7 +202,7 @@ func (r *PubsubResolver) resolveOnce(ctx context.Context, name string) (path.Pat
 
 	id := peer.ID(hash)
 	if r.host.Peerstore().PrivKey(id) != nil {
-		return "", errors.New("Cannot resolve own name through pubsub")
+		return "", errors.New("cannot resolve own name through pubsub")
 	}
 
 	pubk := id.ExtractPublicKey()
@@ -318,7 +314,7 @@ func (r *PubsubResolver) handleSubscription(sub *floodsub.Subscription, name str
 
 		err = r.receive(msg, name, pubk)
 		if err != nil {
-			log.Warningf("PubsubResolve: error proessing update for %s: %s", name, err.Error())
+			log.Warningf("PubsubResolve: error processing update for %s: %s", name, err.Error())
 		}
 	}
 }
@@ -372,7 +368,7 @@ func (r *PubsubResolver) receive(msg *floodsub.Message, name string, pubk ci.Pub
 }
 
 // rendezvous with peers in the name topic through provider records
-// Note: rendezbous/boostrap should really be handled by the pubsub implementation itself!
+// Note: rendezvous/boostrap should really be handled by the pubsub implementation itself!
 func bootstrapPubsub(ctx context.Context, cr routing.ContentRouting, host p2phost.Host, name string) {
 	topic := "floodsub:" + name
 	hash := u.Hash([]byte(topic))

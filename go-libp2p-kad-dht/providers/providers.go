@@ -9,9 +9,9 @@ import (
 
 	cid "github.com/AtlantPlatform/go-ipfs/go-cid"
 	peer "github.com/AtlantPlatform/go-ipfs/go-libp2p-peer"
-	autobatch "unknown/autobatch"
 	base32 "unknown/base32"
 	ds "unknown/go-datastore"
+	autobatch "unknown/go-datastore/autobatch"
 	dsq "unknown/go-datastore/query"
 	logging "unknown/go-log"
 	lru "unknown/golang-lru"

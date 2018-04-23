@@ -100,7 +100,7 @@ func StringToMode(s string) (Mode, bool) {
 // A Pinner provides the necessary methods to keep track of Nodes which are
 // to be kept locally, according to a pin mode. In practice, a Pinner is in
 // in charge of keeping the list of items from the local storage that should
-// not be garbaged-collected.
+// not be garbage-collected.
 type Pinner interface {
 	// IsPinned returns whether or not the given cid is pinned
 	// and an explanation of why its pinned
@@ -304,7 +304,7 @@ func (p *pinner) isPinnedWithType(c *cid.Cid, mode Mode) (string, bool, error) {
 	switch mode {
 	case Any, Direct, Indirect, Recursive, Internal:
 	default:
-		err := fmt.Errorf("Invalid Pin Mode '%d', must be one of {%d, %d, %d, %d, %d}",
+		err := fmt.Errorf("invalid Pin Mode '%d', must be one of {%d, %d, %d, %d, %d}",
 			mode, Direct, Indirect, Recursive, Internal, Any)
 		return "", false, err
 	}

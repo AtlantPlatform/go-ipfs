@@ -1,7 +1,6 @@
 package cmds
 
 import (
-	"bufio"
 	"context"
 	"fmt"
 	"reflect"
@@ -20,6 +19,8 @@ type Request struct {
 	Options   cmdkit.OptMap
 
 	Files files.File
+
+	bodyArgs *arguments
 }
 
 // NewRequest returns a request initialized with given arguments
@@ -47,62 +48,29 @@ func NewRequest(ctx context.Context, path []string, opts cmdkit.OptMap, args []s
 	return req, req.convertOptions(root)
 }
 
-type allArgsCovered struct{}
-
-func (allArgsCovered) Error() string            { return "all arguments covered by positional arguments" }
-func (allArgsCovered) ArgsAlreadyCovered() bool { return true }
-
-type moreArgsExpected struct{}
-
-func (moreArgsExpected) Error() string          { return "expected more arguments from stdin" }
-func (moreArgsExpected) MoreArgsExpected() bool { return true }
-
 // BodyArgs returns a scanner that returns arguments passed in the body as tokens.
-func (req *Request) BodyArgs() (*bufio.Scanner, error) {
-	if len(req.Arguments) >= len(req.Command.Arguments) {
-		return nil, allArgsCovered{}
+//
+// Returns nil if there are no arguments to be consumed via stdin.
+func (req *Request) BodyArgs() StdinArguments {
+	// dance to make sure we return an *untyped* nil.
+	// DO NOT just return `req.bodyArgs`.
+	// If you'd like to complain, go to
+	// https://github.com/golang/go/issues/.
+	if req.bodyArgs != nil {
+		return req.bodyArgs
 	}
-
-	if req.Files == nil {
-		return nil, moreArgsExpected{}
-	}
-
-	fi, err := req.Files.NextFile()
-	if err != nil {
-		return nil, err
-	}
-
-	return bufio.NewScanner(fi), nil
-}
-
-type argsAlreadyCovereder interface {
-	ArgsAlreadyCovered() bool
-}
-
-func IsAllArgsAlreadyCovered(err error) bool {
-	argsErr, ok := err.(argsAlreadyCovereder)
-	return ok && argsErr.ArgsAlreadyCovered()
-}
-
-type moreArgsExpecteder interface {
-	MoreArgsExpected() bool
-}
-
-func IsMoreArgumentsExpected(err error) bool {
-	argsErr, ok := err.(moreArgsExpecteder)
-	return ok && argsErr.MoreArgsExpected()
+	return nil
 }
 
 func (req *Request) ParseBodyArgs() error {
-	s, err := req.BodyArgs()
-	if err != nil {
-		return err
+	s := req.BodyArgs()
+	if s == nil {
+		return nil
 	}
 
 	for s.Scan() {
-		req.Arguments = append(req.Arguments, s.Text())
+		req.Arguments = append(req.Arguments, s.Argument())
 	}
-
 	return s.Err()
 }
 

@@ -16,11 +16,8 @@ import (
 	ipld "github.com/AtlantPlatform/go-ipfs/go-ipld-format"
 	path "github.com/AtlantPlatform/go-ipfs/path"
 	pin "github.com/AtlantPlatform/go-ipfs/pin"
-	logging "unknown/go-log"
 	mh "unknown/go-multihash"
 )
-
-var log = logging.Logger("cmds/files")
 
 var DagCmd = &cmds.Command{
 	Helptext: cmdkit.HelpText{
@@ -184,7 +181,7 @@ var DagGetCmd = &cmds.Command{
 	Helptext: cmdkit.HelpText{
 		Tagline: "Get a dag node from ipfs.",
 		ShortDescription: `
-'ipfs dag get' fetches a dag node from ipfs and prints it out in the specifed
+'ipfs dag get' fetches a dag node from ipfs and prints it out in the specified
 format.
 `,
 	},

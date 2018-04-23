@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"io"
 	"os"
-	gopath "path"
+	"path/filepath"
 	"strings"
 
 	core "github.com/AtlantPlatform/go-ipfs/core"
@@ -14,13 +14,13 @@ import (
 	"github.com/AtlantPlatform/go-ipfs/go-ipfs-cmdkit"
 	dag "github.com/AtlantPlatform/go-ipfs/merkledag"
 	path "github.com/AtlantPlatform/go-ipfs/path"
-	tar "github.com/AtlantPlatform/go-ipfs/thirdparty/tar"
 	uarchive "github.com/AtlantPlatform/go-ipfs/unixfs/archive"
 	"unknown/go-ipfs-cmds"
 	"unknown/pb"
+	tar "unknown/tar-utils"
 )
 
-var ErrInvalidCompressionLevel = errors.New("Compression level must be between 1 and 9")
+var ErrInvalidCompressionLevel = errors.New("compression level must be between 1 and 9")
 
 var GetCmd = &cmds.Command{
 	Helptext: cmdkit.HelpText{
@@ -52,10 +52,6 @@ may also specify the level of compression by specifying '-l=<1-9>'.
 		return err
 	},
 	Run: func(req *cmds.Request, res cmds.ResponseEmitter, env cmds.Environment) {
-		if len(req.Arguments) == 0 {
-			res.SetError(errors.New("not enough arugments provided"), cmdkit.ErrClient)
-			return
-		}
 		cmplvl, err := getCompressOptions(req)
 		if err != nil {
 			res.SetError(err, cmdkit.ErrNormal)
@@ -186,8 +182,8 @@ func getOutPath(req *cmds.Request) string {
 	outPath, _ := req.Options["output"].(string)
 	if outPath == "" {
 		trimmed := strings.TrimRight(req.Arguments[0], "/")
-		_, outPath = gopath.Split(trimmed)
-		outPath = gopath.Clean(outPath)
+		_, outPath = filepath.Split(trimmed)
+		outPath = filepath.Clean(outPath)
 	}
 	return outPath
 }

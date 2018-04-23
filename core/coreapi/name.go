@@ -14,14 +14,12 @@ import (
 	peer "github.com/AtlantPlatform/go-ipfs/go-libp2p-peer"
 	keystore "github.com/AtlantPlatform/go-ipfs/keystore"
 	namesys "github.com/AtlantPlatform/go-ipfs/namesys"
+	nsopts "github.com/AtlantPlatform/go-ipfs/namesys/opts"
 	ipath "github.com/AtlantPlatform/go-ipfs/path"
 	offline "unknown/go-ipfs-routing/offline"
 )
 
-type NameAPI struct {
-	*CoreAPI
-	*caopts.NameOptions
-}
+type NameAPI CoreAPI
 
 type ipnsEntry struct {
 	name  string
@@ -116,25 +114,21 @@ func (api *NameAPI) Resolve(ctx context.Context, name string, opts ...caopts.Nam
 		resolver = namesys.NewNameSystem(n.Routing, n.Repo.Datastore(), 0)
 	}
 
-	depth := 1
-	if options.Recursive {
-		depth = namesys.DefaultDepthLimit
-	}
-
 	if !strings.HasPrefix(name, "/ipns/") {
 		name = "/ipns/" + name
 	}
 
-	output, err := resolver.ResolveN(ctx, name, depth)
+	var ropts []nsopts.ResolveOpt
+	if !options.Recursive {
+		ropts = append(ropts, nsopts.Depth(1))
+	}
+
+	output, err := resolver.Resolve(ctx, name, ropts...)
 	if err != nil {
 		return nil, err
 	}
 
 	return &path{path: output}, nil
-}
-
-func (api *NameAPI) core() coreiface.CoreAPI {
-	return api.CoreAPI
 }
 
 func keylookup(n *core.IpfsNode, k string) (crypto.PrivKey, error) {

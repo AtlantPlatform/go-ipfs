@@ -16,10 +16,7 @@ import (
 	mh "unknown/go-multihash"
 )
 
-type BlockAPI struct {
-	*CoreAPI
-	*caopts.BlockOptions
-}
+type BlockAPI CoreAPI
 
 type BlockStat struct {
 	path coreiface.Path

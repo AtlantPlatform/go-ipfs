@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 #
 # Copyright (c) 2015 Matt Bell
 # MIT Licensed; see the LICENSE file in this repository.
@@ -104,6 +104,14 @@ test_get_cmd() {
     rm -r "$HASH2"
   '
 
+  # Test issue #4720: problems when path contains a trailing slash.
+  test_expect_success "ipfs get with slash (directory)" '
+    ipfs get "$HASH2/" &&
+    test_cmp dir/a "$HASH2"/a &&
+    test_cmp dir/b/c "$HASH2"/b/c &&
+    rm -r "$HASH2"
+  '
+
   test_expect_success "ipfs get -a -C succeeds (directory)" '
     ipfs get "$HASH2" -a -C >actual
   '
@@ -177,9 +185,7 @@ test_get_cmd
 
 test_expect_success "empty request to get doesn't panic and returns error" '
   curl "http://$API_ADDR/api/v0/get" > curl_out || true &&
-    grep "not enough arugments provided" curl_out
-
-
+    grep "argument \"ipfs-path\" is required" curl_out
 '
 test_kill_ipfs_daemon
 

@@ -38,10 +38,16 @@ func Init(out io.Writer, nBitsForKeypair int) (*Config, error) {
 		Datastore: datastore,
 		Bootstrap: BootstrapPeerStrings(bootstrapPeers),
 		Identity:  identity,
-		Discovery: Discovery{MDNS{
-			Enabled:  true,
-			Interval: 10,
-		}},
+		Discovery: Discovery{
+			MDNS: MDNS{
+				Enabled:  true,
+				Interval: 10,
+			},
+		},
+
+		Routing: Routing{
+			Type: "dht",
+		},
 
 		// setup the node mount points.
 		Mounts: Mounts{
@@ -147,7 +153,7 @@ func identityConfig(out io.Writer, nbits int) (Identity, error) {
 	// TODO guard higher up
 	ident := Identity{}
 	if nbits < 1024 {
-		return ident, errors.New("Bitsize less than 1024 is considered unsafe.")
+		return ident, errors.New("bitsize less than 1024 is considered unsafe")
 	}
 
 	fmt.Fprintf(out, "generating %v-bit RSA keypair...", nbits)

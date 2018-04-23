@@ -27,11 +27,6 @@ var FileStoreCmd = &cmds.Command{
 	},
 }
 
-type lsEncoder struct {
-	errors bool
-	w      io.Writer
-}
-
 var lsFileStore = &cmds.Command{
 	Helptext: cmdkit.HelpText{
 		Tagline: "List objects in filestore.",

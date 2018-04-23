@@ -9,11 +9,11 @@ import (
 	"fmt"
 	"io"
 
-	exchange "github.com/AtlantPlatform/go-ipfs/exchange"
 	blocks "github.com/AtlantPlatform/go-ipfs/go-block-format"
 	cid "github.com/AtlantPlatform/go-ipfs/go-cid"
 	"github.com/AtlantPlatform/go-ipfs/thirdparty/verifcid"
 	blockstore "unknown/go-ipfs-blockstore"
+	exchange "unknown/go-ipfs-exchange-interface"
 	logging "unknown/go-log"
 )
 
@@ -145,6 +145,8 @@ func (s *blockService) AddBlock(o blocks.Block) error {
 		return err
 	}
 
+	log.Event(context.TODO(), "BlockService.BlockAdded", c)
+
 	if err := s.exchange.HasBlock(o); err != nil {
 		// TODO(#4623): really an error?
 		return errors.New("blockservice is closed")
@@ -183,6 +185,7 @@ func (s *blockService) AddBlocks(bs []blocks.Block) error {
 	}
 
 	for _, o := range toput {
+		log.Event(context.TODO(), "BlockService.BlockAdded", o.Cid())
 		if err := s.exchange.HasBlock(o); err != nil {
 			// TODO(#4623): Should this really *return*?
 			return fmt.Errorf("blockservice is closed (%s)", err)
@@ -226,6 +229,7 @@ func getBlock(ctx context.Context, c *cid.Cid, bs blockstore.Blockstore, f excha
 			}
 			return nil, err
 		}
+		log.Event(ctx, "BlockService.BlockFetched", c)
 		return blk, nil
 	}
 
@@ -246,15 +250,22 @@ func (s *blockService) GetBlocks(ctx context.Context, ks []*cid.Cid) <-chan bloc
 
 func getBlocks(ctx context.Context, ks []*cid.Cid, bs blockstore.Blockstore, f exchange.Fetcher) <-chan blocks.Block {
 	out := make(chan blocks.Block)
-	for _, c := range ks {
-		// hash security
-		if err := verifcid.ValidateCid(c); err != nil {
-			log.Errorf("unsafe CID (%s) passed to blockService.GetBlocks: %s", c, err)
-		}
-	}
 
 	go func() {
 		defer close(out)
+
+		k := 0
+		for _, c := range ks {
+			// hash security
+			if err := verifcid.ValidateCid(c); err == nil {
+				ks[k] = c
+				k++
+			} else {
+				log.Errorf("unsafe CID (%s) passed to blockService.GetBlocks: %s", c, err)
+			}
+		}
+		ks = ks[:k]
+
 		var misses []*cid.Cid
 		for _, c := range ks {
 			hit, err := bs.Get(c)
@@ -262,7 +273,6 @@ func getBlocks(ctx context.Context, ks []*cid.Cid, bs blockstore.Blockstore, f e
 				misses = append(misses, c)
 				continue
 			}
-			log.Debug("Blockservice: Got data in datastore")
 			select {
 			case out <- hit:
 			case <-ctx.Done():
@@ -281,6 +291,7 @@ func getBlocks(ctx context.Context, ks []*cid.Cid, bs blockstore.Blockstore, f e
 		}
 
 		for b := range rblocks {
+			log.Event(ctx, "BlockService.BlockFetched", b.Cid())
 			select {
 			case out <- b:
 			case <-ctx.Done():
@@ -293,7 +304,11 @@ func getBlocks(ctx context.Context, ks []*cid.Cid, bs blockstore.Blockstore, f e
 
 // DeleteBlock deletes a block in the blockservice from the datastore
 func (s *blockService) DeleteBlock(c *cid.Cid) error {
-	return s.blockstore.DeleteBlock(c)
+	err := s.blockstore.DeleteBlock(c)
+	if err == nil {
+		log.Event(context.TODO(), "BlockService.BlockDeleted", c)
+	}
+	return err
 }
 
 func (s *blockService) Close() error {

@@ -15,7 +15,6 @@ import (
 	"time"
 
 	bserv "github.com/ipfs/go-ipfs/blockservice"
-	offline "github.com/ipfs/go-ipfs/exchange/offline"
 	importer "github.com/ipfs/go-ipfs/importer"
 	dag "github.com/ipfs/go-ipfs/merkledag"
 	"github.com/ipfs/go-ipfs/path"
@@ -23,10 +22,11 @@ import (
 	uio "github.com/ipfs/go-ipfs/unixfs/io"
 
 	u "gx/ipfs/QmNiJuT8Ja3hMVpBHXv3Q6dwmperaQ6JjLtpMQgMCD7xvx/go-ipfs-util"
-	ds "gx/ipfs/QmPpegoMqhAEqjncrzArm7KVWAkCm78rqL2DPuNjhPrshg/go-datastore"
-	dssync "gx/ipfs/QmPpegoMqhAEqjncrzArm7KVWAkCm78rqL2DPuNjhPrshg/go-datastore/sync"
-	bstore "gx/ipfs/QmTVDM4LCSUMFNQzbDLL9zQwp8usE6QHymFdh3h8vL9v6b/go-ipfs-blockstore"
+	offline "gx/ipfs/QmWM5HhdG5ZQNyHQ5XhMdGmV9CvLpFynQfGpTxN2MEM7Lc/go-ipfs-exchange-offline"
 	chunker "gx/ipfs/QmWo8jYc19ppG7YoTsrr2kEtLRbARTJho5oNXFTR6B7Peq/go-ipfs-chunker"
+	ds "gx/ipfs/QmXRKBQA4wXP7xWbFiZsR1GP4HV6wMDQ1aWFxZZ4uBcPX9/go-datastore"
+	dssync "gx/ipfs/QmXRKBQA4wXP7xWbFiZsR1GP4HV6wMDQ1aWFxZZ4uBcPX9/go-datastore/sync"
+	bstore "gx/ipfs/QmaG4DZ4JaqEfvPWt5nPPgoTzhc1tr1T3f4Nu9Jpdm8ymY/go-ipfs-blockstore"
 	cid "gx/ipfs/QmcZfnkapfECQGcLZaf9B79NRg7cRa9EnZh4LSbkCzwNvY/go-cid"
 	ipld "gx/ipfs/Qme5bWv7wtjUNGsK2BNGVUFPKiuxWrsqrtvYwCLRw8YFES/go-ipld-format"
 )
@@ -108,7 +108,7 @@ func assertDirAtPath(root *Directory, pth string, children []string) error {
 	sort.Strings(children)
 	sort.Strings(names)
 	if !compStrArrs(children, names) {
-		return errors.New("directories children did not match!")
+		return errors.New("directories children did not match")
 	}
 
 	return nil
@@ -158,7 +158,7 @@ func assertFileAtPath(ds ipld.DAGService, root *Directory, expn ipld.Node, pth s
 
 	file, ok := finaln.(*File)
 	if !ok {
-		return fmt.Errorf("%s was not a file!", pth)
+		return fmt.Errorf("%s was not a file", pth)
 	}
 
 	rfd, err := file.Open(OpenReadOnly, false)
@@ -177,7 +177,7 @@ func assertFileAtPath(ds ipld.DAGService, root *Directory, expn ipld.Node, pth s
 	}
 
 	if !bytes.Equal(out, expbytes) {
-		return fmt.Errorf("Incorrect data at path!")
+		return fmt.Errorf("incorrect data at path")
 	}
 	return nil
 }
@@ -323,6 +323,11 @@ func TestDirectoryLoadFromDag(t *testing.T) {
 	}
 
 	topd := topi.(*Directory)
+
+	path := topd.Path()
+	if path != "/foo" {
+		t.Fatalf("Expected path '/foo', got '%s'", path)
+	}
 
 	// mkdir over existing but unloaded child file should fail
 	_, err = topd.Mkdir("a")
@@ -611,7 +616,7 @@ func randomFile(d *Directory) (*File, error) {
 
 	fi, ok := fsn.(*File)
 	if !ok {
-		return nil, errors.New("file wasnt a file, race?")
+		return nil, errors.New("file wasn't a file, race?")
 	}
 
 	return fi, nil
@@ -884,7 +889,7 @@ func readFile(rt *Root, path string, offset int64, buf []byte) error {
 		return err
 	}
 	if nread != len(buf) {
-		return fmt.Errorf("didnt read enough!")
+		return fmt.Errorf("didn't read enough")
 	}
 
 	return fd.Close()

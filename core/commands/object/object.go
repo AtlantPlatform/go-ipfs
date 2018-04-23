@@ -13,7 +13,8 @@ import (
 	"strings"
 	"text/tabwriter"
 
-	cmds "github.com/AtlantPlatform/go-ipfs/commands"
+	oldcmds "github.com/AtlantPlatform/go-ipfs/commands"
+	lgc "github.com/AtlantPlatform/go-ipfs/commands/legacy"
 	core "github.com/AtlantPlatform/go-ipfs/core"
 	e "github.com/AtlantPlatform/go-ipfs/core/commands/e"
 	cid "github.com/AtlantPlatform/go-ipfs/go-cid"
@@ -23,6 +24,7 @@ import (
 	path "github.com/AtlantPlatform/go-ipfs/path"
 	pin "github.com/AtlantPlatform/go-ipfs/pin"
 	ft "github.com/AtlantPlatform/go-ipfs/unixfs"
+	cmds "unknown/go-ipfs-cmds"
 )
 
 // ErrObjectTooLarge is returned when too much data was read from stdin. current limit 2m
@@ -54,18 +56,18 @@ directly.`,
 	},
 
 	Subcommands: map[string]*cmds.Command{
-		"data":  ObjectDataCmd,
-		"diff":  ObjectDiffCmd,
-		"get":   ObjectGetCmd,
-		"links": ObjectLinksCmd,
-		"new":   ObjectNewCmd,
+		"data":  lgc.NewCommand(ObjectDataCmd),
+		"diff":  lgc.NewCommand(ObjectDiffCmd),
+		"get":   lgc.NewCommand(ObjectGetCmd),
+		"links": lgc.NewCommand(ObjectLinksCmd),
+		"new":   lgc.NewCommand(ObjectNewCmd),
 		"patch": ObjectPatchCmd,
-		"put":   ObjectPutCmd,
-		"stat":  ObjectStatCmd,
+		"put":   lgc.NewCommand(ObjectPutCmd),
+		"stat":  lgc.NewCommand(ObjectStatCmd),
 	},
 }
 
-var ObjectDataCmd = &cmds.Command{
+var ObjectDataCmd = &oldcmds.Command{
 	Helptext: cmdkit.HelpText{
 		Tagline: "Output the raw bytes of an IPFS object.",
 		ShortDescription: `
@@ -84,7 +86,7 @@ is the raw data of the object.
 	Arguments: []cmdkit.Argument{
 		cmdkit.StringArg("key", true, false, "Key of the object to retrieve, in base58-encoded multihash format.").EnableStdin(),
 	},
-	Run: func(req cmds.Request, res cmds.Response) {
+	Run: func(req oldcmds.Request, res oldcmds.Response) {
 		n, err := req.InvocContext().GetNode()
 		if err != nil {
 			res.SetError(err, cmdkit.ErrNormal)
@@ -113,7 +115,7 @@ is the raw data of the object.
 	},
 }
 
-var ObjectLinksCmd = &cmds.Command{
+var ObjectLinksCmd = &oldcmds.Command{
 	Helptext: cmdkit.HelpText{
 		Tagline: "Output the links pointed to by the specified object.",
 		ShortDescription: `
@@ -129,7 +131,7 @@ multihash.
 	Options: []cmdkit.Option{
 		cmdkit.BoolOption("headers", "v", "Print table headers (Hash, Size, Name)."),
 	},
-	Run: func(req cmds.Request, res cmds.Response) {
+	Run: func(req oldcmds.Request, res oldcmds.Response) {
 		n, err := req.InvocContext().GetNode()
 		if err != nil {
 			res.SetError(err, cmdkit.ErrNormal)
@@ -156,8 +158,8 @@ multihash.
 		}
 		res.SetOutput(output)
 	},
-	Marshalers: cmds.MarshalerMap{
-		cmds.Text: func(res cmds.Response) (io.Reader, error) {
+	Marshalers: oldcmds.MarshalerMap{
+		oldcmds.Text: func(res oldcmds.Response) (io.Reader, error) {
 			v, err := unwrapOutput(res.Output())
 			if err != nil {
 				return nil, err
@@ -184,7 +186,7 @@ multihash.
 	Type: Object{},
 }
 
-var ObjectGetCmd = &cmds.Command{
+var ObjectGetCmd = &oldcmds.Command{
 	Helptext: cmdkit.HelpText{
 		Tagline: "Get and serialize the DAG node named by <key>.",
 		ShortDescription: `
@@ -207,7 +209,7 @@ This command outputs data in the following encodings:
 	Arguments: []cmdkit.Argument{
 		cmdkit.StringArg("key", true, false, "Key of the object to retrieve, in base58-encoded multihash format.").EnableStdin(),
 	},
-	Run: func(req cmds.Request, res cmds.Response) {
+	Run: func(req oldcmds.Request, res oldcmds.Response) {
 		n, err := req.InvocContext().GetNode()
 		if err != nil {
 			res.SetError(err, cmdkit.ErrNormal)
@@ -244,8 +246,8 @@ This command outputs data in the following encodings:
 		res.SetOutput(node)
 	},
 	Type: Node{},
-	Marshalers: cmds.MarshalerMap{
-		cmds.Protobuf: func(res cmds.Response) (io.Reader, error) {
+	Marshalers: oldcmds.MarshalerMap{
+		oldcmds.Protobuf: func(res oldcmds.Response) (io.Reader, error) {
 			v, err := unwrapOutput(res.Output())
 			if err != nil {
 				return nil, err
@@ -271,7 +273,7 @@ This command outputs data in the following encodings:
 	},
 }
 
-var ObjectStatCmd = &cmds.Command{
+var ObjectStatCmd = &oldcmds.Command{
 	Helptext: cmdkit.HelpText{
 		Tagline: "Get stats for the DAG node named by <key>.",
 		ShortDescription: `
@@ -289,7 +291,7 @@ var ObjectStatCmd = &cmds.Command{
 	Arguments: []cmdkit.Argument{
 		cmdkit.StringArg("key", true, false, "Key of the object to retrieve, in base58-encoded multihash format.").EnableStdin(),
 	},
-	Run: func(req cmds.Request, res cmds.Response) {
+	Run: func(req oldcmds.Request, res oldcmds.Response) {
 		n, err := req.InvocContext().GetNode()
 		if err != nil {
 			res.SetError(err, cmdkit.ErrNormal)
@@ -313,8 +315,8 @@ var ObjectStatCmd = &cmds.Command{
 		res.SetOutput(ns)
 	},
 	Type: ipld.NodeStat{},
-	Marshalers: cmds.MarshalerMap{
-		cmds.Text: func(res cmds.Response) (io.Reader, error) {
+	Marshalers: oldcmds.MarshalerMap{
+		oldcmds.Text: func(res oldcmds.Response) (io.Reader, error) {
 			v, err := unwrapOutput(res.Output())
 			if err != nil {
 				return nil, err
@@ -340,7 +342,7 @@ var ObjectStatCmd = &cmds.Command{
 	},
 }
 
-var ObjectPutCmd = &cmds.Command{
+var ObjectPutCmd = &oldcmds.Command{
 	Helptext: cmdkit.HelpText{
 		Tagline: "Store input as a DAG object, print its key.",
 		ShortDescription: `
@@ -387,7 +389,7 @@ And then run:
 		cmdkit.BoolOption("pin", "Pin this object when adding."),
 		cmdkit.BoolOption("quiet", "q", "Write minimal output."),
 	},
-	Run: func(req cmds.Request, res cmds.Response) {
+	Run: func(req oldcmds.Request, res oldcmds.Response) {
 		n, err := req.InvocContext().GetNode()
 		if err != nil {
 			res.SetError(err, cmdkit.ErrNormal)
@@ -443,8 +445,8 @@ And then run:
 
 		res.SetOutput(&Object{Hash: objectCid.String()})
 	},
-	Marshalers: cmds.MarshalerMap{
-		cmds.Text: func(res cmds.Response) (io.Reader, error) {
+	Marshalers: oldcmds.MarshalerMap{
+		oldcmds.Text: func(res oldcmds.Response) (io.Reader, error) {
 			quiet, _, _ := res.Request().Option("quiet").Bool()
 
 			v, err := unwrapOutput(res.Output())
@@ -467,7 +469,7 @@ And then run:
 	Type: Object{},
 }
 
-var ObjectNewCmd = &cmds.Command{
+var ObjectNewCmd = &oldcmds.Command{
 	Helptext: cmdkit.HelpText{
 		Tagline: "Create a new object from an ipfs template.",
 		ShortDescription: `
@@ -486,7 +488,7 @@ Available templates:
 	Arguments: []cmdkit.Argument{
 		cmdkit.StringArg("template", false, false, "Template to use. Optional."),
 	},
-	Run: func(req cmds.Request, res cmds.Response) {
+	Run: func(req oldcmds.Request, res oldcmds.Response) {
 		n, err := req.InvocContext().GetNode()
 		if err != nil {
 			res.SetError(err, cmdkit.ErrNormal)
@@ -511,8 +513,8 @@ Available templates:
 		}
 		res.SetOutput(&Object{Hash: node.Cid().String()})
 	},
-	Marshalers: cmds.MarshalerMap{
-		cmds.Text: func(res cmds.Response) (io.Reader, error) {
+	Marshalers: oldcmds.MarshalerMap{
+		oldcmds.Text: func(res oldcmds.Response) (io.Reader, error) {
 			v, err := unwrapOutput(res.Output())
 			if err != nil {
 				return nil, err
@@ -662,7 +664,7 @@ func deserializeNode(nd *Node, dataFieldEncoding string) (*dag.ProtoNode, error)
 		}
 		dagnode.SetData(data)
 	default:
-		return nil, fmt.Errorf("Unkown data field encoding")
+		return nil, fmt.Errorf("unkown data field encoding")
 	}
 
 	links := make([]*ipld.Link, len(nd.Links))
@@ -683,7 +685,7 @@ func deserializeNode(nd *Node, dataFieldEncoding string) (*dag.ProtoNode, error)
 }
 
 func NodeEmpty(node *Node) bool {
-	return (node.Data == "" && len(node.Links) == 0)
+	return node.Data == "" && len(node.Links) == 0
 }
 
 // copy+pasted from ../commands.go

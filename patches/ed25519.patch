@@ -38,7 +38,7 @@ index b42fdcf14..775b6e782 100644
 --- a/repo/config/init.go
 +++ b/repo/config/init.go
 @@ -150,8 +150,8 @@ func identityConfig(out io.Writer, nbits int) (Identity, error) {
- 		return ident, errors.New("Bitsize less than 1024 is considered unsafe.")
+ 		return ident, errors.New("bitsize less than 1024 is considered unsafe")
  	}
  
 -	fmt.Fprintf(out, "generating %v-bit RSA keypair...", nbits)

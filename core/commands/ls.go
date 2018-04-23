@@ -10,7 +10,7 @@ import (
 	cmds "github.com/AtlantPlatform/go-ipfs/commands"
 	core "github.com/AtlantPlatform/go-ipfs/core"
 	e "github.com/AtlantPlatform/go-ipfs/core/commands/e"
-	offline "github.com/AtlantPlatform/go-ipfs/exchange/offline"
+	cid "github.com/AtlantPlatform/go-ipfs/go-cid"
 	"github.com/AtlantPlatform/go-ipfs/go-ipfs-cmdkit"
 	ipld "github.com/AtlantPlatform/go-ipfs/go-ipld-format"
 	merkledag "github.com/AtlantPlatform/go-ipfs/merkledag"
@@ -19,6 +19,7 @@ import (
 	unixfs "github.com/AtlantPlatform/go-ipfs/unixfs"
 	uio "github.com/AtlantPlatform/go-ipfs/unixfs/io"
 	unixfspb "github.com/AtlantPlatform/go-ipfs/unixfs/pb"
+	offline "unknown/go-ipfs-exchange-offline"
 )
 
 type LsLink struct {
@@ -133,23 +134,28 @@ The JSON output contains type information.
 			for j, link := range links {
 				t := unixfspb.Data_DataType(-1)
 
-				linkNode, err := link.GetNode(req.Context(), dserv)
-				if err == ipld.ErrNotFound && !resolve {
-					// not an error
-					linkNode = nil
-				} else if err != nil {
-					res.SetError(err, cmdkit.ErrNormal)
-					return
-				}
-
-				if pn, ok := linkNode.(*merkledag.ProtoNode); ok {
-					d, err := unixfs.FromBytes(pn.Data())
-					if err != nil {
+				switch link.Cid.Type() {
+				case cid.Raw:
+					// No need to check with raw leaves
+					t = unixfspb.Data_File
+				case cid.DagProtobuf:
+					linkNode, err := link.GetNode(req.Context(), dserv)
+					if err == ipld.ErrNotFound && !resolve {
+						// not an error
+						linkNode = nil
+					} else if err != nil {
 						res.SetError(err, cmdkit.ErrNormal)
 						return
 					}
 
-					t = d.GetType()
+					if pn, ok := linkNode.(*merkledag.ProtoNode); ok {
+						d, err := unixfs.FromBytes(pn.Data())
+						if err != nil {
+							res.SetError(err, cmdkit.ErrNormal)
+							return
+						}
+						t = d.GetType()
+					}
 				}
 				output[i].Links[j] = LsLink{
 					Name: link.Name,

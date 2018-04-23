@@ -14,12 +14,14 @@ import (
 	coreunix "github.com/ipfs/go-ipfs/core/coreunix"
 	dag "github.com/ipfs/go-ipfs/merkledag"
 	namesys "github.com/ipfs/go-ipfs/namesys"
+	nsopts "github.com/ipfs/go-ipfs/namesys/opts"
 	path "github.com/ipfs/go-ipfs/path"
 	repo "github.com/ipfs/go-ipfs/repo"
 	config "github.com/ipfs/go-ipfs/repo/config"
-	ds2 "github.com/ipfs/go-ipfs/thirdparty/datastore2"
 
 	id "gx/ipfs/QmNh1kGFFdsPu79KNSaL4NUKUPb4Eiz4KHdMtFY6664RDp/go-libp2p/p2p/protocol/identify"
+	datastore "gx/ipfs/QmXRKBQA4wXP7xWbFiZsR1GP4HV6wMDQ1aWFxZZ4uBcPX9/go-datastore"
+	syncds "gx/ipfs/QmXRKBQA4wXP7xWbFiZsR1GP4HV6wMDQ1aWFxZZ4uBcPX9/go-datastore/sync"
 	ci "gx/ipfs/QmaPbCnUMBohSGo3KnxEa2bHqyJVVeEEcwtqJAYxerieBo/go-libp2p-crypto"
 )
 
@@ -28,11 +30,7 @@ var emptyDir = "/ipfs/QmUNLLsPACCz1vLxQVkXqqLX5R1X345qqfHbsf67hvA3Nn"
 
 type mockNamesys map[string]path.Path
 
-func (m mockNamesys) Resolve(ctx context.Context, name string) (value path.Path, err error) {
-	return m.ResolveN(ctx, name, namesys.DefaultDepthLimit)
-}
-
-func (m mockNamesys) ResolveN(ctx context.Context, name string, depth int) (value path.Path, err error) {
+func (m mockNamesys) Resolve(ctx context.Context, name string, opts ...nsopts.ResolveOpt) (value path.Path, err error) {
 	p, ok := m[name]
 	if !ok {
 		return "", namesys.ErrResolveFailed
@@ -60,7 +58,7 @@ func newNodeWithMockNamesys(ns mockNamesys) (*core.IpfsNode, error) {
 	}
 	r := &repo.Mock{
 		C: c,
-		D: ds2.ThreadSafeCloserMapDatastore(),
+		D: syncds.MutexWrap(datastore.NewMapDatastore()),
 	}
 	n, err := core.NewNode(context.Background(), &core.BuildCfg{Repo: r})
 	if err != nil {

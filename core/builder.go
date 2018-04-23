@@ -10,7 +10,6 @@ import (
 	"time"
 
 	bserv "github.com/AtlantPlatform/go-ipfs/blockservice"
-	offline "github.com/AtlantPlatform/go-ipfs/exchange/offline"
 	filestore "github.com/AtlantPlatform/go-ipfs/filestore"
 	ci "github.com/AtlantPlatform/go-ipfs/go-libp2p-crypto"
 	peer "github.com/AtlantPlatform/go-ipfs/go-libp2p-peer"
@@ -23,11 +22,12 @@ import (
 	"github.com/AtlantPlatform/go-ipfs/thirdparty/verifbs"
 	uio "github.com/AtlantPlatform/go-ipfs/unixfs/io"
 	ds "unknown/go-datastore"
+	retry "unknown/go-datastore/retrystore"
 	dsync "unknown/go-datastore/sync"
 	bstore "unknown/go-ipfs-blockstore"
+	offline "unknown/go-ipfs-exchange-offline"
 	metrics "unknown/go-metrics-interface"
 	goprocessctx "unknown/goprocess/context"
-	retry "unknown/retry-datastore"
 )
 
 type BuildCfg struct {
@@ -172,7 +172,7 @@ func setupNode(ctx context.Context, n *IpfsNode, cfg *BuildCfg) error {
 
 	// hash security
 	bs := bstore.NewBlockstore(rds)
-	bs = &verifbs.VerifBS{bs}
+	bs = &verifbs.VerifBS{Blockstore: bs}
 
 	opts := bstore.DefaultCacheOpts()
 	conf, err := n.Repo.Config()
@@ -201,7 +201,7 @@ func setupNode(ctx context.Context, n *IpfsNode, cfg *BuildCfg) error {
 		// hash security
 		n.Filestore = filestore.NewFilestore(bs, n.Repo.FileManager())
 		n.Blockstore = bstore.NewGCBlockstore(n.Filestore, n.GCLocker)
-		n.Blockstore = &verifbs.VerifBSGC{n.Blockstore}
+		n.Blockstore = &verifbs.VerifBSGC{GCBlockstore: n.Blockstore}
 	}
 
 	rcfg, err := n.Repo.Config()
@@ -228,7 +228,7 @@ func setupNode(ctx context.Context, n *IpfsNode, cfg *BuildCfg) error {
 	internalDag := dag.NewDAGService(bserv.New(n.Blockstore, offline.Exchange(n.Blockstore)))
 	n.Pinning, err = pin.LoadPinner(n.Repo.Datastore(), n.DAG, internalDag)
 	if err != nil {
-		// TODO: we should move towards only running 'NewPinner' explicity on
+		// TODO: we should move towards only running 'NewPinner' explicitly on
 		// node init instead of implicitly here as a result of the pinner keys
 		// not being found in the datastore.
 		// this is kinda sketchy and could cause data loss

@@ -5,7 +5,6 @@ import (
 	"math"
 
 	context "context"
-
 	"github.com/AtlantPlatform/go-ipfs/core"
 	fsrepo "github.com/AtlantPlatform/go-ipfs/repo/fsrepo"
 	humanize "unknown/go-humanize"
@@ -38,6 +37,11 @@ func RepoStat(n *core.IpfsNode, ctx context.Context) (*Stat, error) {
 	count := uint64(0)
 	for range allKeys {
 		count++
+	}
+
+	path, err := fsrepo.BestKnownPath()
+	if err != nil {
+		return nil, err
 	}
 
 	cfg, err := r.Config()

@@ -5,12 +5,11 @@ import (
 	"fmt"
 	"os"
 
+	cid "github.com/AtlantPlatform/go-ipfs/go-cid"
+	ipld "github.com/AtlantPlatform/go-ipfs/go-ipld-format"
 	dag "github.com/AtlantPlatform/go-ipfs/merkledag"
 	ft "github.com/AtlantPlatform/go-ipfs/unixfs"
 	pi "unknown/go-ipfs-posinfo"
-
-	cid "github.com/AtlantPlatform/go-ipfs/go-cid"
-	ipld "github.com/AtlantPlatform/go-ipfs/go-ipld-format"
 )
 
 // BlockSizeLimit specifies the maximum size an imported block can have.
@@ -32,7 +31,7 @@ var roughLinkSize = 34 + 8 + 5   // sha256 multihash + size + no name + protobuf
 //   var DefaultLinksPerBlock = (roughLinkBlockSize / roughLinkSize)
 //
 // See calc_test.go
-var DefaultLinksPerBlock = (roughLinkBlockSize / roughLinkSize)
+var DefaultLinksPerBlock = roughLinkBlockSize / roughLinkSize
 
 // ErrSizeLimitExceeded signals that a block is larger than BlockSizeLimit.
 var ErrSizeLimitExceeded = fmt.Errorf("object size limit exceeded")
@@ -109,7 +108,7 @@ func (n *UnixfsNode) AddChild(child *UnixfsNode, db *DagBuilderHelper) error {
 
 	// Add a link to this node without storing a reference to the memory
 	// This way, we avoid nodes building up and consuming all of our RAM
-	err = n.node.AddNodeLinkClean("", childnode)
+	err = n.node.AddNodeLink("", childnode)
 	if err != nil {
 		return err
 	}

@@ -13,10 +13,7 @@ import (
 	ipfspath "github.com/AtlantPlatform/go-ipfs/path"
 )
 
-type KeyAPI struct {
-	*CoreAPI
-	*caopts.KeyOptions
-}
+type KeyAPI CoreAPI
 
 type key struct {
 	name   string
@@ -201,8 +198,4 @@ func (api *KeyAPI) Remove(ctx context.Context, name string) (coreiface.Path, err
 	}
 
 	return (&key{"", pid.Pretty()}).Path(), nil
-}
-
-func (api *KeyAPI) core() coreiface.CoreAPI {
-	return api.CoreAPI
 }

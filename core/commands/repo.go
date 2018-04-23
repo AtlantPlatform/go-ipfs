@@ -17,7 +17,6 @@ import (
 	cmdkit "github.com/AtlantPlatform/go-ipfs/go-ipfs-cmdkit"
 	config "github.com/AtlantPlatform/go-ipfs/repo/config"
 	fsrepo "github.com/AtlantPlatform/go-ipfs/repo/fsrepo"
-	lockfile "github.com/AtlantPlatform/go-ipfs/repo/fsrepo/lock"
 	bstore "unknown/go-ipfs-blockstore"
 	cmds "unknown/go-ipfs-cmds"
 )
@@ -232,7 +231,7 @@ daemons are running.
 		}
 
 		dsLockFile := filepath.Join(dsPath, "LOCK") // TODO: get this lockfile programmatically
-		repoLockFile := filepath.Join(configRoot, lockfile.LockFile)
+		repoLockFile := filepath.Join(configRoot, fsrepo.LockFile)
 		apiFile := filepath.Join(configRoot, "api") // TODO: get this programmatically
 
 		log.Infof("Removing repo lockfile: %s", repoLockFile)

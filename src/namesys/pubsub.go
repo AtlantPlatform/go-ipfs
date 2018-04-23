@@ -8,24 +8,25 @@ import (
 	"sync"
 	"time"
 
+	opts "github.com/ipfs/go-ipfs/namesys/opts"
 	pb "github.com/ipfs/go-ipfs/namesys/pb"
 	path "github.com/ipfs/go-ipfs/path"
 
 	u "gx/ipfs/QmNiJuT8Ja3hMVpBHXv3Q6dwmperaQ6JjLtpMQgMCD7xvx/go-ipfs-util"
 	p2phost "gx/ipfs/QmNmJZL7FQySMtE2BQuLMuZg2EB2CLEunJJUSVSc9YnnbV/go-libp2p-host"
-	ds "gx/ipfs/QmPpegoMqhAEqjncrzArm7KVWAkCm78rqL2DPuNjhPrshg/go-datastore"
-	dssync "gx/ipfs/QmPpegoMqhAEqjncrzArm7KVWAkCm78rqL2DPuNjhPrshg/go-datastore/sync"
 	floodsub "gx/ipfs/QmSFihvoND3eDaAYRCeLgLPt62yCPgMZs1NSZmKFEtJQQw/go-libp2p-floodsub"
 	routing "gx/ipfs/QmTiWLZ6Fo5j4KcTVutZJ5KWRRJrbxzmxA4td8NfEdrPh7/go-libp2p-routing"
+	dshelp "gx/ipfs/QmTmqJGRQfuH8eKWD1FjThwPRipt1QhqJQNZ8MpzmfAAxo/go-ipfs-ds-help"
 	record "gx/ipfs/QmUpttFinNDmNPgFwKN8sZK6BUtBmA68Y4KdSBDXa8t9sJ/go-libp2p-record"
 	dhtpb "gx/ipfs/QmUpttFinNDmNPgFwKN8sZK6BUtBmA68Y4KdSBDXa8t9sJ/go-libp2p-record/pb"
+	ds "gx/ipfs/QmXRKBQA4wXP7xWbFiZsR1GP4HV6wMDQ1aWFxZZ4uBcPX9/go-datastore"
+	dssync "gx/ipfs/QmXRKBQA4wXP7xWbFiZsR1GP4HV6wMDQ1aWFxZZ4uBcPX9/go-datastore/sync"
 	pstore "gx/ipfs/QmXauCuJzmzapetmC6W4TuDJLL1yFFrVzSHoWv8YdbmnxH/go-libp2p-peerstore"
 	proto "gx/ipfs/QmZ4Qi3GaRbjcx28Sme5eMH7RQjGkt8wHxt2a65oLaeFEV/gogo-protobuf/proto"
 	peer "gx/ipfs/QmZoWKhxUmZ2seW4BzX6fJkNR8hh9PsGModr7q171yq2SS/go-libp2p-peer"
 	mh "gx/ipfs/QmZyZDi491cCNTLfAhwcaDii2Kg4pwKRkhqQzURGDvY6ua/go-multihash"
 	ci "gx/ipfs/QmaPbCnUMBohSGo3KnxEa2bHqyJVVeEEcwtqJAYxerieBo/go-libp2p-crypto"
 	cid "gx/ipfs/QmcZfnkapfECQGcLZaf9B79NRg7cRa9EnZh4LSbkCzwNvY/go-cid"
-	dshelp "gx/ipfs/QmdQTPWduSeyveSxeCAte33M592isSW5Z979g81aJphrgn/go-ipfs-ds-help"
 )
 
 // PubsubPublisher is a publisher that distributes IPNS records through pubsub
@@ -185,16 +186,11 @@ func (p *PubsubPublisher) publishRecord(ctx context.Context, k ci.PrivKey, value
 }
 
 // Resolve resolves a name through pubsub and default depth limit
-func (r *PubsubResolver) Resolve(ctx context.Context, name string) (path.Path, error) {
-	return r.ResolveN(ctx, name, DefaultDepthLimit)
+func (r *PubsubResolver) Resolve(ctx context.Context, name string, options ...opts.ResolveOpt) (path.Path, error) {
+	return resolve(ctx, r, name, opts.ProcessOpts(options), "/ipns/")
 }
 
-// ResolveN resolves a name through pubsub with the specified depth limit
-func (r *PubsubResolver) ResolveN(ctx context.Context, name string, depth int) (path.Path, error) {
-	return resolve(ctx, r, name, depth, "/ipns/")
-}
-
-func (r *PubsubResolver) resolveOnce(ctx context.Context, name string) (path.Path, error) {
+func (r *PubsubResolver) resolveOnce(ctx context.Context, name string, options *opts.ResolveOpts) (path.Path, error) {
 	log.Debugf("PubsubResolve: resolve '%s'", name)
 
 	// retrieve the public key once (for verifying messages)
@@ -207,7 +203,7 @@ func (r *PubsubResolver) resolveOnce(ctx context.Context, name string) (path.Pat
 
 	id := peer.ID(hash)
 	if r.host.Peerstore().PrivKey(id) != nil {
-		return "", errors.New("Cannot resolve own name through pubsub")
+		return "", errors.New("cannot resolve own name through pubsub")
 	}
 
 	pubk := id.ExtractPublicKey()
@@ -319,7 +315,7 @@ func (r *PubsubResolver) handleSubscription(sub *floodsub.Subscription, name str
 
 		err = r.receive(msg, name, pubk)
 		if err != nil {
-			log.Warningf("PubsubResolve: error proessing update for %s: %s", name, err.Error())
+			log.Warningf("PubsubResolve: error processing update for %s: %s", name, err.Error())
 		}
 	}
 }
@@ -373,7 +369,7 @@ func (r *PubsubResolver) receive(msg *floodsub.Message, name string, pubk ci.Pub
 }
 
 // rendezvous with peers in the name topic through provider records
-// Note: rendezbous/boostrap should really be handled by the pubsub implementation itself!
+// Note: rendezvous/boostrap should really be handled by the pubsub implementation itself!
 func bootstrapPubsub(ctx context.Context, cr routing.ContentRouting, host p2phost.Host, name string) {
 	topic := "floodsub:" + name
 	hash := u.Hash([]byte(topic))

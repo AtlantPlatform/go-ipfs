@@ -8,7 +8,6 @@ import (
 	"strings"
 
 	bserv "github.com/AtlantPlatform/go-ipfs/blockservice"
-	offline "github.com/AtlantPlatform/go-ipfs/exchange/offline"
 	cid "github.com/AtlantPlatform/go-ipfs/go-cid"
 	ipld "github.com/AtlantPlatform/go-ipfs/go-ipld-format"
 	dag "github.com/AtlantPlatform/go-ipfs/merkledag"
@@ -16,6 +15,7 @@ import (
 	"github.com/AtlantPlatform/go-ipfs/thirdparty/verifcid"
 	dstore "unknown/go-datastore"
 	bstore "unknown/go-ipfs-blockstore"
+	offline "unknown/go-ipfs-exchange-offline"
 	logging "unknown/go-log"
 )
 

@@ -7,12 +7,13 @@ import (
 	"sync"
 	"time"
 
+	opts "github.com/ipfs/go-ipfs/namesys/opts"
 	path "github.com/ipfs/go-ipfs/path"
 
 	p2phost "gx/ipfs/QmNmJZL7FQySMtE2BQuLMuZg2EB2CLEunJJUSVSc9YnnbV/go-libp2p-host"
-	ds "gx/ipfs/QmPpegoMqhAEqjncrzArm7KVWAkCm78rqL2DPuNjhPrshg/go-datastore"
 	floodsub "gx/ipfs/QmSFihvoND3eDaAYRCeLgLPt62yCPgMZs1NSZmKFEtJQQw/go-libp2p-floodsub"
 	routing "gx/ipfs/QmTiWLZ6Fo5j4KcTVutZJ5KWRRJrbxzmxA4td8NfEdrPh7/go-libp2p-routing"
+	ds "gx/ipfs/QmXRKBQA4wXP7xWbFiZsR1GP4HV6wMDQ1aWFxZZ4uBcPX9/go-datastore"
 	isd "gx/ipfs/QmZmmuAXgX73UQmX1jRKjTGmjzq24Jinqkq8vzkBtno4uX/go-is-domain"
 	peer "gx/ipfs/QmZoWKhxUmZ2seW4BzX6fJkNR8hh9PsGModr7q171yq2SS/go-libp2p-peer"
 	mh "gx/ipfs/QmZyZDi491cCNTLfAhwcaDii2Kg4pwKRkhqQzURGDvY6ua/go-multihash"
@@ -67,12 +68,7 @@ func AddPubsubNameSystem(ctx context.Context, ns NameSystem, host p2phost.Host, 
 const DefaultResolverCacheTTL = time.Minute
 
 // Resolve implements Resolver.
-func (ns *mpns) Resolve(ctx context.Context, name string) (path.Path, error) {
-	return ns.ResolveN(ctx, name, DefaultDepthLimit)
-}
-
-// ResolveN implements Resolver.
-func (ns *mpns) ResolveN(ctx context.Context, name string, depth int) (path.Path, error) {
+func (ns *mpns) Resolve(ctx context.Context, name string, options ...opts.ResolveOpt) (path.Path, error) {
 	if strings.HasPrefix(name, "/ipfs/") {
 		return path.ParsePath(name)
 	}
@@ -81,11 +77,11 @@ func (ns *mpns) ResolveN(ctx context.Context, name string, depth int) (path.Path
 		return path.ParsePath("/ipfs/" + name)
 	}
 
-	return resolve(ctx, ns, name, depth, "/ipns/")
+	return resolve(ctx, ns, name, opts.ProcessOpts(options), "/ipns/")
 }
 
 // resolveOnce implements resolver.
-func (ns *mpns) resolveOnce(ctx context.Context, name string) (path.Path, error) {
+func (ns *mpns) resolveOnce(ctx context.Context, name string, options *opts.ResolveOpts) (path.Path, error) {
 	if !strings.HasPrefix(name, "/ipns/") {
 		name = "/ipns/" + name
 	}
@@ -114,7 +110,7 @@ func (ns *mpns) resolveOnce(ctx context.Context, name string) (path.Path, error)
 	if err == nil {
 		res, ok := ns.resolvers["pubsub"]
 		if ok {
-			p, err := res.resolveOnce(ctx, key)
+			p, err := res.resolveOnce(ctx, key, options)
 			if err == nil {
 				return makePath(p)
 			}
@@ -122,7 +118,7 @@ func (ns *mpns) resolveOnce(ctx context.Context, name string) (path.Path, error)
 
 		res, ok = ns.resolvers["dht"]
 		if ok {
-			p, err := res.resolveOnce(ctx, key)
+			p, err := res.resolveOnce(ctx, key, options)
 			if err == nil {
 				return makePath(p)
 			}
@@ -134,7 +130,7 @@ func (ns *mpns) resolveOnce(ctx context.Context, name string) (path.Path, error)
 	if isd.IsDomain(key) {
 		res, ok := ns.resolvers["dns"]
 		if ok {
-			p, err := res.resolveOnce(ctx, key)
+			p, err := res.resolveOnce(ctx, key, options)
 			if err == nil {
 				return makePath(p)
 			}
@@ -145,7 +141,7 @@ func (ns *mpns) resolveOnce(ctx context.Context, name string) (path.Path, error)
 
 	res, ok := ns.resolvers["proquint"]
 	if ok {
-		p, err := res.resolveOnce(ctx, key)
+		p, err := res.resolveOnce(ctx, key, options)
 		if err == nil {
 			return makePath(p)
 		}

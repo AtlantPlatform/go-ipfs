@@ -10,7 +10,6 @@ import (
 	"time"
 
 	bserv "github.com/ipfs/go-ipfs/blockservice"
-	offline "github.com/ipfs/go-ipfs/exchange/offline"
 	filestore "github.com/ipfs/go-ipfs/filestore"
 	dag "github.com/ipfs/go-ipfs/merkledag"
 	resolver "github.com/ipfs/go-ipfs/path/resolver"
@@ -20,15 +19,16 @@ import (
 	"github.com/ipfs/go-ipfs/thirdparty/verifbs"
 	uio "github.com/ipfs/go-ipfs/unixfs/io"
 
-	ds "gx/ipfs/QmPpegoMqhAEqjncrzArm7KVWAkCm78rqL2DPuNjhPrshg/go-datastore"
-	dsync "gx/ipfs/QmPpegoMqhAEqjncrzArm7KVWAkCm78rqL2DPuNjhPrshg/go-datastore/sync"
 	metrics "gx/ipfs/QmRg1gKTHzc3CZXSKzem8aR4E3TubFhbgXwfVuWnSK5CC5/go-metrics-interface"
 	goprocessctx "gx/ipfs/QmSF8fPo3jgVBAy8fpdjjYqgG87dkJgUprRBHRd2tmfgpP/goprocess/context"
-	bstore "gx/ipfs/QmTVDM4LCSUMFNQzbDLL9zQwp8usE6QHymFdh3h8vL9v6b/go-ipfs-blockstore"
+	offline "gx/ipfs/QmWM5HhdG5ZQNyHQ5XhMdGmV9CvLpFynQfGpTxN2MEM7Lc/go-ipfs-exchange-offline"
+	ds "gx/ipfs/QmXRKBQA4wXP7xWbFiZsR1GP4HV6wMDQ1aWFxZZ4uBcPX9/go-datastore"
+	retry "gx/ipfs/QmXRKBQA4wXP7xWbFiZsR1GP4HV6wMDQ1aWFxZZ4uBcPX9/go-datastore/retrystore"
+	dsync "gx/ipfs/QmXRKBQA4wXP7xWbFiZsR1GP4HV6wMDQ1aWFxZZ4uBcPX9/go-datastore/sync"
 	pstore "gx/ipfs/QmXauCuJzmzapetmC6W4TuDJLL1yFFrVzSHoWv8YdbmnxH/go-libp2p-peerstore"
 	peer "gx/ipfs/QmZoWKhxUmZ2seW4BzX6fJkNR8hh9PsGModr7q171yq2SS/go-libp2p-peer"
+	bstore "gx/ipfs/QmaG4DZ4JaqEfvPWt5nPPgoTzhc1tr1T3f4Nu9Jpdm8ymY/go-ipfs-blockstore"
 	ci "gx/ipfs/QmaPbCnUMBohSGo3KnxEa2bHqyJVVeEEcwtqJAYxerieBo/go-libp2p-crypto"
-	retry "gx/ipfs/Qmc74pRHvndTDAB5nXztWAV7vs5j1obvCb9ejfQzXp9USX/retry-datastore"
 )
 
 type BuildCfg struct {
@@ -173,7 +173,7 @@ func setupNode(ctx context.Context, n *IpfsNode, cfg *BuildCfg) error {
 
 	// hash security
 	bs := bstore.NewBlockstore(rds)
-	bs = &verifbs.VerifBS{bs}
+	bs = &verifbs.VerifBS{Blockstore: bs}
 
 	opts := bstore.DefaultCacheOpts()
 	conf, err := n.Repo.Config()
@@ -202,7 +202,7 @@ func setupNode(ctx context.Context, n *IpfsNode, cfg *BuildCfg) error {
 		// hash security
 		n.Filestore = filestore.NewFilestore(bs, n.Repo.FileManager())
 		n.Blockstore = bstore.NewGCBlockstore(n.Filestore, n.GCLocker)
-		n.Blockstore = &verifbs.VerifBSGC{n.Blockstore}
+		n.Blockstore = &verifbs.VerifBSGC{GCBlockstore: n.Blockstore}
 	}
 
 	rcfg, err := n.Repo.Config()
@@ -229,7 +229,7 @@ func setupNode(ctx context.Context, n *IpfsNode, cfg *BuildCfg) error {
 	internalDag := dag.NewDAGService(bserv.New(n.Blockstore, offline.Exchange(n.Blockstore)))
 	n.Pinning, err = pin.LoadPinner(n.Repo.Datastore(), n.DAG, internalDag)
 	if err != nil {
-		// TODO: we should move towards only running 'NewPinner' explicity on
+		// TODO: we should move towards only running 'NewPinner' explicitly on
 		// node init instead of implicitly here as a result of the pinner keys
 		// not being found in the datastore.
 		// this is kinda sketchy and could cause data loss
