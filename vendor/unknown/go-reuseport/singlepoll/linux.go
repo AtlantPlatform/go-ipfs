@@ -8,8 +8,8 @@ import (
 	"sync"
 	"unknown/sys/unix"
 
-	"gx/ipfs/QmSGRM5Udmy1jsFBr1Cawez7Lt7LZ3ZKA23GGVEsiEW6F3/eventfd"
-	logging "gx/ipfs/QmSpJByNKFX1sCsHBEp3R73FL4NF6FnQTEGyNAXHm2GS52/go-log"
+	logging "unknown-2/go-log"
+	"unknown/eventfd"
 )
 
 var (
