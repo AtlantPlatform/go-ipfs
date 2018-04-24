@@ -7,7 +7,7 @@ import (
 	"sync"
 	"unknown/sys/unix"
 
-	"gx/ipfs/QmSGRM5Udmy1jsFBr1Cawez7Lt7LZ3ZKA23GGVEsiEW6F3/eventfd"
+	"unknown/eventfd"
 )
 
 type Poller struct {

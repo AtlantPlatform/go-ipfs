@@ -6,7 +6,7 @@ import (
 	"strings"
 	"syscall"
 
-	reuseport "unknown/go-reuseport"
+	reuseport "github.com/AtlantPlatform/go-ipfs/go-reuseport"
 )
 
 // envReuseport is the env variable name used to turn off reuse port.

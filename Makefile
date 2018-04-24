@@ -25,6 +25,7 @@ extract:
 	--unvendor go-ipld-format \
 	--unvendor go-multiaddr \
 	--unvendor go-libp2p-metrics \
+	--unvendor go-reuseport \
 	--rename badger:github.com/dgraph-io/badger
 	
 extract-apply:
@@ -46,6 +47,7 @@ extract-apply:
 	--unvendor go-ipld-format \
 	--unvendor go-multiaddr \
 	--unvendor go-libp2p-metrics \
+	--unvendor go-reuseport \
 	--rename badger:github.com/dgraph-io/badger
 
 patch-apply:
@@ -53,6 +55,7 @@ patch-apply:
 	git apply patches/libp2p-version.patch
 	git apply patches/mdns.patch
 	git apply patches/peer-info.patch
+	git apply patches/go-reuseport.patch
 
 test:
 	go install github.com/AtlantPlatform/go-ipfs/cmd/ipfswatch

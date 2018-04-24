@@ -10,7 +10,7 @@ import (
 	"strings"
 
 	core "github.com/AtlantPlatform/go-ipfs/core"
-	"gx/ipfs/QmYRGECuvQnRX73fcvPnGbYijBcGN2HbKZQ7jh26qmLiHG/semver"
+	"unknown/semver"
 	unix "unknown/sys/unix"
 )
 

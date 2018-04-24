@@ -8,8 +8,8 @@ import (
 	"sync"
 	"unknown/sys/unix"
 
-	logging "unknown-2/go-log"
 	"unknown/eventfd"
+	logging "unknown/go-log"
 )
 
 var (

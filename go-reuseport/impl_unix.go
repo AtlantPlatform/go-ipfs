@@ -11,7 +11,7 @@ import (
 	"time"
 	"unknown/sys/unix"
 
-	"unknown/go-reuseport/singlepoll"
+	"github.com/AtlantPlatform/go-ipfs/go-reuseport/singlepoll"
 	sockaddrnet "unknown/go-sockaddr/net"
 )
 
