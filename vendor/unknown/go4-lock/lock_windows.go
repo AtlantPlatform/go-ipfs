@@ -22,7 +22,7 @@ import (
 	"os"
 	"sync"
 
-	"gx/ipfs/QmPXvegq26x982cQjSfbTvSzZXn7GiaMwhhVPHkeTEhrPT/sys/windows"
+	"golang.org/x/sys/windows"
 )
 
 func init() {
