@@ -1,0 +1,33 @@
+diff --git a/go-libp2p/p2p/protocol/identify/id.go b/go-libp2p/p2p/protocol/identify/id.go
+index 70a2c7c2e..aced50e97 100644
+--- a/go-libp2p/p2p/protocol/identify/id.go
++++ b/go-libp2p/p2p/protocol/identify/id.go
+@@ -29,7 +29,7 @@ const ID = "/ipfs/id/1.0.0"
+ 
+ // LibP2PVersion holds the current protocol version for a client running this code
+ // TODO(jbenet): fix the versioning mess.
+-const LibP2PVersion = "ipfs/0.1.0"
++const LibP2PVersion = "atlant/0.1.0"
+ 
+ var ClientVersion = "go-libp2p/3.3.4"
+ 
+@@ -425,11 +425,15 @@ func addrInAddrs(a ma.Multiaddr, as []ma.Multiaddr) bool {
+ // we're in tight development, we will return false for minor version
+ // changes too.
+ func protocolVersionsAreCompatible(v1, v2 string) bool {
+-	if strings.HasPrefix(v1, "ipfs/") {
+-		v1 = v1[5:]
++	if !strings.HasPrefix(v1, "atlant/") {
++		return false
++	} else {
++		v1 = v1[7:]
+ 	}
+-	if strings.HasPrefix(v2, "ipfs/") {
+-		v2 = v2[5:]
++	if !strings.HasPrefix(v2, "atlant/") {
++		return false
++	} else {
++		v2 = v2[7:]
+ 	}
+ 
+ 	v1s, err := semver.NewVersion(v1)

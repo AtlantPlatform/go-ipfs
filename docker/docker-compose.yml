@@ -1,0 +1,7 @@
+version: '3'
+services:
+  atlantgo:
+    build: ./
+    network_mode: "host"
+    volumes:
+      - ./output:/output

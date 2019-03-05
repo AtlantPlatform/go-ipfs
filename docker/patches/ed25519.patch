@@ -1,0 +1,151 @@
+diff --git a/core/core.go b/core/core.go
+index b4c423e2d..06c9ef633 100644
+--- a/core/core.go
++++ b/core/core.go
+@@ -808,7 +808,7 @@ func loadPrivateKey(cfg *config.Identity, id peer.ID) (ic.PrivKey, error) {
+ 		return nil, err
+ 	}
+ 
+-	id2, err := peer.IDFromPrivateKey(sk)
++	id2, err := peer.IDFromEd25519PublicKey(sk.GetPublic())
+ 	if err != nil {
+ 		return nil, err
+ 	}
+diff --git a/go-libp2p-peer/peer.go b/go-libp2p-peer/peer.go
+index 0b3bbbcb9..55786f4db 100644
+--- a/go-libp2p-peer/peer.go
++++ b/go-libp2p-peer/peer.go
+@@ -59,7 +59,7 @@ func (id ID) MatchesPrivateKey(sk ic.PrivKey) bool {
+ 
+ // MatchesPublicKey tests whether this ID was derived from pk
+ func (id ID) MatchesPublicKey(pk ic.PubKey) bool {
+-	oid, err := IDFromPublicKey(pk)
++	oid, err := IDFromEd25519PublicKey(pk)
+ 	if err != nil {
+ 		return false
+ 	}
+@@ -216,7 +216,7 @@ func IDFromEd25519PublicKey(pk ic.PubKey) (ID, error) {
+ 
+ // IDFromPrivateKey returns the Peer ID corresponding to sk
+ func IDFromPrivateKey(sk ic.PrivKey) (ID, error) {
+-	return IDFromPublicKey(sk.GetPublic())
++	return IDFromEd25519PublicKey(sk.GetPublic())
+ }
+ 
+ // IDSlice for sorting peers
+diff --git a/repo/config/init.go b/repo/config/init.go
+index b42fdcf14..775b6e782 100644
+--- a/repo/config/init.go
++++ b/repo/config/init.go
+@@ -150,8 +150,8 @@ func identityConfig(out io.Writer, nbits int) (Identity, error) {
+ 		return ident, errors.New("bitsize less than 1024 is considered unsafe")
+ 	}
+ 
+-	fmt.Fprintf(out, "generating %v-bit RSA keypair...", nbits)
+-	sk, pk, err := ci.GenerateKeyPair(ci.RSA, nbits)
++	fmt.Fprintf(out, "generating an Ed25519 keypair...")
++	sk, pk, err := ci.GenerateKeyPair(ci.Ed25519, 0)
+ 	if err != nil {
+ 		return ident, err
+ 	}
+@@ -165,7 +165,7 @@ func identityConfig(out io.Writer, nbits int) (Identity, error) {
+ 	}
+ 	ident.PrivKey = base64.StdEncoding.EncodeToString(skbytes)
+ 
+-	id, err := peer.IDFromPublicKey(pk)
++	id, err := peer.IDFromEd25519PublicKey(pk)
+ 	if err != nil {
+ 		return ident, err
+ 	}
+diff --git a/go-cid/cid.go b/go-cid/cid.go
+index d0ce2ce35..bfaf34f80 100644
+--- a/go-cid/cid.go
++++ b/go-cid/cid.go
+@@ -245,13 +245,16 @@ func uvError(read int) error {
+ //     <version><codec-type><multihash>
+ //
+ // CidV0 are also supported. In particular, data buffers starting
+-// with length 34 bytes, which starts with bytes [18,32...] are considered
+-// binary multihashes.
++// with length 34 bytes, which starts with bytes [18,32...] or [0,34...]
++// are considered binary multihashes.
+ //
+ // Please use decode when parsing a regular Cid string, as Cast does not
+ // expect multibase-encoded data. Cast accepts the output of Cid.Bytes().
+ func Cast(data []byte) (*Cid, error) {
+-	if len(data) == 34 && data[0] == 18 && data[1] == 32 {
++	switch {
++	case
++		len(data) == 34 && data[0] == 18 && data[1] == 32, // Code = SHA_256, Length = 32
++		len(data) == 36 && data[0] == 0 && data[1] == 34:  // Code = ID, Length = 34 (e.g.: Ed25519 peer ID)
+ 		h, err := mh.Cast(data)
+ 		if err != nil {
+ 			return nil, err
+@@ -204,14 +204,17 @@ func Parse(v interface{}) (*Cid, error) {
+ // <version><codec-type><multihash>
+ //
+ // Decode will also detect and parse CidV0 strings. Strings
+-// starting with "Qm" are considered CidV0 and treated directly
++// starting with "Qm" and "14V" are considered CidV0 and treated directly
+ // as B58-encoded multihashes.
+ func Decode(v string) (*Cid, error) {
+ 	if len(v) < 2 {
+ 		return nil, ErrCidTooShort
+ 	}
+ 
+-	if len(v) == 46 && v[:2] == "Qm" {
++	switch {
++	case
++		len(v) == 46 && v[:2] == "Qm",  // SHA_256
++		len(v) == 49 && v[:3] == "14V": // ID (e.g.: Ed25519 peer ID)
+ 		hash, err := mh.FromB58String(v)
+ 		if err != nil {
+ 			return nil, err
+diff --git a/go-libp2p-kad-dht/records.go b/go-libp2p-kad-dht/records.go
+index a10977bf8..d434fc8b0 100644
+--- a/go-libp2p-kad-dht/records.go
++++ b/go-libp2p-kad-dht/records.go
+@@ -97,7 +97,7 @@ func (dht *IpfsDHT) getPublicKeyFromNode(ctx context.Context, p peer.ID) (ci.Pub
+ 		return nil, err
+ 	}
+ 
+-	id, err := peer.IDFromPublicKey(pk)
++	id, err := peer.IDFromEd25519PublicKey(pk)
+ 	if err != nil {
+ 		return nil, err
+ 	}
+diff --git a/go-libp2p-secio/protocol.go b/go-libp2p-secio/protocol.go
+index 965a2aec6..c2546488e 100644
+--- a/go-libp2p-secio/protocol.go
++++ b/go-libp2p-secio/protocol.go
+@@ -188,7 +188,7 @@ func (s *secureSession) runHandshakeSync() error {
+ 	}
+ 
+ 	// get peer id
+-	s.remotePeer, err = peer.IDFromPublicKey(s.remote.permanentPubKey)
++	s.remotePeer, err = peer.IDFromEd25519PublicKey(s.remote.permanentPubKey)
+ 	if err != nil {
+ 		return err
+ 	}
+diff --git a/go-libp2p/p2p/protocol/identify/id.go b/go-libp2p/p2p/protocol/identify/id.go
+index 253635ee8..ef93415f0 100644
+--- a/go-libp2p/p2p/protocol/identify/id.go
++++ b/go-libp2p/p2p/protocol/identify/id.go
+@@ -272,7 +272,7 @@ func (ids *IDService) consumeReceivedPubKey(c inet.Conn, kb []byte) {
+ 	}
+ 
+ 	// verify key matches peer.ID
+-	np, err := peer.IDFromPublicKey(newKey)
++	np, err := peer.IDFromEd25519PublicKey(newKey)
+ 	if err != nil {
+ 		log.Debugf("%s cannot get peer.ID from key of remote peer: %s, %s", lp, rp, err)
+ 		return
+@@ -316,7 +316,7 @@ func (ids *IDService) consumeReceivedPubKey(c inet.Conn, kb []byte) {
+ 	log.Errorf("%s identify got a different key for: %s", lp, rp)
+ 
+ 	// okay... does ours NOT match the remote peer.ID?
+-	cp, err := peer.IDFromPublicKey(currKey)
++	cp, err := peer.IDFromEd25519PublicKey(currKey)
+ 	if err != nil {
+ 		log.Errorf("%s cannot get peer.ID from local key of remote peer: %s, %s", lp, rp, err)
+ 		return
