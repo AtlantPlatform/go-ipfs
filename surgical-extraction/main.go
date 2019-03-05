@@ -147,6 +147,9 @@ func (s SourceFile) GxRootPackage() (string, bool) {
 		return "", false
 	}
 	parts := strings.Split(s.Package, "/")
+	if len(parts) < 4 {
+		return "", false
+	}
 	// 0: gx
 	// 1: ipfs
 	// 2: hash
@@ -159,6 +162,9 @@ func (s SourceFile) IpfsRootPackage() (string, bool) {
 		return "", false
 	}
 	parts := strings.Split(s.Package, "/")
+	if len(parts) < 4 {
+		return "", false
+	}
 	// 0: github.com
 	// 1: ipfs
 	// 2: go-ipfs
@@ -176,6 +182,10 @@ func (s SourceFile) GodepsRootPackage() (string, bool) {
 	}
 	cleanPrefix := strings.TrimPrefix(s.Package, "github.com/ipfs/go-ipfs/Godeps/_workspace/")
 	parts := strings.Split(cleanPrefix, "/")
+	if len(parts) < 4 {
+		return "", false
+	}
+
 	// 0: src
 	// 1: root repo
 	// 2: root author
@@ -458,6 +468,8 @@ type ExtractReport struct {
 }
 
 func (e *ExtractReport) Rewrite(path string) (string, bool) {
+
+	// log.Println("[DEBUG] Rewrite", path)
 	if filepath.HasPrefix(path, "gx/ipfs/") {
 		for basePkg, m := range e.GxResults {
 			sources := m[SourcesOrigin]
