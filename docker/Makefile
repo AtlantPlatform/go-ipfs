@@ -67,7 +67,7 @@ extract-apply:
 	# --rename badger:github.com/dgraph-io/badger
 
 patch-windows:
-	find . -type f | grep \.go\$ | xargs sed -i 's/gx\/ipfs\/QmVGjyM9i2msKvLXwh9VosCTgP4mL91kC7hDmqnwTTx6Hu\/sys\/windows/golang.org\/x\/sys\/windows/g'
+	find . -type f | grep \.go | xargs sed -i 's/gx\/ipfs\/QmVGjyM9i2msKvLXwh9VosCTgP4mL91kC7hDmqnwTTx6Hu\/sys\/windows/golang.org\/x\/sys\/windows/g'
 
 patch-apply:
 	git apply patches/mdns.patch
