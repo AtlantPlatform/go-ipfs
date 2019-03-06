@@ -63,7 +63,6 @@ extract-apply:
 	--unvendor go-libp2p-transport \
 	--unvendor go-libp2p-quic-transport \
 	--unvendor go-libp2p
-	rm -rf quic-go go-libp2p-quic-transport
 
 # --unvendor go-ds-badger \
 # --rename badger:github.com/dgraph-io/badger
