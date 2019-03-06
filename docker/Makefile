@@ -22,7 +22,6 @@ extract:
 	extract \
 	--unvendor go-libp2p-pnet \
 	--unvendor go-libp2p-interface-pnet \
-	--unvendor go-ds-badger \
 	--unvendor go-libp2p-peer \
 	--unvendor go-libp2p-crypto \
 	--unvendor go-cid \
@@ -37,6 +36,7 @@ extract:
 	--unvendor go-multiaddr \
 	--unvendor go-libp2p-metrics \
 	--unvendor go-reuseport
+	# --unvendor go-ds-badger \
 	# --rename badger:github.com/dgraph-io/badger
 	
 extract-apply:
@@ -63,21 +63,17 @@ extract-apply:
 	--unvendor go-libp2p-transport \
 	--unvendor go-libp2p-quic-transport \
 	--unvendor go-libp2p
+	# --unvendor go-ds-badger \
+	# --rename badger:github.com/dgraph-io/badger
 
-# --unvendor go-ds-badger \
-# --rename badger:github.com/dgraph-io/badger
-replace:
-	find . -type f | grep \.go$ | xargs sed -i \
-	   's/github.com\/AtlantPlatform\/go-ipfs\/quic-go/github.com\/lucas-clemente\/quic-go/g'
-	find . -type f | grep \.go$ | xargs sed -i \
-	   's/github.com\/AtlantPlatform\/go-ipfs\/go-libp2p-quic-transport/github.com\/libp2p\/go-libp2p-quic-transport/g'
+patch-windows:
+	find . -type f | grep \.go\$ | xargs sed -i 's/gx\/ipfs\/QmVGjyM9i2msKvLXwh9VosCTgP4mL91kC7hDmqnwTTx6Hu\/sys\/windows/golang.org\/x\/sys\/windows/g'
 
 patch-apply:
-	git apply patches/ed25519.patch
-	git apply patches/libp2p-version.patch
 	git apply patches/mdns.patch
 	git apply patches/peer-info.patch
-	# deprecated: git apply patches/go-reuseport.patch
+	git apply patches/libp2p-version.patch
+	# git apply patches/ed25519.patch
 
 test:
 	go install github.com/AtlantPlatform/go-ipfs/cmd/ipfswatch

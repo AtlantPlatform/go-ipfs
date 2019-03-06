@@ -2,7 +2,7 @@ diff --git a/core/core.go b/core/core.go
 index 0fa6b52cd..bed3010b6 100644
 --- a/core/core.go
 +++ b/core/core.go
-@@ -426,7 +426,7 @@ func setupDiscoveryOption(d config.Discovery) DiscoveryOption {
+@@ -453,7 +453,7 @@ func setupDiscoveryOption(d config.Discovery) DiscoveryOption {
  // HandlePeerFound attempts to connect to peer from `PeerInfo`, if it fails
  // logs a warning log.
  func (n *IpfsNode) HandlePeerFound(p pstore.PeerInfo) {

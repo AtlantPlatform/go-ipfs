@@ -41,7 +41,6 @@ WORKDIR /go/src/github.com/AtlantPlatform/go-ipfs
 # Overwrite makefile and patches files
 RUN rm -rf patches/* Makefile
 COPY Makefile  ./
-COPY patches/*.patch ./patches/
 
 # Cleaning all files in the repository, we can even reset GIT index
 RUN make clean
@@ -76,7 +75,11 @@ WORKDIR /go/src/github.com/AtlantPlatform/go-ipfs/vendor
 RUN find . -type d -name .git | xargs rm -rf
 
 WORKDIR /go/src/github.com/AtlantPlatform/go-ipfs
-# RUN make test
+RUN make test
+
+COPY patches/*.patch ./patches/
+RUN make patch-apply
+RUN make patch-windows
 
 # volume for source exchange
 VOLUME /output
