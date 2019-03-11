@@ -1,4 +1,4 @@
-FROM golang:1.11.5-stretch
+FROM golang:1.12-stretch
 ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get -y update \
     && apt-get install -y git gcc libc-dev make
@@ -7,18 +7,18 @@ RUN apt-get -y update \
 # "Badger" dependency has no backward compatibility,
 # So we are taking it from the old branch
 # and it has own dependencies:
-RUN  go get -u github.com/AndreasBriese/bbloom \
-  && go get -u github.com/dgryski/go-farm \ 
-  && go get -u github.com/pkg/errors \
-  && go get -u golang.org/x/net/trace \
-  && go get -u golang.org/x/sys/unix \
-  && go get -u github.com/golang/protobuf/proto
-
-WORKDIR /go/src/github.com/dgraph-io
-RUN  git config --global advice.detachedHead false \
-  && git clone --branch v1.5.4 --single-branch https://github.com/dgraph-io/badger \
-  && cd badger \
-  && go build .
+# RUN  go get -u github.com/AndreasBriese/bbloom \
+#   && go get -u github.com/dgryski/go-farm \ 
+#   && go get -u github.com/pkg/errors \
+#   && go get -u golang.org/x/net/trace \
+#   && go get -u golang.org/x/sys/unix \
+#   && go get -u github.com/golang/protobuf/proto
+# RUN  go get -u github.com/dgraph-io/badger
+# WORKDIR /go/src/github.com/dgraph-io
+# RUN  git config --global advice.detachedHead false \
+  # && git clone --branch v1.5.4 --single-branch https://github.com/dgraph-io/badger \
+  # && cd badger \
+  #&& go build .
 # end of "badger"
 # - - - - - -
 
@@ -46,38 +46,12 @@ COPY Makefile  ./
 RUN make clean
 RUN make extract-apply
 
-# `quic-go` uses old structure reference from `mint`
-# mint uses QTLS which is 
-
-RUN    go get -u golang.org/x/crypto/chacha20poly1305 \
-    && go get -u golang.org/x/crypto/cryptobyte \
-    && go get -u golang.org/x/crypto/curve25519 \
-    && go get -u golang.org/x/crypto/hkdf
-
-WORKDIR /go/src/github.com/AtlantPlatform/go-ipfs/vendor/github.com/marten-seemann
-RUN git clone https://github.com/marten-seemann/qtls \
-      && cd ./qtls \
-      && git checkout 3637b8f41961577d41c232ecd31ea6791438aeed \
-      && go build .
-
-WORKDIR /go/src/github.com/AtlantPlatform/go-ipfs/vendor/github.com/bifurcation
-RUN git clone https://github.com/bifurcation/mint \
-    && cd ./mint \
-    && git checkout 824af65410658916142a7600349144e1289f2110 \
-    && go build .
-
-RUN    go get -u github.com/cheekybits/genny/generic \
-    && go get -u github.com/hashicorp/golang-lru \
-    && go get -u github.com/lucas-clemente/aes12 \
-    && go get -u github.com/lucas-clemente/quic-go-certificates
-
 WORKDIR /go/src/github.com/AtlantPlatform/go-ipfs/vendor
 RUN find . -type d -name .git | xargs rm -rf
-
 WORKDIR /go/src/github.com/AtlantPlatform/go-ipfs
 RUN make test
-
 COPY patches/*.patch ./patches/
+
 RUN make patch-apply
 RUN make patch-windows
 

@@ -35,8 +35,8 @@ extract:
 	--unvendor go-ipld-format \
 	--unvendor go-multiaddr \
 	--unvendor go-libp2p-metrics \
-	--unvendor go-reuseport
-	# --unvendor go-ds-badger \
+	--unvendor go-reuseport \
+	--unvendor go-ds-badger
 	# --rename badger:github.com/dgraph-io/badger
 	
 extract-apply:
@@ -59,11 +59,8 @@ extract-apply:
 	--unvendor go-multiaddr \
 	--unvendor go-libp2p-metrics \
 	--unvendor go-reuseport \
-	--unvendor quic-go \
-	--unvendor go-libp2p-transport \
-	--unvendor go-libp2p-quic-transport \
+	--unvendor go-ds-badger \
 	--unvendor go-libp2p
-	# --unvendor go-ds-badger \
 	# --rename badger:github.com/dgraph-io/badger
 
 patch-windows:
