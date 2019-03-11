@@ -17,6 +17,7 @@ import (
 	"strings"
 
 	cli "github.com/jawher/mow.cli"
+	copy "github.com/otiai10/copy"
 	"github.com/xlab/closer"
 )
 
@@ -280,6 +281,16 @@ func extractCmd(c *cli.Cmd) {
 		gxPackagesRenamed := make(map[string][]SourceFile)
 		gxNonce := make(map[string]int)
 		for pkg, sources := range gxPackages {
+
+			// This is called once per package
+			pkgOriginVendorDir := filepath.Dir(sources[0].FullPath) + "/vendor"
+			if stat, errStat := os.Stat(pkgOriginVendorDir); errStat == nil && stat.IsDir() {
+				pkgVendorDir := projectRoot + "/vendor"
+				log.Println("[WARN] vendor folder detected in ", pkgOriginVendorDir, "copying to ", pkgVendorDir)
+				copy.Copy(pkgOriginVendorDir, pkgVendorDir)
+				// os.Exit(0)
+			}
+
 			for _, src := range sources {
 				if gxVersions[pkg] == nil {
 					gxVersions[pkg] = map[string]struct{}{
