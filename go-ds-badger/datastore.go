@@ -78,7 +78,7 @@ func (d *datastore) Put(key ds.Key, value interface{}) error {
 	}
 
 	//TODO: Setting callback may potentially make this faster
-	return txn.Commit(nil)
+	return txn.Commit()
 }
 
 func (d *datastore) Get(key ds.Key) (value interface{}, err error) {
@@ -93,7 +93,7 @@ func (d *datastore) Get(key ds.Key) (value interface{}, err error) {
 		return nil, err
 	}
 
-	val, err := item.Value()
+	val, err := item.ValueCopy(nil)
 	if err != nil {
 		return nil, err
 	}
@@ -126,7 +126,7 @@ func (d *datastore) Delete(key ds.Key) error {
 	}
 
 	//TODO: callback may potentially make this faster
-	return txn.Commit(nil)
+	return txn.Commit()
 }
 
 func (d *datastore) Query(q dsq.Query) (dsq.Results, error) {
@@ -166,7 +166,7 @@ func (d *datastore) QueryNew(q dsq.Query) (dsq.Results, error) {
 
 			var result dsq.Result
 			if !q.KeysOnly {
-				b, err := item.Value()
+				b, err := item.ValueCopy(nil)
 				if err != nil {
 					result = dsq.Result{Error: err}
 				} else {
@@ -252,7 +252,7 @@ func (b *badgerBatch) Delete(key ds.Key) error {
 
 func (b *badgerBatch) Commit() error {
 	//TODO: Setting callback may potentially make this faster
-	return b.txn.Commit(nil)
+	return b.txn.Commit()
 }
 
 func (d *datastore) CollectGarbage() error {
